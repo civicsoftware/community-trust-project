@@ -4,7 +4,11 @@ import c from './contextData';
 function App() {
   return (
     <>
-      <div className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl">
+      <a
+        href="https://www.civicsoftwarefoundation.org"
+        target="_blank"
+        className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 408.9 184.5"
@@ -64,10 +68,10 @@ function App() {
         </svg>
         <p className="text-md font-semibold">Early Prototype</p>
         <p className="text-sm font-medium uppercase">Do not share publicly</p>
-        <a href className="text-xs underline">
+        <p href className="text-xs underline">
           Learn more
-        </a>
-      </div>
+        </p>
+      </a>
       <div className="max-w-4xl mx-auto">
         <div className="">
           <div className="mt-2 p-2 flex flex-row justify-center text-gray-600 text-sm underline w-min-content">
