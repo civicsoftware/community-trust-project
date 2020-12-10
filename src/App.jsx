@@ -1,5 +1,5 @@
-import React from 'react';
-import c from './contextData';
+import React from "react";
+import c from "./contextData";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <a
         href="https://www.civicsoftwarefoundation.org"
         target="_blank"
+        rel="noreferrer"
         className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
       >
         <svg
@@ -174,13 +175,13 @@ function App() {
             </div>
             <h3 className="text-lg font-bold mt-4">Definitions</h3>
             <dl>
-              {c.other[1].definitions.map((definition) => (
+              {c.other[1].definitions.map(definition => (
                 <div className="mt-2 grid grid-cols-12">
                   <dt className="text-md font-bold col-span-2 border-r-4">
                     {definition.term}
                   </dt>
                   <dd className="col-span-10 pl-2">
-                    {definition.definition}{' '}
+                    {definition.definition}{" "}
                     <p className="text-xs italic">({definition.source})</p>
                   </dd>
                 </div>
@@ -264,7 +265,10 @@ function App() {
               </div>
               <div className="text-sm">
                 <span className="font-semibold">URI: </span>
-                <a href="#" className="text-sm font-medium underline">
+                <a
+                  href={c.rawData.rawStableURI}
+                  className="text-sm font-medium underline"
+                >
                   {c.rawData.rawStableURI}
                 </a>
               </div>
@@ -322,7 +326,7 @@ function App() {
             <div className="py-4 px-4 text-sm">
               <h3 className="text-lg font-bold">Process Steps</h3>
               <ol>
-                {c.processedData.processSteps.map((step) => (
+                {c.processedData.processSteps.map(step => (
                   <li className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md">
                     <div className="grid grid-cols-12">
                       <div className="col-span-1 font-mono text-2xl">
@@ -335,7 +339,7 @@ function App() {
                         <p className="italic">{step.stepWho}</p>
                         <p className="mb-2">{step.stepExplanation}</p>
                         <p className="text-xs">Resources used:</p>
-                        {step.relatedResources.map((resource) => (
+                        {step.relatedResources.map(resource => (
                           <div className="inline-block mr-2 p-0.5 bg-indigo-800 text-white text-xs rounded">
                             {resource}
                           </div>
@@ -372,16 +376,16 @@ function App() {
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Key Questions</h3>
               <ul>
-                {c.contextQuestions.map((question) => (
+                {c.contextQuestions.map(question => (
                   <li className="mt-4 p-2 bg-pink-50">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2">An answer will go here</p>
-                    {question.contextualLayer.map((layer) => (
+                    {question.contextualLayer.map(layer => (
                       <div className="inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
                         {layer}
                       </div>
                     ))}
-                    {question.topic.map((topic) => (
+                    {question.topic.map(topic => (
                       <div className="inline-block mr-2 p-0.5 bg-gray-200 text-xs rounded">
                         {topic}
                       </div>
@@ -418,7 +422,7 @@ function App() {
             <div className="mt-4 p-4 text-sm">
               <h3 className="text-lg font-bold">Resources</h3>
               <ul className="">
-                {c.referenceDocumentation.map((resource) => (
+                {c.referenceDocumentation.map(resource => (
                   <li className="mt-2">
                     <a
                       className="font-medium underline"
@@ -434,7 +438,7 @@ function App() {
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Service Providers</h3>
               <ul className="">
-                {c.other[0].serviceProviders.map((provider) => (
+                {c.other[0].serviceProviders.map(provider => (
                   <li className="mt-2">
                     <a
                       className="font-medium underline"
@@ -447,15 +451,15 @@ function App() {
                     <p className="text-xs">
                       <span
                         className={`inline-block mr-2 p-0.5 text-xs rounded ${
-                          provider.contractWithMultCo == 'Active'
-                            ? 'bg-indigo-800 text-white'
-                            : 'bg-gray-300'
+                          provider.contractWithMultCo === "Active"
+                            ? "bg-indigo-800 text-white"
+                            : "bg-gray-300"
                         }`}
                       >
                         {provider.contractWithMultCo}
                       </span>
                       {provider.startDate} - {provider.startDate}
-                    </p>
+                    </p>ga
                   </li>
                 ))}
               </ul>
