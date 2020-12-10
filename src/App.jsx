@@ -7,6 +7,7 @@ function App() {
       <a
         href="https://www.civicsoftwarefoundation.org"
         target="_blank"
+        rel="noreferrer"
         className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
       >
         <svg
@@ -264,7 +265,10 @@ function App() {
               </div>
               <div className="text-sm">
                 <span className="font-semibold">URI: </span>
-                <a href="#" className="text-sm font-medium underline">
+                <a
+                  href={c.rawData.rawStableURI}
+                  className="text-sm font-medium underline"
+                >
                   {c.rawData.rawStableURI}
                 </a>
               </div>
@@ -447,7 +451,7 @@ function App() {
                     <p className="text-xs">
                       <span
                         className={`inline-block mr-2 p-0.5 text-xs rounded ${
-                          provider.contractWithMultCo == "Active"
+                          provider.contractWithMultCo === "Active"
                             ? "bg-indigo-800 text-white"
                             : "bg-gray-300"
                         }`}
@@ -455,7 +459,7 @@ function App() {
                         {provider.contractWithMultCo}
                       </span>
                       {provider.startDate} - {provider.startDate}
-                    </p>
+                    </p>ga
                   </li>
                 ))}
               </ul>
