@@ -459,7 +459,8 @@ function App() {
                         {provider.contractWithMultCo}
                       </span>
                       {provider.startDate} - {provider.startDate}
-                    </p>ga
+                    </p>
+                    ga
                   </li>
                 ))}
               </ul>
