@@ -17,7 +17,7 @@ const ROUTES = [
       },
       {
         path: "/avatars",
-        key: "APP_ROOT",
+        key: "APP_PAGE",
         exact: true,
         component: Avatars
       },
