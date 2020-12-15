@@ -1,114 +1,48 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import { default as Windmill } from '@windmill/react-ui';
 
 import ROUTES, { RenderRoutes } from './routes';
+import Header from './Header';
 
-
-const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
 
 function App() {
-  const classes = useStyles();
 
   return (
-      <>
+      <Windmill.Windmill>
         <RenderRoutes routes={ROUTES}/>
-        <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>
-              TRUST Project
-            </Typography>
-            <Typography variant="body" color="inherit" noWrap>
-              <Link color="inherit" href={'/avatars'}>{'        '}Avatars</Link>
-              <Link color="inherit" href={'/context'}>{'   '}Context</Link>
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <main>
-          {/* Hero card*/}
-          <div className={classes.heroContent}>
-            <Container maxWidth="sm">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Community Data in Context
-              </Typography>
-              <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                This is a very good mission statement that is concise and inspiring.
-              </Typography>
-              <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                  <Grid item>
-                    <Button variant="contained" color="primary">
-                      Contribute to the Library
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Request a Dataset
-                    </Button>
-                  </Grid>
-                </Grid>
-              </div>
-            </Container>
+        <Header />
+
+        {/* HERO CARD */}
+        <div className="container mx-auto m-6 px-4 grid grid-cols-1 justify-center">
+          <p className="text-5xl mb-4 mt-10 font-semibold justify-self-center">
+            Community data, in context.
+          </p>
+          <div className="text-xl justify-self-center">
+            This is a very good mission statement that is concise and inspiring.
           </div>
-          {/* End hero card */}
+          <div class="items-center justify-self-center mt-8">
+            <a href="#" class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+              Request a Dataset
+            </a>
+            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 px-4 py-2 hover:text-gray-900">
+              Contribute to the Library
+            </a>
+          </div>
+        </div>
+        {/* End hero card */}
 
 
-          {/* Footer */}
-          <footer className={classes.footer}>
+          {/* FOOTER */}
+          {/* <footer className={classes.footer}>
             <Typography variant="h6" align="center" gutterBottom>
               Footer
             </Typography>
             <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
               This is a footer.
             </Typography>
-          </footer>
+          </footer> */}
           {/* End footer */}
-        </main>
-      </>
+      </Windmill.Windmill>
   );
 }
 
