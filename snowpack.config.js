@@ -13,7 +13,7 @@ module.exports = {
     /* ... */
   ],
   installOptions: {
-    /* ... */
+    namedExports: ['@windmill/react-ui'],
   },
   devOptions: {
     /* ... */
