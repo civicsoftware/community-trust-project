@@ -1,6 +1,8 @@
 import React from "react";
+import Home from "./Home";
 import Avatars from "./Avatars";
 import Context from "./Context";
+import Library from "./Library";
 import { Switch, Route } from "react-router-dom";
 
 const ROUTES = [
@@ -10,14 +12,26 @@ const ROUTES = [
     component: RenderRoutes,
     routes: [
       {
+        path: "/home",
+        key: "HOME",
+        exact: true,
+        component: Home  
+      },
+      {
+        path: "/library",
+        key: "LIBRARY",
+        exact: true,
+        component: Library  
+      },
+      {
         path: "/context",
-        key: "APP_PAGE",
+        key: "CONTEXT",
         exact: true,
         component: Context  
       },
       {
         path: "/avatars",
-        key: "APP_PAGE",
+        key: "AVATARS",
         exact: true,
         component: Avatars
       },
