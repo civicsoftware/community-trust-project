@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header() {
+function Navbar() {
   return (
     <div class="p-4 bg-gradient-to-l from-purple-600 to-purple-900 text-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -16,8 +16,8 @@ function Header() {
             <a href="/avatars" class="text-base font-medium text-gray-300 hover:text-white">
               Avatars
             </a>
-            <a href="/context" class="text-base font-medium text-gray-300 hover:text-white">
-              Context
+            <a href="/library" class="text-base font-medium text-gray-300 hover:text-white">
+              Data Library
             </a>
           </nav>
         </div>
@@ -26,4 +26,4 @@ function Header() {
   )
 }
 
-export default Header;
+export default Navbar;
