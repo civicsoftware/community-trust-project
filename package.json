@@ -4,13 +4,16 @@
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.jsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "lint": "prettier --check \"src/**/*.{js,jsx}\"",
+    "watch:tailwind": "postcss src/tailwind.css -o src/index.css -w"
   },
   "dependencies": {
+    "@snowpack/plugin-build-script": "^2.0.12",
     "autoprefixer": "^10.0.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.1",
+    "temp-civic-ui-tailwind-config": "^0.0.5"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.0.5",

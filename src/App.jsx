@@ -7,7 +7,7 @@ function App() {
       <a
         href="https://www.civicsoftwarefoundation.org"
         target="_blank"
-        className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
+        className="m-4 p-4 fixed w-36 bg-gray-light border-gray border-2 shadow"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ function App() {
           Learn more
         </p>
       </a>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto font-rubik">
         <div className="">
           <div className="mt-2 p-2 flex flex-row justify-center text-gray-600 text-sm underline w-min-content">
             <a href="#maintenance" className="ml-2">
@@ -92,12 +92,9 @@ function App() {
             </a>
           </div>
         </div>
-        <section
-          id="header"
-          className="m-4 border-gray-300 border-2 rounded-lg shadow-xl"
-        >
-          <div className="p-4 bg-gradient-to-l from-purple-600 to-purple-900 text-gray-200 rounded-t-lg">
-            <h2 className="text-2xl font-bold tracking-wider text-white">
+        <section id="header" className="m-4 border-gray-light border-2 shadow">
+          <div className="p-4 bg-black text-gray-light">
+            <h2 className="font-rubik text-2xl font-bold tracking-wider text-white">
               {c.title}
             </h2>
             {/* <h3 className="text-sm">Type: {c.dataType}</h3> */}
@@ -130,7 +127,7 @@ function App() {
                 <p className="">{c.challenges}</p>
               </div>
             </div>
-            <div className="mt-4 bg-pink-50 rounded box-content p-4">
+            <div className="mt-4 bg-red-light bg-opacity-25 box-content p-4">
               <h3 className="text-lg font-bold">Gaps</h3>
               <p className="font-medium p-2">
                 <svg
@@ -191,10 +188,10 @@ function App() {
         <div className="grid grid-cols-2">
           <section
             id="maintenance"
-            className="m-4 border-gray-200 rounded-lg border-2 shadow-xl"
+            className="m-4 border-gray-light border-2 shadow"
           >
-            <div className="bg-blue-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-blue-100 border-blue-900">
+            <div className="bg-blue bg-opacity-30 p-4">
+              <div className="inline-block p-1 border-2 rounded-full bg-blue-light border-blue-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -210,12 +207,12 @@ function App() {
                   />
                 </svg>
               </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">
+              <h2 className="font-rubik inline-block ml-2 text-xl font-bold">
                 Official Maintenance
               </h2>
             </div>
             <div className="p-4">
-              <div className="text-sm font-bold text-purple-800">
+              <div className="text-sm font-bold text-purple-dark">
                 {c.officialMaintenance.officialMaintainer}
               </div>
               <div className="text-sm">
@@ -237,10 +234,10 @@ function App() {
           </section>
           <section
             id="rawData"
-            className="m-4 border-gray-200 rounded-lg border-2 shadow-xl"
+            className="m-4 border-gray-light border-2 shadow"
           >
-            <div className="bg-gray-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-gray-100 border-gray-900">
+            <div className="bg-yellow bg-opacity-30 p-4">
+              <div className="inline-block p-1 border-2 rounded-full bg-gray-light border-gray-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -256,10 +253,12 @@ function App() {
                   />
                 </svg>
               </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">Raw Data</h2>
+              <h2 className="font-rubik inline-block ml-2 text-xl font-bold">
+                Raw Data
+              </h2>
             </div>
             <div className="p-4">
-              <div className="text-sm font-bold text-purple-800">
+              <div className="text-sm font-bold text-purple-dark">
                 {c.rawData.rawTitle}
               </div>
               <div className="text-sm">
@@ -277,9 +276,9 @@ function App() {
           </section>
         </div>
         <section id="process" className="grid">
-          <div className="m-4 border-gray-200 rounded-lg border-2 shadow-xl">
-            <div className="bg-indigo-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-indigo-100 border-indigo-900">
+          <div className="m-4 border-gray-light border-2 shadow">
+            <div className="bg-green bg-opacity-30 p-4">
+              <div className="inline-block p-1 border-2 rounded-full bg-green-light border-green-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -295,7 +294,7 @@ function App() {
                   />
                 </svg>
               </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">
+              <h2 className="font-rubik inline-block ml-2 text-xl font-bold">
                 Data Process
               </h2>
             </div>
@@ -306,15 +305,15 @@ function App() {
               </div>
               <div>{c.processedData.processOverview}</div>
             </div>
-            <div className="m-0 bg-gray-100 w-full font-mono text-xs">
-              <div className="inline-block ml-0 mt-0 px-2 uppercase bg-gray-800 text-white font-semibold rounded-br shadow-sm text-sm">
+            <div className="m-0 bg-gray-light w-full font-mono text-xs">
+              <div className="inline-block ml-0 mt-0 px-2 uppercase bg-gray-dark text-white font-semibold rounded-br shadow-sm text-sm">
                 Field changes
               </div>
               <div className="p-4">
-                <div className="text-red-800">
+                <div className="text-red-dark">
                   {c.processedData.droppedFields}
                 </div>
-                <div className="text-green-800">
+                <div className="text-green-dark">
                   {c.processedData.addedFields}
                 </div>
               </div>
@@ -323,7 +322,7 @@ function App() {
               <h3 className="text-lg font-bold">Process Steps</h3>
               <ol>
                 {c.processedData.processSteps.map((step) => (
-                  <li className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md">
+                  <li className="mt-4 bg-indigo-50 p-2 shadow-md">
                     <div className="grid grid-cols-12">
                       <div className="col-span-1 font-mono text-2xl">
                         {step.stepNumber}
@@ -349,9 +348,9 @@ function App() {
           </div>
         </section>
         <section id="context" className="grid">
-          <div className="m-4 border-gray-200 rounded-lg border-2 shadow-xl">
-            <div className="bg-pink-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-pink-100 border-pink-900">
+          <div className="m-4 border-gray-light border-2 shadow">
+            <div className="bg-red bg-opacity-30 p-4">
+              <div className="inline-block p-1 border-2 rounded-full bg-red-light border-pink-900">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -367,22 +366,24 @@ function App() {
                   />
                 </svg>
               </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">Context</h2>
+              <h2 className="font-rubik inline-block ml-2 text-xl font-bold">
+                Context
+              </h2>
             </div>
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Key Questions</h3>
               <ul>
                 {c.contextQuestions.map((question) => (
-                  <li className="mt-4 p-2 bg-pink-50">
+                  <li className="mt-4 p-2 bg-gray-light">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2">An answer will go here</p>
                     {question.contextualLayer.map((layer) => (
-                      <div className="inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
+                      <div className="inline-block mr-2 p-0.5 bg-red-dark text-white text-xs rounded">
                         {layer}
                       </div>
                     ))}
                     {question.topic.map((topic) => (
-                      <div className="inline-block mr-2 p-0.5 bg-gray-200 text-xs rounded">
+                      <div className="inline-block mr-2 p-0.5 bg-gray text-xs rounded">
                         {topic}
                       </div>
                     ))}
@@ -393,9 +394,9 @@ function App() {
           </div>
         </section>
         <section id="resources" className="grid">
-          <div className="m-4 border-gray-200 rounded-lg border-2 shadow-xl">
-            <div className="bg-green-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-green-100 border-green-900">
+          <div className="m-4 border-gray-light border-2 shadow">
+            <div className="bg-purple bg-opacity-30 p-4">
+              <div className="inline-block p-1 border-2 rounded-full bg-purple-light border-purple-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -411,7 +412,7 @@ function App() {
                   />
                 </svg>
               </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">
+              <h2 className="font-rubik inline-block ml-2 text-xl font-bold">
                 Resources & Service Providers
               </h2>
             </div>
@@ -448,8 +449,8 @@ function App() {
                       <span
                         className={`inline-block mr-2 p-0.5 text-xs rounded ${
                           provider.contractWithMultCo == 'Active'
-                            ? 'bg-indigo-800 text-white'
-                            : 'bg-gray-300'
+                            ? 'bg-green-dark text-white'
+                            : 'bg-gray-light'
                         }`}
                       >
                         {provider.contractWithMultCo}

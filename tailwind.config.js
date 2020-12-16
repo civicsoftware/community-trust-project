@@ -1,11 +1,3 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  presets: [require('temp-civic-ui-tailwind-config')],
+};
