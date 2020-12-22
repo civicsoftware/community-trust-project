@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { default as Windmill } from '@windmill/react-ui';
+import Compass from './compass';
 
 function Home() {
 
@@ -30,6 +31,8 @@ function Home() {
               (maybe there is a cool graphic here)
             </p>
           </div>
+
+          {/* <Compass /> */}
 
           <div class="bg-gray-50 mt-40">
             <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-around">
