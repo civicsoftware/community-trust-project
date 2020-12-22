@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
 function EarlyPrototype() {
   return (
     <a
       href="https://www.civicsoftwarefoundation.org"
       target="_blank"
+      rel="noreferrer"
       className="m-4 p-4 fixed bottom-0 w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
     >
       <svg
