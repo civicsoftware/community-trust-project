@@ -22,4 +22,4 @@ Your app is ready to be deployed!
 ### yarn test
 
 Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Run with the `--watch` flag (`yarn test -- --watch`) to run in interactive watch mode.
