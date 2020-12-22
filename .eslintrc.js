@@ -20,6 +20,7 @@ module.exports = {
     "react/require-default-props": 0,
     "react/forbid-prop-types": 1,
     "arrow-body-style": 0,
+    "import/no-named-default": 0,
     "import/extensions": [2, "ignorePackages", { js: "never", jsx: "never" }]
   }
 };
