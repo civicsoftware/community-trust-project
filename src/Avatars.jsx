@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Avatars() {
-  return (
-    <>
-        AVATARS
-    </>
-  );
+  return <>AVATARS</>;
 }
 
 export default Avatars;

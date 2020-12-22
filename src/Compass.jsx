@@ -1,24 +1,47 @@
-import React from 'react';
-import './Compass.css';
-
+import React from "react";
+import "./Compass.css";
 
 function Compass() {
   return (
     <div>
-      <div class="pieContainer">
-        <div class="pieBackground"></div>
-        <div id="pieSlice1" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice2" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice3" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice4" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice5" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice6" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice7" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice8" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice9" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice10" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice11" class="hold"><div class="pie"></div></div>
-        <div id="pieSlice12" class="hold"><div class="pie"></div></div>
+      <div className="pieContainer">
+        <div className="pieBackground" />
+        <div id="pieSlice1" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice2" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice3" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice4" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice5" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice6" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice7" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice8" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice9" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice10" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice11" className="hold">
+          <div className="pie" />
+        </div>
+        <div id="pieSlice12" className="hold">
+          <div className="pie" />
+        </div>
         {/* <div class="innerCircle">
           <div class="content">
            data
