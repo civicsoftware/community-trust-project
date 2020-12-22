@@ -126,7 +126,7 @@ function Context() {
               </div>
               <div className="flex h-full w-full items-center">
                 <a
-                  href="#"
+                  href="#TODO"
                   className="flex p-2 uppercase text-center bg-white text-purple-900 rounded text-md font-semibold border-4 border-purple-300 hover:bg-purple-50 hover:border-purple-400 hover:shadow-2xl"
                 >
                   <h2>Request Data</h2>
@@ -321,7 +321,7 @@ function Context() {
               </div>
               <div className="text-sm">
                 <span className="font-semibold">URI: </span>
-                <a href="#" className="text-sm font-medium underline">
+                <a href="#TODO" className="text-sm font-medium underline">
                   {c.rawData.rawStableURI}
                 </a>
               </div>
@@ -583,7 +583,7 @@ function Context() {
                     <p className="text-xs">
                       <span
                         className={`inline-block mr-2 p-0.5 text-xs rounded ${
-                          provider.contractWithMultCo == "Active"
+                          provider.contractWithMultCo === "Active"
                             ? "bg-indigo-800 text-white"
                             : "bg-gray-300"
                         }`}
