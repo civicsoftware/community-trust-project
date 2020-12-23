@@ -11,10 +11,10 @@ import { setContext } from "@apollo/client/link/context";
 import App from "./App";
 import "./index.css";
 
+// GraphiQL: https://graphql.contentful.com/content/v1/spaces/6tnkmr6wtypd/explore?access_token=GuDQhC7mmtc54uXycydPDa3n5uuFvsbC8t1ueJ-CG1I
 const contentfulSpaceID = "6tnkmr6wtypd";
 const contentfulContentDeliveryKey =
   "GuDQhC7mmtc54uXycydPDa3n5uuFvsbC8t1ueJ-CG1I";
-// https://graphql.contentful.com/content/v1/spaces/6tnkmr6wtypd/explore?access_token=GuDQhC7mmtc54uXycydPDa3n5uuFvsbC8t1ueJ-CG1I
 
 const httpLink = createHttpLink({
   uri: `https://graphql.contentful.com/content/v1/spaces/${contentfulSpaceID}`
