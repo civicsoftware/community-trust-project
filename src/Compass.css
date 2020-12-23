@@ -1,163 +1,44 @@
+/* @-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+} */
+/* TODO: randomize these? */
+@keyframes spinBobble {
+    0% { transform:rotate(0deg); }
+    10% { transform:rotate(5deg); }
+    25% { transform:rotate(-2deg); }
+    50% { transform:rotate(20deg); }
+    70% { transform:rotate(-10deg); }
+    90% { transform:rotate(5deg); }
+    100% { transform:rotate(0deg); }
+}
 
-
-.pieContainer {
-    height: 300px;
-    width: 300px;
+.compassContainer {
     position: relative;
-    -webkit-transition: -webkit-transform .8s ease-in-out;
-    transition:         transform .8s ease-in-out;
-  }
+}
 
-  .pieContainer:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-  
-  .pieBackground {
-    position: absolute;
-    width: 300px;
-    height: 300px;
+.outerCircle {
+    position: relative;
+    width: 700px;
+    height: 700px;
     border-radius: 100%;
+    background-color: whitesmoke;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
-    stroke: 30px grey;
-  } 
-  
-  .pie {
-    transition: all 1s;
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    clip: rect(0px, 150px, 300px, 0px);
-  }
-  
-  .hold {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    clip: rect(0px, 300px, 300px, 150px);
-  }
-  
-  #pieSlice1 .pie {
-    background-color: purple;
-    transform:rotate(30deg);
-  }
-  
-  #pieSlice2 {
-    transform: rotate(30deg);
-  }
-  
-  #pieSlice2 .pie {
-    background-color: blue;
-    transform: rotate(30deg);
-  }
-  
-  #pieSlice3 {
-    transform: rotate(60deg);
-  }
-  
-  #pieSlice3 .pie {
-    background-color: green;
-    transform: rotate(30deg);
-  }
-  
-  #pieSlice4 {
-    transform: rotate(90deg);
-  }
-  
-  #pieSlice4 .pie {
-    background-color: purple;
-    transform: rotate(30deg);
-  }
-  
-  #pieSlice5 {
-    transform: rotate(120deg);
-  }
-  
-  #pieSlice5 .pie {
-    background-color: blue;
-    transform: rotate(30deg);
-  }
-  
-  #pieSlice6 {
-    transform: rotate(150deg);
-  }
-  
-  #pieSlice6 .pie {
-    background-color: green;
-    transform: rotate(30deg);
   }
 
-  #pieSlice7 {
-    transform: rotate(180deg);
-  }
-  
-  #pieSlice7 .pie {
-    background-color: purple;
-    transform: rotate(30deg);
-  }
-  
-
-  #pieSlice8 {
-    transform: rotate(210deg);
-  }
-  
-  #pieSlice8 .pie {
-    background-color: blue;
-    transform: rotate(30deg);
-  }
-  
-
-  #pieSlice9 {
-    transform: rotate(240deg);
-  }
-  
-  #pieSlice9 .pie {
-    background-color: green;
-    transform: rotate(30deg);
-  }
-
-
-  #pieSlice10 {
-    transform: rotate(270deg);
-  }
-  
-  #pieSlice10 .pie {
-    background-color: purple;
-    transform: rotate(30deg);
-  }
-
-
-  #pieSlice11 {
-    transform: rotate(300deg);
-  }
-  
-  #pieSlice11 .pie {
-    background-color: blue;
-    transform: rotate(30deg);
-  }
-
-
-  #pieSlice12 {
-    transform: rotate(330deg);
-  }
-  
-  #pieSlice12 .pie {
-    background-color: green;
-    transform: rotate(30deg);
-  }
-
-  
-  
   .innerCircle {
     position: absolute;
+    z-index: 9;
     width: 120px;
     height: 120px;
     background-color: #444;
     border-radius: 100%;
-    top: 15px;
-    left: 15px; 
+    top: 290px;
+    left: 290px; 
     box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
     color: white;
   }
@@ -170,3 +51,148 @@
     text-align: center;
     font-size: 14px;
   }
+  
+
+.pieContainer {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+    /* -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;   */
+    animation-name: spinBobble;
+    animation-duration: 6000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+
+  /* TODO: make this stop during the animation not pop back to 0deg */
+  .pieContainer:hover {
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+    animation-name: none 
+  }
+
+  .pie {
+    transition: all 1s;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    clip: rect(0px, 300px, 600px, 0px);
+  }
+  
+  .hold {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    clip: rect(0px, 600px, 600px, 300px);
+  }
+  
+  #pieSlice1 .pie {
+    background-color: purple;
+    transform:rotate(30deg);
+  }
+  
+  #pieSlice2 {
+    transform: rotate(30deg);
+  }
+  #pieSlice2 .pie {
+    background-color: blue;
+    transform: rotate(30deg);
+  }
+  
+  #pieSlice3 {
+    transform: rotate(60deg);
+  }
+  #pieSlice3 .pie {
+    background-color: green;
+    transform: rotate(30deg);
+  }
+  
+  #pieSlice4 {
+    transform: rotate(90deg);
+  }
+  #pieSlice4 .pie {
+    background-color: purple;
+    transform: rotate(30deg);
+  }
+  
+  #pieSlice5 {
+    transform: rotate(120deg);
+  }
+  #pieSlice5 .pie {
+    background-color: blue;
+    transform: rotate(30deg);
+  }
+  
+  #pieSlice6 {
+    transform: rotate(150deg);
+  }
+  #pieSlice6 .pie {
+    background-color: green;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice7 {
+    transform: rotate(180deg);
+  }
+  #pieSlice7 .pie {
+    background-color: purple;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice8 {
+    transform: rotate(210deg);
+  }
+  #pieSlice8 .pie {
+    background-color: blue;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice9 {
+    transform: rotate(240deg);
+  }
+  #pieSlice9 .pie {
+    background-color: green;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice10 {
+    transform: rotate(270deg);
+  }
+  #pieSlice10 .pie {
+    background-color: purple;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice11 {
+    transform: rotate(300deg);
+  }
+  #pieSlice11 .pie {
+    background-color: blue;
+    transform: rotate(30deg);
+  }
+
+  #pieSlice12 {
+    transform: rotate(330deg);
+  }
+  #pieSlice12 .pie {
+    background-color: green;
+    transform: rotate(30deg);
+  }
+
