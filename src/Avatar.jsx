@@ -77,10 +77,10 @@ function Avatar() {
         <br />
       </ul>
       <img src={photo.url} alt={photo.description} className="h-72 w-72" />
-      <p>{documentToReactComponents(bio.json)}</p>
-      <p>{documentToReactComponents(goals.json)}</p>
-      <p>{documentToReactComponents(frustrations.json)}</p>
-      <p>{documentToReactComponents(dataNeeds.json)}</p>
+      <section>{documentToReactComponents(bio.json)}</section>
+      <section>{documentToReactComponents(goals.json)}</section>
+      <section>{documentToReactComponents(frustrations.json)}</section>
+      <section>{documentToReactComponents(dataNeeds.json)}</section>
       <q>{quote}</q>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio controls>
