@@ -81,8 +81,8 @@ function Avatar() {
       <p>{documentToReactComponents(goals.json)}</p>
       <p>{documentToReactComponents(frustrations.json)}</p>
       <p>{documentToReactComponents(dataNeeds.json)}</p>
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <q>{quote}</q>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio controls>
         <source src={audioFile.url} type="audio/mpeg" />
         Your browser does not support the audio element.
