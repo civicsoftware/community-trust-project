@@ -1,13 +1,13 @@
-const windmill = require('@windmill/react-ui/config')
+const windmill = require("@windmill/react-ui/config");
 
 module.exports = windmill({
-  purge: [],
+  purge: ["./src/**/*.jsx"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-})
+  plugins: []
+});
