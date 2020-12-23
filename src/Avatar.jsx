@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-// note
+// TODO: Null checks for non-required fields
 
 const AVATAR = gql`
   query {
@@ -29,6 +29,15 @@ const AVATAR = gql`
         dataNeeds {
           json
         }
+        conversationsCollection(limit: 1) {
+          items {
+            quote
+            audioFile {
+              url
+              contentType
+            }
+          }
+        }
       }
     }
   }
@@ -50,8 +59,12 @@ function Avatar() {
     bio,
     goals,
     frustrations,
-    dataNeeds
+    dataNeeds,
+    conversationsCollection
   } = avatar;
+
+  const conversation = conversationsCollection.items[0];
+  const { quote, audioFile } = conversation;
 
   return (
     <>
@@ -62,12 +75,18 @@ function Avatar() {
         <li>{role}</li>
         <li>{location}</li>
         <br />
-        <img src={photo.url} alt={photo.description} className="h-72 w-72" />
-        <p>{documentToReactComponents(bio.json)}</p>
-        <p>{documentToReactComponents(goals.json)}</p>
-        <p>{documentToReactComponents(frustrations.json)}</p>
-        <p>{documentToReactComponents(dataNeeds.json)}</p>
       </ul>
+      <img src={photo.url} alt={photo.description} className="h-72 w-72" />
+      <p>{documentToReactComponents(bio.json)}</p>
+      <p>{documentToReactComponents(goals.json)}</p>
+      <p>{documentToReactComponents(frustrations.json)}</p>
+      <p>{documentToReactComponents(dataNeeds.json)}</p>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <q>{quote}</q>
+      <audio controls>
+        <source src={audioFile.url} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </>
   );
 }
