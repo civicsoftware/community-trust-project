@@ -1,3 +1,4 @@
 {
-    "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "vscode-graphql.useSchemaFileDefinitions": true
 }
