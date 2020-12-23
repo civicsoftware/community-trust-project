@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import Avatar from "./Avatar";
 
 const AVATARS = gql`
   query {
@@ -19,12 +20,13 @@ function Avatars() {
 
   return (
     <>
-      AVATARS
+      <strong>AVATARS</strong>
       <ul>
         {data.avatarCollection.items.map(({ name }) => (
           <li>{name}</li>
         ))}
       </ul>
+      <Avatar />
     </>
   );
 }
