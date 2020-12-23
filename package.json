@@ -4,18 +4,26 @@
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.jsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "generate": "graphql-codegen",
+    "prestart": "yarn generate",
+    "prebuild": "yarn generate",
     "lint": "eslint --fix \"src/**/*.{js,jsx}\" && prettier --check \"src/**/*.{js,jsx}\"",
     "watch:tailwind": "postcss src/tailwind.css -o src/index.css -w"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
     "@windmill/react-ui": "^0.5.0",
     "autoprefixer": "^10.0.4",
+    "graphql": "^15.4.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.19.4",
+    "@graphql-codegen/introspection": "^1.18.1",
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-postcss": "^1.0.10",
     "@snowpack/plugin-react-refresh": "^2.3.8",
