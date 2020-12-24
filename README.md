@@ -1,4 +1,6 @@
-# Trust Context Exploration
+[![Netlify Status](https://api.netlify.com/api/v1/badges/67158ede-fe57-4f0e-8c73-3438e9bcc56c/deploy-status)](https://app.netlify.com/sites/trust-project/deploys)
+
+# [TRUST Project](https://trust-project.netlify.app/)
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 

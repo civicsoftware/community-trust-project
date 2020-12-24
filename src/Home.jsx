@@ -33,7 +33,7 @@ function Home() {
             (maybe there is a cool graphic here)
           </p>
         </div>
-
+        
         <Compass />
 
         <div className="bg-gray-50 mt-40">
