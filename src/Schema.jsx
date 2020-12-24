@@ -30,7 +30,6 @@ function Schema() {
   const [dataset, setDataset] = useState();
 
   function handleClick() {
-    console.clear();
     console.log("Checking JSON...");
     setValue(textInput.current.value);
     setDataset(null);
