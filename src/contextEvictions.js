@@ -11,8 +11,9 @@ export default {
   successes: "Document successes here",
   challenges:
     "Research conducted by Matthew Desmond and his website (evictionslab.org) that displays eviction statistics on a map were highlighted in the documentation. Desmond has been criticized for not consulting community organizations who have been working with housing and evictions in order to contextualize his findings. In Oregon, no-cause evictions are allowed without any formal court filing. Since court filings inform Desmond's work, his data represent only a small part of renter instability in Oregon.",
-  sandtraps:
-    ["The eviction data used here are only representative of eviction cases that went through the court process. Data on no-cause evictions without court filings are not captured."],
+  sandtraps: [
+    "The eviction data used here are only representative of eviction cases that went through the court process. Data on no-cause evictions without court filings are not captured."
+  ],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",

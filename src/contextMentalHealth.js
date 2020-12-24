@@ -14,8 +14,8 @@ export default {
   challenges:
     'The HSRI report identifies barriers, in particular for communities of color, to accessing services at the county. In particular, communities of color and immigrants lack access to culturally responsive services that go beyond language translation, and providers with a deep understanding of "historical trauma, microaggressions, and racism." The report identifies and discusses both overrepresentation and underrepresentation based on race and ethnicity in the public behavioral health system. As next steps, the report identifies three high priority recommendations: (1) "Engage in ongoing dialogue with service users and their families and other stakeholders to ensure a shared and actionable vision for the mental health system."; (2) "Establish a director-level lived experience leadership position"; (3) "Integrate and analyze data on funding and services to support system improvements."',
   sandtraps: [
-      "19.4% of the population of Multnomah County has Medicaid (Data USA, https://datausa.io/profile/geo/multnomah-county-or#health), and only 33% of Medicaid clients who utilize mental health services do so through mental health providers; the majority of care is received through physical care providers (HSRI report). The dataset of Medicaid Clients Served may undercount behavioral health service utilization by persons with Medicaid.",
-      "Normalization with respect to the general population vs population of Medicaid clients should be considered based on use."
+    "19.4% of the population of Multnomah County has Medicaid (Data USA, https://datausa.io/profile/geo/multnomah-county-or#health), and only 33% of Medicaid clients who utilize mental health services do so through mental health providers; the majority of care is received through physical care providers (HSRI report). The dataset of Medicaid Clients Served may undercount behavioral health service utilization by persons with Medicaid.",
+    "Normalization with respect to the general population vs population of Medicaid clients should be considered based on use."
   ],
   missingInformation: {
     gapsInStewardship:
