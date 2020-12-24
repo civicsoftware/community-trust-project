@@ -22,6 +22,7 @@
 }
 
 .outerCircle {
+    z-index: 20;
     position: relative;
     width: 700px;
     height: 700px;
@@ -31,8 +32,8 @@
   }
 
   .innerCircle {
+    z-index: 30;
     position: absolute;
-    z-index: 9;
     width: 120px;
     height: 120px;
     background-color: #444;
@@ -54,6 +55,7 @@
   
 
 .pieContainer {
+    z-index: 25;
     height: 600px;
     width: 600px;
     position: absolute;
