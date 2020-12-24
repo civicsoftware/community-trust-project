@@ -149,6 +149,31 @@ function Context({ dataset }) {
                     </svg>
                   </div>
                   <h3 className="inline text-xs">{dataset.dateRange}</h3>
+                  <div className="inline-block p-1 ml-4 -mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-4 w-4 inline-block align-text-bottom"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="inline text-xs">
+                    Multnomah County, Oregon, US
+                  </h3>
                 </div>
               </div>
               <div className="flex h-full w-full items-center">
@@ -161,8 +186,19 @@ function Context({ dataset }) {
               </div>
             </div>
           </div>
+          <div className="grid grid-cols-3 gap-8 mt-4 mx-8">
+            <div className="bg-green-100 text-center rounded-full">
+              ✅ Lineage
+            </div>
+            <div className="bg-yellow-100 text-center rounded-full">
+              ⚠️ Social Justice
+            </div>
+            <div className="bg-pink-100 text-center rounded-full">
+              ❌ Governance
+            </div>
+          </div>
           <div className="p-4 text-sm">
-            <h3 className="text-xl font-bold">Summary</h3>
+            <h3 className="text-xl font-bold">What is it?</h3>
             <p>{dataset.summary}</p>
           </div>
           <div className="px-4 mb-4 text-sm">
@@ -199,7 +235,7 @@ function Context({ dataset }) {
                 <p className="">{dataset.challenges}</p>
               </div>
             </div>
-            <div className="mt-4 bg-pink-50 rounded box-content p-4">
+            {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
               <h3 className="text-lg font-bold">Missing information</h3>
               <ul>
                 <li className="mt-2 grid grid-cols-12">
@@ -230,8 +266,10 @@ function Context({ dataset }) {
                   </div>
                 </li>
               </ul>
-            </div>
-            <h3 className="text-lg font-bold mt-4">Definitions</h3>
+            </div> */}
+            <h3 className="text-lg font-bold mt-4">
+              {dataset?.other?.definitions && "Definitions"}
+            </h3>
             <dl>
               {dataset?.other?.definitions?.map(definition => (
                 <div key={definition.term} className="mt-2 grid grid-cols-12">
