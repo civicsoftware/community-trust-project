@@ -10,7 +10,7 @@ export default {
   relatedTo: "Other variables considered in 'Health & Family Marginalization'",
   successes: "Document successes here",
   challenges: "Document challenges here.",
-  sandtraps: "Document sandtraps here.",
+  sandtraps: ["Document sandtraps here."],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",

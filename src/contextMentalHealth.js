@@ -13,12 +13,10 @@ export default {
     'The HSRI report identifies several existing ongoing efforts at Multnomah County: "The Behavioral Health Draft Work Plan of the Oregon Health Policy Board includes consideration of many of the issues discussed in this analysis, including integration, financing, care coordination, workforce issues, evidence-based practice, cultural best practice, and children’s behavioral health issues including meeting the needs of children in foster care. Stakeholders at the local and state levels appear to be in agreement that the goals of system reforms should be to maintain the positive gains from past efforts while addressing continued issues such as physical and behavioral health integration, health equity, supporting the social determinants of health, and outcomes-driven quality improvement."',
   challenges:
     'The HSRI report identifies barriers, in particular for communities of color, to accessing services at the county. In particular, communities of color and immigrants lack access to culturally responsive services that go beyond language translation, and providers with a deep understanding of "historical trauma, microaggressions, and racism." The report identifies and discusses both overrepresentation and underrepresentation based on race and ethnicity in the public behavioral health system. As next steps, the report identifies three high priority recommendations: (1) "Engage in ongoing dialogue with service users and their families and other stakeholders to ensure a shared and actionable vision for the mental health system."; (2) "Establish a director-level lived experience leadership position"; (3) "Integrate and analyze data on funding and services to support system improvements."',
-  sandtraps: {
-    sandtrap1:
+  sandtraps: [
       "19.4% of the population of Multnomah County has Medicaid (Data USA, https://datausa.io/profile/geo/multnomah-county-or#health), and only 33% of Medicaid clients who utilize mental health services do so through mental health providers; the majority of care is received through physical care providers (HSRI report). The dataset of Medicaid Clients Served may undercount behavioral health service utilization by persons with Medicaid.",
-    sandtrap2:
       "Normalization with respect to the general population vs population of Medicaid clients should be considered based on use."
-  },
+  ],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",

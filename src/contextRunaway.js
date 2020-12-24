@@ -11,8 +11,9 @@ export default {
   successes: "Document successes here",
   challenges:
     "Over-representation of runaways from group homes and foster care and under-represenation of runaways from wealthier areas led County to pause on including this in the Dashboard. DCJ thought the ata did not tell the whole story of runaways in Multnomah Couny and thought it would be intellectually irresponsible to include.",
-  sandtraps:
-    "Runaway data do not represent homelessness. Counts are based on reports to police and may under-represent runaways.",
+  sandtraps: [
+    "Runaway data do not represent homelessness. Counts are based on reports to police and may under-represent runaways."
+  ],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",

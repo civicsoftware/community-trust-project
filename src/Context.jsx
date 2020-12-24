@@ -167,23 +167,27 @@ function Context({ dataset }) {
           </div>
           <div className="px-4 mb-4 text-sm">
             <div className="bg-yellow-50 rounded box-content p-4">
-              <p className="font-medium">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-4 w-4 mr-1 inline-block align-text-bottom"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  />
-                </svg>
-                {dataset.sandtraps}
-              </p>
+              <ul className="font-medium">
+                {dataset.sandtraps.map(sandtrap => (
+                  <li key={sandtrap}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-4 w-4 mr-1 inline-block align-text-bottom"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
+                    </svg>
+                    {sandtrap}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="grid grid-cols-2 mt-2">
               <div className="">
@@ -229,7 +233,7 @@ function Context({ dataset }) {
             </div>
             <h3 className="text-lg font-bold mt-4">Definitions</h3>
             <dl>
-              {dataset?.other.definitions.map(definition => (
+              {dataset?.other?.definitions?.map(definition => (
                 <div key={definition.term} className="mt-2 grid grid-cols-12">
                   <dt className="text-md font-bold col-span-2 border-r-4">
                     {definition.term}
@@ -620,7 +624,7 @@ function Context({ dataset }) {
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Service Providers</h3>
               <ul className="">
-                {dataset?.other.serviceProviders.map(provider => (
+                {dataset?.other?.serviceProviders?.map(provider => (
                   <li key={provider.serviceProvider} className="mt-2">
                     <a
                       className="font-medium underline"
@@ -735,7 +739,7 @@ Context.propTypes = {
     }),
     dateRange: string.isRequired,
     summary: string.isRequired,
-    sandtraps: string.isRequired,
+    sandtraps: arrayOf(string.isRequired).isRequired,
     successes: string.isRequired,
     challenges: string.isRequired,
     missingInformation: shape({
@@ -801,7 +805,7 @@ Context.propTypes = {
           definition: string.isRequired,
           source: string.isRequired
         })
-      ).isRequired
+      )
     }),
     context: shape({
       contextContributor: string,

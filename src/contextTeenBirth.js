@@ -11,12 +11,10 @@ export default {
     "Other variables considered in 'Health and Education Marginalization': Limited English, Low Birth Weight, Low Education, Low Voter Participation",
   successes: "Document successes here",
   challenges: "Document challenges here",
-  sandtraps: {
-    sandtrap1:
-      "Literature review showed that teen births were highly correlated with race. Also with whether the teenage girls were in child welfare system. It is unclear if the birth data was correlated with these demographic information in the EMD dashboard",
-    sandtrap2:
-      "OHA dataset includes both teen births and teen abortions. Why was only teen births included?"
-  },
+  sandtraps: [
+    "Literature review showed that teen births were highly correlated with race. Also with whether the teenage girls were in child welfare system. It is unclear if the birth data was correlated with these demographic information in the EMD dashboard",
+    "OHA dataset includes both teen births and teen abortions. Why was only teen births included?"
+  ],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",
