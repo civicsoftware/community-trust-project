@@ -4,10 +4,16 @@ import { arrayOf, shape, string } from "prop-types";
 import EarlyPrototype from "./ContextComponents/EarlyPrototype";
 import runaway from "./contextRunaway";
 import mentalHealth from "./contextMentalHealth";
+import evictions from "./contextEvictions";
+import lowBirthRate from "./contextLowBirthRate";
+import teenBirth from "./contextTeenBirth";
 
 const ALL_DATASETS = {
   runaway,
-  mentalHealth
+  mentalHealth,
+  evictions,
+  lowBirthRate,
+  teenBirth
 };
 
 function useQuery() {

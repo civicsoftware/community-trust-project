@@ -16,6 +16,24 @@ function Library() {
       >
         Mental Health Dataset
       </a>
+      <a
+        href="/context?data=evictions"
+        className="whitespace-nowrap text-gray-500 px-4 py-2 hover:text-gray-900"
+      >
+        Evictions Count Dataset
+      </a>
+      <a
+        href="/context?data=lowBirthRate"
+        className="whitespace-nowrap text-gray-500 px-4 py-2 hover:text-gray-900"
+      >
+        Low Birth Rate Dataset
+      </a>
+      <a
+        href="/context?data=teenBirth"
+        className="whitespace-nowrap text-gray-500 px-4 py-2 hover:text-gray-900"
+      >
+        Teen Birth Dataset
+      </a>
     </>
   );
 }
