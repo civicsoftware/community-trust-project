@@ -4,19 +4,28 @@ import "./Compass.css";
 
 function Compass() {
   const [isOpen, setIsOpen] = useState(false);
+  const [cardShown, setCardShown] = useState(false);
+
   function toggleBackdrop() {
     setIsOpen(!isOpen);
+    setCardShown(false);
+  }
+
+  function toggleCard(e) {
+    e.stopPropagation();
+    setCardShown(!cardShown)
   }
 
   function printPie(e, message) {
     e.stopPropagation();
-    console.log(message);
+    toggleCard(e);
   }
 
   return (
     <>
       <div className="absolute">
         <div
+          aria-hidden="true"
           onClick={toggleBackdrop}
           className="bg-pink-400 bottom-10 right-10 m-4 p-4 fixed w-32 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
         >
@@ -28,8 +37,19 @@ function Compass() {
       {isOpen && (
         <Windmill.Backdrop onClick={toggleBackdrop} className="z-0">
           <div className="relative">
+          {cardShown && (
+            <div className="definitionCard">
+              <div onClick={e => toggleCard(e)}> X </div>
+              <div className="content">
+                Definition
+                <p>
+                  <a href="/avatars">Click to hear stories</a>
+                </p>
+              </div>
+            </div>
+          )}
             <div className="compassContainer">
-              <div className="outerCircle"></div>
+              <div className="outerCircle"/>
               <div className="innerCircle">
                 <div className="content">The Compass of Oppression</div>
               </div>
