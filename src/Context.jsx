@@ -1,8 +1,35 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import EarlyPrototype from "./ContextComponents/EarlyPrototype";
-import c from "./contextDataVTwo";
+import runaway from "./contextRunaway";
+import mentalHealth from "./contextMentalHealth";
+import evictions from "./contextEvictions";
+import lowBirthRate from "./contextLowBirthRate";
+import teenBirth from "./contextTeenBirth";
+import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function Context() {
+const ALL_DATASETS = {
+  runaway,
+  mentalHealth,
+  evictions,
+  lowBirthRate,
+  teenBirth
+};
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
+function ContextPage() {
+  const query = useQuery();
+  const dataset = ALL_DATASETS?.[query.get("data")];
+
+  return <Context dataset={dataset} />;
+}
+
+function Context({ dataset }) {
+  if (!dataset) return <div>No data</div>;
+
   return (
     <>
       <EarlyPrototype />
@@ -59,9 +86,9 @@ function Context() {
             <div className="grid grid-cols-12">
               <div className="col-span-10">
                 <h2 className="text-2xl font-bold tracking-wider text-white">
-                  {c.title}
+                  {dataset.title}
                 </h2>
-                {/* <h3 className="text-sm">Type: {c.dataType}</h3> */}
+                {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
                 <div>
                   <div className="inline-block p-1 ml-4 -mt-2">
                     <svg
@@ -80,7 +107,7 @@ function Context() {
                     </svg>
                   </div>
                   <h3 className="inline text-sm font-semibold">
-                    {c.subComponentOf}
+                    {dataset.subComponentOf}
                   </h3>
                 </div>
                 <div>
@@ -101,7 +128,7 @@ function Context() {
                     </svg>
                   </div>
                   <h3 className="inline text-xs">
-                    {c.officialMaintenance.officialMaintainer}
+                    {dataset.officialMaintenance.officialMaintainer}
                   </h3>
                 </div>
                 <div>
@@ -121,7 +148,32 @@ function Context() {
                       />
                     </svg>
                   </div>
-                  <h3 className="inline text-xs">{c.dateRange}</h3>
+                  <h3 className="inline text-xs">{dataset.dateRange}</h3>
+                  <div className="inline-block p-1 ml-4 -mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-4 w-4 inline-block align-text-bottom"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="inline text-xs">
+                    Multnomah County, Oregon, US
+                  </h3>
                 </div>
               </div>
               <div className="flex h-full w-full items-center">
@@ -134,41 +186,56 @@ function Context() {
               </div>
             </div>
           </div>
+          <div className="grid grid-cols-3 gap-8 mt-4 mx-8">
+            <div className="bg-green-100 text-center rounded-full">
+              ✅ Lineage
+            </div>
+            <div className="bg-yellow-100 text-center rounded-full">
+              ⚠️ Social Justice
+            </div>
+            <div className="bg-pink-100 text-center rounded-full">
+              ❌ Governance
+            </div>
+          </div>
           <div className="p-4 text-sm">
-            <h3 className="text-xl font-bold">Summary</h3>
-            <p>{c.summary}</p>
+            <h3 className="text-xl font-bold">What is it?</h3>
+            <p>{dataset.summary}</p>
           </div>
           <div className="px-4 mb-4 text-sm">
             <div className="bg-yellow-50 rounded box-content p-4">
-              <p className="font-medium">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-4 w-4 mr-1 inline-block align-text-bottom"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  />
-                </svg>
-                {c.sandtraps}
-              </p>
+              <ul className="font-medium">
+                {dataset.sandtraps.map(sandtrap => (
+                  <li key={sandtrap}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-4 w-4 mr-1 inline-block align-text-bottom"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
+                    </svg>
+                    {sandtrap}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="grid grid-cols-2 mt-2">
               <div className="">
                 <h3 className="text-lg font-bold">Successes</h3>
-                <p className="">{c.successes}</p>
+                <p className="">{dataset.successes}</p>
               </div>
               <div className="">
                 <h3 className="text-lg font-bold">Challenges</h3>
-                <p className="">{c.challenges}</p>
+                <p className="">{dataset.challenges}</p>
               </div>
             </div>
-            <div className="mt-4 bg-pink-50 rounded box-content p-4">
+            {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
               <h3 className="text-lg font-bold">Missing information</h3>
               <ul>
                 <li className="mt-2 grid grid-cols-12">
@@ -176,7 +243,7 @@ function Context() {
                     Stewardship
                   </div>
                   <div className="col-span-10 pl-2">
-                    {c.missingInformation.gapsInStewardship}
+                    {dataset.missingInformation.gapsInStewardship}
                   </div>
                 </li>
                 <li className="mt-2 grid grid-cols-12">
@@ -184,7 +251,7 @@ function Context() {
                     Information
                   </div>
                   <div className="col-span-10 pl-2">
-                    {c.missingInformation.gapsInStewardship}
+                    {dataset.missingInformation.gapsInInformation}
                   </div>
                 </li>
                 <li className="mt-2 grid grid-cols-12">
@@ -192,15 +259,20 @@ function Context() {
                     Classification
                   </div>
                   <div className="col-span-10 pl-2">
-                    {c.missingInformation.gapsInClassificationRaceEthnicity}
+                    {
+                      dataset.missingInformation
+                        .gapsInClassificationRaceEthnicity
+                    }
                   </div>
                 </li>
               </ul>
-            </div>
-            <h3 className="text-lg font-bold mt-4">Definitions</h3>
+            </div> */}
+            <h3 className="text-lg font-bold mt-4">
+              {dataset?.other?.definitions && "Definitions"}
+            </h3>
             <dl>
-              {c.other.definitions.map(definition => (
-                <div className="mt-2 grid grid-cols-12">
+              {dataset?.other?.definitions?.map(definition => (
+                <div key={definition.term} className="mt-2 grid grid-cols-12">
                   <dt className="text-md font-bold col-span-2 border-r-4">
                     {definition.term}
                   </dt>
@@ -257,22 +329,23 @@ function Context() {
             </div>
             <div className="p-4">
               <div className="text-sm font-bold text-purple-800">
-                {c.officialMaintenance.officialMaintainer}
+                {dataset.officialMaintenance.officialMaintainer}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Contributors: </span>
-                {c.officialMaintenance.dataContributor}
+                {dataset.officialMaintenance.dataContributor}
               </div>
               <div className="mt-4 text-sm">
                 <span className="font-semibold">Last updated: </span>
-                {c.officialMaintenance.lastOfficialMaintainence}
+                {dataset.officialMaintenance?.lastOfficialMaintainence ||
+                  "Unknown"}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Update frequency: </span>
-                {c.officialMaintenance.maintenanceInterval}
+                {dataset.officialMaintenance.maintenanceInterval}
               </div>
               <div className="mt-4 text-sm">
-                {c.officialMaintenance.typicalUpdates}
+                {dataset.officialMaintenance.typicalUpdates}
               </div>
             </div>
           </section>
@@ -317,23 +390,24 @@ function Context() {
             </div>
             <div className="p-4">
               <div className="text-sm font-bold text-purple-800">
-                {c.rawData.rawTitle}
+                {dataset.rawData.rawTitle}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">URI: </span>
                 <a href="#TODO" className="text-sm font-medium underline">
-                  {c.rawData.rawStableURI}
+                  {dataset.rawData.rawStableURI}
                 </a>
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Date Range: </span>
-                {c.rawData.dateRangeStart} - {c.rawData.dataRangeEnd}
+                {dataset.rawData.dateRangeStart} -{" "}
+                {dataset.rawData.dataRangeEnd}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Language: </span>
-                {c.rawData.lang}
+                {dataset.rawData.lang}
               </div>
-              <div className="mt-4 text-sm">{c.rawData.notes}</div>
+              <div className="mt-4 text-sm">{dataset.rawData.notes}</div>
             </div>
           </section>
         </div>
@@ -363,9 +437,9 @@ function Context() {
             <div className="p-4 text-sm">
               <div>
                 <span className="font-semibold">Contributors: </span>
-                {c.processedData.processDescriber}
+                {dataset.processedData.processDescriber}
               </div>
-              <div>{c.processedData.processOverview}</div>
+              <div>{dataset.processedData.processOverview}</div>
             </div>
             <div className="m-0 bg-gray-100 w-full font-mono text-xs">
               <div className="inline-block ml-0 mt-0 px-2 uppercase bg-gray-800 text-white font-semibold rounded-br shadow-sm text-sm">
@@ -373,18 +447,21 @@ function Context() {
               </div>
               <div className="p-4">
                 <div className="text-red-800">
-                  {c.processedData.droppedFields}
+                  {dataset.processedData.droppedFields}
                 </div>
                 <div className="text-green-800">
-                  {c.processedData.addedFields}
+                  {dataset.processedData.addedFields}
                 </div>
               </div>
             </div>
             <div className="py-4 px-4 text-sm">
               <h3 className="text-lg font-bold">Process Steps</h3>
               <ol>
-                {c.processedData.processSteps.map(step => (
-                  <li className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md">
+                {dataset.processedData.processSteps.map(step => (
+                  <li
+                    key={step.stepNumber}
+                    className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md"
+                  >
                     <div className="grid grid-cols-12">
                       <div className="col-span-1 font-mono text-2xl">
                         {step.stepNumber}
@@ -397,7 +474,10 @@ function Context() {
                         <p className="mb-2">{step.stepExplanation}</p>
                         <p className="text-xs">Resources used:</p>
                         {step.relatedResources.map(resource => (
-                          <div className="inline-block mr-2 p-0.5 bg-indigo-800 text-white text-xs rounded">
+                          <div
+                            key={`${step.stepNumber}${resource}`}
+                            className="inline-block mr-2 p-0.5 bg-indigo-800 text-white text-xs rounded"
+                          >
                             {resource}
                           </div>
                         ))}
@@ -449,14 +529,17 @@ function Context() {
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Influence</h3>
               <ul>
-                {c.contextQuestions[0].Influence.map(question => (
-                  <li className="mt-2 p-2 bg-pink-50">
+                {dataset.contextQuestions[0].Influence.map(question => (
+                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2 hidden">
                       An answer will go here
                     </p>
                     {question.contextualLayer.map(layer => (
-                      <div className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
+                      <div
+                        key={`${question.question}${layer}`}
+                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
+                      >
                         {layer}
                       </div>
                     ))}
@@ -465,14 +548,17 @@ function Context() {
               </ul>
               <h3 className="mt-4 text-lg font-bold">Accountability</h3>
               <ul>
-                {c.contextQuestions[0].Accountability.map(question => (
-                  <li className="mt-2 p-2 bg-pink-50">
+                {dataset.contextQuestions[0].Accountability.map(question => (
+                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2 hidden">
                       An answer will go here
                     </p>
                     {question.contextualLayer.map(layer => (
-                      <div className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
+                      <div
+                        key={`${question.question}${layer}`}
+                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
+                      >
                         {layer}
                       </div>
                     ))}
@@ -481,14 +567,17 @@ function Context() {
               </ul>
               <h3 className="mt-4 text-lg font-bold">Representation</h3>
               <ul>
-                {c.contextQuestions[0].Representation.map(question => (
-                  <li className="mt-2 p-2 bg-pink-50">
+                {dataset.contextQuestions[0].Representation.map(question => (
+                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2 hidden">
                       An answer will go here
                     </p>
                     {question.contextualLayer.map(layer => (
-                      <div className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
+                      <div
+                        key={`${question.question}${layer}`}
+                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
+                      >
                         {layer}
                       </div>
                     ))}
@@ -497,14 +586,17 @@ function Context() {
               </ul>
               <h3 className="mt-4 text-lg font-bold">Impact</h3>
               <ul>
-                {c.contextQuestions[0].Impact.map(question => (
-                  <li className="mt-2 p-2 bg-pink-50">
+                {dataset.contextQuestions[0].Impact.map(question => (
+                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
                     <p className="text-md font-medium">{question.question}</p>
                     <p className="text-md mb-2 hidden">
                       An answer will go here
                     </p>
                     {question.contextualLayer.map(layer => (
-                      <div className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded">
+                      <div
+                        key={`${question.question}${layer}`}
+                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
+                      >
                         {layer}
                       </div>
                     ))}
@@ -554,8 +646,8 @@ function Context() {
             <div className="mt-4 p-4 text-sm">
               <h3 className="text-lg font-bold">Resources</h3>
               <ul className="">
-                {c.referenceDocumentation.map(resource => (
-                  <li className="mt-2">
+                {dataset.referenceDocumentation.map(resource => (
+                  <li key={resource.title} className="mt-2">
                     <a
                       className="font-medium underline"
                       href={resource.stableURI}
@@ -570,8 +662,8 @@ function Context() {
             <div className="p-4 text-sm">
               <h3 className="text-lg font-bold">Service Providers</h3>
               <ul className="">
-                {c.other.serviceProviders.map(provider => (
-                  <li className="mt-2">
+                {dataset?.other?.serviceProviders?.map(provider => (
+                  <li key={provider.serviceProvider} className="mt-2">
                     <a
                       className="font-medium underline"
                       href={provider.website}
@@ -590,7 +682,7 @@ function Context() {
                       >
                         {provider.contractWithMultCo}
                       </span>
-                      {provider.startDate} - {provider.startDate}
+                      {provider.startDate} - {provider.endDate}
                     </p>
                   </li>
                 ))}
@@ -640,23 +732,23 @@ function Context() {
             <div className="mt-4 p-4 text-sm">
               <div className="text-sm">
                 <span className="font-semibold">Context contributors: </span>
-                {c.context.contextContributor}
+                {dataset.context.contextContributor}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">On behalf of: </span>
-                {c.context.onBehalfOf}
+                {dataset.context.onBehalfOf}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Publication date: </span>
-                {c.context.contextPublicationDate}
+                {dataset.context.contextPublicationDate}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Update date: </span>
-                {c.context.contextUpdateDate}
+                {dataset.context.contextUpdateDate}
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Updated by: </span>
-                {c.context.contextUpdateBy}
+                {dataset.context.contextUpdateBy}
               </div>
             </div>
           </div>
@@ -666,4 +758,6 @@ function Context() {
   );
 }
 
-export default Context;
+Context.propTypes = contextSchemaPropTypes;
+
+export default ContextPage;

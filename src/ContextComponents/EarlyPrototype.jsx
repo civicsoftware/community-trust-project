@@ -67,9 +67,7 @@ function EarlyPrototype() {
       </svg>
       <p className="text-md font-semibold">Early Prototype</p>
       <p className="text-sm font-medium uppercase">Do not share publicly</p>
-      <p href className="text-xs underline">
-        Learn more
-      </p>
+      <p className="text-xs underline">Learn more</p>
     </a>
   );
 }
