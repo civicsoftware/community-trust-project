@@ -5,7 +5,12 @@ import PropTypes from "prop-types";
  * An accessible container for collapsable content.
  * A short description is required to clarify to screen readers what the more button will unhide.
  */
-export default function Collapsable({ children, description, hideText }) {
+export default function Collapsable({
+  children,
+  description,
+  hideText,
+  answered
+}) {
   const hiddenRef = useRef(null);
   const buttonRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
@@ -40,7 +45,36 @@ export default function Collapsable({ children, description, hideText }) {
         >
           {!hideText && cta}
           <span className="hidden">{description}</span>
-          {arrow === "up" && (
+
+          {arrow === "up" && answered && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="inline-block h-4 w-4"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          )}
+          {arrow === "down" && answered && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="inline-block h-4 w-4"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z"
+                clipRule="evenodd"
+              />
+            </svg>
+          )}
+          {arrow === "up" && !answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -56,7 +90,7 @@ export default function Collapsable({ children, description, hideText }) {
               />
             </svg>
           )}
-          {arrow === "down" && (
+          {arrow === "down" && !answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -74,7 +108,12 @@ export default function Collapsable({ children, description, hideText }) {
           )}
         </button>
       )}
-      <div className="outline-none" role="group" tabIndex="-1" ref={hiddenRef}>
+      <div
+        className="outline-none ml-12"
+        role="group"
+        tabIndex="-1"
+        ref={hiddenRef}
+      >
         {expanded && hiddenChildren}
       </div>
     </>
@@ -91,7 +130,8 @@ Collapsable.propTypes = {
    *  Will announce as "more (description)" or "less (description)"
    */
   description: PropTypes.string.isRequired,
-  hideText: PropTypes.bool
+  hideText: PropTypes.bool,
+  answered: PropTypes.bool
 };
 
 Collapsable.displayName = Collapsable;

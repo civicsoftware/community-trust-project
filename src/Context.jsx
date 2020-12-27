@@ -490,123 +490,36 @@ function Context({ dataset }) {
             </div>
           </div>
         </section>
-        <section id="context" className="grid">
-          <div className="relative m-4 border-gray-200 rounded-lg border-2 shadow-xl">
-            <div className="absolute bottom-4 right-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6 inline-block align-text-bottom"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                />
-              </svg>
-            </div>
-            <div className="bg-pink-200 p-4 rounded-t-lg">
-              <div className="inline-block p-1 border-2 rounded-full bg-pink-100 border-pink-900">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6 inline-block align-text-bottom"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h2 className="inline-block ml-2 text-xl font-bold">Context</h2>
-            </div>
-            <div className="p-4 text-sm">
-              <h3 className="text-lg font-bold">Influence</h3>
-              <ul>
-                {dataset.contextQuestions[0].Influence.map(question => (
-                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
-                    <p className="text-md font-medium">{question.question}</p>
-                    <p className="text-md mb-2 hidden">
-                      An answer will go here
-                    </p>
-                    {question.contextualLayer.map(layer => (
-                      <div
-                        key={`${question.question}${layer}`}
-                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
-                      >
-                        {layer}
-                      </div>
-                    ))}
-                  </li>
-                ))}
-              </ul>
-              <h3 className="mt-4 text-lg font-bold">Accountability</h3>
-              <ul>
-                {dataset.contextQuestions[0].Accountability.map(question => (
-                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
-                    <p className="text-md font-medium">{question.question}</p>
-                    <p className="text-md mb-2 hidden">
-                      An answer will go here
-                    </p>
-                    {question.contextualLayer.map(layer => (
-                      <div
-                        key={`${question.question}${layer}`}
-                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
-                      >
-                        {layer}
-                      </div>
-                    ))}
-                  </li>
-                ))}
-              </ul>
-              <h3 className="mt-4 text-lg font-bold">Representation</h3>
-              <ul>
-                {dataset.contextQuestions[0].Representation.map(question => (
-                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
-                    <p className="text-md font-medium">{question.question}</p>
-                    <p className="text-md mb-2 hidden">
-                      An answer will go here
-                    </p>
-                    {question.contextualLayer.map(layer => (
-                      <div
-                        key={`${question.question}${layer}`}
-                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
-                      >
-                        {layer}
-                      </div>
-                    ))}
-                  </li>
-                ))}
-              </ul>
-              <h3 className="mt-4 text-lg font-bold">Impact</h3>
-              <ul>
-                {dataset.contextQuestions[0].Impact.map(question => (
-                  <li key={question.question} className="mt-2 p-2 bg-pink-50">
-                    <p className="text-md font-medium">{question.question}</p>
-                    <p className="text-md mb-2 hidden">
-                      An answer will go here
-                    </p>
-                    {question.contextualLayer.map(layer => (
-                      <div
-                        key={`${question.question}${layer}`}
-                        className="hidden inline-block mr-2 p-0.5 bg-pink-800 text-white text-xs rounded"
-                      >
-                        {layer}
-                      </div>
-                    ))}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+        {/* Lineage */}
+        <ContextSection
+          questionGroup="5oOzAK9EEh7rUuBrbInLFx"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
+        {/* Methodology */}
+        <ContextSection
+          questionGroup="iUwbAs8uk0yiUhPJK2eyX"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
+        {/* Access */}
+        <ContextSection
+          questionGroup="c7cq4mb35M6zr7LAgjINd"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
+        {/* Ethical Governance */}
+        <ContextSection
+          questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
+        {/* Community Context */}
+        <ContextSection
+          questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
+        {/* Historic Context */}
+        <ContextSection
+          questionGroup="2khypcmlN6CBCnl8NS9our"
+          dataset="5MOWcewjQWtxY4hI23QyHH"
+        />
         <section id="resources" className="grid">
           <div className="relative m-4 border-gray-200 rounded-lg border-2 shadow-xl">
             <div className="absolute bottom-4 right-4">
@@ -754,7 +667,6 @@ function Context({ dataset }) {
             </div>
           </div>
         </section>
-        <ContextSection questionGroup="foRUu7uX4mdFjI3O9x6ZX" />
       </div>
     </>
   );
