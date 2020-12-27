@@ -7,6 +7,7 @@ import evictions from "./contextEvictions";
 import lowBirthRate from "./contextLowBirthRate";
 import teenBirth from "./contextTeenBirth";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
+import ContextSection from "./ContextSection";
 
 const ALL_DATASETS = {
   runaway,
@@ -753,6 +754,9 @@ function Context({ dataset }) {
             </div>
           </div>
         </section>
+        <ContextSection
+          questionGroup="foRUu7uX4mdFjI3O9x6ZX"
+        />
       </div>
     </>
   );
