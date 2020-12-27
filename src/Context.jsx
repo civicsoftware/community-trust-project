@@ -754,9 +754,7 @@ function Context({ dataset }) {
             </div>
           </div>
         </section>
-        <ContextSection
-          questionGroup="foRUu7uX4mdFjI3O9x6ZX"
-        />
+        <ContextSection questionGroup="foRUu7uX4mdFjI3O9x6ZX" />
       </div>
     </>
   );

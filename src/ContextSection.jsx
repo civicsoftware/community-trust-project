@@ -39,8 +39,8 @@ function ContextSection({ questionGroup }) {
 }
 
 ContextSection.propTypes = {
-  questionGroup: string.isRequired,
-}
+  questionGroup: string.isRequired
+};
 
 function ContextSectionDisplay({ title, questions }) {
   return (
