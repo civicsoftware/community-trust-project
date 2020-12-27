@@ -1,5 +1,6 @@
+import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
-import React from "react";
+import { default as Windmill } from "@windmill/react-ui";
 import Avatar from "./Avatar";
 
 const AVATARS = gql`
@@ -13,6 +14,14 @@ const AVATARS = gql`
 `;
 
 function Avatars() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [avatarName, setAvatarName] = useState();
+  function openModal() {
+    setIsModalOpen(true);
+  }
+  function closeModal() {
+    setIsModalOpen(false);
+  }
   const { loading, error, data } = useQuery(AVATARS);
 
   if (loading) return <p>Loading...</p>;
@@ -23,10 +32,34 @@ function Avatars() {
       <strong>AVATARS</strong>
       <ul>
         {data.avatarCollection.items.map(({ name }) => (
-          <li>{name}</li>
+          <li>
+            <button
+              onClick={() => {
+                setAvatarName(name);
+                openModal();
+              }}
+              type="button"
+            >
+              {name}
+            </button>
+          </li>
         ))}
       </ul>
-      <Avatar />
+      {/* Modals for data submission forms */}
+      <Windmill.Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Windmill.ModalHeader>{avatarName}</Windmill.ModalHeader>
+        <Avatar name={avatarName} />
+        <Windmill.ModalFooter>
+          <Windmill.Button
+            className="w-full sm:w-auto"
+            layout="outline"
+            onClick={closeModal}
+          >
+            Close
+          </Windmill.Button>
+        </Windmill.ModalFooter>
+      </Windmill.Modal>
+      {/* End modals */}
     </>
   );
 }
