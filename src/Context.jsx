@@ -1,34 +1,41 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { gql, useQuery } from "@apollo/client";
 import EarlyPrototype from "./ContextComponents/EarlyPrototype";
-import runaway from "./contextRunaway";
-import mentalHealth from "./contextMentalHealth";
-import evictions from "./contextEvictions";
-import lowBirthRate from "./contextLowBirthRate";
-import teenBirth from "./contextTeenBirth";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSection from "./ContextSection";
 
-const ALL_DATASETS = {
-  runaway,
-  mentalHealth,
-  evictions,
-  lowBirthRate,
-  teenBirth
-};
+const DATASETS = gql`
+  query Dataset($datasetId: String!) {
+    dataset(id: $datasetId) {
+      title
+      summary {
+        json
+      }
+      schema
+    }
+  }
+`;
 
-function useQuery() {
+function useQueryParam() {
   return new URLSearchParams(useLocation().search);
 }
 
 function ContextPage() {
-  const query = useQuery();
-  const dataset = ALL_DATASETS?.[query.get("data")];
+  const query = useQueryParam();
+  const datasetId = query.get("data");
 
-  return <Context dataset={dataset} />;
+  return <Context datasetId={datasetId} />;
 }
 
-function Context({ dataset }) {
+function Context({ datasetId }) {
+  const { loading, error, data } = useQuery(DATASETS, {
+    variables: { datasetId }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+  const dataset = data?.dataset?.schema;
   if (!dataset) return <div>No data</div>;
 
   return (
@@ -493,32 +500,32 @@ function Context({ dataset }) {
         {/* Lineage */}
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         {/* Methodology */}
         <ContextSection
           questionGroup="iUwbAs8uk0yiUhPJK2eyX"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         {/* Access */}
         <ContextSection
           questionGroup="c7cq4mb35M6zr7LAgjINd"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         {/* Ethical Governance */}
         <ContextSection
           questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         {/* Community Context */}
         <ContextSection
           questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         {/* Historic Context */}
         <ContextSection
           questionGroup="2khypcmlN6CBCnl8NS9our"
-          dataset="5MOWcewjQWtxY4hI23QyHH"
+          dataset={datasetId}
         />
         <section id="resources" className="grid">
           <div className="relative m-4 border-gray-200 rounded-lg border-2 shadow-xl">
