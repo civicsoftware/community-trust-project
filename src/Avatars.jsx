@@ -13,6 +13,7 @@ const AVATARS = gql`
   }
 `;
 
+// TODO: fix error is back button pressed when modal is open and renavigated to
 function Avatars() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [avatarName, setAvatarName] = useState();
