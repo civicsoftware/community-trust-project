@@ -1,10 +1,29 @@
-import { arrayOf, shape, string } from "prop-types";
+import { arrayOf, shape, string, oneOf, bool } from "prop-types";
 
-export const question = shape({
-  id: string.isRequired,
-  question: string.isRequired,
-  contextualLayer: arrayOf(string.isRequired)
-});
+export const questionPropTypes = {
+  type: oneOf([
+    "short answer",
+    "long answer",
+    "yes no",
+    "yes no with short answer",
+    "yes no with long answer"
+  ]).isRequired,
+  text: string,
+  textYes: string,
+  textNo: string,
+  description: shape({
+    /* contentful rich text */
+  })
+};
+
+export const answerPropTypes = {
+  question: shape({ questionText: string }),
+  answerBoolean: bool,
+  answerShortText: string,
+  answerLongText: shape({
+    /* contentful rich text */
+  })
+};
 
 export const contextSchemaPropTypes = {
   dataset: shape({
