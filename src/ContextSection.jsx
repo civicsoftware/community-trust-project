@@ -30,6 +30,7 @@ const SECTION = gql`
           answerLongText {
             json
           }
+          important
         }
       }
     }

@@ -68,6 +68,7 @@ function ContextQuestionsSection({ title, questions, answers }) {
                   answerBoolean={answer?.answerBoolean}
                   answerShortText={answer?.answerShortText}
                   answerLongText={answer?.answerLongText}
+                  important={answer?.important}
                 />
               );
             })}
