@@ -121,6 +121,12 @@
     animation-timing-function: ease-in-out;
   }
 
+  @media (prefers-reduced-motion) {
+    .pieContainer {
+      animation-name: none;
+    }
+  }
+
 
   /* TODO: make this stop during the animation not pop back to 0deg */
   .pieContainer:hover {
