@@ -11,7 +11,7 @@ function ContextNav({ dataset }) {
         <div className="grid grid-cols-12">
           <div className="col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
-              {dataset.title}
+              {dataset?.title}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
@@ -32,7 +32,7 @@ function ContextNav({ dataset }) {
                 </svg>
               </div>
               <h3 className="inline text-sm font-semibold">
-                {dataset.subComponentOf}
+                {dataset?.subComponentOf}
               </h3>
             </div>
             <div>
@@ -53,7 +53,7 @@ function ContextNav({ dataset }) {
                 </svg>
               </div>
               <h3 className="inline text-xs">
-                {dataset.officialMaintenance.officialMaintainer}
+                {dataset?.officialMaintenance?.officialMaintainer}
               </h3>
             </div>
             <div>
@@ -73,7 +73,7 @@ function ContextNav({ dataset }) {
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">{dataset.dateRange}</h3>
+              <h3 className="inline text-xs">{dataset?.dateRange}</h3>
               <div className="inline-block p-1 ml-4 -mb-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,12 +120,12 @@ function ContextNav({ dataset }) {
       </div>
       <div className="p-4 text-sm">
         <h3 className="text-xl font-bold">What is it?</h3>
-        <p>{dataset.summary}</p>
+        <p>{dataset?.summary}</p>
       </div>
       <div className="px-4 mb-4 text-sm">
         <div className="bg-yellow-50 rounded box-content p-4">
           <ul className="font-medium">
-            {dataset.sandtraps.map(sandtrap => (
+            {dataset?.sandtraps?.map(sandtrap => (
               <li key={sandtrap}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -28,22 +28,22 @@ function ContextSectionMaintenance({ dataset }) {
       </div>
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
-          {dataset.officialMaintenance.officialMaintainer}
+          {dataset?.officialMaintenance?.officialMaintainer}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Contributors: </span>
-          {dataset.officialMaintenance.dataContributor}
+          {dataset?.officialMaintenance?.dataContributor}
         </div>
         <div className="mt-4 text-sm">
           <span className="font-semibold">Last updated: </span>
-          {dataset.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
+          {dataset?.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Update frequency: </span>
-          {dataset.officialMaintenance.maintenanceInterval}
+          {dataset?.officialMaintenance?.maintenanceInterval}
         </div>
         <div className="mt-4 text-sm">
-          {dataset.officialMaintenance.typicalUpdates}
+          {dataset?.officialMaintenance?.typicalUpdates}
         </div>
       </div>
     </section>

@@ -27,23 +27,23 @@ function ContextSectionAttribution({ dataset }) {
         <div className="mt-4 p-4 text-sm">
           <div className="text-sm">
             <span className="font-semibold">Context contributors: </span>
-            {dataset.context.contextContributor}
+            {dataset?.context?.contextContributor}
           </div>
           <div className="text-sm">
             <span className="font-semibold">On behalf of: </span>
-            {dataset.context.onBehalfOf}
+            {dataset?.context?.onBehalfOf}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Publication date: </span>
-            {dataset.context.contextPublicationDate}
+            {dataset?.context?.contextPublicationDate}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Update date: </span>
-            {dataset.context.contextUpdateDate}
+            {dataset?.context?.contextUpdateDate}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Updated by: </span>
-            {dataset.context.contextUpdateBy}
+            {dataset?.context?.contextUpdateBy}
           </div>
         </div>
       </div>

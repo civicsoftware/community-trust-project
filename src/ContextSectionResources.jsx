@@ -27,12 +27,12 @@ function ContextSectionResources({ dataset }) {
         <div className="mt-4 p-4 text-sm">
           <h3 className="text-lg font-bold">Resources</h3>
           <ul className="">
-            {dataset.referenceDocumentation.map(resource => (
+            {dataset?.referenceDocumentation?.map(resource => (
               <li key={resource.title} className="mt-2">
                 <a className="font-medium underline" href={resource.stableURI}>
-                  {resource.title}
+                  {resource?.title}
                 </a>
-                <p className="">{resource.notes}</p>
+                <p className="">{resource?.notes}</p>
               </li>
             ))}
           </ul>
@@ -41,23 +41,23 @@ function ContextSectionResources({ dataset }) {
           <h3 className="text-lg font-bold">Service Providers</h3>
           <ul className="">
             {dataset?.other?.serviceProviders?.map(provider => (
-              <li key={provider.serviceProvider} className="mt-2">
-                <a className="font-medium underline" href={provider.website}>
-                  {provider.serviceProvider}
+              <li key={provider?.serviceProvider} className="mt-2">
+                <a className="font-medium underline" href={provider?.website}>
+                  {provider?.serviceProvider}
                 </a>
-                <p className="text-xs">{provider.address}</p>
-                <p className="">{provider.servicesProvided}</p>
+                <p className="text-xs">{provider?.address}</p>
+                <p className="">{provider?.servicesProvided}</p>
                 <p className="text-xs">
                   <span
                     className={`inline-block mr-2 p-0.5 text-xs rounded ${
-                      provider.contractWithMultCo === "Active"
+                      provider?.contractWithMultCo === "Active"
                         ? "bg-indigo-800 text-white"
                         : "bg-gray-300"
                     }`}
                   >
-                    {provider.contractWithMultCo}
+                    {provider?.contractWithMultCo}
                   </span>
-                  {provider.startDate} - {provider.endDate}
+                  {provider?.startDate} - {provider?.endDate}
                 </p>
               </li>
             ))}

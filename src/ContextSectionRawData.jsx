@@ -28,23 +28,23 @@ function ContextSectionRawData({ dataset }) {
       </div>
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
-          {dataset.rawData.rawTitle}
+          {dataset?.rawData?.rawTitle}
         </div>
         <div className="text-sm">
           <span className="font-semibold">URI: </span>
           <a href="#TODO" className="text-sm font-medium underline">
-            {dataset.rawData.rawStableURI}
+            {dataset?.rawData?.rawStableURI}
           </a>
         </div>
         <div className="text-sm">
           <span className="font-semibold">Date Range: </span>
-          {dataset.rawData.dateRangeStart} - {dataset.rawData.dataRangeEnd}
+          {dataset?.rawData?.dateRangeStart} - {dataset?.rawData?.dataRangeEnd}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Language: </span>
-          {dataset.rawData.lang}
+          {dataset?.rawData?.lang}
         </div>
-        <div className="mt-4 text-sm">{dataset.rawData.notes}</div>
+        <div className="mt-4 text-sm">{dataset?.rawData?.notes}</div>
       </div>
     </section>
   );
