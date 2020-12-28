@@ -15,7 +15,7 @@ function Compass() {
 
   function toggleCard(e) {
     e.stopPropagation();
-    setCardShown(!cardShown)
+    setCardShown(!cardShown);
   }
 
   function printPie(e) {
@@ -39,19 +39,19 @@ function Compass() {
       {isOpen && (
         <Windmill.Backdrop onClick={toggleBackdrop} className="z-0">
           <div className="relative">
-          {cardShown && (
-            <div className="definitionCard">
-              <div onClick={e => toggleCard(e)}> X </div>
-              <div className="content">
-                Definition
-                <p>
-                  <a href="/avatars">Click to hear stories</a>
-                </p>
+            {cardShown && (
+              <div className="definitionCard">
+                <div onClick={e => toggleCard(e)}> X </div>
+                <div className="content">
+                  Definition
+                  <p>
+                    <a href="/avatars">Click to hear stories</a>
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
             <div className="compassContainer">
-              <div className="outerCircle"/>
+              <div className="outerCircle" />
               <div className="innerCircle">
                 <div className="content">The Compass of Oppression</div>
               </div>
