@@ -15,7 +15,7 @@ export const contextSchemaPropTypes = {
     officialMaintenance: shape({
       officialMaintainer: string.isRequired,
       dataContributor: string.isRequired,
-      lastOfficialMaintainence: string,
+      lastOfficialMaintainence: string.isRequired,
       maintenanceInterval: string.isRequired,
       typicalUpdates: string.isRequired
     }),
@@ -27,7 +27,7 @@ export const contextSchemaPropTypes = {
     }),
     rawData: shape({
       rawTitle: string.isRequired,
-      rawStableURI: string.isRequired,
+      rawStableURI: string.isRequired,q
       dateRangeStart: string.isRequired,
       dataRangeEnd: string.isRequired,
       lang: string.isRequired,
@@ -56,16 +56,16 @@ export const contextSchemaPropTypes = {
         title: string.isRequired,
         notes: string.isRequired
       })
-    ),
+    ).isRequired,
     other: shape({
       serviceProviders: arrayOf(
         shape({
-          website: string,
-          serviceProvider: string,
-          address: string,
-          contractWithMultCo: string,
-          startDate: string,
-          endDate: string
+          website: string.isRequired,
+          serviceProvider: string.isRequired,
+          address: string.isRequired,
+          contractWithMultCo: string.isRequired,
+          startDate: string.isRequired,
+          endDate: string.isRequired
         })
       ).isRequired,
       definitions: arrayOf(
@@ -74,14 +74,14 @@ export const contextSchemaPropTypes = {
           definition: string.isRequired,
           source: string.isRequired
         })
-      )
-    }),
+      ).isRequired
+    }).isRequired,
     context: shape({
-      contextContributor: string,
-      onBehalfOf: string,
-      contextPublicationDate: string,
-      contextUpdateDate: string,
-      contextUpdateBy: string
-    })
+      contextContributor: string.isRequired,
+      onBehalfOf: string.isRequired,
+      contextPublicationDate: string.isRequired,
+      contextUpdateDate: string.isRequired,
+      contextUpdateBy: string.isRequired
+    }).isRequired
   })
 };
