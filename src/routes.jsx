@@ -41,7 +41,7 @@ const ROUTES = [
     component: RenderRoutes,
     routes: [
       {
-        path: "/home",
+        path: "/",
         key: "HOME",
         exact: true,
         component: Home

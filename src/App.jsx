@@ -10,7 +10,6 @@ function App() {
     <Windmill.Windmill>
       <Navbar />
       <RenderRoutes routes={ROUTES} />
-      <Home />
     </Windmill.Windmill>
   );
 }
