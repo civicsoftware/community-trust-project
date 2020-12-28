@@ -27,7 +27,7 @@ export const contextSchemaPropTypes = {
     }),
     rawData: shape({
       rawTitle: string.isRequired,
-      rawStableURI: string.isRequired,q
+      rawStableURI: string.isRequired,
       dateRangeStart: string.isRequired,
       dataRangeEnd: string.isRequired,
       lang: string.isRequired,
