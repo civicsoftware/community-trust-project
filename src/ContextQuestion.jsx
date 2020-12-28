@@ -110,8 +110,8 @@ function ContextQuestion({
               </p>
               <p>{hasText && !hasYesNo && answerShortText}</p>
               <p>{hasText && !hasYesNo && answerLongText?.json}</p>
-              <p>{showYesNo && textYes}</p>
-              <p>{showYesNo && textNo}</p>
+              <p>{answerBoolean !== false && showYesNo && textYes}</p>
+              <p>{answerBoolean !== true && showYesNo && textNo}</p>
               {documentToReactComponents(description?.json)}
             </div>
           </Collapsable.Section>
