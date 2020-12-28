@@ -55,6 +55,7 @@ function Context({ datasetId }) {
           <ContextSectionMaintenance dataset={dataset} />
           <ContextSectionRawData dataset={dataset} />
         </div>
+        <ContextSectionDataProcess />
         {/* Lineage */}
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
