@@ -34,6 +34,8 @@ export const contextSchemaPropTypes = {
       notes: string.isRequired
     }),
     processedData: shape({
+      classificationBy: string.isRequired,
+      classificationFields: string.isRequired,
       processDescriber: string.isRequired,
       processOverview: string.isRequired,
       droppedFields: string.isRequired,
