@@ -1,4 +1,5 @@
 {
   "files.autoSave": "afterDelay",
-  "vscode-graphql.useSchemaFileDefinitions": true
+  "vscode-graphql.useSchemaFileDefinitions": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
