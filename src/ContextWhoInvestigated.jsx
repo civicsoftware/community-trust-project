@@ -7,37 +7,43 @@ const COMPLETENESS_TEXT = {
   2: "Completed"
 };
 
-function ContextWhoInvestigated({ completeness, sources }) {
+// TODO: Don't dynamically generate class names so purge works properly
+
+function ContextWhoInvestigated({ completeness, sources, color }) {
   return (
-    <>
-      <div className="flex items-center gap-1 ml-0.5 z-50 -mt-2.5">
-        <div
-          className={`h-2 w-2 bg-gray-100 ring-2 ring-gray-500 rounded-full ${
-            completeness >= 0 ? "bg-gray-700" : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-2  bg-gray-100 ring-2 ring-gray-500 rounded-full ${
-            completeness >= 1 ? "bg-gray-700" : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-2 bg-gray-100 ring-2 ring-gray-500 rounded-full  ${
-            completeness >= 2 ? "bg-gray-700" : ""
-          }`}
-        />
-        <div className="mt-0.5 ml-1.5 h-4 text-xs capitalize items-baseline italic">
-          {COMPLETENESS_TEXT?.[completeness]}
-          {sources}
-        </div>
+    <div className="relative flex items-center gap-1 ml-12 -mt-1">
+      {/* <div className="absolute left-1 top-0 bottom-0 m-auto w-16 h-1 bg-gray-400 z-10" /> */}
+      {completeness >= 0 && (
+        <>
+          <div
+            className={`h-2 w-8 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 0 ? `from-${color}-100 to-${color}-400` : ""
+            }`}
+          />
+          <div
+            className={`h-2 w-8 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 1 ? `from-${color}-400 to-${color}-700` : ""
+            }`}
+          />
+          <div
+            className={`h-2 w-8 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 2 ? `from-${color}-700 to-${color}-900` : ""
+            }`}
+          />
+        </>
+      )}
+      <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic">
+        {COMPLETENESS_TEXT?.[completeness]}
+        {sources}
       </div>
-    </>
+    </div>
   );
 }
 
 ContextWhoInvestigated.propTypes = {
   completeness: oneOf([0, 1, 2]),
-  sources: string
+  sources: string,
+  color: string
 };
 
 export default ContextWhoInvestigated;

@@ -1,36 +1,26 @@
+import { startCase, toLower } from "lodash";
+import { arrayOf, string } from "prop-types";
 import React from "react";
 
-function ContextNav() {
+function ContextNav({ sections }) {
   return (
     <section
       id="nav"
-      className="m-4 p-4 fixed w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
+      className="mx-auto sticky bg-gray-50 border-gray-300 border-2 top-0 z-10"
     >
-      <div className="p-2 flex flex-col justify-center text-gray-600 text-sm underline w-min-content">
-        <a href="#summary" className="">
-          Summary
-        </a>
-        <a href="#maintenance" className="mt-2">
-          Maintenance
-        </a>
-        <a href="#rawData" className="mt-2">
-          Raw Data
-        </a>
-        <a href="#process" className="mt-2">
-          Data Process
-        </a>
-        <a href="#context" className="mt-2">
-          Context
-        </a>
-        <a href="#resources" className="mt-2">
-          Resources
-        </a>
-        <a href="#attribution" className="mt-2">
-          Attribution
-        </a>
+      <div className="p-1 flex flex-row justify-center text-gray-600 text-sm underline w-min-content">
+        {sections?.map(section => (
+          <a href={`#${section}`} className="m-2">
+            {startCase(toLower(section))}
+          </a>
+        ))}
       </div>
     </section>
   );
 }
+
+ContextNav.propTypes = {
+  sections: arrayOf(string)
+};
 
 export default ContextNav;

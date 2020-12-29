@@ -64,7 +64,19 @@ function Context({ datasetId }) {
   return (
     <>
       <EarlyPrototype />
-      <ContextNav />
+      <ContextNav
+        sections={[
+          "summary",
+          "lineage",
+          "methodology",
+          "access",
+          "ethical-governance",
+          "community-context",
+          "historic-context",
+          "resources",
+          "attribution"
+        ]}
+      />
       <div className="max-w-4xl mx-auto">
         <ContextSectionSummary
           schema={schema}
