@@ -19,7 +19,7 @@ function ContextQuestion({
   const hasText = type.search("answer") >= 0;
   const hasYesNo = type.search("yes no") >= 0;
   const answer =
-    answerBoolean !== undefined || answerShortText || answerLongText;
+    answerBoolean !== null || answerShortText !== null || answerLongText !== null;
 
   return (
     <li
