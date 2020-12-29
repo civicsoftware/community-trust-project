@@ -120,7 +120,7 @@ function ContextQuestion({
             <div className="prose prose-sm mt-4 mb-4 ml-4">
               <p>
                 {hasYesNo &&
-                  answerBoolean !== undefined &&
+                  answerBoolean !== null &&
                   (answerBoolean ? "Yes" : "No")}
               </p>
               <p>{hasText && !hasYesNo && answerShortText}</p>
