@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import PropTypes from "prop-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // TODO: Null checks for non-required fields
@@ -43,13 +44,14 @@ const AVATAR = gql`
   }
 `;
 
-function Avatar() {
+function Avatar(props) {
   const { loading, error, data } = useQuery(AVATAR);
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const avatar = data.avatarCollection.items[0];
+  const avatar = data.avatarCollection.items.find(
+    element => element.name === props.persona
+  );
   const {
     name,
     organization,
@@ -64,7 +66,7 @@ function Avatar() {
   } = avatar;
 
   const conversation = conversationsCollection.items[0];
-  const { quote, audioFile } = conversation;
+  const { quote, audioFile } = conversation || {};
 
   return (
     <>
@@ -76,7 +78,7 @@ function Avatar() {
         <li>{location}</li>
         <br />
       </ul>
-      <img src={photo.url} alt={photo.description} className="h-72 w-72" />
+      <img src={photo?.url} alt={photo?.description} className="h-72 w-72" />
       <section>{documentToReactComponents(bio.json)}</section>
       <section>{documentToReactComponents(goals.json)}</section>
       <section>{documentToReactComponents(frustrations.json)}</section>
@@ -84,7 +86,7 @@ function Avatar() {
       <q>{quote}</q>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio controls>
-        <source src={audioFile.url} type="audio/mpeg" />
+        <source src={audioFile?.url} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </>
@@ -92,3 +94,7 @@ function Avatar() {
 }
 
 export default Avatar;
+
+Avatar.propTypes = {
+  persona: PropTypes.string
+};

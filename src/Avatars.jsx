@@ -1,5 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
-import React from "react";
+import React, { useState } from "react";
+import { default as Windmill } from "@windmill/react-ui";
+
 import Avatar from "./Avatar";
 
 const AVATARS = gql`
@@ -7,6 +9,11 @@ const AVATARS = gql`
     avatarCollection(limit: 20) {
       items {
         name
+        photo {
+          title
+          description
+          url
+        }
       }
     }
   }
@@ -14,19 +21,46 @@ const AVATARS = gql`
 
 function Avatars() {
   const { loading, error, data } = useQuery(AVATARS);
+  const [cardShown, setCardShown] = useState(false);
+  const [currentPersona, setCurrentPersona] = useState(null);
+
+  function toggleCard(persona) {
+    setCurrentPersona(persona);
+    setCardShown(!cardShown);
+  }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   return (
     <>
-      <strong>AVATARS</strong>
-      <ul>
-        {data.avatarCollection.items.map(({ name }) => (
-          <li>{name}</li>
-        ))}
-      </ul>
-      <Avatar />
+      {cardShown && (
+        <Windmill.Backdrop onClick={toggleCard} className="z-0">
+          <div className="container">
+            <Avatar persona={currentPersona} />
+          </div>
+        </Windmill.Backdrop>
+      )}
+      <div className="container m-12 p-12 max-w-4xl mx-auto justify-center grid grid-cols-1 ">
+        <p className="text-4xl mb-12 mt-20 font-semibold justify-self-center">
+          Data = people
+        </p>
+        <div className="grid grid-cols-3 gap-4">
+          {data.avatarCollection.items.map(({ name, photo }) => (
+            <div
+              className="flex flex-col justify-center"
+              onClick={() => toggleCard(name)}
+            >
+              <img
+                src={photo?.url}
+                alt={photo?.description}
+                className="h-48 w-72"
+              />
+              <p className="self-center">{name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
