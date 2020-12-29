@@ -19,13 +19,12 @@ function ContextQuestion({
   const hasText = type.search("answer") >= 0;
   const hasYesNo = type.search("yes no") >= 0;
   const answer =
-    answerBoolean !== null || answerShortText !== null || answerLongText !== null;
+    !(answerBoolean === undefined || answerBoolean === null) ||
+    answerShortText ||
+    answerLongText;
 
   return (
-    <li
-      key={text}
-      className={`mt-2 p-2 bg-gray-50 w-full ${answer ? "" : "text-gray-600"}`}
-    >
+    <li key={text} className="mt-2 p-2 bg-gray-50 w-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -110,7 +109,9 @@ function ContextQuestion({
         </>
       )}
       <span
-        className={`ml-4 text-md font-medium ${answer ? "" : "text-gray-600"}`}
+        className={`ml-4 text-md font-medium ${
+          answer || important ? "" : "text-gray-600"
+        }`}
       >
         {text}
       </span>
