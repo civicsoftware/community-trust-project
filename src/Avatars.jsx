@@ -36,7 +36,7 @@ function Avatars() {
     <>
       {cardShown && (
         <Windmill.Backdrop onClick={toggleCard} className="z-0">
-          <div className="container">
+          <div className="container m-20 bg-white max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
             <Avatar persona={currentPersona} />
           </div>
         </Windmill.Backdrop>
@@ -54,7 +54,7 @@ function Avatars() {
               <img
                 src={photo?.url}
                 alt={photo?.description}
-                className="h-48 w-72"
+                className="h-48 w-72 border-gray-300 border-2 rounded-lg"
               />
               <p className="self-center">{name}</p>
             </div>
