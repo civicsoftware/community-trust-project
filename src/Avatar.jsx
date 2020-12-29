@@ -1,14 +1,14 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
-import PropTypes from "prop-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { string } from "prop-types";
 
-import sketchFilter from "./sketchFilter.svg"
+//import sketchFilter from "./sketchFilter.svg"
+
 // TODO: Null checks for non-required fields
-
 const AVATAR = gql`
-  query {
-    avatarCollection(limit: 1) {
+  query Avatar($name: String!) {
+    avatarCollection(where: { name: $name }) {
       items {
         name
         organization
@@ -45,16 +45,16 @@ const AVATAR = gql`
   }
 `;
 
-function Avatar(props) {
-  const { loading, error, data } = useQuery(AVATAR);
+function Avatar({ name }) {
+  const { loading, error, data } = useQuery(AVATAR, { variables: { name } });
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const avatar = data.avatarCollection.items.find(
-    element => element.name === props.persona
-  );
+  const avatar = data?.avatarCollection?.items?.[0];
+  if (!avatar) return <p>Error :(</p>;
+
   const {
-    name,
     organization,
     role,
     location,
@@ -66,8 +66,9 @@ function Avatar(props) {
     conversationsCollection
   } = avatar;
 
-  const conversation = conversationsCollection.items[0];
-  const { quote, audioFile } = conversation || {};
+  const conversation = conversationsCollection?.items?.[0];
+  const quote = conversation?.quote;
+  const audioFile = conversation?.audioFile;
 
   return (
     <>
@@ -167,8 +168,8 @@ function Avatar(props) {
   );
 }
 
-export default Avatar;
-
 Avatar.propTypes = {
-  persona: PropTypes.string
+  name: string.isRequired
 };
+
+export default Avatar;

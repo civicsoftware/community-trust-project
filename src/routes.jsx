@@ -6,6 +6,7 @@ import Home from "./Home";
 import Avatars from "./Avatars";
 import Context from "./Context";
 import Library from "./Library";
+import Schema from "./Schema";
 
 /* *
  * Render a route with potential sub routes
@@ -57,6 +58,12 @@ const ROUTES = [
         key: "CONTEXT",
         exact: true,
         component: Context
+      },
+      {
+        path: "/schema",
+        key: "SCHEMA",
+        exact: true,
+        component: Schema
       },
       {
         path: "/avatars",

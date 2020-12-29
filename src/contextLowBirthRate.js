@@ -1,58 +1,55 @@
 export default {
   uniqueID: "001",
-  title: "Runaway Data",
+  title: "Low Birth Weight Data",
   summary:
-    "These data represent the number of runaway youth that are reported to police in Multnomah County from 2015 - 2018. Data are obtained from <insert here> and are processed to assess the percentage of runaway youth per census tract. This dataset was not inclued in the Economic Mobility Dashboard due to over- and under-representation of populations.",
+    "Low birth weight is commonly thought of as being a cause of poverty and associated other negative outcomes later in life. Babies weighing less than 2500 grams (5.5 lbs) are considered to have a low birth weight. It may be a result of preterm birth (gestation < 37 completed weeks), intrauterine growth restriction, or both (Cutland et al. 2017). About 15 percent of babies were born with a health issue, and women of color had higher rates of births with one of several poor outcomes (e.g. low birthweight, pre-term, newborn condition), with 21.3% of Black/African American recent mothers experiencing poor outcomes. Black/African American recent mothers had the highest proportion of low birthweight babies and preterm births. American Indian/Alaska Native mothers, along with Black/African American mothers were nearly two times more likely than non-Latino white counterparts to have an infant die in the first year of life (see Maternal, Child, and Family Health Data Book).",
   dataType: "Dataset",
-  dateRange: "1/1/2015 - 12/31/2018",
-  subComponentOf: "Health & Family Marginalization",
+  dateRange: "1/1/2017 - 12/31/2017",
+  subComponentOf: "Health & Education Marginalization",
   includedIn: "Economic Mobility Dashboard",
   relatedTo: "Other variables considered in 'Health & Family Marginalization'",
   successes: "Document successes here",
-  challenges:
-    "Over-representation of runaways from group homes and foster care and under-represenation of runaways from wealthier areas led County to pause on including this in the Dashboard. DCJ thought the ata did not tell the whole story of runaways in Multnomah Couny and thought it would be intellectually irresponsible to include.",
-  sandtraps:
-    "Runaway data do not represent homelessness. Counts are based on reports to police and may under-represent runaways.",
+  challenges: "Document challenges here.",
+  sandtraps: ["Document sandtraps here."],
   missingInformation: {
     gapsInStewardship:
       "Who are the data trustees and data stewards that participate in the data lifecycle?",
     gapsInInformation:
-      "Runaway data lacks information from wealthier areas and over-represents runaway youth in group homes and foster care.",
+      "What other data accompany the low-birth-weight data? The data are represented as a count, are there demographic data that accompany the instance of a low-birth-weight report?",
     gapsInClassificationRaceEthnicity:
       "Does dataset include information on race and ethnicity? If so, what classification is used?"
   },
   officialMaintenance: {
-    officialMaintainer: "Multnomah County Department of Community Justice",
-    dataContributor: "Alisa Stubblefield",
+    officialMaintainer: "Multnomah County Health Department",
+    dataContributor: "Erin Fairchild",
     maintenanceInterval: "Unknown",
     lastOfficialMaintainence: "yyyy-mm-dd (Date)",
     typicalUpdates: "Long form explanation of typical updates"
   },
   rawData: {
-    rawTitle:
-      "Official Title of the Runaway Data from the original source. Note that we need more info on this, where do raw data come from?",
+    rawTitle: "Need more info",
     rawStableURI: "archival URL to incentivize providers",
     lang: "language",
-    dateRangeStart: "1/1/2015",
-    dataRangeEnd: "12/31/2018",
-    notes: "notes about this resource"
+    dateRangeStart: "1/1/2017",
+    dataRangeEnd: "12/31/2017",
+    notes:
+      "Low birth weight are obtained through administrative datasets. The data are collected through official records and capture instances where official reports were made. The data source is listed as 'Mulnomah County Health Department database'."
   },
   processedData: {
     droppedFields:
-      "What are additional fields that accompany the runaway data from reports to police that are not represented here?",
-    addedFields:
-      "What fields have been added to the runaway data in the development of the normalized factor?",
+      "What are additional fields that accompany the raw data that are not represented here?",
+    addedFields: "What fields have been added to the low birth weight data?",
     processOverview:
-      "Explanation of steps taken to process, clear and sequential",
-    processDescriber: "Who has provided the context on the processing steps",
+      "The count of babies born in each census tract weighing less than 2500 grams is aggregated by census tract. This count is then converted to a percentage of population in each census tract. This percentage is then normalized on a scale of 0 - 10.",
+    processDescriber: "Multnomah County (identify specific individual?)",
     processSteps: [
       {
         stepNumber: "01",
         action:
-          "Aggregate number of youth reported to police as runaways by census tract.",
+          "Aggregate number of babies born in each census tract who weighed less than 2500 grams.",
         relatedResources: [
           "Multnomah County Census Tracts",
-          "Number of runaways reported to police."
+          "Number of babies that weigh less than 2500 grams"
         ],
         stepWho: "Multnomah County data stewards (Alissa?, Rachel?)",
         stepExplanation:
@@ -61,19 +58,19 @@ export default {
       {
         stepNumber: "02",
         action:
-          "Convert the count of runaway youth by census tract to a percentage of population in each census tract.",
+          "Convert the count of low birth weight babies to a percentage of population in each census tract.",
         relatedResources: [
           "Multnomah County Census Tracts",
           "Multnomah County Census Tract Populations"
         ],
         stepWho: "Multnomah County data stewards (Alissa?, Rachel?)",
         stepExplanation:
-          "This was done to calculate the count of runaways as a percentage of census tract population."
+          "This was done to calculate the count of low-birth-weight babies as a percentage of census tract population."
       },
       {
         stepNumber: "03",
         action:
-          "Normalize the percentage of population of runaway youth in a census tract on a 0-10 scale for the dashboard.",
+          "Normalize the percentage of population of low birth weight babies in a census tract on a 0-10 scale for the dashboard.",
         relatedResources: ["Multnomah County Census Tracts"],
         stepWho: "Multnomah County data stewards (Alissa?, Rachel?)",
         stepExplanation:
@@ -109,6 +106,14 @@ export default {
       lang: "English",
       notes:
         "This document provides information on the variables included in the Marginalization Factor Score Analysis section and the Community Information section of the Economic Mobility Marginalization Dashboard. Information includes variable definition, where the variable fits in the dashboard, data source, date range, and a brief literature review for context."
+    },
+    {
+      id: "04",
+      title: "Maternal, Child, and Family Health Data Book",
+      stableURI: "https://multco.us/file/34038/download",
+      lang: "English",
+      notes:
+        "This document provides information on the variables included in the Marginalization Factor Score Analysis section and the Community Information section of the Economic Mobility Marginalization Dashboard. Information includes variable definition, where the variable fits in the dashboard, data source, date range, and a brief literature review for context."
     }
   ],
   contextQuestions: [
@@ -133,12 +138,6 @@ export default {
           id: "03",
           contextualLayer: ["Historical"],
           question: "Who does this work benefit?"
-        },
-        {
-          id: "04",
-          contextualLayer: ["Institutional"],
-          question:
-            "How will a racial equity lens be incorporated throughout the data life cycle?"
         }
       ],
       Accountability: [
@@ -147,17 +146,6 @@ export default {
           contextualLayer: ["Structural"],
           question:
             "What guides accountability and power sharing between community members/participants and policy makers/agency?"
-        },
-        {
-          id: "02",
-          contextualLayer: ["Structural"],
-          question:
-            "How will community members/people whose data are in the system receive capacity-building? "
-        },
-        {
-          id: "03",
-          contextualLayer: ["Structural", "Institutional"],
-          question: "Who will hold the agency/collaborative accountable?"
         },
         {
           id: "04",
@@ -193,42 +181,29 @@ export default {
   other: {
     serviceProviders: [
       {
-        id: "01",
-        serviceProvider: "New Avenues for Youth",
+        id: "",
+        serviceProvider: "",
         startDate: "yyyy-mm-dd (Date)",
         endDate: "yyyy-mm-dd (Date)",
-        website: "https://newavenues.org",
-        address: "1220 SW Columbia St., Portland, OR 97201",
-        servicesProvided:
-          "Prevention and intervention of youth homelessness. Support basic needs, education, job training, employment, and housing.",
-        contractWithMultCo: "Active"
-      },
-      {
-        id: "02",
-        serviceProvider: "Janus Youth Programs",
-        startDate: "yyyy-mm-dd (Date)",
-        endDate: "yyyy-mm-dd (Date)",
-        website: "http://www.janusyouth.org",
-        address: "738 NE Davis Street, Portland, OR 97232",
-        servicesProvided:
-          "Provides residential care for adolescents struggling with homelessness and drug abuse.",
-        contractWithMultCo: "Expired"
+        website: "",
+        address: "",
+        servicesProvided: "",
+        contractWithMultCo: ""
       }
     ],
     definitions: [
       {
         id: "01",
-        term: "Homeless youth",
+        term: "Low birth weight",
         definition:
-          "Do not have a home to return to either because 'it is not possible to live in a safe environment with a relative' and there is no alternative safe living arrangements.",
-        source: "Runaway and Homeless Youth Act of 1974"
+          "Term used to describe babies that weigh less than 5 pounds, 8 ounces (2,500 grams) at birth regardless of gestational age. A low-birth-weight baby may be healthy despite being small; however, infants born with low birth weight can also have many health problems.",
+        source: "World Health Organization"
       },
       {
         id: "02",
-        term: "Runaway youth",
-        definition:
-          "under 18 years of age and have absented themselves from a 'home or place of legal residence without the permission of a parent or legal guardian'.",
-        source: "Runaway and Homeless Youth Act of 1974"
+        term: "",
+        definition: "",
+        source: ""
       }
     ]
   },

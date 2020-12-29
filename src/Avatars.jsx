@@ -19,25 +19,25 @@ const AVATARS = gql`
   }
 `;
 
+// TODO: fix error is back button pressed when modal is open and renavigated to
 function Avatars() {
   const { loading, error, data } = useQuery(AVATARS);
   const [cardShown, setCardShown] = useState(false);
-  const [currentPersona, setCurrentPersona] = useState(null);
+  const [avatarName, setAvatarName] = useState(null);
 
-  function toggleCard(persona) {
-    setCurrentPersona(persona);
+  function toggleCard(name) {
+    setAvatarName(name);
     setCardShown(!cardShown);
   }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+
 
   return (
     <>
       {cardShown && (
         <Windmill.Backdrop onClick={toggleCard} className="z-0">
           <div className="container m-20 bg-white max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
-            <Avatar persona={currentPersona} />
+            <Avatar name={avatarName} />
           </div>
         </Windmill.Backdrop>
       )}
@@ -46,7 +46,9 @@ function Avatars() {
           Data = people
         </p>
         <div className="grid grid-cols-3 gap-4">
-          {data.avatarCollection.items.map(({ name, photo }) => (
+          {loading && <p className="col-span-3">Loading...</p>}
+          {error && <p className="col-span-3">Error loading data :(</p>}
+          {(!loading && !error) && data.avatarCollection.items.map(({ name, photo }) => (
             <div
               className="flex flex-col justify-center"
               onClick={() => toggleCard(name)}
