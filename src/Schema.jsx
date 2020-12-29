@@ -51,6 +51,10 @@ function Schema() {
 
   return (
     <div className="max-w-4xl mx-auto mt-32">
+      <p>
+        This will warnings for all required fields. In the product, all fields
+        are optional, but this should help you catch any misshapen objects.
+      </p>
       <Label>
         <div className="fixed bg-gray-300 p-4 -mt-32">
           <span className="text-xl">Schema validation</span>

@@ -1,7 +1,8 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextNav({ dataset }) {
+function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
   return (
     <section
       id="summary"
@@ -11,7 +12,7 @@ function ContextNav({ dataset }) {
         <div className="grid grid-cols-12">
           <div className="col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
-              {dataset?.title}
+              {schema?.title}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
@@ -32,7 +33,7 @@ function ContextNav({ dataset }) {
                 </svg>
               </div>
               <h3 className="inline text-sm font-semibold">
-                {dataset?.subComponentOf}
+                {schema?.subComponentOf}
               </h3>
             </div>
             <div>
@@ -53,7 +54,7 @@ function ContextNav({ dataset }) {
                 </svg>
               </div>
               <h3 className="inline text-xs">
-                {dataset?.officialMaintenance?.officialMaintainer}
+                {schema?.officialMaintenance?.officialMaintainer}
               </h3>
             </div>
             <div>
@@ -73,7 +74,7 @@ function ContextNav({ dataset }) {
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">{dataset?.dateRange}</h3>
+              <h3 className="inline text-xs">{schema?.dateRange}</h3>
               <div className="inline-block p-1 ml-4 -mb-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,12 +121,21 @@ function ContextNav({ dataset }) {
       </div>
       <div className="p-4 text-sm">
         <h3 className="text-xl font-bold">What is it?</h3>
-        <p>{dataset?.summary}</p>
+        {summary?.json ? (
+          documentToReactComponents(summary?.json)
+        ) : (
+          <p>TODO: convert summary to Contentful</p>
+        )}
       </div>
       <div className="px-4 mb-4 text-sm">
         <div className="bg-yellow-50 rounded box-content p-4">
           <ul className="font-medium">
-            {dataset?.sandtraps?.map(sandtrap => (
+            {sandtraps?.json ? (
+              documentToReactComponents(sandtraps?.json)
+            ) : (
+              <p>TODO: Convert to contentful</p>
+            )}
+            {/* {schema?.sandtraps?.map(sandtrap => (
               <li key={sandtrap}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,17 +153,25 @@ function ContextNav({ dataset }) {
                 </svg>
                 {sandtrap}
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
         <div className="grid grid-cols-2 mt-2">
-          <div className="">
+          <div className="block">
             <h3 className="text-lg font-bold">Successes</h3>
-            <p className="">{dataset.successes}</p>
+            {successes?.json ? (
+              documentToReactComponents(successes?.json)
+            ) : (
+              <p>TODO: Convert to contentful</p>
+            )}
           </div>
-          <div className="">
+          <div className="block">
             <h3 className="text-lg font-bold">Challenges</h3>
-            <p className="">{dataset.challenges}</p>
+            {challenges?.json ? (
+              documentToReactComponents(challenges?.json)
+            ) : (
+              <p>TODO: Convert to contentful</p>
+            )}
           </div>
         </div>
         {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
@@ -189,10 +207,10 @@ function ContextNav({ dataset }) {
               </ul>
             </div> */}
         <h3 className="text-lg font-bold mt-4">
-          {dataset?.other?.definitions && "Definitions"}
+          {schema?.other?.definitions && "Definitions"}
         </h3>
         <dl>
-          {dataset?.other?.definitions?.map(definition => (
+          {schema?.other?.definitions?.map(definition => (
             <div key={definition.term} className="mt-2 grid grid-cols-12">
               <dt className="text-md font-bold col-span-2 border-r-4">
                 {definition.term}

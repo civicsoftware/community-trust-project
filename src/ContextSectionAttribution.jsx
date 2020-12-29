@@ -1,7 +1,7 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextSectionAttribution({ dataset }) {
+function ContextSectionAttribution({ schema }) {
   return (
     <section id="attribution" className="grid">
       <div className="relative m-4 border-gray-200 rounded-lg border-2 shadow-xl">
@@ -27,23 +27,23 @@ function ContextSectionAttribution({ dataset }) {
         <div className="mt-4 p-4 text-sm">
           <div className="text-sm">
             <span className="font-semibold">Context contributors: </span>
-            {dataset?.context?.contextContributor}
+            {schema?.context?.contextContributor}
           </div>
           <div className="text-sm">
             <span className="font-semibold">On behalf of: </span>
-            {dataset?.context?.onBehalfOf}
+            {schema?.context?.onBehalfOf}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Publication date: </span>
-            {dataset?.context?.contextPublicationDate}
+            {schema?.context?.contextPublicationDate}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Update date: </span>
-            {dataset?.context?.contextUpdateDate}
+            {schema?.context?.contextUpdateDate}
           </div>
           <div className="text-sm">
             <span className="font-semibold">Updated by: </span>
-            {dataset?.context?.contextUpdateBy}
+            {schema?.context?.contextUpdateBy}
           </div>
         </div>
       </div>

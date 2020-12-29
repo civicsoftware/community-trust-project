@@ -1,7 +1,7 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextSectionMaintenance({ dataset }) {
+function ContextSectionMaintenance({ schema }) {
   return (
     <section
       id="maintenance"
@@ -28,22 +28,22 @@ function ContextSectionMaintenance({ dataset }) {
       </div>
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
-          {dataset?.officialMaintenance?.officialMaintainer}
+          {schema?.officialMaintenance?.officialMaintainer}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Contributors: </span>
-          {dataset?.officialMaintenance?.dataContributor}
+          {schema?.officialMaintenance?.dataContributor}
         </div>
         <div className="mt-4 text-sm">
           <span className="font-semibold">Last updated: </span>
-          {dataset?.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
+          {schema?.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Update frequency: </span>
-          {dataset?.officialMaintenance?.maintenanceInterval}
+          {schema?.officialMaintenance?.maintenanceInterval}
         </div>
         <div className="mt-4 text-sm">
-          {dataset?.officialMaintenance?.typicalUpdates}
+          {schema?.officialMaintenance?.typicalUpdates}
         </div>
       </div>
     </section>

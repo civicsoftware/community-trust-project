@@ -1,7 +1,7 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextSectionResources({ dataset }) {
+function ContextSectionResources({ schema }) {
   return (
     <section id="resources" className="grid">
       <div className="relative m-4 border-gray-200 rounded-lg border-2 shadow-xl">
@@ -27,7 +27,7 @@ function ContextSectionResources({ dataset }) {
         <div className="mt-4 p-4 text-sm">
           <h3 className="text-lg font-bold">Resources</h3>
           <ul className="">
-            {dataset?.referenceDocumentation?.map(resource => (
+            {schema?.referenceDocumentation?.map(resource => (
               <li key={resource.title} className="mt-2">
                 <a className="font-medium underline" href={resource.stableURI}>
                   {resource?.title}
@@ -40,7 +40,7 @@ function ContextSectionResources({ dataset }) {
         <div className="p-4 text-sm">
           <h3 className="text-lg font-bold">Service Providers</h3>
           <ul className="">
-            {dataset?.other?.serviceProviders?.map(provider => (
+            {schema?.other?.serviceProviders?.map(provider => (
               <li key={provider?.serviceProvider} className="mt-2">
                 <a className="font-medium underline" href={provider?.website}>
                   {provider?.serviceProvider}

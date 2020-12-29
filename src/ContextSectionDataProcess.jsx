@@ -1,7 +1,7 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextSectionDataProcess({ dataset }) {
+function ContextSectionDataProcess({ schema }) {
   return (
     <section id="process" className="grid">
       <div className="m-4 border-gray-200 rounded-lg border-2 shadow-xl">
@@ -27,9 +27,9 @@ function ContextSectionDataProcess({ dataset }) {
         <div className="p-4 text-sm">
           <div>
             <span className="font-semibold">Contributors: </span>
-            {dataset?.processedData?.processDescriber}
+            {schema?.processedData?.processDescriber}
           </div>
-          <div>{dataset?.processedData?.processOverview}</div>
+          <div>{schema?.processedData?.processOverview}</div>
         </div>
         <div className="m-0 bg-gray-100 w-full font-mono text-xs">
           <div className="inline-block ml-0 mt-0 px-2 uppercase bg-gray-800 text-white font-semibold rounded-br shadow-sm text-sm">
@@ -37,17 +37,17 @@ function ContextSectionDataProcess({ dataset }) {
           </div>
           <div className="p-4">
             <div className="text-red-800">
-              {dataset?.processedData?.droppedFields}
+              {schema?.processedData?.droppedFields}
             </div>
             <div className="text-green-800">
-              {dataset?.processedData?.addedFields}
+              {schema?.processedData?.addedFields}
             </div>
           </div>
         </div>
         <div className="py-4 px-4 text-sm">
           <h3 className="text-lg font-bold">Process Steps</h3>
           <ol>
-            {dataset?.processedData?.processSteps?.map(step => (
+            {schema?.processedData?.processSteps?.map(step => (
               <li
                 key={step.stepNumber}
                 className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md"

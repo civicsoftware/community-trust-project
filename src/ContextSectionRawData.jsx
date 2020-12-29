@@ -1,7 +1,7 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 
-function ContextSectionRawData({ dataset }) {
+function ContextSectionRawData({ schema }) {
   return (
     <section
       id="rawData"
@@ -28,23 +28,23 @@ function ContextSectionRawData({ dataset }) {
       </div>
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
-          {dataset?.rawData?.rawTitle}
+          {schema?.rawData?.rawTitle}
         </div>
         <div className="text-sm">
           <span className="font-semibold">URI: </span>
           <a href="#TODO" className="text-sm font-medium underline">
-            {dataset?.rawData?.rawStableURI}
+            {schema?.rawData?.rawStableURI}
           </a>
         </div>
         <div className="text-sm">
           <span className="font-semibold">Date Range: </span>
-          {dataset?.rawData?.dateRangeStart} - {dataset?.rawData?.dataRangeEnd}
+          {schema?.rawData?.dateRangeStart} - {schema?.rawData?.dataRangeEnd}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Language: </span>
-          {dataset?.rawData?.lang}
+          {schema?.rawData?.lang}
         </div>
-        <div className="mt-4 text-sm">{dataset?.rawData?.notes}</div>
+        <div className="mt-4 text-sm">{schema?.rawData?.notes}</div>
       </div>
     </section>
   );

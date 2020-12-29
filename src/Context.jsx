@@ -20,6 +20,18 @@ const DATASETS = gql`
         json
       }
       schema
+      summary {
+        json
+      }
+      successes {
+        json
+      }
+      challenges {
+        json
+      }
+      sandtraps {
+        json
+      }
     }
   }
 `;
@@ -42,20 +54,30 @@ function Context({ datasetId }) {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  const dataset = data?.dataset?.schema;
-  if (!dataset) return <div>No data</div>;
+  const schema = data?.dataset?.schema;
+  const summary = data?.dataset?.summary;
+  const successes = data?.dataset?.successes;
+  const challenges = data?.dataset?.challenges;
+  const sandtraps = data?.dataset?.sandtraps;
+  if (!schema) return <div>No data</div>;
 
   return (
     <>
       <EarlyPrototype />
       <ContextNav />
       <div className="max-w-4xl mx-auto">
-        <ContextSectionSummary dataset={dataset} />
+        <ContextSectionSummary
+          schema={schema}
+          summary={summary}
+          challenges={challenges}
+          successes={successes}
+          sandtraps={sandtraps}
+        />
         <div className="grid grid-cols-2">
-          <ContextSectionMaintenance dataset={dataset} />
-          <ContextSectionRawData dataset={dataset} />
+          <ContextSectionMaintenance schema={schema} />
+          <ContextSectionRawData schema={schema} />
         </div>
-        <ContextSectionDataProcess dataset={dataset} />
+        <ContextSectionDataProcess schema={schema} />
         {/* Lineage */}
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
@@ -86,8 +108,8 @@ function Context({ datasetId }) {
           questionGroup="2khypcmlN6CBCnl8NS9our"
           dataset={datasetId}
         />
-        <ContextSectionResources dataset={dataset} />
-        <ContextSectionAttribution dataset={dataset} />
+        <ContextSectionResources schema={schema} />
+        <ContextSectionAttribution schema={schema} />
       </div>
     </>
   );
