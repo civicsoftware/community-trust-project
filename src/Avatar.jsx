@@ -1,12 +1,13 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { string } from "prop-types";
 
 // TODO: Null checks for non-required fields
 
 const AVATAR = gql`
-  query {
-    avatarCollection(limit: 1) {
+  query Avatar($name: String!) {
+    avatarCollection(where: { name: $name }) {
       items {
         name
         organization
@@ -43,15 +44,16 @@ const AVATAR = gql`
   }
 `;
 
-function Avatar() {
-  const { loading, error, data } = useQuery(AVATAR);
+function Avatar({ name }) {
+  const { loading, error, data } = useQuery(AVATAR, { variables: { name } });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const avatar = data.avatarCollection.items[0];
+  const avatar = data?.avatarCollection?.items?.[0];
+  if (!avatar) return <p>Error :(</p>;
+
   const {
-    name,
     organization,
     role,
     location,
@@ -63,8 +65,9 @@ function Avatar() {
     conversationsCollection
   } = avatar;
 
-  const conversation = conversationsCollection.items[0];
-  const { quote, audioFile } = conversation;
+  const conversation = conversationsCollection?.items?.[0];
+  const quote = conversation?.quote;
+  const audioFile = conversation?.audioFile;
 
   return (
     <>
@@ -76,19 +79,33 @@ function Avatar() {
         <li>{location}</li>
         <br />
       </ul>
-      <img src={photo.url} alt={photo.description} className="h-72 w-72" />
-      <section>{documentToReactComponents(bio.json)}</section>
-      <section>{documentToReactComponents(goals.json)}</section>
-      <section>{documentToReactComponents(frustrations.json)}</section>
-      <section>{documentToReactComponents(dataNeeds.json)}</section>
-      <q>{quote}</q>
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio controls>
-        <source src={audioFile.url} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      {photo && (
+        <img
+          src={`${photo.url}?w=800&f=face&fit=thumb`}
+          alt={photo.description}
+          className="object-contain h-full max-w-4xl"
+        />
+      )}
+      <section>{documentToReactComponents(bio?.json)}</section>
+      <section>{documentToReactComponents(goals?.json)}</section>
+      <section>{documentToReactComponents(frustrations?.json)}</section>
+      <section>{documentToReactComponents(dataNeeds?.json)}</section>
+      {audioFile && quote && (
+        <figure>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <audio controls>
+            <figcaption>{quote}</figcaption>
+            <source src={audioFile.url} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      )}
     </>
   );
 }
+
+Avatar.propTypes = {
+  name: string.isRequired
+};
 
 export default Avatar;
