@@ -117,7 +117,7 @@ function ContextQuestion({
       {(showYesNo || answer) && (
         <Collapsable description="question detail" hideText>
           <Collapsable.Section hidden>
-            <div>
+            <div className="prose prose-sm mt-4 mb-4 ml-4">
               <p>
                 {hasYesNo &&
                   answerBoolean !== undefined &&
@@ -127,8 +127,16 @@ function ContextQuestion({
               {hasText &&
                 !hasYesNo &&
                 documentToReactComponents(answerLongText?.json)}
-              <p>{answerBoolean !== false && showYesNo && textYes}</p>
-              <p>{answerBoolean !== true && showYesNo && textNo}</p>
+              <p className="text-md font-medium">
+                {answerBoolean !== false && showYesNo && textYes}
+              </p>
+              <p className="text-md font-medium">
+                {answerBoolean !== true && showYesNo && textNo}
+              </p>
+              <p>{hasText && hasYesNo && answerShortText}</p>
+              {hasText &&
+                hasYesNo &&
+                documentToReactComponents(answerLongText?.json)}
               {documentToReactComponents(description?.json)}
             </div>
           </Collapsable.Section>
