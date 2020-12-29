@@ -3,7 +3,14 @@ import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
 
-function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
+function ContextNav({
+  schema,
+  summary,
+  successes,
+  challenges,
+  sandtraps,
+  logo
+}) {
   return (
     <section
       id="summary"
@@ -99,6 +106,23 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
                 </svg>
               </div>
               <h3 className="inline text-xs">Multnomah County, Oregon, US</h3>
+            </div>
+            <div className="absolute right-4 top-4 items-center">
+              <img
+                src={logo?.url}
+                alt={logo?.description}
+                height={logo?.height}
+                width={logo?.width}
+                className="w-36"
+              />
+              <div className="flex h-full w-full items-center mt-2">
+                <a
+                  href="#TODO"
+                  className="flex p-1 uppercase text-center bg-white text-purple-900 rounded text-sm font-semibold border-4 border-purple-300 hover:bg-purple-50 hover:border-purple-400 hover:shadow-2xl"
+                >
+                  <h2>Contact Org</h2>
+                </a>
+              </div>
             </div>
           </div>
         </div>

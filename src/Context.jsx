@@ -32,6 +32,12 @@ const DATASETS = gql`
       sandtraps {
         json
       }
+      logo {
+        url
+        description
+        width
+        height
+      }
     }
   }
 `;
@@ -59,6 +65,7 @@ function Context({ datasetId }) {
   const successes = data?.dataset?.successes;
   const challenges = data?.dataset?.challenges;
   const sandtraps = data?.dataset?.sandtraps;
+  const logo = data?.dataset?.logo;
   if (!schema) return <div>No data</div>;
 
   return (
@@ -84,6 +91,7 @@ function Context({ datasetId }) {
           challenges={challenges}
           successes={successes}
           sandtraps={sandtraps}
+          logo={logo}
         />
         {/* <div className="grid grid-cols-2">
           <ContextSectionMaintenance schema={schema} />
