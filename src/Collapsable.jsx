@@ -9,7 +9,10 @@ export default function Collapsable({
   children,
   description,
   hideText,
-  answered
+  answered,
+  iconClassName,
+  hiddenClassName,
+  buttonClassName
 }) {
   const hiddenRef = useRef(null);
   const buttonRef = useRef(null);
@@ -37,7 +40,7 @@ export default function Collapsable({
       {unhiddenChildren}
       {hiddenChildren.length > 0 && (
         <button
-          className="inline-block float-right font-medium text-md"
+          className={`inline-block float-right font-medium text-md ${buttonClassName}`}
           onClick={() => handleClick(expanded)}
           type="button"
           aria-live="polite"
@@ -51,7 +54,7 @@ export default function Collapsable({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="inline-block h-4 w-4"
+              className={`inline-block h-4 w-4 ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -65,7 +68,7 @@ export default function Collapsable({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="inline-block h-4 w-4"
+              className={`inline-block h-4 w-4 ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -80,7 +83,7 @@ export default function Collapsable({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="inline-block h-4 w-4"
+              className={`inline-block h-4 w-4 ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"
@@ -96,7 +99,7 @@ export default function Collapsable({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="inline-block h-4 w-4"
+              className={`inline-block h-4 w-4 ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"
@@ -109,7 +112,7 @@ export default function Collapsable({
         </button>
       )}
       <div
-        className="outline-none ml-12"
+        className={`outline-none ${hiddenClassName}`}
         role="group"
         tabIndex="-1"
         ref={hiddenRef}
@@ -131,7 +134,10 @@ Collapsable.propTypes = {
    */
   description: PropTypes.string.isRequired,
   hideText: PropTypes.bool,
-  answered: PropTypes.bool
+  answered: PropTypes.bool,
+  buttonClassName: PropTypes.string,
+  iconClassName: PropTypes.string,
+  hiddenClassName: PropTypes.string
 };
 
 Collapsable.displayName = Collapsable;

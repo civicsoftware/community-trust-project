@@ -8,10 +8,16 @@ const COMPLETENESS_TEXT = {
 };
 
 // TODO: Don't dynamically generate class names so purge works properly
+const gray =
+  "from-gray-100 to-gray-400 from-gray-400 to-gray-700 from-gray-700 to-gray-900";
+const purple =
+  "from-purple-100 to-purple-400 from-purple-400 to-purple-700 from-purple-700 to-purple-900";
 
-function ContextWhoInvestigated({ completeness, sources, color }) {
+function ContextWhoInvestigated({ completeness, sources, color, className }) {
   return (
-    <div className="relative flex items-center gap-1 ml-12 -mt-1">
+    <div
+      className={`relative flex items-center gap-1 ml-12 -mt-1 ${className}`}
+    >
       {/* <div className="absolute left-1 top-0 bottom-0 m-auto w-16 h-1 bg-gray-400 z-10" /> */}
       {completeness >= 0 && (
         <>
@@ -43,7 +49,8 @@ function ContextWhoInvestigated({ completeness, sources, color }) {
 ContextWhoInvestigated.propTypes = {
   completeness: oneOf([0, 1, 2]),
   sources: string,
-  color: string
+  color: string,
+  className: string
 };
 
 export default ContextWhoInvestigated;

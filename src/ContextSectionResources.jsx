@@ -38,7 +38,7 @@ function ContextSectionResources({ schema }) {
     <ContextSectionWrapper
       title="Resources"
       Icon={BookIcon}
-      color="green"
+      color="gray"
       completeness={completeness}
       cta
     >

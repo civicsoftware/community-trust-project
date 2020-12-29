@@ -4,9 +4,9 @@ import { gql, useQuery } from "@apollo/client";
 import EarlyPrototype from "./ContextComponents/EarlyPrototype";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionSummary from "./ContextSectionSummary";
-import ContextSectionMaintenance from "./ContextSectionMaintenance";
-import ContextSectionRawData from "./ContextSectionRawData";
-import ContextSectionDataProcess from "./ContextSectionDataProcess";
+// import ContextSectionMaintenance from "./ContextSectionMaintenance";
+// import ContextSectionRawData from "./ContextSectionRawData";
+// import ContextSectionDataProcess from "./ContextSectionDataProcess";
 import ContextSectionResources from "./ContextSectionResources";
 import ContextSectionAttribution from "./ContextSectionAttribution";
 import ContextSection from "./ContextSection";
@@ -85,11 +85,11 @@ function Context({ datasetId }) {
           successes={successes}
           sandtraps={sandtraps}
         />
-        <div className="grid grid-cols-2">
+        {/* <div className="grid grid-cols-2">
           <ContextSectionMaintenance schema={schema} />
           <ContextSectionRawData schema={schema} />
         </div>
-        <ContextSectionDataProcess schema={schema} />
+        <ContextSectionDataProcess schema={schema} /> */}
         {/* Lineage */}
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"

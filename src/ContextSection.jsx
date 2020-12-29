@@ -7,6 +7,9 @@ const SECTION = gql`
   query Section($questionGroup: String!, $dataset: String!) {
     questionGroup(id: $questionGroup) {
       title
+      attribution {
+        json
+      }
       questionsCollection(limit: 50) {
         items {
           questionType
@@ -30,7 +33,6 @@ const SECTION = gql`
           answerLongText {
             json
           }
-          important
         }
       }
     }
@@ -54,6 +56,7 @@ function ContextSection({ questionGroup, dataset }) {
       title={title}
       questions={questions}
       answers={answers}
+      description={data?.questionGroup?.attribution}
     />
   );
 }

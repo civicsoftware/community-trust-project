@@ -40,7 +40,7 @@ function ContextSectionDataProcess({ schema }) {
     <ContextSectionWrapper
       title="Process"
       Icon={ProcessIcon}
-      color="indigo"
+      color="gray"
       completeness={completeness}
       cta
     >

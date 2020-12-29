@@ -1,6 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
+import ContextWhoInvestigated from "./ContextWhoInvestigated";
 
 function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
   return (
@@ -205,6 +206,60 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
             </div>
           ))}
         </dl>
+      </div>
+      <div className="grid grid-cols-2 bg-purple-900 text-white">
+        <div className="p-4 text-xs">
+          <h3 className="text-lg font-bold tracking-wide">Maintenance</h3>
+          {/* TODO Dynamic indicator */}
+          <ContextWhoInvestigated
+            className="-ml-0 mb-4"
+            color="purple"
+            completeness="1"
+          />
+          <div className="font-bold">
+            {schema?.officialMaintenance?.officialMaintainer}
+          </div>
+          <div className="">
+            <span className="font-semibold">Contributors: </span>
+            {schema?.officialMaintenance?.dataContributor}
+          </div>
+          <div className="">
+            <span className="font-semibold">Last updated: </span>
+            {schema?.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
+          </div>
+          <div className="">
+            <span className="font-semibold">Update frequency: </span>
+            {schema?.officialMaintenance?.maintenanceInterval}
+          </div>
+          <div className="mt-4 ">
+            {schema?.officialMaintenance?.typicalUpdates}
+          </div>
+        </div>
+        <div className="p-4 text-xs">
+          <h3 className="text-lg font-bold tracking-wide">Data Details</h3>
+          {/* TODO Dynamic indicator */}
+          <ContextWhoInvestigated
+            className="-ml-0 mb-4"
+            color="purple"
+            completeness="1"
+          />
+          <div className=" font-bold">{schema?.rawData?.rawTitle}</div>
+          <div className="">
+            <span className="font-semibold">URI: </span>
+            <a href="#TODO" className=" font-medium underline">
+              {schema?.rawData?.rawStableURI}
+            </a>
+          </div>
+          <div className="">
+            <span className="font-semibold">Date Range: </span>
+            {schema?.rawData?.dateRangeStart} - {schema?.rawData?.dataRangeEnd}
+          </div>
+          <div className="">
+            <span className="font-semibold">Language: </span>
+            {schema?.rawData?.lang}
+          </div>
+          <div className="mt-4 ">{schema?.rawData?.notes}</div>
+        </div>
       </div>
     </section>
   );

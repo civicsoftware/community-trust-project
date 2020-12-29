@@ -40,7 +40,7 @@ function ContextSectionMaintenance({ schema }) {
     <ContextSectionWrapper
       title="Maintenance"
       Icon={LibraryIcon}
-      color="blue"
+      color="gray"
       completeness={completeness}
       cta
     >
