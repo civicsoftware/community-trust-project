@@ -110,16 +110,7 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8 mt-4 mx-8">
-        <div className="bg-green-100 text-center rounded-full">✅ Lineage</div>
-        <div className="bg-yellow-100 text-center rounded-full">
-          ⚠️ Social Justice
-        </div>
-        <div className="bg-pink-100 text-center rounded-full">
-          ❌ Governance
-        </div>
-      </div>
-      <div className="p-4 text-sm">
+      <div className="p-4 prose-md">
         <h3 className="text-xl font-bold">What is it?</h3>
         {summary?.json ? (
           documentToReactComponents(summary?.json)
@@ -129,7 +120,7 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
       </div>
       <div className="px-4 mb-4 text-sm">
         <div className="bg-yellow-50 rounded box-content p-4">
-          <ul className="font-medium">
+          <ul className="font-medium prose-sm">
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json)
             ) : (
@@ -156,8 +147,8 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
             ))} */}
           </ul>
         </div>
-        <div className="grid grid-cols-2 mt-2">
-          <div className="block">
+        <div className="grid grid-cols-2 gap-4 mt-2">
+          <div className="prose-sm">
             <h3 className="text-lg font-bold">Successes</h3>
             {successes?.json ? (
               documentToReactComponents(successes?.json)
@@ -165,7 +156,7 @@ function ContextNav({ schema, summary, successes, challenges, sandtraps }) {
               <p>TODO: Convert to contentful</p>
             )}
           </div>
-          <div className="block">
+          <div className="prose-sm">
             <h3 className="text-lg font-bold">Challenges</h3>
             {challenges?.json ? (
               documentToReactComponents(challenges?.json)
