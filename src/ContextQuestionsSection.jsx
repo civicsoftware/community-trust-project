@@ -12,13 +12,13 @@ function ContextQuestionsSection({
   description,
   narrow
 }) {
-  const answersForSection = answers.filter(a =>
+  const answersForSection = answers?.filter(a =>
     questions.find(
-      question => question?.questionText === a?.question?.questionText
+      question => question.questionText === a?.question?.questionText
     )
   );
-  const answered = answersForSection.length;
-  const total = questions.length;
+  const answered = answersForSection?.length;
+  const total = questions?.length;
   let completeness = 0;
   if (answered >= 1) {
     completeness = 1;
