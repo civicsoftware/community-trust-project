@@ -45,7 +45,7 @@ function Avatars() {
         <p className="text-4xl mb-12 mt-20 font-semibold justify-self-center">
           Data = people
         </p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-10">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {(!loading && !error) && data.avatarCollection.items.map(({ name, photo }) => (
@@ -53,11 +53,13 @@ function Avatars() {
               className="flex flex-col justify-center"
               onClick={() => toggleCard(name)}
             >
-              <img
-                src={photo?.url}
-                alt={photo?.description}
-                className="h-48 w-72 border-gray-300 border-2 rounded-lg"
-              />
+              <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
+                <img
+                  src={photo?.url}
+                  alt={photo?.description}
+                  className="object-cover h-full"
+                />
+              </div>
               <p className="self-center">{name}</p>
             </div>
           ))}
