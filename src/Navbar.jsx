@@ -8,7 +8,7 @@ function Navbar() {
         <div className="flex justify-between py-1 items-center md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
-              <span className="text-xl">TRUST Project</span>
+              <span className="text-xl">Community TRUST Project</span>
             </a>
           </div>
           <nav className="hidden md:flex space-x-10">
@@ -16,7 +16,21 @@ function Navbar() {
               href="/avatars"
               className="text-base font-medium text-gray-300 hover:text-white"
             >
-              Avatars
+              Compass
+            </a>
+            <a
+              href="/library"
+              className="text-base font-medium text-gray-300 hover:text-white"
+            >
+              Stakeholders
+            </a>
+          </nav>
+          <nav className="hidden md:flex space-x-10">
+            <a
+              href="/avatars"
+              className="text-base font-medium text-gray-300 hover:text-white"
+            >
+              Flower Of Hope
             </a>
             <a
               href="/library"
