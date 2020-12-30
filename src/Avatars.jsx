@@ -49,7 +49,7 @@ function Avatars() {
         </Windmill.Modal>
       )}
       <div className="container m-12 p-12 max-w-5xl mx-auto justify-center grid grid-cols-1">
-      <p className="text-4xl mt-20 font-semibold justify-self-center">
+        <p className="text-4xl mt-20 font-semibold justify-self-center">
           Story-Centered Stakeholders
         </p>
         <p className="text-xl mt-4 mb-12 justify-self-center">

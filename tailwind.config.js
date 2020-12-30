@@ -23,7 +23,7 @@ module.exports = windmill({
       },
       blue: {
         light: "#7096C7",
-        DEFAULT:  "#7096C7",
+        DEFAULT: "#7096C7",
         dark: "#2E66B1"
       },
       teal: {
@@ -39,12 +39,12 @@ module.exports = windmill({
       yellow: {
         light: "#FEE4A1",
         DEFAULT: "#FEE4A1",
-        dark: "#FFD768",
+        dark: "#FFD768"
       },
       red: "#C70000",
       orange: "#F46C0B",
       green: "#008600",
-      cobalt: "#184C8B",
+      cobalt: "#184C8B"
     },
     fontFamily: {
       sans: ['"Rubik", sans-serif'],
@@ -70,33 +70,33 @@ module.exports = windmill({
             },
             h1: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 300, 
-              fontSize: "60px",
+              fontWeight: 300,
+              fontSize: "60px"
             },
             h2: {
               fontFamily: theme("fontFamily.rubik"),
               fontWeight: 700,
-              fontSize: "40px",
+              fontSize: "40px"
             },
             h3: {
               fontFamily: theme("fontFamily.rubik"),
               fontWeight: 900,
-              fontSize: "28px",
+              fontSize: "28px"
             },
             h4: {
               fontFamily: theme("fontFamily.rubik"),
               fontWeight: 900,
-              fontSize: "18px",
+              fontSize: "18px"
             },
             h5: {
               fontFamily: theme("fontFamily.rubik"),
               fontWeight: 700,
-              fontSize: "14px",
+              fontSize: "14px"
             },
             h6: {
               fontFamily: theme("fontFamily.rubik"),
               fontWeight: 700,
-              fontSize: "12px",
+              fontSize: "12px"
             },
             table: {
               fontFamily: theme("fontFamily.roboto")
@@ -105,9 +105,9 @@ module.exports = windmill({
         }
       }),
       zIndex: {
-        '-1': '-1',
-        '-10': '-10',
-      },
+        "-1": "-1",
+        "-10": "-10"
+      }
     }
   },
   variants: {
