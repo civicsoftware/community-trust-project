@@ -33,12 +33,14 @@ function Avatars() {
     setCardShown(!cardShown);
   }
 
-
-
   return (
     <>
       {cardShown && (
-        <Windmill.Modal isOpen={cardShown} onClose={(e) => toggleCard(e, null)} className="">
+        <Windmill.Modal
+          isOpen={cardShown}
+          onClose={e => toggleCard(e, null)}
+          className=""
+        >
           <div className="container -m-7 max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
             <Avatar name={avatarName} />
           </div>
@@ -51,23 +53,25 @@ function Avatars() {
         <div className="grid grid-cols-3 gap-10">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
-          {(!loading && !error) && data.avatarCollection.items.map(({ name, photo }) => (
-            <div
-              className="flex flex-col justify-center"
-              onClick={(e) => toggleCard(e, name)}
-              role="img"
-            >
-              <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
-                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                <img
-                  src={photo?.url}
-                  alt={photo?.description}
-                  className="object-cover h-full"
-                />
+          {!loading &&
+            !error &&
+            data.avatarCollection.items.map(({ name, photo }) => (
+              <div
+                className="flex flex-col justify-center"
+                onClick={e => toggleCard(e, name)}
+                role="img"
+              >
+                <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
+                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                  <img
+                    src={photo?.url}
+                    alt={photo?.description}
+                    className="object-cover h-full"
+                  />
+                </div>
+                <p className="self-center">{name}</p>
               </div>
-              <p className="self-center">{name}</p>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </>

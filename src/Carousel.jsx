@@ -52,22 +52,34 @@ function Carousel({ photos }) {
         <aside className="carousel__navigation">
           <ol className="carousel__navigation-list">
             <li className="carousel__navigation-item">
-              <a href="#carousel__slide1" className="carousel__navigation-button">
+              <a
+                href="#carousel__slide1"
+                className="carousel__navigation-button"
+              >
                 Go to slide 1
               </a>
             </li>
             <li className="carousel__navigation-item">
-              <a href="#carousel__slide2" className="carousel__navigation-button">
+              <a
+                href="#carousel__slide2"
+                className="carousel__navigation-button"
+              >
                 Go to slide 2
               </a>
             </li>
             <li className="carousel__navigation-item">
-              <a href="#carousel__slide3" className="carousel__navigation-button">
+              <a
+                href="#carousel__slide3"
+                className="carousel__navigation-button"
+              >
                 Go to slide 3
               </a>
             </li>
             <li className="carousel__navigation-item">
-              <a href="#carousel__slide4" className="carousel__navigation-button">
+              <a
+                href="#carousel__slide4"
+                className="carousel__navigation-button"
+              >
                 Go to slide 4
               </a>
             </li>
@@ -79,11 +91,13 @@ function Carousel({ photos }) {
 }
 
 Carousel.propTypes = {
-  photos: arrayOf(shape({
-    title: string,
-    description: string,
-    url: string,
-  }))
+  photos: arrayOf(
+    shape({
+      title: string,
+      description: string,
+      url: string
+    })
+  )
 };
 
 export default Carousel;

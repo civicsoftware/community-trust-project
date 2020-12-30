@@ -7,7 +7,9 @@ import Carousel from "./Carousel";
 
 const richTextOptions = {
   renderNode: {
-    [BLOCKS.LIST_ITEM]: (node, children) => <li className="list-disc">{children}</li>
+    [BLOCKS.LIST_ITEM]: (node, children) => (
+      <li className="list-disc">{children}</li>
+    )
   }
 };
 
