@@ -4,6 +4,8 @@ import { gql, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { default as Windmill } from "@windmill/react-ui";
 
+import './imageFilter.css';
+
 import Avatar from "./Avatar";
 
 const AVATARS = gql`
@@ -41,14 +43,17 @@ function Avatars() {
           onClose={e => toggleCard(e, null)}
           className=""
         >
-          <div className="container -m-7 max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
+          <div className="container -m-7 max-w-3xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
             <Avatar name={avatarName} />
           </div>
         </Windmill.Modal>
       )}
-      <div className="container m-12 p-12 max-w-4xl mx-auto justify-center grid grid-cols-1">
-        <p className="text-4xl mb-12 mt-20 font-semibold justify-self-center">
-          Data = people
+      <div className="container m-12 p-12 max-w-5xl mx-auto justify-center grid grid-cols-1">
+        <p className="text-4xl mt-20 font-semibold justify-self-center">
+          Story Centered Stakeholders
+        </p>
+        <p className="text-xl mt-4 mb-12 justify-self-center">
+          Click below to hear their stories.
         </p>
         <div className="grid grid-cols-3 gap-10">
           {loading && <p className="col-span-3">Loading...</p>}
@@ -57,11 +62,11 @@ function Avatars() {
             !error &&
             data.avatarCollection.items.map(({ name, photo }) => (
               <div
-                className="flex flex-col justify-center"
+                className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
                 onClick={e => toggleCard(e, name)}
                 role="img"
               >
-                <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
+                <div className="h-56">
                   {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                   <img
                     src={photo?.url}
@@ -69,7 +74,9 @@ function Avatars() {
                     className="object-cover h-full"
                   />
                 </div>
-                <p className="self-center">{name}</p>
+                <div className="bg-gradient-to-l from-purple-600 to-purple-900 rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                  <p className="font-bold text-white text-center">{name}</p>
+                </div>
               </div>
             ))}
         </div>
