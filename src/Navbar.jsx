@@ -13,13 +13,13 @@ function Navbar() {
           </div>
           <nav className="hidden md:flex space-x-10">
             <a
-              href="/avatars"
+              href="#"
               className="text-base font-medium text-gray-300 hover:text-white"
             >
               Compass
             </a>
             <a
-              href="/library"
+              href="/avatars"
               className="text-base font-medium text-gray-300 hover:text-white"
             >
               Stakeholders
@@ -27,7 +27,7 @@ function Navbar() {
           </nav>
           <nav className="hidden md:flex space-x-10">
             <a
-              href="/avatars"
+              href="#"
               className="text-base font-medium text-gray-300 hover:text-white"
             >
               Flower Of Hope
