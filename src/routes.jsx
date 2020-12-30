@@ -7,6 +7,8 @@ import Avatars from "./Avatars";
 import Context from "./Context";
 import Library from "./Library";
 import Schema from "./Schema";
+import Compass from "./Compass";
+import Flower from "./Flower";
 
 /* *
  * Render a route with potential sub routes
@@ -70,6 +72,18 @@ const ROUTES = [
         key: "AVATARS",
         exact: true,
         component: Avatars
+      },
+      {
+        path: "/compass",
+        key: "COMPASS",
+        exact: true,
+        component: Compass
+      },
+      {
+        path: "/flower",
+        key: "FLOWER",
+        exact: true,
+        component: Flower
       }
     ]
   }

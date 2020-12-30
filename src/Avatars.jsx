@@ -69,6 +69,7 @@ function Avatars() {
                 <div className="h-52">
                   {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                   <img
+                    id="filtered"
                     src={photo?.url}
                     alt={photo?.description}
                     className="object-cover h-full"

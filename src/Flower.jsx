@@ -4,7 +4,7 @@ import { default as Windmill } from "@windmill/react-ui";
 import React, { useState } from "react";
 import "./Compass.css";
 
-function Compass() {
+function Flower() {
   // const [isOpen, setIsOpen] = useState(false);
   const [cardShown, setCardShown] = useState(false);
 
@@ -101,4 +101,4 @@ function Compass() {
   );
 }
 
-export default Compass;
+export default Flower;

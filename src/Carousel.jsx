@@ -8,7 +8,7 @@ function Carousel({ photos }) {
       <section className="carousel" aria-label="Images">
         <ol className="carousel__viewport">
           <li id="carousel__slide1" className="carousel__slide">
-            <img src={photos[0].url} alt={photos[0].description} />
+            <img src={photos[0].url} alt={photos[0].description} id="filtered"/>
             <div className="carousel__snapper">
               <a href="#carousel__slide4" className="carousel__prev">
                 Go to last slide
@@ -19,7 +19,7 @@ function Carousel({ photos }) {
             </div>
           </li>
           <li id="carousel__slide2" className="carousel__slide">
-            <img src={photos[1].url} alt={photos[1].description} />
+            <img src={photos[1].url} alt={photos[1].description} id="filtered"/>
             <div className="carousel__snapper" />
             <a href="#carousel__slide1" className="carousel__prev">
               Go to previous slide
@@ -29,7 +29,7 @@ function Carousel({ photos }) {
             </a>
           </li>
           <li id="carousel__slide3" className="carousel__slide">
-            <img src={photos[2].url} alt={photos[2].description} />
+            <img src={photos[2].url} alt={photos[2].description} id="filtered"/>
             <div className="carousel__snapper" />
             <a href="#carousel__slide2" className="carousel__prev">
               Go to previous slide
@@ -39,7 +39,7 @@ function Carousel({ photos }) {
             </a>
           </li>
           <li id="carousel__slide4" className="carousel__slide">
-            <img src={photos[3].url} alt={photos[3].description} />
+            <img src={photos[3].url} alt={photos[3].description} id="filtered"/>
             <div className="carousel__snapper" />
             <a href="#carousel__slide3" className="carousel__prev">
               Go to previous slide
