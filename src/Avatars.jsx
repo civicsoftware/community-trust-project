@@ -74,7 +74,7 @@ function Avatars() {
                     className="object-cover h-full"
                   />
                 </div>
-                <div className="bg-gradient-to-l from-purple-600 to-purple-900 rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                <div className="bg-gradient-to-l from-teal-light to-teal-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
                   <p className="font-bold text-white text-center">{name}</p>
                 </div>
               </div>
