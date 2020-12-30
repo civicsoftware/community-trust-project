@@ -100,15 +100,15 @@ function Avatar({ name }) {
   return (
     <>
       <div className="grid grid-cols-5 -z-10">
-        <div className="col-span-5 bg-pink-200 p-4 pb-2 rounded-t-lg flex flex-col -z-1">
-          <h2 className="inline-block ml-2 text-xl font-bold">{name}</h2>
+        <div className="col-span-5 bg-gradient-to-l from-teal-light to-teal-dark p-4 pb-2 rounded-t-lg flex flex-col -z-1">
+          <h2 className="inline-block ml-2 text-xl text-white font-bold">{name}</h2>
           <div>
             <div className="inline-block p-1 ml-0.5 -mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="white"
                 className="h-4 w-4 inline-block align-text-bottom"
               >
                 <path
@@ -119,13 +119,13 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs">{organization}</h3>
+            <h3 className="inline text-xs text-white">{organization}</h3>
             <div className="inline-block p-1 ml-2 -mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="white"
                 className="h-4 w-4 inline-block align-text-bottom"
               >
                 <path
@@ -136,13 +136,13 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs">{role}</h3>
+            <h3 className="inline text-xs text-white">{role}</h3>
             <div className="inline-block ml-2 p-1 -mb-2 -mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="white"
                 className="h-4 w-4 inline-block align-text-bottom"
               >
                 <path
@@ -159,7 +159,7 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs">{location}</h3>
+            <h3 className="inline text-xs text-white">{location}</h3>
           </div>
         </div>
         <div className="col-span-3 bg-white">
@@ -175,7 +175,7 @@ function Avatar({ name }) {
           <p className="">{documentToReactComponents(bio.json)}</p>
         </div>
         <div className="col-span-5 px-6 pb-10 pt-3 text-sm bg-white">
-          <p className="bg-yellow-50 w-full rounded-lg box-content py-4 mt-2 pl-4 mb-4 text-m">
+          <p className="bg-yellow-light w-full rounded-lg box-content py-4 mt-2 pl-4 mb-4 text-m">
             <quote>{quote}</quote>
           </p>
           <div className="pb-4">

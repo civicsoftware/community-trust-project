@@ -47,14 +47,15 @@ module.exports = windmill({
       cobalt: "#184C8B",
     },
     fontFamily: {
-      sans: ['"Roboto Condensed", sans-serif'],
+      sans: ['"Rubik", sans-serif'],
       serif: ['"Merriweather", serif'],
       mono: ['"Roboto Mono", mono'],
-      rubik: ['"Rubik", sans-serif']
+      rubik: ['"Rubik", sans-serif'],
+      roboto: ['"Roboto", sans-serif']
     },
     extend: {
       typography: theme => ({
-        sm: { css: { fontFamily: theme("fontFamily.sans") } },
+        sm: { css: { fontFamily: theme("fontFamily.roboto") } },
         DEFAULT: {
           css: {
             color: theme("colors.black"),
@@ -98,7 +99,7 @@ module.exports = windmill({
               fontSize: "12px",
             },
             table: {
-              fontFamily: theme("fontFamily.sans")
+              fontFamily: theme("fontFamily.roboto")
             }
           }
         }
