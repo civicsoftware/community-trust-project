@@ -174,7 +174,7 @@ function Avatar({ name }) {
           <h3 className="text-lg font-bold">Bio</h3>
           <p className="">{documentToReactComponents(bio.json)}</p>
         </div>
-        <div className="col-span-5 px-6 pb-10 text-sm bg-white">
+        <div className="col-span-5 px-6 pb-10 pt-3 text-sm bg-white">
           <p className="bg-yellow-50 w-full rounded-lg box-content py-4 mt-2 pl-4 mb-4 text-m">
             <quote>{quote}</quote>
           </p>

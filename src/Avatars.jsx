@@ -4,7 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { default as Windmill } from "@windmill/react-ui";
 
-import './imageFilter.css';
+import "./imageFilter.css";
 
 import Avatar from "./Avatar";
 
@@ -43,14 +43,14 @@ function Avatars() {
           onClose={e => toggleCard(e, null)}
           className=""
         >
-          <div className="container -m-7 max-w-3xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
+          <div className="container -m-7 max-w-5xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
             <Avatar name={avatarName} />
           </div>
         </Windmill.Modal>
       )}
       <div className="container m-12 p-12 max-w-5xl mx-auto justify-center grid grid-cols-1">
         <p className="text-4xl mt-20 font-semibold justify-self-center">
-          Story Centered Stakeholders
+          Story-Centered Stakeholders
         </p>
         <p className="text-xl mt-4 mb-12 justify-self-center">
           Click below to hear their stories.
@@ -66,7 +66,7 @@ function Avatars() {
                 onClick={e => toggleCard(e, name)}
                 role="img"
               >
-                <div className="h-56">
+                <div className="h-52">
                   {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                   <img
                     src={photo?.url}
