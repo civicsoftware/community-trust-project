@@ -121,7 +121,7 @@ li {
   .carousel__snapper {
     animation-name: tonext, snap;
     animation-timing-function: ease;
-    animation-duration: 6s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
   }
 

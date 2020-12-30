@@ -4,7 +4,12 @@ module.exports = windmill({
   purge: ["./src/**/*.jsx"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      zIndex: {
+        '-1': '-1',
+        '-10': '-10',
+      },
+    }
   },
   variants: {
     extend: {}

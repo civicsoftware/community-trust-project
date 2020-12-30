@@ -25,7 +25,8 @@ function Avatars() {
   const [cardShown, setCardShown] = useState(false);
   const [avatarName, setAvatarName] = useState(null);
 
-  function toggleCard(name) {
+  function toggleCard(e, name) {
+    e.stopPropagation();
     setAvatarName(name);
     setCardShown(!cardShown);
   }
@@ -35,13 +36,13 @@ function Avatars() {
   return (
     <>
       {cardShown && (
-        <Windmill.Backdrop onClick={toggleCard} className="z-0">
-          <div className="container m-20 bg-white max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
+        <Windmill.Modal isOpen={cardShown} onClose={(e) => toggleCard(e, null)} className="">
+          <div className="container -m-7 max-w-4xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
             <Avatar name={avatarName} />
           </div>
-        </Windmill.Backdrop>
+        </Windmill.Modal>
       )}
-      <div className="container m-12 p-12 max-w-4xl mx-auto justify-center grid grid-cols-1 ">
+      <div className="container m-12 p-12 max-w-4xl mx-auto justify-center grid grid-cols-1">
         <p className="text-4xl mb-12 mt-20 font-semibold justify-self-center">
           Data = people
         </p>
@@ -51,7 +52,7 @@ function Avatars() {
           {(!loading && !error) && data.avatarCollection.items.map(({ name, photo }) => (
             <div
               className="flex flex-col justify-center"
-              onClick={() => toggleCard(name)}
+              onClick={(e) => toggleCard(e, name)}
             >
               <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
                 <img

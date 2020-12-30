@@ -97,8 +97,8 @@ function Avatar({ name }) {
 
   return (
     <>
-      <div className="grid grid-cols-5">
-        <div className="col-span-5 bg-pink-200 p-4 pb-2 rounded-t-lg flex flex-col">
+      <div className="grid grid-cols-5 -z-10">
+        <div className="col-span-5 bg-pink-200 p-4 pb-2 rounded-t-lg flex flex-col -z-1">
           <h2 className="inline-block ml-2 text-xl font-bold">{name}</h2>
           <div>
             <div className="inline-block p-1 ml-0.5 -mt-2">
@@ -160,7 +160,7 @@ function Avatar({ name }) {
             <h3 className="inline text-xs">{location}</h3>
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 bg-white">
           <Carousel photos={[photo, photo2, photo3, photo4]} />
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <audio controls className="px-10 w-full">
@@ -168,12 +168,12 @@ function Avatar({ name }) {
             Your browser does not support the audio element.
           </audio>
         </div>
-        <div className="col-span-2 pr-10 pt-4 pb-2 mb-4 text-sm h-80">
+        <div className="col-span-2 pr-10 pt-4 text-sm bg-white">
           <h3 className="text-lg font-bold">Bio</h3>
           <p className="">{documentToReactComponents(bio.json)}</p>
         </div>
-        <div className="col-span-5 px-6 mb-10 text-sm">
-          <p className="bg-yellow-50 w-full rounded-lg box-content py-4 pl-4 mb-4 text-m">
+        <div className="col-span-5 px-6 pb-10 text-sm bg-white">
+          <p className="bg-yellow-50 w-full rounded-lg box-content py-4 mt-2 pl-4 mb-4 text-m">
             <quote>{quote}</quote>
           </p>
           <div className="pb-4">
