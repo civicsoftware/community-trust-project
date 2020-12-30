@@ -116,7 +116,11 @@ function ContextQuestion({
         {text}
       </span>
       {(showYesNo || answer) && (
-        <Collapsable description="question detail" hideText hiddenClassName="ml-12">
+        <Collapsable
+          description="question detail"
+          hideText
+          hiddenClassName="ml-12"
+        >
           <Collapsable.Section hidden>
             <div className="prose prose-sm mt-4 mb-4 ml-4">
               <p>

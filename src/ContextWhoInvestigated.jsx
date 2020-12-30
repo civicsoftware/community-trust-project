@@ -8,8 +8,10 @@ const COMPLETENESS_TEXT = {
 };
 
 // TODO: Don't dynamically generate class names so purge works properly
+// eslint-disable-next-line no-unused-vars
 const gray =
   "from-gray-100 to-gray-400 from-gray-400 to-gray-700 from-gray-700 to-gray-900";
+// eslint-disable-next-line no-unused-vars
 const purple =
   "from-purple-100 to-purple-400 from-purple-400 to-purple-700 from-purple-700 to-purple-900";
 

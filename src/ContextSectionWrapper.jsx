@@ -25,7 +25,9 @@ function DefaultIcon() {
 }
 
 // TODO: Don't dynamically generate class names so purge works properly
+// eslint-disable-next-line no-unused-vars
 const gray = "border-gray-200, bg-gray-200 bg-gray-100 border-gray-900";
+// eslint-disable-next-line no-unused-vars
 const purple =
   "border-purple-200, bg-purple-200 bg-purple-100 border-purple-900";
 
