@@ -3,6 +3,7 @@ import { default as Windmill } from "@windmill/react-ui";
 
 import ROUTES, { RenderRoutes } from "./routes";
 import Navbar from "./Navbar";
+import "./fonts.css";
 
 function App() {
   return (

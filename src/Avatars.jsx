@@ -49,12 +49,12 @@ function Avatars() {
         </Windmill.Modal>
       )}
       <div className="container m-12 p-12 max-w-5xl mx-auto justify-center grid grid-cols-1">
-        <p className="text-4xl mt-20 font-semibold justify-self-center">
+        <h3 className="mt-20 justify-self-center">
           Story-Centered Stakeholders
-        </p>
-        <p className="text-xl mt-4 mb-12 justify-self-center">
+        </h3>
+        <h1 className="justify-self-center">
           Click below to hear their stories.
-        </p>
+        </h1>
         <div className="grid grid-cols-3 gap-10">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
@@ -74,7 +74,7 @@ function Avatars() {
                     className="object-cover h-full"
                   />
                 </div>
-                <div className="bg-gradient-to-l from-purple-600 to-purple-900 rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                <div className="bg-gradient-to-l from-purple-light to-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
                   <p className="font-bold text-white text-center">{name}</p>
                 </div>
               </div>
