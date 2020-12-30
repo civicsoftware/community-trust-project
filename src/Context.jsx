@@ -4,8 +4,8 @@ import { gql, useQuery } from "@apollo/client";
 import EarlyPrototype from "./ContextComponents/EarlyPrototype";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionSummary from "./ContextSectionSummary";
-// import ContextSectionMaintenance from "./ContextSectionMaintenance";
-// import ContextSectionRawData from "./ContextSectionRawData";
+import ContextSectionMaintenance from "./ContextSectionMaintenance";
+import ContextSectionRawData from "./ContextSectionRawData";
 // import ContextSectionDataProcess from "./ContextSectionDataProcess";
 import ContextSectionResources from "./ContextSectionResources";
 import ContextSectionAttribution from "./ContextSectionAttribution";
@@ -93,11 +93,11 @@ function Context({ datasetId }) {
           sandtraps={sandtraps}
           logo={logo}
         />
-        {/* <div className="grid grid-cols-2">
-          <ContextSectionMaintenance schema={schema} />
+        <div className="md:grid md:grid-cols-2">
           <ContextSectionRawData schema={schema} />
+          <ContextSectionMaintenance schema={schema} />
         </div>
-        <ContextSectionDataProcess schema={schema} /> */}
+        {/* <ContextSectionDataProcess schema={schema} /> */}
         {/* Lineage */}
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
@@ -109,7 +109,7 @@ function Context({ datasetId }) {
           dataset={datasetId}
         />
         {/* Access */}
-        <div className="grid grid-cols-2">
+        <div className="md:grid md:grid-cols-2">
           <ContextSection
             questionGroup="c7cq4mb35M6zr7LAgjINd"
             dataset={datasetId}
@@ -123,7 +123,7 @@ function Context({ datasetId }) {
           />
         </div>
         {/* Community Context */}
-        <div className="grid grid-cols-2">
+        <div className="md:grid md:grid-cols-2">
           <ContextSection
             questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
             dataset={datasetId}
@@ -136,7 +136,7 @@ function Context({ datasetId }) {
             narrow
           />
         </div>
-        <div className="grid grid-cols-2">
+        <div className="md:grid md:grid-cols-2">
           <ContextSectionResources schema={schema} />
           <ContextSectionAttribution schema={schema} />
         </div>

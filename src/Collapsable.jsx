@@ -49,7 +49,7 @@ export default function Collapsable({
           {!hideText && cta}
           <span className="hidden">{description}</span>
 
-          {arrow === "up" && answered && (
+          {hideText && arrow === "up" && answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -63,7 +63,7 @@ export default function Collapsable({
               />
             </svg>
           )}
-          {arrow === "down" && answered && (
+          {hideText && arrow === "down" && answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -77,7 +77,7 @@ export default function Collapsable({
               />
             </svg>
           )}
-          {arrow === "up" && !answered && (
+          {hideText && arrow === "up" && !answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -93,7 +93,7 @@ export default function Collapsable({
               />
             </svg>
           )}
-          {arrow === "down" && !answered && (
+          {hideText && arrow === "down" && !answered && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -111,13 +111,8 @@ export default function Collapsable({
           )}
         </button>
       )}
-      <div
-        className={`outline-none ${hiddenClassName}`}
-        role="group"
-        tabIndex="-1"
-        ref={hiddenRef}
-      >
-        {expanded && hiddenChildren}
+      <div className="outline-none" role="group" tabIndex="-1" ref={hiddenRef}>
+        {expanded && <div className={hiddenClassName}>{hiddenChildren}</div>}
       </div>
     </>
   );

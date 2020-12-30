@@ -1,8 +1,8 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
+import CollapsableFixedHeight from "./CollapsableFixedHeight";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
-import ContextWhoInvestigated from "./ContextWhoInvestigated";
 
 function ContextSectionSummary({
   schema,
@@ -125,12 +125,14 @@ function ContextSectionSummary({
         </div>
       </div>
       <div className="p-4 prose-md">
-        <h3 className="text-xl font-bold">Dataset Description</h3>
-        {summary?.json ? (
-          documentToReactComponents(summary?.json)
-        ) : (
-          <p>TODO: convert summary to Contentful</p>
-        )}
+        <CollapsableFixedHeight>
+          <h3 className="text-xl font-bold">Dataset Description</h3>
+          {summary?.json ? (
+            documentToReactComponents(summary?.json)
+          ) : (
+            <p>TODO: convert summary to Contentful</p>
+          )}
+        </CollapsableFixedHeight>
       </div>
       <div className="px-4 mb-4 text-sm">
         <div className="bg-yellow-50 rounded box-content p-4">
@@ -161,24 +163,26 @@ function ContextSectionSummary({
             ))} */}
           </ul>
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-2">
-          <div className="prose-sm">
-            <h3 className="text-lg font-bold">Successes</h3>
-            {successes?.json ? (
-              documentToReactComponents(successes?.json)
-            ) : (
-              <p>TODO: Convert to contentful</p>
-            )}
+        <CollapsableFixedHeight>
+          <div className="grid grid-cols-2 gap-4 mt-2">
+            <div className="prose-sm">
+              <h3 className="text-lg font-bold">Successes</h3>
+              {successes?.json ? (
+                documentToReactComponents(successes?.json)
+              ) : (
+                <p>TODO: Convert to contentful</p>
+              )}
+            </div>
+            <div className="prose-sm">
+              <h3 className="text-lg font-bold">Challenges</h3>
+              {challenges?.json ? (
+                documentToReactComponents(challenges?.json)
+              ) : (
+                <p>TODO: Convert to contentful</p>
+              )}
+            </div>
           </div>
-          <div className="prose-sm">
-            <h3 className="text-lg font-bold">Challenges</h3>
-            {challenges?.json ? (
-              documentToReactComponents(challenges?.json)
-            ) : (
-              <p>TODO: Convert to contentful</p>
-            )}
-          </div>
-        </div>
+        </CollapsableFixedHeight>
         {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
               <h3 className="text-lg font-bold">Missing information</h3>
               <ul>
@@ -228,15 +232,9 @@ function ContextSectionSummary({
           ))}
         </dl>
       </div>
-      <div className="grid grid-cols-2 bg-purple-900 text-white">
+      {/* <div className="grid grid-cols-2 bg-purple-900 text-white">
         <div className="p-4 text-xs">
           <h3 className="text-lg font-bold tracking-wide">Data Details</h3>
-          {/* TODO Dynamic indicator */}
-          <ContextWhoInvestigated
-            className="-ml-0 mb-4"
-            color="purple"
-            completeness="1"
-          />
           <div className=" font-bold">{schema?.rawData?.rawTitle}</div>
           <div className="">
             <span className="font-semibold">Date Range: </span>
@@ -260,12 +258,6 @@ function ContextSectionSummary({
         </div>
         <div className="p-4 text-xs">
           <h3 className="text-lg font-bold tracking-wide">Maintenance</h3>
-          {/* TODO Dynamic indicator */}
-          <ContextWhoInvestigated
-            className="-ml-0 mb-4"
-            color="purple"
-            completeness="1"
-          />
           <div className="font-bold">
             {schema?.officialMaintenance?.officialMaintainer}
           </div>
@@ -285,7 +277,7 @@ function ContextSectionSummary({
             {schema?.officialMaintenance?.typicalUpdates}
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="grid grid-cols-2 bg-purple-50 rounded box-content p-4 text-sm">
         <div className="">
           <span className="font-semibold">Included in : </span>

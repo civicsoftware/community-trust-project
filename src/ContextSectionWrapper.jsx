@@ -1,5 +1,5 @@
 import React from "react";
-import { bool, node, oneOf, shape, string } from "prop-types";
+import { bool, node, number, oneOf, shape, string } from "prop-types";
 import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
@@ -35,19 +35,22 @@ const purple =
 function ContextSectionWrapper({
   title,
   completeness,
+  answered,
+  total,
   cta,
   children,
   color,
   description,
   Icon,
-  narrow
+  narrow,
+  expandable
 }) {
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
         className={`relative m-4 rounded-lg border-2 shadow-xl border-${color}-200 bg-${color}-200`}
       >
-        <div className="relative px-4 py-2 rounded-t-lg">
+        <div className="px-4 py-2 rounded-t-lg">
           <div
             className={`inline-block p-1 border-2 rounded-full bg-${color}-100 border-${color}-900 `}
           >
@@ -56,21 +59,31 @@ function ContextSectionWrapper({
           <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize">
             {title}
           </h2>
-          <ContextWhoInvestigated completeness={completeness} color={color} />
+          <ContextWhoInvestigated
+            completeness={completeness}
+            answered={answered}
+            total={total}
+            color={color}
+          />
         </div>
-        <div className={`py-2 px-4 w-full bg-${color}-200`}>
-          {documentToReactComponents(description?.json)}
+        <div className={`bg-white ${description ? "py-4" : ""}`}>
+          <div className="px-4 w-full">
+            {documentToReactComponents(description?.json)}
+          </div>
+          {expandable && (
+            <Collapsable
+              description="section detail"
+              hideText
+              iconClassName="h-6 w-6"
+              buttonClassName="absolute right-4 top-4"
+            >
+              <Collapsable.Section hidden> {children}</Collapsable.Section>
+            </Collapsable>
+          )}
+          {!expandable && children}
         </div>
-        <Collapsable
-          description="section detail"
-          hideText
-          iconClassName="h-6 w-6"
-          buttonClassName="absolute right-4 top-4"
-        >
-          <Collapsable.Section hidden> {children}</Collapsable.Section>
-        </Collapsable>
         {cta && (
-          <ContextSectionCTAFooter className={`${color}-200`} narrow={narrow} />
+          <ContextSectionCTAFooter className={`${color}-300`} narrow={narrow} />
         )}
       </div>
     </section>
@@ -80,6 +93,8 @@ function ContextSectionWrapper({
 ContextSectionWrapper.propTypes = {
   title: string,
   completeness: oneOf([1, 2, 3]),
+  answered: number,
+  total: number,
   cta: bool,
   children: node,
   color: string,
@@ -89,7 +104,8 @@ ContextSectionWrapper.propTypes = {
     })
   }),
   narrow: bool,
-  Icon: node
+  Icon: node,
+  expandable: bool
 };
 
 ContextSectionWrapper.defaultProps = {

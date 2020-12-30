@@ -1,6 +1,6 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
-import ContextSectionWrapper from "./ContextSectionWrapper";
+import ContextSummarySectionWrapper from "./ContextSummarySectionWrapper";
 
 function TableIcon() {
   return (
@@ -22,33 +22,44 @@ function TableIcon() {
 }
 
 function ContextSectionRawData({ schema }) {
-  let completeness = 0;
-  const entries = [
-    schema?.rawData?.rawTitle,
-    schema?.rawData?.rawStableURI,
-    schema?.rawData?.dateRangeStart,
-    schema?.rawData?.dataRangeEnd,
-    schema?.rawData?.lang,
-    schema?.rawData?.notes
-  ];
-  if (entries.filter(x => x).length >= 0) {
-    completeness = 1;
-  }
-  if (entries.filter(x => x).length === entries.length) {
-    completeness = 2;
-  }
+  // let completeness = 0;
+  // const entries = [
+  //   schema?.rawData?.rawTitle,
+  //   schema?.rawData?.rawStableURI,
+  //   schema?.rawData?.dateRangeStart,
+  //   schema?.rawData?.dataRangeEnd,
+  //   schema?.rawData?.lang,
+  //   schema?.rawData?.notes
+  // ];
+  // if (entries.filter(x => x).length >= 0) {
+  //   completeness = 1;
+  // }
+  // if (entries.filter(x => x).length === entries.length) {
+  //   completeness = 2;
+  // }
 
   return (
-    <ContextSectionWrapper
-      title="Raw Data"
+    <ContextSummarySectionWrapper
+      title="Data Details"
       Icon={TableIcon}
       color="gray"
-      completeness={completeness}
-      cta
+      narrow
     >
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
           {schema?.rawData?.rawTitle}
+        </div>
+        <div className="text-sm">
+          <span className="font-semibold">Date Range: </span>
+          {schema?.rawData?.dateRangeStart} - {schema?.rawData?.dataRangeEnd}
+        </div>
+        <div className="text-sm">
+          <span className="font-semibold">Data Type: </span>
+          {schema?.dataType || "English"}
+        </div>
+        <div className="text-sm">
+          <span className="font-semibold">Language: </span>
+          {schema?.rawData?.lang || "English"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">URI: </span>
@@ -56,17 +67,9 @@ function ContextSectionRawData({ schema }) {
             {schema?.rawData?.rawStableURI}
           </a>
         </div>
-        <div className="text-sm">
-          <span className="font-semibold">Date Range: </span>
-          {schema?.rawData?.dateRangeStart} - {schema?.rawData?.dataRangeEnd}
-        </div>
-        <div className="text-sm">
-          <span className="font-semibold">Language: </span>
-          {schema?.rawData?.lang}
-        </div>
         <div className="mt-4 text-sm">{schema?.rawData?.notes}</div>
       </div>
-    </ContextSectionWrapper>
+    </ContextSummarySectionWrapper>
   );
 }
 

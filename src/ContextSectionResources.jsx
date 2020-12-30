@@ -22,26 +22,26 @@ function BookIcon() {
 }
 
 function ContextSectionResources({ schema }) {
-  let completeness = 0;
-  const entries = [
-    schema?.referenceDocumentation,
-    schema?.other?.serviceProviders
-  ];
-  if (entries.filter(x => x).length >= 0) {
-    completeness = 1;
-  }
-  if (entries.filter(x => x).length === entries.length) {
-    completeness = 2;
-  }
+  // let completeness = 0;
+  // const entries = [
+  //   schema?.referenceDocumentation,
+  //   schema?.other?.serviceProviders
+  // ];
+  // if (entries.filter(x => x).length >= 0) {
+  //   completeness = 1;
+  // }
+  // if (entries.filter(x => x).length === entries.length) {
+  //   completeness = 2;
+  // }
 
   return (
     <ContextSectionWrapper
       title="Resources"
       Icon={BookIcon}
       color="gray"
-      completeness={completeness}
       cta
       narrow
+      expandable
     >
       <div className="mt-4 p-4 text-sm">
         <h3 className="text-lg font-bold">Resources</h3>
