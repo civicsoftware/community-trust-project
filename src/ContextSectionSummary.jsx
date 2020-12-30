@@ -125,14 +125,12 @@ function ContextSectionSummary({
         </div>
       </div>
       <div className="p-4 prose-md">
-        <CollapsableFixedHeight>
-          <h3 className="text-xl font-bold">Dataset Description</h3>
-          {summary?.json ? (
-            documentToReactComponents(summary?.json)
-          ) : (
-            <p>TODO: convert summary to Contentful</p>
-          )}
-        </CollapsableFixedHeight>
+        <h3 className="text-xl font-bold">Dataset Description</h3>
+        {summary?.json ? (
+          documentToReactComponents(summary?.json)
+        ) : (
+          <p>TODO: convert summary to Contentful</p>
+        )}
       </div>
       <div className="px-4 mb-4 text-sm">
         <div className="bg-yellow-50 rounded box-content p-4">
