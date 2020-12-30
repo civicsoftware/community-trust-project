@@ -13,6 +13,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.6",
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@contentful/rich-text-types": "^14.1.2",
     "@windmill/react-ui": "^0.5.0",
     "autoprefixer": "^10.0.4",
     "graphql": "^15.4.0",

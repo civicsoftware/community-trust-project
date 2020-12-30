@@ -1,5 +1,5 @@
 import React from "react";
-import { array } from "prop-types";
+import { arrayOf, shape, string } from "prop-types";
 import "./Carousel.css";
 
 function Carousel({ photos }) {
@@ -79,7 +79,11 @@ function Carousel({ photos }) {
 }
 
 Carousel.propTypes = {
-  photos: array.isRequired
+  photos: arrayOf(shape({
+    title: string,
+    description: string,
+    url: string,
+  }))
 };
 
 export default Carousel;

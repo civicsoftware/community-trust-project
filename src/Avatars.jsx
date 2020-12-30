@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { gql, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { default as Windmill } from "@windmill/react-ui";
@@ -53,8 +55,10 @@ function Avatars() {
             <div
               className="flex flex-col justify-center"
               onClick={(e) => toggleCard(e, name)}
+              role="img"
             >
               <div className="h-48 w-64 border-gray-300 border-2 rounded-lg">
+                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                 <img
                   src={photo?.url}
                   alt={photo?.description}
