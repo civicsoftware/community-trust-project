@@ -1,10 +1,16 @@
 import React from "react";
-import { arrayOf, string, shape } from "prop-types";
+import { arrayOf, string, shape, bool } from "prop-types";
 import ContextQuestion from "./ContextQuestion";
 import { answerPropTypes, questionPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionWrapper from "./ContextSectionWrapper";
 
-function ContextQuestionsSection({ title, questions, answers, description }) {
+function ContextQuestionsSection({
+  title,
+  questions,
+  answers,
+  description,
+  narrow
+}) {
   const answersForSection = answers.filter(a =>
     questions.find(
       question => question?.questionText === a?.question?.questionText
@@ -25,6 +31,7 @@ function ContextQuestionsSection({ title, questions, answers, description }) {
       title={title}
       completeness={completeness}
       description={description}
+      narrow={narrow}
       cta
     >
       {questions && questions.length > 0 && (
@@ -61,7 +68,8 @@ ContextQuestionsSection.propTypes = {
     json: shape({
       /* contentful rich text json */
     })
-  })
+  }),
+  narrow: bool
 };
 
 export default ContextQuestionsSection;

@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { string } from "prop-types";
+import { bool, string } from "prop-types";
 import React from "react";
 import ContextQuestionsSection from "./ContextQuestionsSection";
 
@@ -39,7 +39,7 @@ const SECTION = gql`
   }
 `;
 
-function ContextSection({ questionGroup, dataset }) {
+function ContextSection({ questionGroup, dataset, narrow }) {
   const { loading, error, data } = useQuery(SECTION, {
     variables: { questionGroup, dataset }
   });
@@ -57,13 +57,15 @@ function ContextSection({ questionGroup, dataset }) {
       questions={questions}
       answers={answers}
       description={data?.questionGroup?.attribution}
+      narrow={narrow}
     />
   );
 }
 
 ContextSection.propTypes = {
   questionGroup: string.isRequired,
-  dataset: string.isRequired
+  dataset: string.isRequired,
+  narrow: bool
 };
 
 export default ContextSection;

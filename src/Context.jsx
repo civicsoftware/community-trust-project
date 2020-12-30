@@ -109,27 +109,37 @@ function Context({ datasetId }) {
           dataset={datasetId}
         />
         {/* Access */}
-        <ContextSection
-          questionGroup="c7cq4mb35M6zr7LAgjINd"
-          dataset={datasetId}
-        />
-        {/* Ethical Governance */}
-        <ContextSection
-          questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
-          dataset={datasetId}
-        />
+        <div className="grid grid-cols-2">
+          <ContextSection
+            questionGroup="c7cq4mb35M6zr7LAgjINd"
+            dataset={datasetId}
+            narrow
+          />
+          {/* Ethical Governance */}
+          <ContextSection
+            questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
+            dataset={datasetId}
+            narrow
+          />
+        </div>
         {/* Community Context */}
-        <ContextSection
-          questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
-          dataset={datasetId}
-        />
-        {/* Historic Context */}
-        <ContextSection
-          questionGroup="2khypcmlN6CBCnl8NS9our"
-          dataset={datasetId}
-        />
-        <ContextSectionResources schema={schema} />
-        <ContextSectionAttribution schema={schema} />
+        <div className="grid grid-cols-2">
+          <ContextSection
+            questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
+            dataset={datasetId}
+            narrow
+          />
+          {/* Historic Context */}
+          <ContextSection
+            questionGroup="2khypcmlN6CBCnl8NS9our"
+            dataset={datasetId}
+            narrow
+          />
+        </div>
+        <div className="grid grid-cols-2">
+          <ContextSectionResources schema={schema} />
+          <ContextSectionAttribution schema={schema} />
+        </div>
       </div>
     </>
   );

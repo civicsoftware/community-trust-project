@@ -44,6 +44,7 @@ function ContextSectionAttribution({ schema }) {
       color="gray"
       completeness={completeness}
       cta
+      narrow
     >
       <div className="mt-4 p-4 text-sm">
         <div className="text-sm">

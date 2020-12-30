@@ -4,6 +4,7 @@ import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
 import Collapsable from "./Collapsable";
+import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
 
 function DefaultIcon() {
   return (
@@ -38,14 +39,15 @@ function ContextSectionWrapper({
   children,
   color,
   description,
-  Icon
+  Icon,
+  narrow
 }) {
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-2 shadow-xl border-${color}-200`}
+        className={`relative m-4 rounded-lg border-2 shadow-xl border-${color}-200 bg-${color}-200`}
       >
-        <div className={`relative p-4 rounded-t-lg  bg-${color}-200`}>
+        <div className="relative px-4 py-2 rounded-t-lg">
           <div
             className={`inline-block p-1 border-2 rounded-full bg-${color}-100 border-${color}-900 `}
           >
@@ -54,27 +56,22 @@ function ContextSectionWrapper({
           <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize">
             {title}
           </h2>
-          {cta && (
-            <div className="absolute inline-block h-full right-4 top-0 items-center">
-              <button className="inline-block h-full" type="button">
-                <p className="text-md font-semibold capitalize">Contribute</p>
-                <p className="text-sm capitalize">Call To Action</p>
-              </button>
-            </div>
-          )}
           <ContextWhoInvestigated completeness={completeness} color={color} />
         </div>
-        <div className={`p-4 w-full bg-${color}-200`}>
+        <div className={`py-2 px-4 w-full bg-${color}-200`}>
           {documentToReactComponents(description?.json)}
         </div>
         <Collapsable
           description="section detail"
           hideText
           iconClassName="h-6 w-6"
-          buttonClassName="absolute right-2 bottom-2"
+          buttonClassName="absolute right-4 top-4"
         >
           <Collapsable.Section hidden> {children}</Collapsable.Section>
         </Collapsable>
+        {cta && (
+          <ContextSectionCTAFooter className={`${color}-200`} narrow={narrow} />
+        )}
       </div>
     </section>
   );
@@ -91,6 +88,7 @@ ContextSectionWrapper.propTypes = {
       /* contentful rich text json */
     })
   }),
+  narrow: bool,
   Icon: node
 };
 

@@ -41,6 +41,7 @@ function ContextSectionResources({ schema }) {
       color="gray"
       completeness={completeness}
       cta
+      narrow
     >
       <div className="mt-4 p-4 text-sm">
         <h3 className="text-lg font-bold">Resources</h3>
