@@ -52,7 +52,8 @@ module.exports = windmill({
       serif: ['"Merriweather", serif'],
       mono: ['"Roboto Mono", mono'],
       rubik: ['"Rubik", sans-serif'],
-      roboto: ['"Roboto", sans-serif']
+      roboto: ['"Roboto", sans-serif'],
+      delius: ['"Delius", fantasy']
     },
     extend: {
       typography: theme => ({

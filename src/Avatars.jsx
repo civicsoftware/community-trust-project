@@ -30,7 +30,6 @@ function Avatars() {
   const [avatarName, setAvatarName] = useState(null);
 
   function toggleCard(e, name) {
-    e.stopPropagation();
     setAvatarName(name);
     setCardShown(!cardShown);
   }
@@ -41,11 +40,9 @@ function Avatars() {
         <Windmill.Modal
           isOpen={cardShown}
           onClose={e => toggleCard(e, null)}
-          className=""
+          className="max-w-screen-lg h-3/4 overflow-y-scroll bg-purple-dark border-gray-300 border-2 rounded-lg shadow-xl"
         >
-          <div className="container -m-7 max-w-5xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
-            <Avatar name={avatarName} />
-          </div>
+          <Avatar name={avatarName} />
         </Windmill.Modal>
       )}
 

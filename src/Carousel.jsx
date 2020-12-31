@@ -8,11 +8,7 @@ function Carousel({ photos }) {
       <section className="carousel" aria-label="Images">
         <ol className="carousel__viewport">
           <li id="carousel__slide1" className="carousel__slide">
-            <img
-              src={photos[0].url}
-              alt={photos[0].description}
-              id="filtered"
-            />
+            <img src={photos[0].url} alt={photos[0].description} />
             <div className="carousel__snapper">
               <a href="#carousel__slide4" className="carousel__prev">
                 Go to last slide
