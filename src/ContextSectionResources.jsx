@@ -51,7 +51,7 @@ function ContextSectionResources({ schema }) {
     <ContextSectionWrapper
       title="Resources"
       Icon={BookIcon}
-      color="gray"
+      color="purple"
       callToAction={callToAction}
       narrow
       expandable

@@ -68,7 +68,7 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-purple-900 border-8 rounded-lg shadow-xl scroll-mt-16"
+      className="relative m-4 border-purple-900 border-4 rounded-lg shadow-xl scroll-mt-16"
     >
       <div className="p-4 bg-purple-900 text-gray-100">
         <div className="grid grid-cols-12">
@@ -330,7 +330,7 @@ function ContextSectionSummary({
       </div>
       <ContextSectionCTAFooter
         callToAction={callToAction}
-        className="purple-900"
+        color="purple"
         narrow
       />
     </section>

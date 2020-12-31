@@ -51,7 +51,7 @@ function ContextSectionAttribution({ schema }) {
     <ContextSectionWrapper
       title="Attribution"
       Icon={BookmarkIcon}
-      color="gray"
+      color="purple"
       callToAction={callToAction}
       narrow
       expandable

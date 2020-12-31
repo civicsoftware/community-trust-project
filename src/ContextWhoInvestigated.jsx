@@ -55,7 +55,7 @@ function ContextWhoInvestigated({
             completeness >= 4 ? `bg-${color}-900` : ""
           }`}
         />
-        <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic">
+        <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic text-white">
           {COMPLETENESS_TEXT?.[completeness] ||
             `${answered}/${total} answered fields`}
           {sources}
