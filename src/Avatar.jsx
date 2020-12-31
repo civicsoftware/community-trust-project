@@ -245,7 +245,7 @@ function Avatar({ name }) {
         </div>
         <div className="col-span-4 pb-4">
           <h3 className="text-lg font-bold pb-2">Actions</h3>
-          {console.log(videoConversationsCollection)}
+          {/* {console.log(videoConversationsCollection)} */}
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <video className="w-full pr-10" controls>
             <source src={videoFile} type="video/mp4" />
