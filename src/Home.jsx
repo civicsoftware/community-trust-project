@@ -68,7 +68,7 @@ function Home() {
               <img
                 src={CivicLogo}
                 className="w-7 pt-1 mr-3"
-                alt="Trust Project Logo"
+                alt="CIVIC Logo"
               />
               <h2 className="text-2xl font-semibold">
                 Community Library of Context
