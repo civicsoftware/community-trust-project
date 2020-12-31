@@ -4,7 +4,7 @@ export default {
       base:
         "text-white bg-teal-dark hover:bg-teal-light border border-transparent",
       active:
-        "active:bg-teal-dark hover:bg-teal-light focus:shadow-outline-pink",
+        "active:bg-teal-dark hover:bg-teal-light focus:shadow-outline-teal",
       disabled: "opacity-50 cursor-not-allowed"
     },
     outline: {

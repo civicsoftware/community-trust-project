@@ -68,9 +68,9 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-gray-300 border-2 rounded-lg shadow-xl"
+      className="relative m-4 border-purple-900 border-8 rounded-lg shadow-xl scroll-mt-16"
     >
-      <div className="p-4 bg-black text-gray-200 rounded-t-lg">
+      <div className="p-4 bg-purple-900 text-gray-100">
         <div className="grid grid-cols-12">
           <div className="col-start-0 col-end-11 col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
@@ -186,22 +186,22 @@ function ContextSectionSummary({
         )}
       </div>
       <div className="px-4 mb-4 text-sm">
-        <div className="bg-pink-light bg-opacity-20 rounded box-content p-4">
+        <div className="bg-pink-light rounded box-content p-2">
           <ul className="font-medium prose-sm">
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json, sandtrapOptions)
             ) : (
-              <p>TODO: Convert to contentful</p>
+              <p>Unknown</p>
             )}
           </ul>
         </div>
         <CollapsableFixedHeight>
-          <div className="p-4 prose-sm">
+          <div className="mt-2 prose-sm">
             <h3 className="text-lg font-bold">Challenges</h3>
             {challenges?.json ? (
               documentToReactComponents(challenges?.json)
             ) : (
-              <p>TODO: Convert to contentful</p>
+              <p>Unknown</p>
             )}
           </div>
           {/* <div className="grid grid-cols-2 gap-4 mt-2">
@@ -210,7 +210,7 @@ function ContextSectionSummary({
               {successes?.json ? (
                 documentToReactComponents(successes?.json)
               ) : (
-                <p>TODO: Convert to contentful</p>
+                <p>Unknown</p>
               )}
             </div>
             <div className="prose-sm">
@@ -218,7 +218,7 @@ function ContextSectionSummary({
               {challenges?.json ? (
                 documentToReactComponents(challenges?.json)
               ) : (
-                <p>TODO: Convert to contentful</p>
+                <p>Unknown</p>
               )}
             </div>
           </div> */}
@@ -318,7 +318,7 @@ function ContextSectionSummary({
           </div>
         </div>
       </div> */}
-      <div className="grid grid-cols-2 bg-purple-50 rounded box-content p-4 text-sm">
+      <div className="grid grid-cols-2 bg-purple-100 rounded box-content m-4 p-6 text-sm">
         <div className="">
           <span className="font-semibold">Included in : </span>
           {schema?.includedIn}
@@ -330,7 +330,7 @@ function ContextSectionSummary({
       </div>
       <ContextSectionCTAFooter
         callToAction={callToAction}
-        colorAndWeight="purple-900"
+        className="purple-900"
         narrow
       />
     </section>

@@ -17,7 +17,7 @@ export default function Collapsable({
   const hiddenRef = useRef(null);
   const buttonRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
-  const cta = expanded ? "Less" : "More";
+  const cta = expanded ? "Less" : "More...";
   const arrow = expanded ? "up" : "down";
   const unhiddenChildren = Children.toArray(children).filter(
     child => !child.props.hidden
@@ -54,7 +54,7 @@ export default function Collapsable({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -68,7 +68,7 @@ export default function Collapsable({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -83,7 +83,7 @@ export default function Collapsable({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"
@@ -99,7 +99,7 @@ export default function Collapsable({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"

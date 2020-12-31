@@ -18,9 +18,9 @@ function ContextSectionCTAFooter({ callToAction, className, narrow }) {
       emailSubject ? encodeURIComponent(emailSubject) : ""
     }&body=${emailBody ? encodeURIComponent(emailBody) : ""}`;
   return (
-    <div className={`px-4 py-2 rounded-b-lg  bg-gray-200 ${className}`}>
+    <div className={`px-4 py-2 rounded-b-lg ${className}`}>
       <div
-        className={`prose prose-sm max-w-none mb-12 ${narrow ? "" : "md:mb-6"}`}
+        className={`prose prose-sm max-w-none mb-16 ${narrow ? "" : "md:mb-6"}`}
       >
         {description && documentToReactComponents(description)}
       </div>
