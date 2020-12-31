@@ -444,7 +444,7 @@ function Library() {
                 agency that isn’t a partner yet to get the conversation started.
               </p>
               <Windmill.Button className="mt-4 w-80">
-                <a href="mailto:datastrategy-grp@civicteam.org?subject=Request for Datasource">
+                <a href="mailto:datastrategy-grp@civicteam.org?subject=Request for Data Source">
                   Request a Dataset be Added to the Library
                 </a>
               </Windmill.Button>
