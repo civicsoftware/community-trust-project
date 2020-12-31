@@ -9,6 +9,7 @@ import Library from "./Library";
 import Schema from "./Schema";
 import Compass from "./Compass";
 import Flower from "./Flower";
+import Blueprint from "./Blueprint";
 
 /* *
  * Render a route with potential sub routes
@@ -84,6 +85,12 @@ const ROUTES = [
         key: "FLOWER",
         exact: true,
         component: Flower
+      },
+      {
+        path: "/blueprint",
+        key: "BLUEPRINT",
+        exact: true,
+        component: Blueprint
       }
     ]
   }
