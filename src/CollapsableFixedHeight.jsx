@@ -19,7 +19,7 @@ export default function CollapsableFixedHeight({
   const [expanded, setExpanded] = useState(false);
   const [containerRef, { height }] = useDimensions({ liveMeasure: false });
 
-  const cta = expanded ? "Less" : "More";
+  const cta = expanded ? "Less" : "More...";
   const arrow = expanded ? "up" : "down";
   const unhiddenChildren = Children.toArray(children).filter(
     child => !child.props.hidden
@@ -42,7 +42,7 @@ export default function CollapsableFixedHeight({
       </div>
       {height > 36 && (
         <button
-          className={`mt-6 bottom-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full font-medium text-md text-purple-900 ${buttonClassName}`}
+          className={`mt-6 bottom-0 w-full font-bold text-md text-cobalt-900 ${buttonClassName}`}
           onClick={() => handleClick(expanded)}
           type="button"
           aria-live="polite"
@@ -56,7 +56,7 @@ export default function CollapsableFixedHeight({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -70,7 +70,7 @@ export default function CollapsableFixedHeight({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 fillRule="evenodd"
@@ -85,7 +85,7 @@ export default function CollapsableFixedHeight({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"
@@ -101,7 +101,7 @@ export default function CollapsableFixedHeight({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className={`inline-block h-4 w-4 ${iconClassName}`}
+              className={`inline-block h-4 w-4 text-cobalt ${iconClassName}`}
             >
               <path
                 strokeLinecap="round"

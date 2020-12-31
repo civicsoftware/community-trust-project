@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { bool, string } from "prop-types";
 import React from "react";
 import ContextQuestionsSection from "./ContextQuestionsSection";
+import { ICONS } from "./Icons";
 
 const SECTION = gql`
   query Section($questionGroup: String!, $dataset: String!) {
@@ -32,6 +33,7 @@ const SECTION = gql`
         emailBody
         formUrl
       }
+      icon
     }
     dataset(id: $dataset) {
       answersCollection {
@@ -50,7 +52,7 @@ const SECTION = gql`
   }
 `;
 
-function ContextSection({ questionGroup, dataset, narrow }) {
+function ContextSection({ questionGroup, dataset, narrow, color }) {
   const { loading, error, data } = useQuery(SECTION, {
     variables: { questionGroup, dataset }
   });
@@ -62,6 +64,7 @@ function ContextSection({ questionGroup, dataset, narrow }) {
   const questions = data?.questionGroup?.questionsCollection?.items;
   const callToAction = data?.questionGroup?.callToAction;
   const answers = data?.dataset?.answersCollection?.items;
+  const Icon = ICONS?.[data?.questionGroup?.icon];
 
   return (
     <ContextQuestionsSection
@@ -71,6 +74,8 @@ function ContextSection({ questionGroup, dataset, narrow }) {
       description={data?.questionGroup?.attribution}
       narrow={narrow}
       callToAction={callToAction}
+      color={color}
+      Icon={Icon}
     />
   );
 }
@@ -78,7 +83,8 @@ function ContextSection({ questionGroup, dataset, narrow }) {
 ContextSection.propTypes = {
   questionGroup: string.isRequired,
   dataset: string.isRequired,
-  narrow: bool
+  narrow: bool,
+  color: string
 };
 
 export default ContextSection;

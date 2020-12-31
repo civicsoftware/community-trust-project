@@ -100,38 +100,44 @@ function Context({ datasetId }) {
         <ContextSection
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
           dataset={datasetId}
+          narrow
+          color="teal"
         />
         {/* Methodology */}
         <ContextSection
           questionGroup="iUwbAs8uk0yiUhPJK2eyX"
           dataset={datasetId}
+          narrow
+          color="teal"
         />
         {/* Access */}
-        <div className="md:grid md:grid-cols-2">
-          <ContextSection
-            questionGroup="c7cq4mb35M6zr7LAgjINd"
-            dataset={datasetId}
-            narrow
-          />
-          {/* Ethical Governance */}
-          <ContextSection
-            questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
-            dataset={datasetId}
-            narrow
-          />
-        </div>
+        <ContextSection
+          questionGroup="c7cq4mb35M6zr7LAgjINd"
+          dataset={datasetId}
+          narrow
+          color="blue"
+        />
+        {/* Ethical Governance */}
+        <ContextSection
+          questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
+          dataset={datasetId}
+          narrow
+          color="purple"
+        />
         {/* Community Context */}
         <div className="md:grid md:grid-cols-2">
           <ContextSection
             questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
             dataset={datasetId}
             narrow
+            color="pink"
           />
           {/* Historic Context */}
           <ContextSection
             questionGroup="2khypcmlN6CBCnl8NS9our"
             dataset={datasetId}
             narrow
+            color="pink"
           />
         </div>
         <div className="md:grid md:grid-cols-2">

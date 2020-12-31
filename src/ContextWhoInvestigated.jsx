@@ -32,27 +32,27 @@ function ContextWhoInvestigated({
       >
         <div
           className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 0 ? `from-${color}-100 to-${color}-300` : ""
+            completeness >= 0 ? `bg-${color}-900` : ""
           }`}
         />
         <div
           className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 1 ? `from-${color}-300 to-${color}-500` : ""
+            completeness >= 1 ? `bg-${color}-900` : ""
           }`}
         />
         <div
           className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 2 ? `from-${color}-500 to-${color}-700` : ""
+            completeness >= 2 ? `bg-${color}-900` : ""
           }`}
         />
         <div
           className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 3 ? `from-${color}-700 to-${color}-800` : ""
+            completeness >= 3 ? `bg-${color}-900` : ""
           }`}
         />
         <div
           className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 4 ? `from-${color}-800 to-${color}-900` : ""
+            completeness >= 4 ? `bg-${color}-900` : ""
           }`}
         />
         <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic">

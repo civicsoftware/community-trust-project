@@ -48,13 +48,13 @@ function ContextSectionWrapper({
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-2 shadow-xl border-${color}-200 bg-${color}-200`}
+        className={`relative m-4 rounded-lg border-8 shadow-xl border-${color}-900 bg-white`}
       >
         <div className="px-4 py-2 rounded-t-lg">
           <div
-            className={`inline-block p-1 border-2 rounded-full bg-${color}-100 border-${color}-900 `}
+            className={`inline-block p-1 border-2  shadow-xl rounded-full  text-white bg-${color}-900`}
           >
-            <Icon />
+            <Icon className="h-6 w-6 inline-block align-text-bottom" />
           </div>
           <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize">
             {title}
@@ -84,7 +84,7 @@ function ContextSectionWrapper({
         </div>
         {callToAction?.buttonText && (
           <ContextSectionCTAFooter
-            className={`${color}-300`}
+            className=""
             narrow={narrow}
             callToAction={callToAction}
           />

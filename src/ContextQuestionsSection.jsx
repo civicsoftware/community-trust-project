@@ -1,5 +1,5 @@
 import React from "react";
-import { arrayOf, string, shape, bool } from "prop-types";
+import { arrayOf, string, shape, bool, func } from "prop-types";
 import ContextQuestion from "./ContextQuestion";
 import { answerPropTypes, questionPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionWrapper from "./ContextSectionWrapper";
@@ -11,7 +11,9 @@ function ContextQuestionsSection({
   answers,
   description,
   callToAction,
-  narrow
+  narrow,
+  color,
+  Icon
 }) {
   const answersForSection = answers.filter(a =>
     questions.find(
@@ -43,7 +45,9 @@ function ContextQuestionsSection({
       description={description}
       callToAction={callToAction}
       narrow={narrow}
+      color={color}
       cta
+      Icon={Icon}
     >
       {questions && questions.length > 0 && (
         <ul className="mb-2 p-4 text-sm">
@@ -66,7 +70,7 @@ function ContextQuestionsSection({
             );
           })}
           {questions.length > 2 && (
-            <Collapsable buttonClassName="text-purple-900">
+            <Collapsable buttonClassName="text-cobalt">
               <Collapsable.Section hidden>
                 {questions.slice(3, 500).map(question => {
                   const answer = answers?.find(
@@ -105,7 +109,9 @@ ContextQuestionsSection.propTypes = {
     })
   }),
   callToAction: shape,
-  narrow: bool
+  narrow: bool,
+  color: string,
+  Icon: func
 };
 
 export default ContextQuestionsSection;

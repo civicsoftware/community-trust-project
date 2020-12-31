@@ -1,7 +1,10 @@
 const windmill = require("@windmill/react-ui/config");
 
 const merged = windmill({
-  purge: ["./src/**/*.js*", "./packages/**/src/**/*.js*"],
+  purge: {
+    enabled: false,
+    content: ["./src/**/*.js*", "./packages/**/src/**/*.js*"]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -52,8 +55,7 @@ const merged = windmill({
       serif: ['"Merriweather", serif'],
       mono: ['"Roboto Mono", mono'],
       rubik: ['"Rubik", sans-serif'],
-      roboto: ['"Roboto", sans-serif'],
-      delius: ['"Delius", fantasy']
+      roboto: ['"Roboto", sans-serif']
     },
     extend: {
       typography: theme => ({
@@ -141,16 +143,16 @@ merged.theme.colors = {
     DEFAULT: "#DF7280",
     dark: "#DA4759",
     // windmill
-    50: "#fdf2f8",
-    100: "#fce8f3",
-    200: "#fad1e8",
-    300: "#f8b4d9",
-    400: "#f17eb8",
-    500: "#e74694",
-    600: "#d61f69",
-    700: "#bf125d",
-    800: "#99154b",
-    900: "#751a3d"
+    50: "#DF7280",
+    100: "#DF7280",
+    200: "#DF7280",
+    300: "#DF7280",
+    400: "#DF7280",
+    500: "#DF7280",
+    600: "#DA4759",
+    700: "#DA4759",
+    800: "#DA4759",
+    900: "#DA4759"
   },
   blue: {
     light: "#7096C7",
@@ -198,7 +200,7 @@ merged.theme.colors = {
     600: "#70297B",
     700: "#3A1B53",
     800: "#3A1B53",
-    900: "#4a1d96"
+    900: "#3A1B53"
   },
   yellow: {
     light: "#FEE4A1",
