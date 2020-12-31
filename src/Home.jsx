@@ -28,7 +28,7 @@ function Home() {
             />
             <p className="text-sm -mt-9">
               <a
-                href="http://www.civicplatform.org"
+                href="http://www.civicsoftwarefoundation.org"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -44,11 +44,10 @@ function Home() {
               experiences of the communities they serve.
             </p>
             <div className="justify-self-center self-start pt-4 pb-2 mb-4 flex flex-row">
-              <Windmill.Button
-                onClick={openModal}
-                className="whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
-              >
-                Bring TRUST to your community
+              <Windmill.Button className="whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Bring TRUST to my Community">
+                  Bring TRUST to your community
+                </a>
               </Windmill.Button>
             </div>
           </div>
