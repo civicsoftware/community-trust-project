@@ -19,7 +19,8 @@ function ContextQuestionsSection({
     questions.find(
       question =>
         question?.questionText === a?.question?.questionText &&
-        a?.answerBoolean === true || a?.answerBoolean === false ||
+        (a?.answerBoolean === true ||
+          a?.answerBoolean === false ||
           a?.answerShortText ||
           a?.answerLongText)
     )
