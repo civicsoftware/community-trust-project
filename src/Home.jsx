@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 
 function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  function openModal() {
-    setIsModalOpen(true);
-  }
-  function closeModal() {
-    setIsModalOpen(false);
-  }
-
   return (
     <>
       <section
@@ -116,7 +108,7 @@ function Home() {
           <div className="m-12 mt-24 max-w-7xl px-12">
             <div className="flex items-center text-blue mb-4">
               <svg
-                className="h-6 w-6 mr-3"
+                className="h-7 w-7 mr-3"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -153,7 +145,7 @@ function Home() {
           <div className="m-12 mt-24 max-w-7xl px-12">
             <div className="flex items-center text-yellow-dark mb-4">
               <svg
-                className="h-6 w-6 mr-3"
+                className="h-7 w-7 mr-3"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -189,7 +181,7 @@ function Home() {
           <div className="m-12 mt-24 max-w-7xl px-12">
             <div className="flex items-center text-pink-dark mb-4">
               <svg
-                className="h-6 w-6 mr-3"
+                className="h-7 w-7 mr-3"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -240,25 +232,6 @@ function Home() {
           </p>
         </div>
       </section>
-
-      {/* Modals for data submission forms */}
-      <Windmill.Modal isOpen={isModalOpen} onClose={closeModal}>
-        <Windmill.ModalHeader>Contact Us</Windmill.ModalHeader>
-        <Windmill.ModalBody>
-          This is a modal that will have a contact form on it.
-        </Windmill.ModalBody>
-        <Windmill.ModalFooter>
-          <Windmill.Button
-            className="w-full sm:w-auto"
-            layout="outline"
-            onClick={closeModal}
-          >
-            Cancel
-          </Windmill.Button>
-          <Windmill.Button className="w-full sm:w-auto">Accept</Windmill.Button>
-        </Windmill.ModalFooter>
-      </Windmill.Modal>
-      {/* End modals */}
     </>
   );
 }
