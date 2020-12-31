@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { string } from "prop-types";
+import { bool, string } from "prop-types";
 import React from "react";
 import ContextQuestionsSection from "./ContextQuestionsSection";
 
@@ -21,6 +21,17 @@ const SECTION = gql`
           }
         }
       }
+      callToAction {
+        description {
+          json
+        }
+        buttonText
+        buttonSubText
+        emailRecipients
+        emailSubject
+        emailBody
+        formUrl
+      }
     }
     dataset(id: $dataset) {
       answersCollection {
@@ -39,16 +50,17 @@ const SECTION = gql`
   }
 `;
 
-function ContextSection({ questionGroup, dataset }) {
+function ContextSection({ questionGroup, dataset, narrow }) {
   const { loading, error, data } = useQuery(SECTION, {
     variables: { questionGroup, dataset }
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
 
   const title = data?.questionGroup?.title;
   const questions = data?.questionGroup?.questionsCollection?.items;
+  const callToAction = data?.questionGroup?.callToAction;
   const answers = data?.dataset?.answersCollection?.items;
 
   return (
@@ -57,13 +69,16 @@ function ContextSection({ questionGroup, dataset }) {
       questions={questions}
       answers={answers}
       description={data?.questionGroup?.attribution}
+      narrow={narrow}
+      callToAction={callToAction}
     />
   );
 }
 
 ContextSection.propTypes = {
   questionGroup: string.isRequired,
-  dataset: string.isRequired
+  dataset: string.isRequired,
+  narrow: bool
 };
 
 export default ContextSection;

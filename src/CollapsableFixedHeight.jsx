@@ -1,11 +1,12 @@
-import React, { useState, Children, useRef, Fragment } from "react";
+import React, { useState, Children, useRef } from "react";
 import PropTypes from "prop-types";
+import useDimensions from "react-use-dimensions";
 
 /**
  * An accessible container for collapsable content.
  * A short description is required to clarify to screen readers what the more button will unhide.
  */
-export default function Collapsable({
+export default function CollapsableFixedHeight({
   children,
   description,
   hideText,
@@ -14,9 +15,10 @@ export default function Collapsable({
   hiddenClassName,
   buttonClassName
 }) {
-  const hiddenRef = useRef(null);
   const buttonRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
+  const [containerRef, { height }] = useDimensions({ liveMeasure: false });
+
   const cta = expanded ? "Less" : "More";
   const arrow = expanded ? "up" : "down";
   const unhiddenChildren = Children.toArray(children).filter(
@@ -28,19 +30,19 @@ export default function Collapsable({
 
   function handleClick(isExpanded) {
     setExpanded(!isExpanded);
-    if (isExpanded) {
-      buttonRef.current.focus();
-    } else {
-      hiddenRef.current.focus();
-    }
   }
 
   return (
-    <>
-      {unhiddenChildren}
-      {hiddenChildren.length > 0 && (
+    <div className="relative">
+      <div
+        className={`relative ${expanded ? "" : "max-h-36 overflow-hidden"}`}
+        ref={containerRef}
+      >
+        {unhiddenChildren}
+      </div>
+      {height > 36 && (
         <button
-          className={`inline-block float-right font-medium text-md ${buttonClassName}`}
+          className={`mt-6 bottom-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full font-medium text-md text-purple-900 ${buttonClassName}`}
           onClick={() => handleClick(expanded)}
           type="button"
           aria-live="polite"
@@ -111,18 +113,16 @@ export default function Collapsable({
           )}
         </button>
       )}
-      <div className="outline-none" role="group" tabIndex="-1" ref={hiddenRef}>
-        {expanded && <div className={hiddenClassName}>{hiddenChildren}</div>}
-      </div>
-    </>
+      <div className={hiddenClassName}>{hiddenChildren}</div>
+    </div>
   );
 }
 
 const Section = ({ children }) => children;
 
-Collapsable.Section = Section;
+CollapsableFixedHeight.Section = Section;
 
-Collapsable.propTypes = {
+CollapsableFixedHeight.propTypes = {
   children: PropTypes.node,
   /** A description for screen readers.
    *  Will announce as "more (description)" or "less (description)"
@@ -135,4 +135,4 @@ Collapsable.propTypes = {
   hiddenClassName: PropTypes.string
 };
 
-Collapsable.displayName = Collapsable;
+CollapsableFixedHeight.displayName = CollapsableFixedHeight;

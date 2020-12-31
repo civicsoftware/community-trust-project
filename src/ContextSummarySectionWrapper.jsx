@@ -1,10 +1,7 @@
 import React from "react";
-import { bool, node, number, oneOf, shape, string } from "prop-types";
+import { node, shape, string } from "prop-types";
 import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ContextWhoInvestigated from "./ContextWhoInvestigated";
-import Collapsable from "./Collapsable";
-import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
 
 function DefaultIcon() {
   return (
@@ -32,25 +29,19 @@ const gray = "border-gray-200, bg-gray-200 bg-gray-100 border-gray-900";
 const purple =
   "border-purple-200, bg-purple-200 bg-purple-100 border-purple-900";
 
-function ContextSectionWrapper({
+function ContextSummarySectionWrapper({
   title,
-  completeness,
-  answered,
-  total,
   children,
   color,
   description,
-  Icon,
-  narrow,
-  expandable,
-  callToAction
+  Icon
 }) {
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-2 shadow-xl border-${color}-200 bg-${color}-200`}
+        className={`relative m-4 rounded-t-lg border-2 shadow-xl border-${color}-200 bg-white`}
       >
-        <div className="px-4 py-2 rounded-t-lg">
+        <div className={`px-4 py-2 rounded-t-lg bg-${color}-200`}>
           <div
             className={`inline-block p-1 border-2 rounded-full bg-${color}-100 border-${color}-900 `}
           >
@@ -59,46 +50,20 @@ function ContextSectionWrapper({
           <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize">
             {title}
           </h2>
-          <ContextWhoInvestigated
-            completeness={completeness}
-            answered={answered}
-            total={total}
-            color={color}
-          />
         </div>
         <div className={`bg-white ${description ? "py-4" : ""}`}>
           <div className="px-4 w-full">
             {documentToReactComponents(description?.json)}
           </div>
-          {expandable && (
-            <Collapsable
-              description="section detail"
-              hideText
-              iconClassName="h-6 w-6"
-              buttonClassName="absolute right-4 top-4"
-            >
-              <Collapsable.Section hidden> {children}</Collapsable.Section>
-            </Collapsable>
-          )}
-          {!expandable && children}
+          {children}
         </div>
-        {callToAction?.buttonText && (
-          <ContextSectionCTAFooter
-            className={`${color}-300`}
-            narrow={narrow}
-            callToAction={callToAction}
-          />
-        )}
       </div>
     </section>
   );
 }
 
-ContextSectionWrapper.propTypes = {
+ContextSummarySectionWrapper.propTypes = {
   title: string,
-  completeness: oneOf([1, 2, 3]),
-  answered: number,
-  total: number,
   children: node,
   color: string,
   description: shape({
@@ -106,15 +71,12 @@ ContextSectionWrapper.propTypes = {
       /* contentful rich text json */
     })
   }),
-  narrow: bool,
-  Icon: node,
-  expandable: bool,
-  callToAction: shape({})
+  Icon: node
 };
 
-ContextSectionWrapper.defaultProps = {
+ContextSummarySectionWrapper.defaultProps = {
   color: "gray",
   Icon: DefaultIcon
 };
 
-export default ContextSectionWrapper;
+export default ContextSummarySectionWrapper;

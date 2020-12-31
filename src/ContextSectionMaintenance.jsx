@@ -1,6 +1,6 @@
 import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
-import ContextSectionWrapper from "./ContextSectionWrapper";
+import ContextSummarySectionWrapper from "./ContextSummarySectionWrapper";
 
 function LibraryIcon() {
   return (
@@ -21,28 +21,27 @@ function LibraryIcon() {
   );
 }
 function ContextSectionMaintenance({ schema }) {
-  let completeness = 0;
-  const entries = [
-    schema?.officialMaintenance?.officialMaintainer,
-    schema?.officialMaintenance?.dataContributor,
-    schema?.officialMaintenance?.lastOfficialMaintainence,
-    schema?.officialMaintenance?.maintenanceInterval,
-    schema?.officialMaintenance?.typicalUpdates
-  ];
-  if (entries.filter(x => x).length >= 0) {
-    completeness = 1;
-  }
-  if (entries.filter(x => x).length === entries.length) {
-    completeness = 2;
-  }
+  // let completeness = 0;
+  // const entries = [
+  //   schema?.officialMaintenance?.officialMaintainer,
+  //   schema?.officialMaintenance?.dataContributor,
+  //   schema?.officialMaintenance?.lastOfficialMaintainence,
+  //   schema?.officialMaintenance?.maintenanceInterval,
+  //   schema?.officialMaintenance?.typicalUpdates
+  // ];
+  // if (entries.filter(x => x).length >= 0) {
+  //   completeness = 1;
+  // }
+  // if (entries.filter(x => x).length === entries.length) {
+  //   completeness = 2;
+  // }
 
   return (
-    <ContextSectionWrapper
+    <ContextSummarySectionWrapper
       title="Maintenance"
       Icon={LibraryIcon}
       color="gray"
-      completeness={completeness}
-      cta
+      narrow
     >
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
@@ -64,7 +63,7 @@ function ContextSectionMaintenance({ schema }) {
           {schema?.officialMaintenance?.typicalUpdates}
         </div>
       </div>
-    </ContextSectionWrapper>
+    </ContextSummarySectionWrapper>
   );
 }
 

@@ -1,9 +1,26 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import CollapsableFixedHeight from "./CollapsableFixedHeight";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
-import ContextWhoInvestigated from "./ContextWhoInvestigated";
+import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
 
-function ContextNav({
+const CTA = gql`
+  query CallToAction($callToAction: String!) {
+    callToAction(id: $callToAction) {
+      description {
+        json
+      }
+      buttonText
+      buttonSubText
+      emailRecipients
+      emailSubject
+      emailBody
+      formUrl
+    }
+  }
+`;
+function ContextSectionSummary({
   schema,
   summary,
   successes,
@@ -11,14 +28,22 @@ function ContextNav({
   sandtraps,
   logo
 }) {
+  const { loading, error, data } = useQuery(CTA, {
+    variables: { callToAction: "1c7nrhVR6PWQ8MXuauq54b" }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+  const callToAction = data?.callToAction;
+
   return (
     <section
       id="summary"
       className="relative m-4 border-gray-300 border-2 rounded-lg shadow-xl"
     >
-      <div className="p-4 bg-gradient-to-l from-purple-600 to-purple-900 text-gray-200 rounded-t-lg">
+      <div className="p-4 bg-purple-900 text-gray-200 rounded-t-lg">
         <div className="grid grid-cols-12">
-          <div className="col-span-10">
+          <div className="col-start-0 col-end-11 col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
               {schema?.title}
             </h2>
@@ -44,6 +69,17 @@ function ContextNav({
                 {schema?.subComponentOf}
               </h3>
             </div>
+          </div>
+          <div className="col-start-11 col-end-13 items-center bg-white ring-2 ring-purple-600 rounded-lg">
+            <img
+              src={logo?.url}
+              alt={logo?.description}
+              height={logo?.height}
+              width={logo?.width}
+              className="w-full content-center"
+            />
+          </div>
+          <div className="col-span-12 flex justify-between">
             <div>
               <div className="inline-block p-1 -mb-2">
                 <svg
@@ -83,6 +119,8 @@ function ContextNav({
                 </svg>
               </div>
               <h3 className="inline text-xs">{schema?.dateRange}</h3>
+            </div>
+            <div>
               <div className="inline-block p-1 ml-4 -mb-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,28 +145,11 @@ function ContextNav({
               </div>
               <h3 className="inline text-xs">Multnomah County, Oregon, US</h3>
             </div>
-            <div className="absolute right-4 top-4 items-center">
-              <img
-                src={logo?.url}
-                alt={logo?.description}
-                height={logo?.height}
-                width={logo?.width}
-                className="w-36"
-              />
-              <div className="flex h-full w-full items-center mt-2">
-                <a
-                  href="#TODO"
-                  className="flex p-1 uppercase text-center bg-white text-purple-900 rounded text-sm font-semibold border-4 border-purple-300 hover:bg-purple-50 hover:border-purple-400 hover:shadow-2xl"
-                >
-                  <h2>Contact Org</h2>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div className="p-4 prose-md">
-        <h3 className="text-xl font-bold">What is it?</h3>
+        <h3 className="text-xl font-bold">Dataset Description</h3>
         {summary?.json ? (
           documentToReactComponents(summary?.json)
         ) : (
@@ -164,24 +185,26 @@ function ContextNav({
             ))} */}
           </ul>
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-2">
-          <div className="prose-sm">
-            <h3 className="text-lg font-bold">Successes</h3>
-            {successes?.json ? (
-              documentToReactComponents(successes?.json)
-            ) : (
-              <p>TODO: Convert to contentful</p>
-            )}
+        <CollapsableFixedHeight>
+          <div className="grid grid-cols-2 gap-4 mt-2">
+            <div className="prose-sm">
+              <h3 className="text-lg font-bold">Successes</h3>
+              {successes?.json ? (
+                documentToReactComponents(successes?.json)
+              ) : (
+                <p>TODO: Convert to contentful</p>
+              )}
+            </div>
+            <div className="prose-sm">
+              <h3 className="text-lg font-bold">Challenges</h3>
+              {challenges?.json ? (
+                documentToReactComponents(challenges?.json)
+              ) : (
+                <p>TODO: Convert to contentful</p>
+              )}
+            </div>
           </div>
-          <div className="prose-sm">
-            <h3 className="text-lg font-bold">Challenges</h3>
-            {challenges?.json ? (
-              documentToReactComponents(challenges?.json)
-            ) : (
-              <p>TODO: Convert to contentful</p>
-            )}
-          </div>
-        </div>
+        </CollapsableFixedHeight>
         {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
               <h3 className="text-lg font-bold">Missing information</h3>
               <ul>
@@ -231,15 +254,9 @@ function ContextNav({
           ))}
         </dl>
       </div>
-      <div className="grid grid-cols-2 bg-purple-900 text-white">
+      {/* <div className="grid grid-cols-2 bg-purple-900 text-white">
         <div className="p-4 text-xs">
           <h3 className="text-lg font-bold tracking-wide">Data Details</h3>
-          {/* TODO Dynamic indicator */}
-          <ContextWhoInvestigated
-            className="-ml-0 mb-4"
-            color="purple"
-            completeness="1"
-          />
           <div className=" font-bold">{schema?.rawData?.rawTitle}</div>
           <div className="">
             <span className="font-semibold">Date Range: </span>
@@ -263,12 +280,6 @@ function ContextNav({
         </div>
         <div className="p-4 text-xs">
           <h3 className="text-lg font-bold tracking-wide">Maintenance</h3>
-          {/* TODO Dynamic indicator */}
-          <ContextWhoInvestigated
-            className="-ml-0 mb-4"
-            color="purple"
-            completeness="1"
-          />
           <div className="font-bold">
             {schema?.officialMaintenance?.officialMaintainer}
           </div>
@@ -288,7 +299,7 @@ function ContextNav({
             {schema?.officialMaintenance?.typicalUpdates}
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="grid grid-cols-2 bg-purple-50 rounded box-content p-4 text-sm">
         <div className="">
           <span className="font-semibold">Included in : </span>
@@ -299,10 +310,15 @@ function ContextNav({
           {schema?.relatedTo}
         </div>
       </div>
+      <ContextSectionCTAFooter
+        callToAction={callToAction}
+        colorAndWeight="purple-900"
+        narrow
+      />
     </section>
   );
 }
 
-ContextNav.propTypes = contextSchemaPropTypes;
+ContextSectionSummary.propTypes = contextSchemaPropTypes;
 
-export default ContextNav;
+export default ContextSectionSummary;

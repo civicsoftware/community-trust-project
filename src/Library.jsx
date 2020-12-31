@@ -18,7 +18,7 @@ function Library() {
   const { loading, error, data } = useQuery(DATASETS);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
       <div className="text-xl justify-self-center">Data Library</div>

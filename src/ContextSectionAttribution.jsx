@@ -1,6 +1,23 @@
 import React from "react";
+import { gql, useQuery } from "@apollo/client";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionWrapper from "./ContextSectionWrapper";
+
+const CTA = gql`
+  query CallToAction($callToAction: String!) {
+    callToAction(id: $callToAction) {
+      description {
+        json
+      }
+      buttonText
+      buttonSubText
+      emailRecipients
+      emailSubject
+      emailBody
+      formUrl
+    }
+  }
+`;
 
 function BookmarkIcon() {
   return (
@@ -22,28 +39,22 @@ function BookmarkIcon() {
 }
 
 function ContextSectionAttribution({ schema }) {
-  let completeness = 0;
-  const entries = [
-    schema?.officialMaintenance?.officialMaintainer,
-    schema?.officialMaintenance?.dataContributor,
-    schema?.officialMaintenance?.lastOfficialMaintainence,
-    schema?.officialMaintenance?.maintenanceInterval,
-    schema?.officialMaintenance?.typicalUpdates
-  ];
-  if (entries.filter(x => x).length >= 0) {
-    completeness = 1;
-  }
-  if (entries.filter(x => x).length === entries.length) {
-    completeness = 2;
-  }
+  const { loading, error, data } = useQuery(CTA, {
+    variables: { callToAction: "2iZpayYpfqEU4My4uAPooT" }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+  const callToAction = data?.callToAction;
 
   return (
     <ContextSectionWrapper
       title="Attribution"
       Icon={BookmarkIcon}
       color="gray"
-      completeness={completeness}
-      cta
+      callToAction={callToAction}
+      narrow
+      expandable
     >
       <div className="mt-4 p-4 text-sm">
         <div className="text-sm">
