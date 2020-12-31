@@ -20,7 +20,9 @@ function Blueprint() {
         isOpen={overlayShown}
         onClose={() => toggleOverlay()}
         className="max-w-full mx-40 bg-white border-gray-300 border-2 rounded-lg shadow-xl"
-      >        <img
+      >
+        {" "}
+        <img
           src={InfinityLoop}
           onClick={() => toggleOverlay()}
           className="w-full"
@@ -48,7 +50,7 @@ function Blueprint() {
 
         {/* TODO: make this link to the PDF document */}
         <div className="mt-4 mb-8 flex flex-row">
-          <Link to="/compass">
+          <Link to="/" target="_blank">
             <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
               Read the CIVIC Blueprint for Context-Aware Systems
             </Windmill.Button>
@@ -60,9 +62,7 @@ function Blueprint() {
           loop.This is a paragraph about the inifinity loop.This is a paragraph
           about the inifinity loop.
         </p>
-        <p className="pt-2">
-          Click to view larger:
-        </p>
+        <p className="pt-2">Click to view larger:</p>
 
         <img
           src={InfinityLoop}
