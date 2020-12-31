@@ -18,27 +18,31 @@ function Home() {
         id="hero"
         className="bg-gray-50 border-gray-300 border-2 top-0 pt-20 pb-16"
       >
-        <div className="container mx-auto px-36 flex flex-col justify-center text-center">
+        <div className="container mx-auto px-60 grid grid-cols-5 gap-x-12 justify-items-stretch items-start">
           <img
             src={FullLogo}
-            className="w-1/3 pb-5 self-center"
+            className="col-span-2 pb-5 justify-self-end pt-2"
             alt="Trust Project Logo"
           />
-          <p className="text-2xl px-24 self-center">
-            The Community TRUST Project represents a commitment from local
-            government to assess institutional bias embedded in data models and
-            systems that represent diverse identities and lived experiences of
-            the communities they serve.
-          </p>
-          <p className="text-xl mb-2 mt-12 font-semibold self-center">
-            Bring TRUST to your community.
-          </p>
-          <Windmill.Button
-            onClick={openModal}
-            className="whitespace-nowrap inline-flex self-center w-1/5 mt-3 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
-          >
-            Click here to get involved
-          </Windmill.Button>
+          <div className="col-span-3">
+            <p className="text-2xl justify-self-start">
+              The Community TRUST Project represents a commitment from local
+              government to assess institutional bias embedded in data models
+              and systems that represent diverse identities and lived
+              experiences of the communities they serve.
+            </p>
+            <div className="justify-self-center self-start pt-8 pb-2 mb-4 flex flex-row">
+              <p className="pt-1 text-xl font-semibold">
+                Bring TRUST to your community:
+              </p>
+              <Windmill.Button
+                onClick={openModal}
+                className="whitespace-nowrap ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
+              >
+                Click here to get involved
+              </Windmill.Button>
+            </div>
+          </div>
         </div>
       </section>
 
