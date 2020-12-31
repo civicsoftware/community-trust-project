@@ -1,27 +1,22 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { default as Windmill } from "@windmill/react-ui";
-import React, { useState } from "react";
+// import { default as Windmill } from "@windmill/react-ui";
+import React from "react";
 import "./Compass.css";
 
 function Flower() {
   // const [isOpen, setIsOpen] = useState(false);
-  const [cardShown, setCardShown] = useState(false);
+  // const [cardShown, setCardShown] = useState(false);
 
   // function toggleBackdrop() {
   //   setIsOpen(!isOpen);
   //   setCardShown(false);
   // }
 
-  function toggleCard(e) {
-    e.stopPropagation();
-    setCardShown(!cardShown);
-  }
-
-  function printPie(e) {
-    e.stopPropagation();
-    toggleCard(e);
-  }
+  // function toggleCard(e) {
+  //   e.stopPropagation();
+  //   setCardShown(!cardShown);
+  // }
 
   return (
     // <>

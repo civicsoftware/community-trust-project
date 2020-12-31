@@ -9,7 +9,7 @@ function Navbar() {
         <div className="flex justify-between py-1 items-center md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/" className="flex flex-row">
-              <img src={Logo} className={"h-12 w-12"} />
+              <img src={Logo} className="h-12 w-12" alt="Trust Project Logo" />
               <span className="text-xl self-center pl-4">
                 Community Trust Project
               </span>
