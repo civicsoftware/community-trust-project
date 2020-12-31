@@ -444,7 +444,7 @@ function Library() {
                 agency that isn’t a partner yet to get the conversation started.
               </p>
               <Windmill.Button className="mt-4 w-80">
-                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Request for Datasource">
+                <a href="mailto:datastrategy-grp@civicteam.org?subject=Request for Datasource">
                   Request a Dataset be Added to the Library
                 </a>
               </Windmill.Button>
@@ -468,7 +468,7 @@ function Library() {
                 collection or starting your own.
               </p>
               <Windmill.Button className="mt-4 w-72">
-                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Add My Data Source to the Library">
+                <a href="mailto:datastrategy-grp@civicteam.org?subject=Add My Data Source to the Library">
                   Add Your Data Source to the Library
                 </a>
               </Windmill.Button>
