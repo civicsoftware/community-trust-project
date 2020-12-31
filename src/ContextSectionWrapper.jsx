@@ -3,7 +3,6 @@ import { bool, node, number, oneOf, shape, string } from "prop-types";
 import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
-import Collapsable from "./Collapsable";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
 import CollapsableFixedHeight from "./CollapsableFixedHeight";
 
