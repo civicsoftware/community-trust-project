@@ -13,7 +13,7 @@ const AVATARS = gql`
     avatarCollection(limit: 20) {
       items {
         name
-        photo {
+        thumbnail {
           title
           description
           url
@@ -30,7 +30,6 @@ function Avatars() {
   const [avatarName, setAvatarName] = useState(null);
 
   function toggleCard(e, name) {
-    e.stopPropagation();
     setAvatarName(name);
     setCardShown(!cardShown);
   }
@@ -41,26 +40,58 @@ function Avatars() {
         <Windmill.Modal
           isOpen={cardShown}
           onClose={e => toggleCard(e, null)}
-          className=""
+          className="max-w-screen-lg h-3/4 overflow-y-scroll bg-purple-dark border-gray-300 border-2 rounded-lg shadow-xl"
         >
-          <div className="container -m-7 max-w-5xl mx-auto border-gray-300 border-2 rounded-lg shadow-xl">
-            <Avatar name={avatarName} />
-          </div>
+          <Avatar name={avatarName} />
         </Windmill.Modal>
       )}
-      <div className="container m-12 p-12 max-w-5xl mx-auto justify-center grid grid-cols-1">
-        <p className="text-4xl mt-20 font-semibold justify-self-center">
-          Story-Centered Stakeholders
+
+      <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
+        <div className="flex flex-col mb-4">
+          <div className="flex items-center text-gray-900">
+            <svg
+              className="h-6 w-6 mr-3"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <h2 className="text-2xl font-semibold">
+              Story-Centered Stakeholders
+            </h2>
+          </div>
+          <p className="text-xl"> Click below to hear their stories.</p>
+        </div>
+        <p className="block">
+          Story-Centered Stakeholders (also called personas) are a key component
+          in our storytelling methodology. We use them to build and extend
+          empathy and define the unique needs of each stakeholder.
+          Narrative-centered design is one of CIVIC’s guiding principles and
+          these personas allow us to incorporate the human perspective through
+          every phase of the Trust Project. Each persona has a North Star,
+          goals, and frustrations. As users interact with the Story-Centered
+          Stakeholders, they will learn how their intersections, histories and
+          experiences influence the way they navigate the world.
         </p>
-        <p className="text-xl mt-4 mb-12 justify-self-center">
-          Click below to hear their stories.
+        <p className="block mt-6">
+          Hear the stakeholders share their experiences in their own voice, via
+          a multimedia experience:
         </p>
-        <div className="grid grid-cols-3 gap-10">
+
+        <div className="grid grid-cols-3 gap-10 mt-12  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
             !error &&
-            data.avatarCollection.items.map(({ name, photo }) => (
+            data.avatarCollection.items.map(({ name, thumbnail }) => (
               <div
                 className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
                 onClick={e => toggleCard(e, name)}
@@ -70,13 +101,13 @@ function Avatars() {
                   {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                   <img
                     id="filtered"
-                    src={photo?.url}
-                    alt={photo?.description}
+                    src={thumbnail?.url}
+                    alt={thumbnail?.description}
                     className="object-cover h-full"
                   />
                 </div>
                 <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                  <p className="font-bold text-white text-center">{name}</p>
+                  <p className="text-white text-center">{name}</p>
                 </div>
               </div>
             ))}
