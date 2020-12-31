@@ -15,32 +15,35 @@ function Home() {
 
   return (
     <>
-      <div className="container mx-auto px-4 flex flex-col">
-        <section id="hero" className="bg-gray-100 -mx-12 pt-20 pb-16">
-          <div className="flex flex-col justify-center text-center">
-            <img
-              src={FullLogo}
-              className="w-1/3 pb-5 self-center"
-              alt="Trust Project Logo"
-            />
-            <p className="text-2xl px-24">
-              The Community TRUST Project represents a commitment from local
-              government to assess institutional bias embedded in data models
-              and systems that represent diverse identities and lived
-              experiences of the communities they serve.
-            </p>
-            <p className="text-xl mb-2 mt-12 font-semibold self-center">
-              Bring TRUST to your community.
-            </p>
-            <Windmill.Button
-              onClick={openModal}
-              className="whitespace-nowrap inline-flex self-center w-2/5 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
-            >
-              Click here to get involved
-            </Windmill.Button>
-          </div>
-        </section>
+      <section
+        id="hero"
+        className="bg-gray-50 border-gray-300 border-2 top-0 pt-20 pb-16"
+      >
+        <div className="container mx-auto px-36 flex flex-col justify-center text-center">
+          <img
+            src={FullLogo}
+            className="w-1/3 pb-5 self-center"
+            alt="Trust Project Logo"
+          />
+          <p className="text-2xl px-24 self-center">
+            The Community TRUST Project represents a commitment from local
+            government to assess institutional bias embedded in data models and
+            systems that represent diverse identities and lived experiences of
+            the communities they serve.
+          </p>
+          <p className="text-xl mb-2 mt-12 font-semibold self-center">
+            Bring TRUST to your community.
+          </p>
+          <Windmill.Button
+            onClick={openModal}
+            className="whitespace-nowrap inline-flex self-center w-2/5 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
+          >
+            Click here to get involved
+          </Windmill.Button>
+        </div>
+      </section>
 
+      <div className="max-w-4xl mx-auto">
         <section id="blueprint">
           <div className="m-12 max-w-7xl p-12">
             <div className="flex items-center text-gray-900 mb-4">
@@ -207,13 +210,16 @@ function Home() {
             </div>
           </div>
         </section>
-
-        <section id="footer" className="bg-gray-100 -mx-12 mt-12 pt-20 pb-40">
-          <div className="flex flex-col justify-center text-center">
-            This is a footer.
-          </div>
-        </section>
       </div>
+
+      <section
+        id="footer"
+        className="bg-gray-50 border-gray-300 border-2 mt-12 pt-20 pb-40"
+      >
+        <div className="flex flex-col justify-center text-center">
+          This is a footer.
+        </div>
+      </section>
 
       {/* Modals for data submission forms */}
       <Windmill.Modal isOpen={isModalOpen} onClose={closeModal}>
