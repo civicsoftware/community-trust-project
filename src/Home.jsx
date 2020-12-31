@@ -214,7 +214,7 @@ function Home() {
 
       <section
         id="footer"
-        className="bg-gray-50 border-gray-300 border-2 mt-12 pt-20 pb-40"
+        className="bg-gray-50 border-gray-300 border-2 mt-40 pt-12 pb-40"
       >
         <div className="flex flex-col justify-center text-center">
           This is a footer.
