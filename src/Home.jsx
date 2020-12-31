@@ -228,7 +228,8 @@ function Home() {
               className="inline text-teal-dark hover:text-teal-light"
             >
               inspired by many others
-            </a>{" "}
+            </a>
+            .
           </p>
           <p>
             <a
