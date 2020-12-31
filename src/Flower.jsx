@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { default as Windmill } from "@windmill/react-ui";
+import { Link } from "react-router-dom";
+import { default as Windmill } from "@windmill/react-ui";
 import FlowerSvg from "../public/CIVIC_FLOWER.svg";
 
 function Flower() {
@@ -70,21 +70,19 @@ function Flower() {
           </li>
         </ul>
       </p>
+      <div className="mt-6 font-semibold flex flex-row">
+        <Link to="/blueprint">
+          <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+            Read More in the Blueprint
+          </Windmill.Button>
+        </Link>
+      </div>
       <object
         data={FlowerSvg}
         type="image/svg+xml"
-        className="mt-20"
+        className="mt-10"
         aria-label="Flower of Hope"
       />
-
-      {/* <div className="mt-8 font-semibold flex flex-row">
-        <p className="pt-2">Navigate the Compass of Oppression:</p>
-        <Link to="/compass">
-          <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
-            Click here
-          </Windmill.Button>
-        </Link>
-      </div> */}
     </div>
   );
 }

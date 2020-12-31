@@ -137,7 +137,7 @@ function Avatar({ name }) {
 
   return (
     <>
-      <div className="grid grid-cols-8 -z-10 bg-white pb-12">
+      <div className="grid grid-cols-8 -z-10 bg-white pb-6">
         <div className="col-span-8 bg-purple-dark p-2 flex flex-col z-10">
           <h2 className="inline-block ml-2 text-xl text-white font-bold z-10">
             {name}

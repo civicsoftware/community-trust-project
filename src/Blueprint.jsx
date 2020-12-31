@@ -5,7 +5,7 @@ import { default as Windmill } from "@windmill/react-ui";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
-import InfinityLoop from "../public/INFINITY_LOOP.jpeg";
+import InfinityLoop from "../public/INFINITY_LOOP.png";
 
 function Blueprint() {
   const [overlayShown, setOverlayShown] = useState(false);
@@ -37,9 +37,7 @@ function Blueprint() {
             className="w-7 pt-1 mr-3"
             alt="Trust Project Logo"
           />
-          <h2 className="text-2xl font-semibold">
-            Community Library of Context
-          </h2>
+          <h2 className="text-2xl font-semibold">Context-Aware Systems</h2>
         </div>
         <p className="block">
           The Community Library of Context is a resource that reflects an active
@@ -62,8 +60,10 @@ function Blueprint() {
           loop.This is a paragraph about the inifinity loop.This is a paragraph
           about the inifinity loop.
         </p>
-        <p className="pt-2">Click to view larger:</p>
-
+        <p className="pt-4 font-bold">
+          Infinity Loop Collaboration Model{" "}
+          <span className="italic font-normal">(Click to view larger)</span>:
+        </p>
         <img
           src={InfinityLoop}
           onClick={() => toggleOverlay()}

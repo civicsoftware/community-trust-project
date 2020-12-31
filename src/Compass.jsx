@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { default as Windmill } from "@windmill/react-ui";
+import { Link } from "react-router-dom";
+import { default as Windmill } from "@windmill/react-ui";
 import CompassSvg from "../public/CIVIC_COMPASS.svg";
 
 function Compass() {
@@ -43,10 +43,17 @@ function Compass() {
         </span>{" "}
         that were inspired by the CoO.
       </p>
+      <div className="mt-6 font-semibold flex flex-row">
+        <Link to="/blueprint">
+          <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+            Read More in the Blueprint
+          </Windmill.Button>
+        </Link>
+      </div>
       <object
         data={CompassSvg}
         type="image/svg+xml"
-        className="mt-20"
+        className="mt-10"
         aria-label="Compass of Oppression"
       />
 
