@@ -111,13 +111,11 @@ function Context({ datasetId }) {
           <ContextSection
             questionGroup="c7cq4mb35M6zr7LAgjINd"
             dataset={datasetId}
-            narrow
           />
           {/* Ethical Governance */}
           <ContextSection
             questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
             dataset={datasetId}
-            narrow
           />
         </div>
         {/* Community Context */}
