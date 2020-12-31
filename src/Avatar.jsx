@@ -74,7 +74,7 @@ const AVATAR = gql`
         }
         videoConversationsCollection(limit: 1) {
           items {
-            schemaConvoVideoCollection {
+            schemaConvoVideoCollection(limit: 1) {
               items {
                 url
               }
@@ -130,12 +130,14 @@ function Avatar({ name }) {
   const conversation = conversationsCollection?.items?.[0];
   const quote = conversation?.quote || "This is a temporary quote.";
   const audioFile = conversation?.audioFile;
-  const video = videoConversationsCollection?.items?.[0];
-  const videoFile = video?.url;
+  const video =
+    videoConversationsCollection?.items?.[0]?.schemaConvoVideoCollection
+      ?.items?.[0];
+  const videoFile = video?.url || "";
 
   return (
     <>
-      <div className="grid grid-cols-8 -z-10 bg-white pb-6">
+      <div className="grid grid-cols-8 -z-10 bg-white pb-12">
         <div className="col-span-8 bg-purple-dark p-2 flex flex-col z-10">
           <h2 className="inline-block ml-2 text-xl text-white font-bold z-10">
             {name}
@@ -200,7 +202,7 @@ function Avatar({ name }) {
             <h3 className="inline text-xs text-white">{location}</h3>
           </div>
         </div>
-        <div className="col-span-5 pl-10 pr-6 pt-6">
+        <div className="col-span-5 pl-4 pr-6 pt-6">
           <Carousel photos={[photo, photo2, photo3, photo4]} />
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <audio controls className="w-full">
@@ -208,7 +210,7 @@ function Avatar({ name }) {
             Your browser does not support the audio element.
           </audio>
         </div>
-        <div className="col-span-3 pr-10 pt-4 text-sm">
+        <div className="col-span-3 pr-6 pt-4 text-sm">
           <h3 className="text-lg font-bold">Bio</h3>
           <p className="">{documentToReactComponents(bio.json, pOptions)}</p>
           <div className="">
@@ -218,7 +220,7 @@ function Avatar({ name }) {
         </div>
 
         <div className="col-span-8">
-          <p className="bg-yellow-light rounded-2xl box-content py-4 my-4 mx-4 text-m italic pl-4 font-delius text-lg">
+          <p className="bg-blue-light rounded-2xl box-content py-4 my-4 mx-4 text-m italic pl-4 font-delius text-lg font-bold">
             &quot;{quote}&quot;
           </p>
         </div>
@@ -245,9 +247,8 @@ function Avatar({ name }) {
         </div>
         <div className="col-span-4 pb-4">
           <h3 className="text-lg font-bold pb-2">Actions</h3>
-          {/* {console.log(videoConversationsCollection)} */}
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video className="w-full pr-10" controls>
+          <video className="w-full pr-6" controls>
             <source src={videoFile} type="video/mp4" />
           </video>
           <p className="mr-10 my-4 text-sm">

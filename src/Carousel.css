@@ -76,7 +76,6 @@ li {
 .carousel {
   position: relative;
   padding-top: 56%;
-  filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
 }
 
@@ -96,7 +95,7 @@ li {
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
-  width: 100%;
+  object-fit: cover;
 }
 
 .carousel__slide:before {
@@ -180,6 +179,7 @@ li {
   border-radius: 50%;
   font-size: 0;
   outline: 0;
+  filter: drop-shadow(0 0 10px #0003);
 }
 
 .carousel::before,
