@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { default as Windmill } from "@windmill/react-ui";
@@ -9,7 +10,7 @@ import InfinityLoop from "../public/INFINITY_LOOP.jpeg";
 function Blueprint() {
   const [overlayShown, setOverlayShown] = useState(false);
 
-  function toggleOverlay(e) {
+  function toggleOverlay() {
     setOverlayShown(!overlayShown);
   }
 
@@ -17,11 +18,11 @@ function Blueprint() {
     <>
       <Windmill.Modal
         isOpen={overlayShown}
-        onClose={e => toggleOverlay(e)}
+        onClose={() => toggleOverlay()}
         className="max-w-full mx-40 bg-white border-gray-300 border-2 rounded-lg shadow-xl"
       >        <img
           src={InfinityLoop}
-          onClick={e => toggleOverlay(encodeURI)}
+          onClick={() => toggleOverlay()}
           className="w-full"
           alt="Infinity Loop"
         />
@@ -65,7 +66,7 @@ function Blueprint() {
 
         <img
           src={InfinityLoop}
-          onClick={e => toggleOverlay(e, name)}
+          onClick={() => toggleOverlay()}
           className="mt-10"
           alt="Infinity Loop"
         />
