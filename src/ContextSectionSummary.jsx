@@ -3,7 +3,6 @@ import React from "react";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
 
-const giveMeSomethingToBreak = "face";
 function ContextNav({
   schema,
   summary,
