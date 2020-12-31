@@ -351,7 +351,7 @@ function Library() {
               <h2 className="text-2xl font-semibold">Community Data Library</h2>
             </div>
           </div>
-          <p className="text-xl">Mission: A Platform for Open Context</p>
+          <p className="text-xl">A Platform for Open Context</p>
         </div>
 
         <section
