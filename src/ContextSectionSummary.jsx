@@ -10,9 +10,7 @@ function ContextSectionSummary({
   successes,
   challenges,
   sandtraps,
-  logo,
-  whatWeHave,
-  whatWeNeed
+  logo
 }) {
   return (
     <section
@@ -163,28 +161,6 @@ function ContextSectionSummary({
             ))} */}
           </ul>
         </div>
-        {whatWeHave && whatWeNeed && (
-          <CollapsableFixedHeight>
-            <div className="grid grid-cols-2 gap-4 mt-2">
-              <div className="prose-sm">
-                <h3 className="text-lg font-bold">What We Have</h3>
-                {whatWeHave?.json ? (
-                  documentToReactComponents(whatWeHave?.json)
-                ) : (
-                  <p>TODO: Convert to contentful</p>
-                )}
-              </div>
-              <div className="prose-sm">
-                <h3 className="text-lg font-bold">What We Need</h3>
-                {whatWeNeed?.json ? (
-                  documentToReactComponents(whatWeNeed?.json)
-                ) : (
-                  <p>TODO: Convert to contentful</p>
-                )}
-              </div>
-            </div>
-          </CollapsableFixedHeight>
-        )}
         <CollapsableFixedHeight>
           <div className="grid grid-cols-2 gap-4 mt-2">
             <div className="prose-sm">

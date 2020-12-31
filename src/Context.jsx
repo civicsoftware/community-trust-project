@@ -15,9 +15,6 @@ import ContextNav from "./ContextNav";
 const DATASETS = gql`
   query Dataset($datasetId: String!) {
     dataset(id: $datasetId) {
-      sys {
-        id
-      }
       title
       summary {
         json
@@ -40,52 +37,6 @@ const DATASETS = gql`
         description
         width
         height
-      }
-    }
-  }
-`;
-
-const REPORTS = gql`
-  query Report($datasetId: String!) {
-    report(id: $datasetId) {
-      sys {
-        id
-      }
-      title
-      summary {
-        json
-      }
-      schema
-      summary {
-        json
-      }
-      successes {
-        json
-      }
-      challenges {
-        json
-      }
-      sandtraps {
-        json
-      }
-      logo {
-        url
-        description
-        width
-        height
-      }
-      whatWeHave {
-        json
-      }
-      whatWeNeed {
-        json
-      }
-      questionGroupsCollection {
-        items {
-          sys {
-            id
-          }
-        }
       }
     }
   }
@@ -98,47 +49,23 @@ function useQueryParam() {
 function ContextPage() {
   const query = useQueryParam();
   const datasetId = query.get("data");
-  const isReport = query.get("isReport");
 
-  return isReport === "true" ? (
-    <ReportQuery datasetId={datasetId} />
-  ) : (
-    <DatasetQuery datasetId={datasetId} />
-  );
+  return <Context datasetId={datasetId} />;
 }
 
-function ReportQuery({ datasetId }) {
-  const { loading, error, data } = useQuery(REPORTS, {
-    variables: { datasetId }
-  });
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{JSON.stringify(error)}</p>;
-  return <Context data={data?.report} isReport />;
-}
-
-function DatasetQuery({ datasetId }) {
+function Context({ datasetId }) {
   const { loading, error, data } = useQuery(DATASETS, {
     variables: { datasetId }
   });
+
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{JSON.stringify(error)}</p>;
-  return <Context data={data?.dataset} isDataset />;
-}
-
-function Context({ data, isDataset, isReport }) {
-  const datasetId = data?.sys?.id;
-  const schema = data?.schema;
-  const summary = data?.summary;
-  const successes = data?.successes;
-  const challenges = data?.challenges;
-  const sandtraps = data?.sandtraps;
-  const logo = data?.logo;
-
-  // Reports only
-  const contextSections = data?.questionGroupsCollection?.items;
-  const whatWeHave = data?.whatWeHave;
-  const whatWeNeed = data?.whatWeNeed;
-
+  if (error) return <p>Error :(</p>;
+  const schema = data?.dataset?.schema;
+  const summary = data?.dataset?.summary;
+  const successes = data?.dataset?.successes;
+  const challenges = data?.dataset?.challenges;
+  const sandtraps = data?.dataset?.sandtraps;
+  const logo = data?.dataset?.logo;
   if (!schema) return <div>No data</div>;
 
   return (
@@ -164,8 +91,6 @@ function Context({ data, isDataset, isReport }) {
           challenges={challenges}
           successes={successes}
           sandtraps={sandtraps}
-          whatWeHave={whatWeHave}
-          whatWeNeed={whatWeNeed}
           logo={logo}
         />
         <div className="md:grid md:grid-cols-2">
@@ -173,56 +98,44 @@ function Context({ data, isDataset, isReport }) {
           <ContextSectionMaintenance schema={schema} />
         </div>
         {/* <ContextSectionDataProcess schema={schema} /> */}
-        {isDataset && (
-          <>
-            {/* Lineage */}
-            <ContextSection
-              questionGroup="5oOzAK9EEh7rUuBrbInLFx"
-              dataset={datasetId}
-            />
-            {/* Methodology */}
-            <ContextSection
-              questionGroup="iUwbAs8uk0yiUhPJK2eyX"
-              dataset={datasetId}
-            />
-            {/* Access */}
-            <div className="md:grid md:grid-cols-2">
-              <ContextSection
-                questionGroup="c7cq4mb35M6zr7LAgjINd"
-                dataset={datasetId}
-                narrow
-              />
-              {/* Ethical Governance */}
-              <ContextSection
-                questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
-                dataset={datasetId}
-                narrow
-              />
-            </div>
-            {/* Community Context */}
-            <div className="md:grid md:grid-cols-2">
-              <ContextSection
-                questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
-                dataset={datasetId}
-                narrow
-              />
-              {/* Historic Context */}
-              <ContextSection
-                questionGroup="2khypcmlN6CBCnl8NS9our"
-                dataset={datasetId}
-                narrow
-              />
-            </div>
-          </>
-        )}
-        {isReport &&
-          contextSections.map(item => (
-            <ContextSection
-              questionGroup={item?.sys?.id}
-              dataset={datasetId}
-              isReport
-            />
-          ))}
+        {/* Lineage */}
+        <ContextSection
+          questionGroup="5oOzAK9EEh7rUuBrbInLFx"
+          dataset={datasetId}
+        />
+        {/* Methodology */}
+        <ContextSection
+          questionGroup="iUwbAs8uk0yiUhPJK2eyX"
+          dataset={datasetId}
+        />
+        {/* Access */}
+        <div className="md:grid md:grid-cols-2">
+          <ContextSection
+            questionGroup="c7cq4mb35M6zr7LAgjINd"
+            dataset={datasetId}
+            narrow
+          />
+          {/* Ethical Governance */}
+          <ContextSection
+            questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
+            dataset={datasetId}
+            narrow
+          />
+        </div>
+        {/* Community Context */}
+        <div className="md:grid md:grid-cols-2">
+          <ContextSection
+            questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
+            dataset={datasetId}
+            narrow
+          />
+          {/* Historic Context */}
+          <ContextSection
+            questionGroup="2khypcmlN6CBCnl8NS9our"
+            dataset={datasetId}
+            narrow
+          />
+        </div>
         <div className="md:grid md:grid-cols-2">
           <ContextSectionResources schema={schema} />
           <ContextSectionAttribution schema={schema} />
