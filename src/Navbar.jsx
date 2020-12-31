@@ -5,13 +5,13 @@ import Logo from "../public/trust_logo_t.svg";
 
 function Navbar() {
   return (
-    <div className="p-1 text-gray-900 ">
+    <div className="p-2 text-gray-900 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between py-1 items-center md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/" className="flex flex-row">
-              <img src={Logo} className="h-12 w-12" alt="Trust Project Logo" />
-              <span className="text-xl self-center pl-4">
+              <img src={Logo} className="h-8 w-8" alt="Trust Project Logo" />
+              <span className="text-xl self-center pl-3">
                 Community TRUST Project
               </span>
             </a>

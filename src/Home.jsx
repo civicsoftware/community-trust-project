@@ -17,7 +17,7 @@ function Home() {
     <>
       <section
         id="hero"
-        className="bg-gray-200 border-gray-300 border-2 top-0 pt-20 pb-16"
+        className="bg-gray-200 border-gray-300 border-2 top-0 pt-20 pb-20"
       >
         <div className="container mx-auto px-72 grid grid-cols-4 gap-x-12 justify-items-stretch items-start">
           <div className="col-span-2">
@@ -57,7 +57,7 @@ function Home() {
 
       <div className="max-w-4xl mx-auto">
         <section id="blueprint">
-          <div className="m-12 max-w-7xl p-12">
+          <div className="mx-12 max-w-7xl p-16">
             <div className="flex items-center text-gray-900 mb-4">
               {/* <svg
                 className="h-6 w-6 mr-3"
@@ -89,9 +89,9 @@ function Home() {
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
             </p>
-            <div className="mt-8 font-semibold flex flex-row">
+            <div className="mt-6 font-semibold flex flex-row">
               <Link to="/blueprint">
-                <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Learn more about the CIVIC Blueprint for Context-Aware Systems
                 </Windmill.Button>
               </Link>
@@ -140,9 +140,9 @@ function Home() {
               perpetuate harm is an essential (and complex) part of
               understanding how to do work in our current environment.
             </p>
-            <div className="mt-8 font-semibold flex flex-row">
+            <div className="mt-6 font-semibold flex flex-row">
               <Link to="/compass">
-                <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Navigate the Compass of Oppression
                 </Windmill.Button>
               </Link>
@@ -176,9 +176,9 @@ function Home() {
               Context-aware systems are built on a collaborative model that
               places lived experiences at the center of impact.{" "}
             </p>
-            <div className="mt-8 font-semibold flex flex-row">
+            <div className="mt-6 font-semibold flex flex-row">
               <Link to="/avatars">
-                <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Get to Know the Actors
                 </Windmill.Button>
               </Link>
@@ -212,9 +212,9 @@ function Home() {
               Participation, acknowledgment, accountability are the foundation
               of the theory to drive long-term transformation.{" "}
             </p>
-            <div className="mt-8 font-semibold flex flex-row">
+            <div className="mt-6 font-semibold flex flex-row">
               <Link to="/flower">
-                <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Explore the Flower of Hope
                 </Windmill.Button>
               </Link>
@@ -228,9 +228,17 @@ function Home() {
         className="bg-gray-50 border-gray-300 border-2 mt-40 pt-12 pb-40"
       >
         <div className="flex flex-col justify-center text-center">
-          The Community TRUST Project is built and maintained by Civic Software
-          Foundation. <a mailto="hi@civicsoftwarefoundation.org">Contact us</a>{" "}
-          for questions.
+          <p>
+            The Community TRUST Project is built and maintained by Civic
+            Software Foundation.{" "}
+            <a
+              className="inline text-teal-dark hover:text-teal-light"
+              href="mailto:hi@civicsoftwarefoundation.org"
+            >
+              Contact us
+            </a>{" "}
+            for questions.
+          </p>
         </div>
       </section>
 
