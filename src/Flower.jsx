@@ -27,18 +27,18 @@ function Flower() {
         <h2 className="text-2xl font-semibold">Flower of Hope</h2>
       </div>
       <p className="block">
-        Flower of Hope is our version of a theory of change. Instead of creating
+        Flower of Hope is our version of a <b>theory of change</b>. Instead of creating
         a linear flow chart, we wanted to use flower as a metaphor to emphasize
-        the dynamic aspect of change. A flower is a living and breathing unit,
+        the <b>dynamic aspect</b> of change. A flower is a living and breathing unit,
         growing and blossoming over time, where &quot;theory&quot; meets
         actionable steps so that a future where the flower of hope can blossom
-        can be created. We also do acknowledge that change takes time and
-        commitment. A better future is possible through collaborative actions
+        can be created. We also do acknowledge that change takes <b>time and
+        commitment</b>. A better future is possible through collaborative actions
         which the Flower of Hope can inform.
       </p>
       <p className="block mt-6">
-        Having our main vision -- “justice as the foundational understanding of
-        a society” -- at the center shows we are hopeful; however, we are not
+        Having our main vision -- “<i>justice as the foundational understanding of
+        a society</i>” -- at the center shows we are hopeful; however, we are not
         ignorant. We do acknowledge the pain and suffering systems of
         oppressions have caused. We want to plant positive imagination into the
         gaps we&apos;ve identified via the stories of those whose voices have
