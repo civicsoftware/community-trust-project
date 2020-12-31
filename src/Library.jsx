@@ -314,7 +314,9 @@ function Library() {
                 with one of our TRUST Partners or a city, county, or government
                 agency that isn’t a partner yet to get the conversation started.
               </p>
-              <Windmill.Button className="mt-4 w-32">Click here</Windmill.Button>
+              <Windmill.Button className="mt-4 w-32">
+                Click here
+              </Windmill.Button>
             </div>
             <div className="flex flex-col justify-center">
               <h1 className="font-semibold">
@@ -334,7 +336,9 @@ function Library() {
                 We can help you start the process of adding to an existing
                 collection or starting your own.
               </p>
-              <Windmill.Button className="mt-4 w-32">Click here</Windmill.Button>
+              <Windmill.Button className="mt-4 w-32">
+                Click here
+              </Windmill.Button>
             </div>
           </div>
         </section>
