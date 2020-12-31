@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
-import { Link } from "react-router-dom";
-import { default as Windmill } from "@windmill/react-ui";
+// import { Link } from "react-router-dom";
+// import { default as Windmill } from "@windmill/react-ui";
 import CompassSvg from "../public/CIVIC_COMPASS.svg";
 
 function Compass() {
   return (
-    <div className="m-12 mt-24 max-w-4xl mx-auto px-12">
+    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
       <div className="flex items-center text-gray-900 mb-4">
         <svg
           className="h-6 w-6 mr-3"
