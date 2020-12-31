@@ -84,7 +84,7 @@ function ContextSectionWrapper({
         </div>
         {callToAction?.buttonText && (
           <ContextSectionCTAFooter
-            className={``}
+            className=""
             narrow={narrow}
             callToAction={callToAction}
           />

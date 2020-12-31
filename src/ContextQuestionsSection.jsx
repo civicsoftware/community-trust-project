@@ -1,5 +1,5 @@
 import React from "react";
-import { arrayOf, string, shape, bool } from "prop-types";
+import { arrayOf, string, shape, bool, func } from "prop-types";
 import ContextQuestion from "./ContextQuestion";
 import { answerPropTypes, questionPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionWrapper from "./ContextSectionWrapper";
@@ -110,7 +110,8 @@ ContextQuestionsSection.propTypes = {
   }),
   callToAction: shape,
   narrow: bool,
-  color: string
+  color: string,
+  Icon: func
 };
 
 export default ContextQuestionsSection;

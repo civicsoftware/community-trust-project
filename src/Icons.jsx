@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+import { string } from "prop-types";
 import React from "react";
 
 export function CubeTransparent({ className }) {
@@ -19,6 +20,7 @@ export function CubeTransparent({ className }) {
     </svg>
   );
 }
+CubeTransparent.propTypes = { className: string };
 
 export function Database({ className }) {
   return (
@@ -38,6 +40,7 @@ export function Database({ className }) {
     </svg>
   );
 }
+Database.propTypes = { className: string };
 
 export function DocumentReport({ className }) {
   return (
@@ -57,6 +60,7 @@ export function DocumentReport({ className }) {
     </svg>
   );
 }
+DocumentReport.propTypes = { className: string };
 
 export function Fingerprint({ className }) {
   return (
@@ -76,6 +80,7 @@ export function Fingerprint({ className }) {
     </svg>
   );
 }
+Fingerprint.propTypes = { className: string };
 
 export function Hand({ className }) {
   return (
@@ -94,24 +99,27 @@ export function Hand({ className }) {
       />
     </svg>
   );
-}
-export function Key({ className }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      className={className}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
-      />
-    </svg>
-  );
+
+  Hand.propTypes = { className: string };
+  export function Key({ className }) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        className={className}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+        />
+      </svg>
+    );
+  }
+  Key.propTypes = { className: string };
 }
 
 export function Scales({ className }) {
@@ -132,6 +140,7 @@ export function Scales({ className }) {
     </svg>
   );
 }
+Scales.propTypes = { className: string };
 
 export function Speakerphone({ className }) {
   return (
@@ -151,6 +160,7 @@ export function Speakerphone({ className }) {
     </svg>
   );
 }
+Speakerphone.propTypes = { className: string };
 
 export function Globe({ className }) {
   return (
@@ -170,6 +180,7 @@ export function Globe({ className }) {
     </svg>
   );
 }
+Globe.propTypes = { className: string };
 
 export const ICONS = {
   fingerprint: Fingerprint,

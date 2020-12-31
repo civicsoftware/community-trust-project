@@ -1,8 +1,7 @@
-import { Button } from "@windmill/react-ui";
 import { startCase, toLower } from "lodash";
 import { arrayOf, string } from "prop-types";
 import React from "react";
-import { default as Windmill } from "@windmill/react-ui";
+
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 
 function ContextNav({ sections }) {
@@ -36,7 +35,10 @@ function ContextNav({ sections }) {
             {startCase(toLower(section))}
           </a>
         ))}
-        <a href="/blueprint" className="m-2 text-cobalt text-xs hidden lg:block w-36">
+        <a
+          href="/blueprint"
+          className="m-2 text-cobalt text-xs hidden lg:block w-36"
+        >
           Learn more about context-aware systems
         </a>
       </div>

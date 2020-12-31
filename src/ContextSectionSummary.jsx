@@ -52,7 +52,7 @@ const CTA = gql`
 function ContextSectionSummary({
   schema,
   summary,
-  successes,
+  // successes,
   challenges,
   sandtraps,
   logo
