@@ -39,9 +39,9 @@ function ContextSummarySectionWrapper({
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-900 bg-${color}-900`}
+        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-900 bg-white`}
       >
-        <div className="px-4 py-2 rounded-t-lg">
+        <div className={`px-4 py-2 bg-${color}-900`}>
           <div
             className={`inline-block p-1 border-2  shadow-xl rounded-full text-white bg-${color}-900`}
           >

@@ -40,7 +40,7 @@ function BookmarkIcon() {
 
 function ContextSectionAttribution({ schema }) {
   const { loading, error, data } = useQuery(CTA, {
-    variables: { callToAction: "2iZpayYpfqEU4My4uAPooT" }
+    variables: { callToAction: "6KawAQtep2kOxmcxs29MlR" }
   });
 
   if (loading) return <p>Loading...</p>;

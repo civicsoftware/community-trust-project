@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
 import Collapsable from "./Collapsable";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
+import CollapsableFixedHeight from "./CollapsableFixedHeight";
 
 function DefaultIcon() {
   return (
@@ -71,14 +72,7 @@ function ContextSectionWrapper({
             {documentToReactComponents(description?.json)}
           </div>
           {expandable && (
-            <Collapsable
-              description="section detail"
-              hideText
-              iconClassName="h-6 w-6"
-              buttonClassName="absolute right-4 top-4"
-            >
-              <Collapsable.Section hidden> {children}</Collapsable.Section>
-            </Collapsable>
+            <CollapsableFixedHeight>{children}</CollapsableFixedHeight>
           )}
           {!expandable && children}
         </div>
