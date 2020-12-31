@@ -34,7 +34,8 @@ module.exports = windmill({
       purple: {
         light: "#A074A7",
         DEFAULT: "#A074A7",
-        dark: "#70297B"
+        medium: "#70297B",
+        dark: "#3A1B53"
       },
       yellow: {
         light: "#FEE4A1",
