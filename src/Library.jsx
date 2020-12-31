@@ -211,7 +211,7 @@ function QuestionFive() {
   return (
     <div
       id="question-card-5"
-      className="col-span-1 relative m-4 rounded-lg border-2 shadow-xl 2xl:bg-gray-50   border-gray-500"
+      className="col-span-1 relative m-4 rounded-lg border-2 shadow-xl bg-gray-50   border-gray-500"
     >
       <div className="relative p-4 rounded-t-lg flex flex-row">
         <div
@@ -444,7 +444,9 @@ function Library() {
                 agency that isn’t a partner yet to get the conversation started.
               </p>
               <Windmill.Button className="mt-4 w-80">
-                Request a Dataset be Added to the Library
+                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Request for Datasource">
+                  Request a Dataset be Added to the Library
+                </a>
               </Windmill.Button>
             </div>
             <div className="flex flex-col justify-center">
@@ -466,7 +468,9 @@ function Library() {
                 collection or starting your own.
               </p>
               <Windmill.Button className="mt-4 w-72">
-                Add Your Data Source to the Library
+                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Add My Data Source to the Library">
+                  Add Your Data Source to the Library
+                </a>
               </Windmill.Button>
             </div>
           </div>
