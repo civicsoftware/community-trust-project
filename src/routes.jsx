@@ -9,6 +9,7 @@ import Library from "./Library";
 import Schema from "./Schema";
 import Compass from "./Compass";
 import Flower from "./Flower";
+import Attribution from "./Attribution";
 import Blueprint from "./Blueprint";
 
 /* *
@@ -91,6 +92,12 @@ const ROUTES = [
         key: "BLUEPRINT",
         exact: true,
         component: Blueprint
+      },
+      {
+        path: "/attribution",
+        key: "ATTRIBUTION",
+        exact: true,
+        component: Attribution
       }
     ]
   }
