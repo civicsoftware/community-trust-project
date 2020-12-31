@@ -37,13 +37,13 @@ function ContextSectionWrapper({
   completeness,
   answered,
   total,
-  cta,
   children,
   color,
   description,
   Icon,
   narrow,
-  expandable
+  expandable,
+  callToAction
 }) {
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
@@ -82,8 +82,12 @@ function ContextSectionWrapper({
           )}
           {!expandable && children}
         </div>
-        {cta && (
-          <ContextSectionCTAFooter className={`${color}-300`} narrow={narrow} />
+        {callToAction?.buttonText && (
+          <ContextSectionCTAFooter
+            className={`${color}-300`}
+            narrow={narrow}
+            callToAction={callToAction}
+          />
         )}
       </div>
     </section>
@@ -95,7 +99,6 @@ ContextSectionWrapper.propTypes = {
   completeness: oneOf([1, 2, 3]),
   answered: number,
   total: number,
-  cta: bool,
   children: node,
   color: string,
   description: shape({
@@ -105,7 +108,8 @@ ContextSectionWrapper.propTypes = {
   }),
   narrow: bool,
   Icon: node,
-  expandable: bool
+  expandable: bool,
+  callToAction: shape({})
 };
 
 ContextSectionWrapper.defaultProps = {

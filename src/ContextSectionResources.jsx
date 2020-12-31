@@ -1,6 +1,23 @@
 import React from "react";
+import { gql, useQuery } from "@apollo/client";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionWrapper from "./ContextSectionWrapper";
+
+const CTA = gql`
+  query CallToAction($callToAction: String!) {
+    callToAction(id: $callToAction) {
+      description {
+        json
+      }
+      buttonText
+      buttonSubText
+      emailRecipients
+      emailSubject
+      emailBody
+      formUrl
+    }
+  }
+`;
 
 function BookIcon() {
   return (
@@ -22,24 +39,20 @@ function BookIcon() {
 }
 
 function ContextSectionResources({ schema }) {
-  // let completeness = 0;
-  // const entries = [
-  //   schema?.referenceDocumentation,
-  //   schema?.other?.serviceProviders
-  // ];
-  // if (entries.filter(x => x).length >= 0) {
-  //   completeness = 1;
-  // }
-  // if (entries.filter(x => x).length === entries.length) {
-  //   completeness = 2;
-  // }
+  const { loading, error, data } = useQuery(CTA, {
+    variables: { callToAction: "2iZpayYpfqEU4My4uAPooT" }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+  const callToAction = data?.callToAction;
 
   return (
     <ContextSectionWrapper
       title="Resources"
       Icon={BookIcon}
       color="gray"
-      cta
+      callToAction={callToAction}
       narrow
       expandable
     >

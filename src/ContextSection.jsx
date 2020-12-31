@@ -21,6 +21,17 @@ const SECTION = gql`
           }
         }
       }
+      callToAction {
+        description {
+          json
+        }
+        buttonText
+        buttonSubText
+        emailRecipients
+        emailSubject
+        emailBody
+        formUrl
+      }
     }
     dataset(id: $dataset) {
       answersCollection {
@@ -45,10 +56,11 @@ function ContextSection({ questionGroup, dataset, narrow }) {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
 
   const title = data?.questionGroup?.title;
   const questions = data?.questionGroup?.questionsCollection?.items;
+  const callToAction = data?.questionGroup?.callToAction;
   const answers = data?.dataset?.answersCollection?.items;
 
   return (
@@ -58,6 +70,7 @@ function ContextSection({ questionGroup, dataset, narrow }) {
       answers={answers}
       description={data?.questionGroup?.attribution}
       narrow={narrow}
+      callToAction={callToAction}
     />
   );
 }

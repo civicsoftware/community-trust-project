@@ -1,43 +1,57 @@
 import React from "react";
 import { default as Windmill } from "@windmill/react-ui";
-import { bool, string } from "prop-types";
+import { bool, shape, string } from "prop-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-function ContextSectionCTAFooter({ cta, buttonText, className, narrow }) {
+function ContextSectionCTAFooter({ callToAction, className, narrow }) {
+  const description = callToAction?.description.json;
+  const buttonText = callToAction?.buttonText;
+  const buttonSubText = callToAction?.buttonSubText;
+  const emailRecipients = callToAction?.emailRecipients;
+  const emailSubject = callToAction?.emailSubject;
+  const emailBody = callToAction?.emailBody;
+  const formUrl = callToAction?.formUrl;
+
+  const mailTo =
+    emailRecipients &&
+    `mailto:${emailRecipients.join(", ")}?cc=&bcc=&subject=${
+      emailSubject ? encodeURIComponent(emailSubject) : ""
+    }&body=${emailBody ? encodeURIComponent(emailBody) : ""}`;
   return (
-    <div
-      className={`grid grid-cols-12 px-4 py-2 rounded-b-lg  bg-gray-200 ${className}`}
-    >
-      <p
-        className={`col-span-12 mb-10 md:mb-0 ${
-          narrow ? "md:mb-10" : "md:col-span-10"
-        }`}
-      >
-        {cta}
-      </p>
+    <div className={`px-4 py-2 rounded-b-lg  bg-gray-200 ${className}`}>
       <div
-        className={`md:col-span-12 md:ml-auto absolute right-2 bottom-2 ${
-          narrow ? "" : "md:col-span-2"
-        }`}
+        className={`prose prose-sm max-w-none mb-12 ${narrow ? "" : "md:mb-6"}`}
       >
-        <Windmill.Button>
-          <p className="text-md font-semibold capitalize">{buttonText}</p>
-        </Windmill.Button>
+        {description && documentToReactComponents(description)}
       </div>
+
+      {buttonSubText && (
+        <p className="absolute left-4 bottom-2 text-sm w-1/2">
+          {buttonSubText}
+        </p>
+      )}
+      {buttonText && (
+        <div className="md:col-span-12 md:ml-auto absolute right-2 bottom-2">
+          {emailRecipients && (
+            <Windmill.Button tag="a" href={mailTo}>
+              <p className="text-md font-semibold capitalize">{buttonText}</p>
+            </Windmill.Button>
+          )}
+          {formUrl && (
+            <Windmill.Button tag="a" href={formUrl}>
+              <p className="text-md font-semibold capitalize">{buttonText}</p>
+            </Windmill.Button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
 ContextSectionCTAFooter.propTypes = {
-  cta: string,
-  buttonText: string,
+  callToAction: shape({}),
   className: string,
   narrow: bool
-};
-
-ContextSectionCTAFooter.defaultProps = {
-  cta:
-    "This is where a call to action would go. This is a placeholder for now but the text would be about this log. Do the thing!",
-  buttonText: "Contribute"
 };
 
 export default ContextSectionCTAFooter;

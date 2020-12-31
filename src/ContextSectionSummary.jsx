@@ -1,9 +1,25 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import CollapsableFixedHeight from "./CollapsableFixedHeight";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
 
+const CTA = gql`
+  query CallToAction($callToAction: String!) {
+    callToAction(id: $callToAction) {
+      description {
+        json
+      }
+      buttonText
+      buttonSubText
+      emailRecipients
+      emailSubject
+      emailBody
+      formUrl
+    }
+  }
+`;
 function ContextSectionSummary({
   schema,
   summary,
@@ -12,6 +28,14 @@ function ContextSectionSummary({
   sandtraps,
   logo
 }) {
+  const { loading, error, data } = useQuery(CTA, {
+    variables: { callToAction: "1c7nrhVR6PWQ8MXuauq54b" }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+  const callToAction = data?.callToAction;
+
   return (
     <section
       id="summary"
@@ -286,7 +310,11 @@ function ContextSectionSummary({
           {schema?.relatedTo}
         </div>
       </div>
-      <ContextSectionCTAFooter colorAndWeight="purple-900" />
+      <ContextSectionCTAFooter
+        callToAction={callToAction}
+        colorAndWeight="purple-900"
+        narrow
+      />
     </section>
   );
 }

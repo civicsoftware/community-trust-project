@@ -1,7 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
-import EarlyPrototype from "./ContextComponents/EarlyPrototype";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionSummary from "./ContextSectionSummary";
 import ContextSectionMaintenance from "./ContextSectionMaintenance";
@@ -59,7 +58,7 @@ function Context({ datasetId }) {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
   const schema = data?.dataset?.schema;
   const summary = data?.dataset?.summary;
   const successes = data?.dataset?.successes;
@@ -70,7 +69,6 @@ function Context({ datasetId }) {
 
   return (
     <>
-      <EarlyPrototype />
       <ContextNav
         sections={[
           "summary",

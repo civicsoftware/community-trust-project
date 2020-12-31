@@ -10,6 +10,7 @@ function ContextQuestionsSection({
   questions,
   answers,
   description,
+  callToAction,
   narrow
 }) {
   const answersForSection = answers.filter(a =>
@@ -40,6 +41,7 @@ function ContextQuestionsSection({
       answered={answered}
       total={total}
       description={description}
+      callToAction={callToAction}
       narrow={narrow}
       cta
     >
@@ -102,6 +104,7 @@ ContextQuestionsSection.propTypes = {
       /* contentful rich text json */
     })
   }),
+  callToAction: shape,
   narrow: bool
 };
 
