@@ -1,8 +1,8 @@
-img {
+#filtered {
   -webkit-filter: grayscale(100%) brightness(90%) sepia(90%) hue-rotate(-240deg)
-    saturate(100%) opacity(0.9) contrast(1.7)
+    saturate(50%) opacity(0.9) contrast(1.7)
     drop-shadow(0 0 7px rgba(10, 219, 205, 0.781));
-  filter: grayscale(100%) brightness(80%) sepia(90%) hue-rotate(-240deg)
-    saturate(100%) opacity(0.9) contrast(1.7)
+  filter: grayscale(100%) brightness(90%) sepia(90%) hue-rotate(-240deg)
+    saturate(50%) opacity(0.9) contrast(1.7)
     drop-shadow(0 0 7px rgba(10, 219, 205, 0.781));
 }
