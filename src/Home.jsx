@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
+import LibraryHero from "../public/LIBRARY_HERO.png";
 
 function Home() {
   return (
@@ -88,16 +89,15 @@ function Home() {
         </section>
 
         <section id="library">
-          <div className="text-4xl m-12 max-w-7xl p-12 flex flex-col items-center">
-            <a
-              href="/library"
-              className="whitespace-nowrap text-gray-500 px-4 py-2 hover:text-gray-900"
-            >
-              → GRAPHIC GOES HERE ←
-            </a>
+          <div className="text-4xl m-12 mt-0 max-w-7xl p-12 pb-0 flex flex-col">
+          <img
+          src={LibraryHero}
+          className="w-full"
+          alt="Community Data Library Graphic"
+        />
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/library">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-start px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Explore the Data Library
                 </Windmill.Button>
               </Link>
