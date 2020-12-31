@@ -13,7 +13,7 @@ const AVATARS = gql`
     avatarCollection(limit: 20) {
       items {
         name
-        photo {
+        thumbnail {
           title
           description
           url
@@ -94,7 +94,7 @@ function Avatars() {
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
             !error &&
-            data.avatarCollection.items.map(({ name, photo }) => (
+            data.avatarCollection.items.map(({ name, thumbnail }) => (
               <div
                 className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
                 onClick={e => toggleCard(e, name)}
@@ -104,8 +104,8 @@ function Avatars() {
                   {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                   <img
                     id="filtered"
-                    src={photo?.url}
-                    alt={photo?.description}
+                    src={thumbnail?.url}
+                    alt={thumbnail?.description}
                     className="object-cover h-full"
                   />
                 </div>
