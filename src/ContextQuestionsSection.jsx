@@ -17,7 +17,9 @@ function ContextQuestionsSection({
 }) {
   const answersForSection = answers.filter(a =>
     questions.find(
-      question => question?.questionText === a?.question?.questionText
+      question =>
+        question?.questionText === a?.question?.questionText &&
+        (a?.answerBoolean || a?.answerShortText || a?.answerShortText)
     )
   );
   const answered = answersForSection.length;
