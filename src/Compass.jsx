@@ -43,7 +43,12 @@ function Compass() {
         </span>{" "}
         that were inspired by the CoO.
       </p>
-      <img src={CompassSvg} className="mt-20" alt="Compass of Oppression" />
+      <object
+        data={CompassSvg}
+        type="image/svg+xml"
+        className="mt-20"
+        aria-label="Compass of Oppression"
+      />
 
       {/* <div className="mt-8 font-semibold flex flex-row">
         <p className="pt-2">Navigate the Compass of Oppression:</p>
