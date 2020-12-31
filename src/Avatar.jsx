@@ -89,11 +89,26 @@ const AVATAR = gql`
 function Avatar({ name }) {
   const { loading, error, data } = useQuery(AVATAR, { variables: { name } });
 
-  if (loading) return <p className="p-20 bg-white">Loading...</p>;
-  if (error) return <p className="p-20 bg-white">Error loading data :(</p>;
+  if (loading)
+    return (
+      <div className="h-full bg-white">
+        <p className="p-96">Loading...</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="h-full bg-white">
+        <p className="p-96">Error loading data :(</p>
+      </div>
+    );
 
   const avatar = data?.avatarCollection?.items?.[0];
-  if (!avatar) return <p className="p-20 bg-white">Error loading data :(</p>;
+  if (!avatar)
+    return (
+      <div className="h-full bg-white">
+        <p className="p-96">Error loading data :(</p>
+      </div>
+    );
 
   const {
     organization,
