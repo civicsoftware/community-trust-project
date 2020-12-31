@@ -100,7 +100,7 @@ function Avatar({ name }) {
   return (
     <>
       <div className="grid grid-cols-5 -z-10">
-        <div className="col-span-5 bg-gradient-to-l from-teal-light to-teal-dark p-4 pb-2 rounded-t-lg flex flex-col -z-1">
+        <div className="col-span-5 bg-purple-dark p-4 pb-2 rounded-t-lg flex flex-col -z-1">
           <h2 className="inline-block ml-2 text-xl text-white font-bold">
             {name}
           </h2>

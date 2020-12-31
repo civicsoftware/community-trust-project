@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../public/trust_logo_t.svg";
 
 function Navbar() {
@@ -16,32 +17,34 @@ function Navbar() {
             </a>
           </div>
           <nav className="hidden md:flex space-x-10">
-            <a
-              href="/compass"
+            <NavLink
+              to="/compass"
               className="text-base font-medium text-gray-900 hover:text-gray-500"
+              activeClassName="text-teal-dark"
             >
               Compass
-            </a>
-            <a
-              href="/avatars"
+            </NavLink>
+            <NavLink
+              to="/avatars"
               className="text-base font-medium text-gray-900 hover:text-gray-500"
+              activeClassName="text-teal-dark"
             >
               Stakeholders
-            </a>
-          </nav>
-          <nav className="hidden md:flex space-x-10">
-            <a
-              href="/flower"
+            </NavLink>
+            <NavLink
+              to="/flower"
               className="text-base font-medium text-gray-900 hover:text-gray-500"
+              activeClassName="text-teal-dark"
             >
               Flower Of Hope
-            </a>
-            <a
-              href="/library"
+            </NavLink>
+            <NavLink
+              to="/library"
               className="text-base font-medium text-gray-900 hover:text-gray-500"
+              activeClassName="text-teal-dark"
             >
               Data Library
-            </a>
+            </NavLink>
           </nav>
         </div>
       </div>
