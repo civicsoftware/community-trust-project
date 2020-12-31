@@ -5,7 +5,7 @@ import { default as Windmill } from "@windmill/react-ui";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
-import InfinityLoop from "../public/INFINITY_LOOP.png";
+import InfinityLoop from "../public/INFINITY_LOOP.jpg";
 
 function Blueprint() {
   const [overlayShown, setOverlayShown] = useState(false);

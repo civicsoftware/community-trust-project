@@ -256,6 +256,73 @@ function QuestionFive() {
   );
 }
 
+function randomBgColor() {
+  const colors = ["bg-purple", "bg-pink", "bg-yellow", "bg-blue", "bg-teal"];
+  const random = Math.floor(Math.random() * colors.length);
+  return colors[random];
+}
+
+// TODO: this is an extremely fast/bad implementation of the 'end' concept
+function Book(dataset) {
+  let bookElement;
+
+  if (dataset === "end") {
+    bookElement = (
+      <Link
+        to={`/context?data=${dataset?.sys?.id}`}
+        className="text-white px-4 py-2"
+      >
+        <div
+          id={dataset}
+          className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial ${randomBgColor()}  shadow-l border-gray-900 hover:opacity-100 `}
+        >
+          <div className="rounded-t-md bg-white">
+            <img
+              src={CivicLogo}
+              className="w-7 m-1 ml-1"
+              alt="Trust Project Logo"
+            />
+          </div>
+          <div className=" p-4 flex-grow bg-gray-900 text-center">
+            <p className="font-normal text-8xl mt-8">+</p>
+          </div>
+          <div className="text-gray-900 text-xs p-1 my-1 text-center font-medium">
+            CIVIC STRUCTURED CONTENT
+          </div>
+        </div>
+      </Link>
+    );
+  } else {
+    bookElement = (
+      <Link
+        to={`/context?data=${dataset?.sys?.id}`}
+        className="text-white px-4 py-2"
+      >
+        <div
+          id={dataset}
+          className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial ${randomBgColor()}  shadow-l border-gray-900 hover:opacity-100 `}
+        >
+          <div className="rounded-t-md bg-white">
+            <img
+              src={CivicLogo}
+              className="w-7 m-1 ml-1"
+              alt="Trust Project Logo"
+            />
+          </div>
+          <div className=" p-4 flex-grow bg-gray-900 text-right">
+            <p className="font-semibold"> {dataset?.title}</p>
+            <p className="text-xs mt-1">Multnomah County</p>
+          </div>
+          <div className="text-gray-900 text-xs p-1 my-1 text-center font-medium">
+            CIVIC STRUCTURED CONTENT
+          </div>
+        </div>
+      </Link>
+    );
+  }
+  return bookElement;
+}
+
 const QUESTIONS = [
   { Component: QuestionOne, title: "What is the data library?" },
   { Component: QuestionTwo, title: "Who is it for?" },
@@ -289,7 +356,7 @@ function Library() {
 
         <section
           id="questions"
-          className="flex flex-cols justify-evenly font-medium "
+          className="flex flex-cols justify-evenly font-medium mt-6"
         >
           {QUESTIONS?.map(({ title }, index) => (
             <button
@@ -310,27 +377,32 @@ function Library() {
         </section>
 
         <section id="fake-breadcrumb">
-          <div className="mt-20 p-6 rounded-lg border-2 border-gray-500">
-            <p className="text-3xl font-bold">
-              This {">"} Is {">"} A {">"} Fake {">"} Breadcrumb {">"} Nav {"> "}
-              Multnomah County
-            </p>
+          <div className="col-span-1 relative m-4 mt-10 rounded-lg border-2 shadow-xl bg-gray-50  border-gray-500 divide-y-2 divide-gray-500">
+            <div className="relative p-4 rounded-t-lg flex flex-row ">
+              <h2 className="inline-block mt-1 ml-2 text-xl font-semibold">
+                Community Data Library {">"} Region {">"} Multnomah County
+              </h2>
+            </div>
 
             <section id="bookshelf">
-              <div className="container mt-4 flex flex-row max-w-7xl">
-                {data?.datasetCollection?.items?.map(dataset => (
-                  <Link
-                    to={`/context?data=${dataset?.sys?.id}`}
-                    className="text-gray-900 px-4 py-2 hover:text-purple-900"
+              <div className="p-4 mr-0 flex flex-row overflow-x-scroll">
+                <p className="absolute right-4 top-52 z-20 w-12 h-12 text-gray-900 shadow-2xl">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <div
-                      id={dataset}
-                      className="relative p-4 m-0 rounded-lg border-2 flex-initial bg-pink-100 border-purple-500"
-                    >
-                      {dataset?.title}
-                    </div>
-                  </Link>
-                ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </p>
+                {data?.datasetCollection?.items?.map(dataset => Book(dataset))}
+                {Book("end")}
               </div>
             </section>
           </div>
@@ -349,7 +421,7 @@ function Library() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                stroke-width="2"
+                strokeWidth="2"
                 d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
               />
             </svg>
