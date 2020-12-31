@@ -1,9 +1,38 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { gql, useQuery } from "@apollo/client";
+import { BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
 import CollapsableFixedHeight from "./CollapsableFixedHeight";
 import { contextSchemaPropTypes } from "./contextSchemaPropTypes";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
+
+// eslint-disable-next-line react/prop-types
+const Sandtrap = ({ children }) => (
+  <li>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="h-4 w-4 mr-1 inline-block align-text-bottom"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      />
+    </svg>
+    {children}
+  </li>
+);
+
+const sandtrapOptions = {
+  renderNode: {
+    [BLOCKS.LIST_ITEM]: (node, children) => <Sandtrap>{children}</Sandtrap>,
+    [BLOCKS.PARAGRAPH]: (node, children) => <span>{children}</span>
+  }
+};
 
 const CTA = gql`
   query CallToAction($callToAction: String!) {
@@ -41,7 +70,7 @@ function ContextSectionSummary({
       id="summary"
       className="relative m-4 border-gray-300 border-2 rounded-lg shadow-xl"
     >
-      <div className="p-4 bg-purple-900 text-gray-200 rounded-t-lg">
+      <div className="p-4 bg-black text-gray-200 rounded-t-lg">
         <div className="grid grid-cols-12">
           <div className="col-start-0 col-end-11 col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
@@ -157,37 +186,26 @@ function ContextSectionSummary({
         )}
       </div>
       <div className="px-4 mb-4 text-sm">
-        <div className="bg-yellow-50 rounded box-content p-4">
+        <div className="bg-pink-light bg-opacity-20 rounded box-content p-4">
           <ul className="font-medium prose-sm">
             {sandtraps?.json ? (
-              documentToReactComponents(sandtraps?.json)
+              documentToReactComponents(sandtraps?.json, sandtrapOptions)
             ) : (
               <p>TODO: Convert to contentful</p>
             )}
-            {/* {schema?.sandtraps?.map(sandtrap => (
-              <li key={sandtrap}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-4 w-4 mr-1 inline-block align-text-bottom"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  />
-                </svg>
-                {sandtrap}
-              </li>
-            ))} */}
           </ul>
         </div>
         <CollapsableFixedHeight>
-          <div className="grid grid-cols-2 gap-4 mt-2">
-            <div className="prose-sm">
+          <div className="p-4 prose-sm">
+            <h3 className="text-lg font-bold">Challenges</h3>
+            {challenges?.json ? (
+              documentToReactComponents(challenges?.json)
+            ) : (
+              <p>TODO: Convert to contentful</p>
+            )}
+          </div>
+          {/* <div className="grid grid-cols-2 gap-4 mt-2">
+            <div className="p-4 prose-sm">
               <h3 className="text-lg font-bold">Successes</h3>
               {successes?.json ? (
                 documentToReactComponents(successes?.json)
@@ -203,7 +221,7 @@ function ContextSectionSummary({
                 <p>TODO: Convert to contentful</p>
               )}
             </div>
-          </div>
+          </div> */}
         </CollapsableFixedHeight>
         {/* <div className="mt-4 bg-pink-50 rounded box-content p-4">
               <h3 className="text-lg font-bold">Missing information</h3>

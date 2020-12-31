@@ -26,7 +26,7 @@ function ContextSectionCTAFooter({ callToAction, className, narrow }) {
       </div>
 
       {buttonSubText && (
-        <p className="absolute left-4 bottom-2 text-sm w-1/2">
+        <p className="absolute left-4 bottom-2 text-sm font-semibold w-1/2">
           {buttonSubText}
         </p>
       )}
