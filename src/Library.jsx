@@ -219,8 +219,18 @@ function Library() {
               </h2>
             </div>
             <div className="p-4">
-              <p>FILLER TEXT</p>
-              <p>FILLER TEXT</p>
+              <p>
+                TRUST stands for Technology for Relationships, Understanding,
+                Service and Transparency. For government agencies, creating
+                public data resources that drive equitable outcomes involves
+                more than just building technology. In order to create
+                sustainable change, modernizing workflows and practices that
+                prioritize inclusion means adapting existing data governance
+                models and involves many people and sometimes, inflexible
+                systems. Through the TRUST program, CIVIC works with partners to
+                integrate standards for structured context collaboration and
+                engage community stakeholders.
+              </p>
             </div>
           </div>
 
@@ -253,23 +263,24 @@ function Library() {
               </h2>
             </div>
             <div className="p-4">
-              <p>FILLER TEXT</p>
-              <p>FILLER TEXT</p>
+              The Community Data Library is designed to build and hold value in
+              the public interest, It is a project that is created and
+              facilitated by{" "}
+              <a href="www.civicsoftwarefoundation.org">
+                Civic Software Foundation
+              </a>{" "}
+              (CIVIC), a 501c3 nonprofit using open source technology. CIVIC’s
+              program supports the growth and maintenance of the Community Data
+              Library by providing technical frameworks in addition to process
+              support and training for our library publishers. The CIVIC
+              Blueprint for Context-Aware Systems (link) provides the backbone
+              and principles for our collaboration model.
+              <p>
+                The library does not publish raw data, and all metadata
+                published in the library remains in the custodianship of the
+                data owner.
+              </p>
             </div>
-          </div>
-        </section>
-
-        <section id="responsive-text">
-          <div className="my-20">
-            <p className="text-l">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
           </div>
         </section>
 
@@ -285,11 +296,11 @@ function Library() {
                 {data?.datasetCollection?.items?.map(dataset => (
                   <Link
                     to={`/context?data=${dataset?.sys?.id}`}
-                    className="text-pink-500 px-4 py-2 hover:text-gray-900"
+                    className="text-gray-900 px-4 py-2 hover:text-purple-900"
                   >
                     <div
                       id={dataset}
-                      className="relative p-4 m-0 rounded-lg border-2 flex-initial bg-pink-200 border-pink-500"
+                      className="relative p-4 m-0 rounded-lg border-2 flex-initial bg-pink-100 border-purple-500"
                     >
                       {dataset?.title}
                     </div>
@@ -301,6 +312,7 @@ function Library() {
         </section>
 
         <section id="CTAs">
+          <h2 className="text-2xl font-semibold mt-16 ">Grow the Library</h2>
           <div className="m-20 grid grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
             <div className="flex flex-col justify-center">
               <h1 className="font-semibold">
