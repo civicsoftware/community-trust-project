@@ -1,103 +1,59 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from "react";
+// import { Link } from "react-router-dom";
 // import { default as Windmill } from "@windmill/react-ui";
-import React, { useState } from "react";
-import "./Compass.css";
+import CompassSvg from "../public/CIVIC_COMPASS.svg";
 
 function Compass() {
-  // const [isOpen, setIsOpen] = useState(false);
-  const [cardShown, setCardShown] = useState(false);
-
-  // function toggleBackdrop() {
-  //   setIsOpen(!isOpen);
-  //   setCardShown(false);
-  // }
-
-  function toggleCard(e) {
-    e.stopPropagation();
-    setCardShown(!cardShown);
-  }
-
-  function printPie(e) {
-    e.stopPropagation();
-    toggleCard(e);
-  }
-
   return (
-    // <>
-    //   <div className="absolute">
-    //     <div
-    //       aria-hidden="true"
-    //       onClick={toggleBackdrop}
-    //       className="bg-pink-400 bottom-10 right-10 m-4 p-4 fixed w-32 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
-    //     >
-    //       Open Compass Navigation
-    //     </div>
-    //   </div>
-
-    // {/* TODO: slice 1-5 click handling doesn't work because of mask overlay? */}
-    // {isOpen && (
-    // <Windmill.Backdrop onClick={toggleBackdrop} className="z-0">
-    <div className="relative">
-      {cardShown && (
-        <div className="definitionCard">
-          <div onClick={e => toggleCard(e)}> X </div>
-          <div className="content">
-            Definition
-            <p>
-              <a href="/avatars">Click to hear stories</a>
-            </p>
-          </div>
-        </div>
-      )}
-      <div className="compassContainer">
-        <div className="outerCircle" />
-        <div className="innerCircle">
-          <div className="content">The Compass of Oppression</div>
-        </div>
-        <div className="pieContainer">
-          <div id="pieSlice1" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice1")} />
-          </div>
-          <div id="pieSlice2" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice2")} />
-          </div>
-          <div id="pieSlice3" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice3")} />
-          </div>
-          <div id="pieSlice4" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice4")} />
-          </div>
-          <div id="pieSlice5" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice5")} />
-          </div>
-          <div id="pieSlice6" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice6")} />
-          </div>
-          <div id="pieSlice7" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice7")} />
-          </div>
-          <div id="pieSlice8" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice8")} />
-          </div>
-          <div id="pieSlice9" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice9")} />
-          </div>
-          <div id="pieSlice10" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice10")} />
-          </div>
-          <div id="pieSlice11" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice11")} />
-          </div>
-          <div id="pieSlice12" className="hold">
-            <div className="pie" onClick={e => printPie(e, "slice12")} />
-          </div>
-        </div>
+    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
+      <div className="flex items-center text-gray-900 mb-4">
+        <svg
+          className="h-6 w-6 mr-3"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+          />
+        </svg>
+        <h2 className="text-2xl font-semibold">Compass of Oppression</h2>
       </div>
+      <p className="block">
+        The Compass of Oppression (CoO) serves as a visual and interactive
+        glossary of an Intersectional Feminist framework that will help us make
+        sure that we are on the same page when we are referring to terms such as
+        oppression, inequity, justice, racial inequity etc.
+      </p>
+      {/* TODO: definition card here */}
+      <p className="block mt-6">
+        FYI, here’s (link to a card that defines this) the definition for Global
+        Systems of Domination. This compass is a tool to explain the framework
+        from a narrative-focused perspective. It enables us to tell the stories
+        of our partners. Read these{" "}
+        <span className="font-semibold text-teal">
+          <a href="/avatars">stakeholder stories</a>
+        </span>{" "}
+        that were inspired by the CoO.
+      </p>
+      <img src={CompassSvg} className="mt-20" alt="Compass of Oppression" />
+
+      {/* <div className="mt-8 font-semibold flex flex-row">
+        <p className="pt-2">Navigate the Compass of Oppression:</p>
+        <Link to="/compass">
+          <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+            Click here
+          </Windmill.Button>
+        </Link>
+      </div> */}
     </div>
-    //   </Windmill.Backdrop>
-    // )}
-    // </>
   );
 }
 
