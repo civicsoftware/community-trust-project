@@ -301,7 +301,7 @@ function Library() {
         </section>
 
         <section id="CTAs">
-          <div className="m-20 grid grid-cols-2 items-start max-w-4xl gap-20 mx-auto">
+          <div className="m-20 grid grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
             <div className="flex flex-col justify-center">
               <h1 className="font-semibold">
                 Is there a dataset that you would like to see added to a
