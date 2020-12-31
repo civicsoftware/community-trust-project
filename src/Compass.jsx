@@ -34,10 +34,9 @@ function Compass() {
       </p>
       {/* TODO: definition card here */}
       <p className="block mt-6">
-        FYI, here’s (link to a card that defines this) the definition for Global
-        Systems of Domination. This compass is a tool to explain the framework
-        from a narrative-focused perspective. It enables us to tell the stories
-        of our partners. Read these{" "}
+        This compass is a tool to explain the framework from a narrative-focused
+        perspective. It enables us to tell the stories of our partners. Read
+        these{" "}
         <span className="font-semibold text-teal">
           <a href="/avatars">stakeholder stories</a>
         </span>{" "}
