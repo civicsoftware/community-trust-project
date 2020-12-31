@@ -23,6 +23,7 @@ function Home() {
                 href="http://www.civicsoftwarefoundation.org"
                 rel="noreferrer"
                 target="_blank"
+                className="cursor-pointer hover:underline"
               >
                 Built by Civic Software Foundation
               </a>
@@ -92,11 +93,15 @@ function Home() {
               href="/library"
               className="whitespace-nowrap text-gray-500 px-4 py-2 hover:text-gray-900"
             >
-              → Explore the Data Library ←
+              → GRAPHIC GOES HERE ←
             </a>
-            <p className="text-xl justify-self-center">
-              (there is a cool graphic here)
-            </p>
+            <div className="mt-6 font-semibold flex flex-row">
+              <Link to="/library">
+                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                  Explore the Data Library
+                </Windmill.Button>
+              </Link>
+            </div>
           </div>
         </section>
 
