@@ -74,7 +74,7 @@ function ContextQuestionsSection({
           {questions.length > 2 && (
             <Collapsable buttonClassName="text-cobalt">
               <Collapsable.Section hidden>
-                {questions.slice(3, 500).map(question => {
+                {questions.slice(2, 500).map(question => {
                   const answer = answers?.find(
                     a => a?.question?.questionText === question?.questionText
                   );
