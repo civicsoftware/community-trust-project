@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
-// import Compass from "./Compass";
 import FullLogo from "../public/trust_logo_full.svg";
 
 function Home() {
@@ -36,7 +35,7 @@ function Home() {
           </p>
           <Windmill.Button
             onClick={openModal}
-            className="whitespace-nowrap inline-flex self-center w-2/5 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
+            className="whitespace-nowrap inline-flex self-center w-1/5 mt-3 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
           >
             Click here to get involved
           </Windmill.Button>
@@ -165,7 +164,7 @@ function Home() {
             </p>
             <div className="mt-8 font-semibold flex flex-row">
               <p className="pt-2">Get to know the actors:</p>
-              <Link to="/compass">
+              <Link to="/avatars">
                 <Windmill.Button className="w-65 ml-3 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Click here
                 </Windmill.Button>
