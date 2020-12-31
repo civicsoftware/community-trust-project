@@ -52,8 +52,7 @@ const merged = windmill({
       serif: ['"Merriweather", serif'],
       mono: ['"Roboto Mono", mono'],
       rubik: ['"Rubik", sans-serif'],
-      roboto: ['"Roboto", sans-serif'],
-      delius: ['"Delius", fantasy']
+      roboto: ['"Roboto", sans-serif']
     },
     extend: {
       typography: theme => ({
@@ -125,8 +124,8 @@ merged.theme.colors = {
   white: "#ffffff",
   black: "#1C1C23",
   gray: {
-    50: "#F3F2F3",
-    100: "#F3F2F3",
+    50: "#C7C7C7",
+    100: "#C7C7C7",
     200: "#C7C7C7",
     300: "#A5A5A5",
     400: "#A5A5A5",
