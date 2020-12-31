@@ -30,32 +30,46 @@ function ContextWhoInvestigated({
       <div
         className={`relative flex items-center gap-1 ml-12 -mt-1 ${className}`}
       >
-        <div
-          className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 0 ? `bg-${color}-900` : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 1 ? `bg-${color}-900` : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 2 ? `bg-${color}-900` : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 3 ? `bg-${color}-900` : ""
-          }`}
-        />
-        <div
-          className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-            completeness >= 4 ? `bg-${color}-900` : ""
-          }`}
-        />
-        <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic">
+        <div className="bg-white">
+          <div
+            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 0 ? `bg-${color}-900 bg-opacity-20` : ""
+            }`}
+          />
+        </div>
+
+        <div className="bg-white">
+          <div
+            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 1 ? `bg-${color}-900 bg-opacity-40` : ""
+            }`}
+          />
+        </div>
+
+        <div className="bg-white">
+          <div
+            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 2 ? `bg-${color}-900 bg-opacity-60` : ""
+            }`}
+          />
+        </div>
+
+        <div className="bg-white">
+          <div
+            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 3 ? `bg-${color}-900 bg-opacity-80` : ""
+            }`}
+          />
+        </div>
+
+        <div className="bg-white">
+          <div
+            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+              completeness >= 4 ? `bg-${color}-900 bg-opacity-100` : ""
+            }`}
+          />
+        </div>
+        <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic text-white">
           {COMPLETENESS_TEXT?.[completeness] ||
             `${answered}/${total} answered fields`}
           {sources}

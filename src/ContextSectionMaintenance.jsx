@@ -45,22 +45,23 @@ function ContextSectionMaintenance({ schema }) {
     >
       <div className="p-4">
         <div className="text-sm font-bold text-purple-800">
-          {schema?.officialMaintenance?.officialMaintainer}
+          {schema?.officialMaintenance?.officialMaintainer || "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Contributors: </span>
-          {schema?.officialMaintenance?.dataContributor}
+          {schema?.officialMaintenance?.dataContributor || "Needs Input"}
         </div>
         <div className="mt-4 text-sm">
           <span className="font-semibold">Last updated: </span>
-          {schema?.officialMaintenance?.lastOfficialMaintainence || "Unknown"}
+          {schema?.officialMaintenance?.lastOfficialMaintainence ||
+            "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Update frequency: </span>
-          {schema?.officialMaintenance?.maintenanceInterval}
+          {schema?.officialMaintenance?.maintenanceInterval || "Needs Input"}
         </div>
         <div className="mt-4 text-sm">
-          {schema?.officialMaintenance?.typicalUpdates}
+          {schema?.officialMaintenance?.typicalUpdates || "Needs Input"}
         </div>
       </div>
     </ContextSummarySectionWrapper>

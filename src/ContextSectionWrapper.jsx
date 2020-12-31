@@ -3,8 +3,8 @@ import { bool, node, number, oneOf, shape, string } from "prop-types";
 import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ContextWhoInvestigated from "./ContextWhoInvestigated";
-import Collapsable from "./Collapsable";
 import ContextSectionCTAFooter from "./ContextSectionCTAFooter";
+import CollapsableFixedHeight from "./CollapsableFixedHeight";
 
 function DefaultIcon() {
   return (
@@ -48,15 +48,15 @@ function ContextSectionWrapper({
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-8 shadow-xl border-${color}-900 bg-white`}
+        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-900 bg-${color}-900`}
       >
-        <div className="px-4 py-2 rounded-t-lg">
+        <div className={`px-4 py-2 rounded-t-lg `}>
           <div
             className={`inline-block p-1 border-2  shadow-xl rounded-full  text-white bg-${color}-900`}
           >
             <Icon className="h-6 w-6 inline-block align-text-bottom" />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize">
+          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize text-white">
             {title}
           </h2>
           <ContextWhoInvestigated
@@ -71,14 +71,7 @@ function ContextSectionWrapper({
             {documentToReactComponents(description?.json)}
           </div>
           {expandable && (
-            <Collapsable
-              description="section detail"
-              hideText
-              iconClassName="h-6 w-6"
-              buttonClassName="absolute right-4 top-4"
-            >
-              <Collapsable.Section hidden> {children}</Collapsable.Section>
-            </Collapsable>
+            <CollapsableFixedHeight>{children}</CollapsableFixedHeight>
           )}
           {!expandable && children}
         </div>
@@ -87,6 +80,7 @@ function ContextSectionWrapper({
             className=""
             narrow={narrow}
             callToAction={callToAction}
+            color={color}
           />
         )}
       </div>

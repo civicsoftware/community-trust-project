@@ -30,6 +30,12 @@ function ContextNav({ sections }) {
           </div>
           <div className="mx-2 lg:text-md lg:font-bold text-black ">Schema</div>
         </div>
+        <a
+          href="/library"
+          className="m-2 text-cobalt hover:underline text-xs hidden lg:block w-36"
+        >
+          &#x3c; Back to Library Directory
+        </a>
         {sections?.map(section => (
           <a href={`#${section}`} className="m-2 underline">
             {startCase(toLower(section))}
@@ -37,7 +43,7 @@ function ContextNav({ sections }) {
         ))}
         <a
           href="/blueprint"
-          className="m-2 text-cobalt text-xs hidden lg:block w-36"
+          className="m-2 text-cobalt hover:underline text-xs hidden lg:block w-36"
         >
           Learn more about context-aware systems
         </a>

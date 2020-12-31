@@ -68,13 +68,13 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-purple-900 border-8 rounded-lg shadow-xl scroll-mt-16"
+      className="relative m-4 border-purple-900 border-4 rounded-lg shadow-xl scroll-mt-16"
     >
       <div className="p-4 bg-purple-900 text-gray-100">
         <div className="grid grid-cols-12">
           <div className="col-start-0 col-end-11 col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-white">
-              {schema?.title}
+              {schema?.title || "Needs Input"}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
@@ -95,7 +95,7 @@ function ContextSectionSummary({
                 </svg>
               </div>
               <h3 className="inline text-sm font-semibold">
-                {schema?.subComponentOf}
+                {schema?.subComponentOf || "Needs Input"}
               </h3>
             </div>
           </div>
@@ -127,7 +127,8 @@ function ContextSectionSummary({
                 </svg>
               </div>
               <h3 className="inline text-xs">
-                {schema?.officialMaintenance?.officialMaintainer}
+                {schema?.officialMaintenance?.officialMaintainer ||
+                  "Needs Input"}
               </h3>
             </div>
             <div>
@@ -147,7 +148,9 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">{schema?.dateRange}</h3>
+              <h3 className="inline text-xs">
+                {schema?.dateRange || "Needs Input"}
+              </h3>
             </div>
             <div>
               <div className="inline-block p-1 ml-4 -mb-2">
@@ -191,7 +194,7 @@ function ContextSectionSummary({
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json, sandtrapOptions)
             ) : (
-              <p>Unknown</p>
+              <p>Needs Input</p>
             )}
           </ul>
         </div>
@@ -201,7 +204,7 @@ function ContextSectionSummary({
             {challenges?.json ? (
               documentToReactComponents(challenges?.json)
             ) : (
-              <p>Unknown</p>
+              <p>Needs Input</p>
             )}
           </div>
           {/* <div className="grid grid-cols-2 gap-4 mt-2">
@@ -321,16 +324,16 @@ function ContextSectionSummary({
       <div className="grid grid-cols-2 bg-purple-100 rounded box-content m-4 p-6 text-sm">
         <div className="">
           <span className="font-semibold">Included in : </span>
-          {schema?.includedIn}
+          {schema?.includedIn || "Needs Input"}
         </div>
         <div className="">
           <span className="font-semibold">Related to: </span>
-          {schema?.relatedTo}
+          {schema?.relatedTo || "Needs Input"}
         </div>
       </div>
       <ContextSectionCTAFooter
         callToAction={callToAction}
-        className="purple-900"
+        color="purple"
         narrow
       />
     </section>

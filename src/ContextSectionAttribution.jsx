@@ -40,7 +40,7 @@ function BookmarkIcon() {
 
 function ContextSectionAttribution({ schema }) {
   const { loading, error, data } = useQuery(CTA, {
-    variables: { callToAction: "2iZpayYpfqEU4My4uAPooT" }
+    variables: { callToAction: "6KawAQtep2kOxmcxs29MlR" }
   });
 
   if (loading) return <p>Loading...</p>;
@@ -51,7 +51,7 @@ function ContextSectionAttribution({ schema }) {
     <ContextSectionWrapper
       title="Attribution"
       Icon={BookmarkIcon}
-      color="gray"
+      color="purple"
       callToAction={callToAction}
       narrow
       expandable
@@ -59,23 +59,23 @@ function ContextSectionAttribution({ schema }) {
       <div className="mt-4 p-4 text-sm">
         <div className="text-sm">
           <span className="font-semibold">Context contributors: </span>
-          {schema?.context?.contextContributor}
+          {schema?.context?.contextContributor || "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">On behalf of: </span>
-          {schema?.context?.onBehalfOf}
+          {schema?.context?.onBehalfOf || "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Publication date: </span>
-          {schema?.context?.contextPublicationDate}
+          {schema?.context?.contextPublicationDate || "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Update date: </span>
-          {schema?.context?.contextUpdateDate}
+          {schema?.context?.contextUpdateDate || "Needs Input"}
         </div>
         <div className="text-sm">
           <span className="font-semibold">Updated by: </span>
-          {schema?.context?.contextUpdateBy}
+          {schema?.context?.contextUpdateBy || "Needs Input"}
         </div>
       </div>
     </ContextSectionWrapper>

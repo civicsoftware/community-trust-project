@@ -3,7 +3,7 @@ import { default as Windmill } from "@windmill/react-ui";
 import { bool, shape, string } from "prop-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-function ContextSectionCTAFooter({ callToAction, className, narrow }) {
+function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
   const description = callToAction?.description.json;
   const buttonText = callToAction?.buttonText;
   const buttonSubText = callToAction?.buttonSubText;
@@ -18,15 +18,17 @@ function ContextSectionCTAFooter({ callToAction, className, narrow }) {
       emailSubject ? encodeURIComponent(emailSubject) : ""
     }&body=${emailBody ? encodeURIComponent(emailBody) : ""}`;
   return (
-    <div className={`px-4 py-2 rounded-b-lg ${className}`}>
+    <div className={`px-4 py-2 text-white bg-${color}-900 ${className}`}>
       <div
-        className={`prose prose-sm max-w-none mb-16 ${narrow ? "" : "md:mb-6"}`}
+        className={`prose prose-sm max-w-none mb-16 text-white ${
+          narrow ? "" : "md:mb-6"
+        }`}
       >
         {description && documentToReactComponents(description)}
       </div>
 
       {buttonSubText && (
-        <p className="absolute left-4 bottom-2 text-sm font-semibold w-1/2">
+        <p className="absolute left-4 bottom-2 text-sm w-1/2">
           {buttonSubText}
         </p>
       )}
@@ -51,7 +53,12 @@ function ContextSectionCTAFooter({ callToAction, className, narrow }) {
 ContextSectionCTAFooter.propTypes = {
   callToAction: shape({}),
   className: string,
-  narrow: bool
+  narrow: bool,
+  color: string
+};
+
+ContextSectionCTAFooter.defaultProps = {
+  color: "gray"
 };
 
 export default ContextSectionCTAFooter;
