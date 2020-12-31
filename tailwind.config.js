@@ -1,7 +1,7 @@
 const windmill = require("@windmill/react-ui/config");
 
 module.exports = windmill({
-  purge: ["./src/**/*.jsx", "./packages/**/src/**/*.js*"],
+  purge: ["./src/**/*.js*", "./packages/**/src/**/*.js*"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
