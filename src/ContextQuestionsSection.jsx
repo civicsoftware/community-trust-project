@@ -19,7 +19,7 @@ function ContextQuestionsSection({
     questions.find(
       question =>
         question?.questionText === a?.question?.questionText &&
-        (a?.answerBoolean || a?.answerShortText || a?.answerShortText)
+        (a?.answerBoolean || a?.answerShortText || a?.answerLongText)
     )
   );
   const answered = answersForSection.length;
