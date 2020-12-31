@@ -70,7 +70,12 @@ function Flower() {
           </li>
         </ul>
       </p>
-      <img src={FlowerSvg} className="mt-20" alt="Flower of Hope" />
+      <object
+        data={FlowerSvg}
+        type="image/svg+xml"
+        className="mt-20"
+        aria-label="Flower of Hope"
+      />
 
       {/* <div className="mt-8 font-semibold flex flex-row">
         <p className="pt-2">Navigate the Compass of Oppression:</p>
