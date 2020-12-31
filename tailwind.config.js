@@ -1,7 +1,7 @@
 const windmill = require("@windmill/react-ui/config");
 
 const merged = windmill({
-  // purge: ["./src/**/*.js*", "./packages/**/src/**/*.js*"],
+  purge: ["./src/**/*.js*", "./packages/**/src/**/*.js*"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
