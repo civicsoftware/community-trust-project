@@ -63,7 +63,11 @@ function ContextQuestion({
       {(showYesNo || answer) && (
         <Collapsable description="question detail" hideText hiddenClassName="">
           <Collapsable.Section hidden>
-            <div className="prose prose-sm mt-4 mb-4 ml-2">
+            <div
+              className={`prose prose-sm mt-4 mb-4 ml-2 ${
+                answer ? "" : "text-gray-600"
+              }`}
+            >
               <p>
                 {hasYesNo &&
                   answerBoolean !== null &&

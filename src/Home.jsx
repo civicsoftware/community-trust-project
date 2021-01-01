@@ -10,7 +10,7 @@ function Home() {
     <>
       <section
         id="hero"
-        className="bg-gray-200 border-gray-300 border-2 top-0 pt-20 pb-20"
+        className="bg-gray-50 border-gray-300 border-2 top-0 pt-20 pb-20"
       >
         <div className="container mx-auto px-72 grid grid-cols-4 gap-x-12 justify-items-stretch items-start">
           <div className="col-span-2">
