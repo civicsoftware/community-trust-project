@@ -7,7 +7,7 @@ import CompassSvg from "../public/CIVIC_COMPASS.svg";
 
 function Compass() {
   return (
-    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
+    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12 prose font-rubik">
       <div className="flex items-center text-gray-900 mb-4">
         <svg
           className="h-6 w-6 mr-3"
@@ -34,9 +34,8 @@ function Compass() {
       {/* TODO: definition card here */}
       <p className="block mt-6">
         This compass is a narrative-focused tool built from a perspective that
-        enables us to tell the system’s individual stories. Experience these
-        stakeholder stories
-        <span className="font-semibold text-teal">
+        enables us to tell the system’s individual stories. Experience these{" "}
+        <span className="font-semibold text-cobalt">
           <a href="/avatars">stakeholder stories</a>
         </span>{" "}
         that were inspired by the CoO.
