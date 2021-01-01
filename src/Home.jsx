@@ -222,7 +222,16 @@ function Home() {
         <div className="flex flex-col justify-center text-center">
           <p>
             The Community TRUST Project is built and maintained by Civic
-            Software Foundation.{" "}
+            Software Foundation and{" "}
+            <a
+              href="/attribution"
+              className="inline text-teal-dark hover:text-teal-light"
+            >
+              inspired by many others
+            </a>
+            .
+          </p>
+          <p>
             <a
               className="inline text-teal-dark hover:text-teal-light"
               href="mailto:hi@civicsoftwarefoundation.org"
