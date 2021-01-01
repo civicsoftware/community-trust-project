@@ -48,15 +48,15 @@ function ContextSectionWrapper({
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-900 bg-${color}-900`}
+        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
       >
         <div className={`px-4 py-2 rounded-t-lg `}>
           <div
-            className={`inline-block p-1 border-2  shadow-xl rounded-full  text-white bg-${color}-900`}
+            className={`inline-block p-1 border-2  shadow-xl rounded-full  text-black bg-${color}-200`}
           >
             <Icon className="h-6 w-6 inline-block align-text-bottom" />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize text-white">
+          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize text-black">
             {title}
           </h2>
           <ContextWhoInvestigated

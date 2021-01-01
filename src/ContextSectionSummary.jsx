@@ -68,12 +68,12 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-purple-900 border-4 rounded-lg shadow-xl scroll-mt-16"
+      className="relative m-4 border-yellow-200 border-4 rounded-lg shadow-xl scroll-mt-16"
     >
-      <div className="p-4 bg-purple-900 text-gray-100">
+      <div className="p-4 bg-yellow-200 text-black">
         <div className="grid grid-cols-12">
           <div className="col-start-0 col-end-11 col-span-10">
-            <h2 className="text-2xl font-bold tracking-wider text-white">
+            <h2 className="text-2xl font-bold tracking-wider text-black">
               {schema?.title || "Needs Input"}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
@@ -275,7 +275,7 @@ function ContextSectionSummary({
           ))}
         </dl>
       </div>
-      {/* <div className="grid grid-cols-2 bg-purple-900 text-white">
+      {/* <div className="grid grid-cols-2 bg-yellow-900 text-black">
         <div className="p-4 text-xs">
           <h3 className="text-lg font-bold tracking-wide">Data Details</h3>
           <div className=" font-bold">{schema?.rawData?.rawTitle}</div>
@@ -333,7 +333,7 @@ function ContextSectionSummary({
       </div>
       <ContextSectionCTAFooter
         callToAction={callToAction}
-        color="purple"
+        color="yellow"
         narrow
       />
     </section>

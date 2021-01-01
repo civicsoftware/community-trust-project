@@ -1,3 +1,4 @@
+const colors = require("tailwindcss/colors");
 const windmill = require("@windmill/react-ui/config");
 
 const merged = windmill({
@@ -13,46 +14,47 @@ const merged = windmill({
       white: "#ffffff",
       // updated with gray
       gray: {
+        50: "#F9FAFB",
         100: "#F3F4F6",
         300: "#D1D5DB",
         500: "#6B7280",
         700: "#374151",
         900: "#111827"
       },
-      accent: "#4C1D95",
-      // updated -- pink 200 700
+      accent: "#6D28D9",
+      // updated -- pink 100 600
       pink: {
-        light: "#FBCFE8",
-        DEFAULT: "#FBCFE8",
-        dark: "#BE185D"
+        light: "#FCE7F3",
+        DEFAULT: "#FCE7F3",
+        dark: "#EC4899"
       },
-      // updated -- blue 200 700
+      // updated -- blue 100 500
       blue: {
-        light: "#BFDBFE",
-        DEFAULT: "#BFDBFE",
-        dark: "#1D4ED8"
+        light: "#DBEAFE",
+        DEFAULT: "#DBEAFE",
+        dark: "#3B82F6"
       },
-      // updated -- indigo 200 700
+      // updated -- indigo 100 500
       teal: {
-        light: "#C7D2FE",
-        DEFAULT: "#C7D2FE",
-        dark: "#4338CA"
+        light: "#E0E7FF",
+        DEFAULT: "#E0E7FF",
+        dark: "#6366F1"
       },
-      // updated -- purple 200 700 900
+      // updated -- purple 100 500 700
       purple: {
-        light: "#DDD6FE",
-        DEFAULT: "#DDD6FE",
-        medium: "#6D28D9",
-        dark: "#4C1D95"
+        light: "#EDE9FE",
+        DEFAULT: "#EDE9FE",
+        medium: "#8B5CF6",
+        dark: "#6D28D9"
       },
-      // updated -- yellow 200 700
+      // updated -- green 100 600
       yellow: {
-        light: "#FDE68A",
-        DEFAULT: "#FDE68A",
-        dark: "#B45309"
+        light: "#6EE7B7",
+        DEFAULT: "#6EE7B7",
+        dark: "#047857"
       },
       red: "#C70000",
-      orange: "#F46C0B",
+      orange: "#FDE68A", // yellow
       green: "#008600",
       cobalt: "#184C8B"
     },
@@ -133,7 +135,7 @@ merged.theme.colors = {
   white: "#ffffff",
   black: "#1C1C23",
   gray: {
-    50: "#F3F2F3",
+    50: "#F9FAFB",
     100: "#F3F2F3",
     200: "#F3F4F6",
     300: "#D1D5DB",
@@ -145,83 +147,83 @@ merged.theme.colors = {
     900: "#111827"
   },
   pink: {
-    light: "#FBCFE8",
-    DEFAULT: "#FBCFE8",
-    dark: "#BE185D",
+    light: "#FCE7F3",
+    DEFAULT: "#FCE7F3",
+    dark: "#EC4899",
     // windmill
-    50: "#FBCFE8",
-    100: "#FBCFE8",
-    200: "#FBCFE8",
-    300: "#FBCFE8",
-    400: "#FBCFE8",
-    500: "#FBCFE8",
-    600: "#BE185D",
-    700: "#BE185D",
-    800: "#BE185D",
-    900: "#BE185D"
+    50: "#FCE7F3",
+    100: "#FCE7F3",
+    200: "#FCE7F3",
+    300: "#FCE7F3",
+    400: "#FCE7F3",
+    500: "#FCE7F3",
+    600: "#EC4899",
+    700: "#EC4899",
+    800: "#EC4899",
+    900: "#EC4899"
   },
   blue: {
-    light: "#BFDBFE",
-    DEFAULT: "#BFDBFE",
-    dark: "#1D4ED8",
+    light: "#DBEAFE",
+    DEFAULT: "#DBEAFE",
+    dark: "#3B82F6",
     // windmill
-    50: "#BFDBFE",
-    100: "#BFDBFE",
-    200: "#BFDBFE",
-    300: "#BFDBFE",
-    400: "#BFDBFE",
-    500: "#BFDBFE",
-    600: "#1D4ED8",
-    700: "#1D4ED8",
-    800: "#1D4ED8",
-    900: "#1D4ED8"
+    50: "#DBEAFE",
+    100: "#DBEAFE",
+    200: "#DBEAFE",
+    300: "#DBEAFE",
+    400: "#DBEAFE",
+    500: "#DBEAFE",
+    600: "#3B82F6",
+    700: "#3B82F6",
+    800: "#3B82F6",
+    900: "#3B82F6"
   },
   teal: {
-    light: "#C7D2FE",
-    DEFAULT: "#C7D2FE",
-    dark: "#4338CA",
+    light: "#E0E7FF",
+    DEFAULT: "#E0E7FF",
+    dark: "#6366F1",
     // windmill
-    50: "#C7D2FE",
-    100: "#C7D2FE",
-    200: "#C7D2FE",
-    300: "#C7D2FE",
-    400: "#C7D2FE",
-    500: "#C7D2FE",
-    600: "#4338CA",
-    700: "#4338CA",
-    800: "#4338CA",
-    900: "#4338CA"
+    50: "#E0E7FF",
+    100: "#E0E7FF",
+    200: "#E0E7FF",
+    300: "#E0E7FF",
+    400: "#E0E7FF",
+    500: "#E0E7FF",
+    600: "#6366F1",
+    700: "#6366F1",
+    800: "#6366F1",
+    900: "#6366F1"
   },
   purple: {
-    light: "#DDD6FE",
-    DEFAULT: "#DDD6FE",
-    medium: "#6D28D9",
-    dark: "#4C1D95",
-    50: "#DDD6FE",
-    100: "#DDD6FE",
-    200: "#DDD6FE",
-    300: "#DDD6FE",
-    400: "#6D28D9",
-    500: "#6D28D9",
-    600: "#6D28D9",
-    700: "#4C1D95",
-    800: "#4C1D95",
-    900: "#4C1D95"
+    light: "#EDE9FE",
+    DEFAULT: "#EDE9FE",
+    medium: "#8B5CF6",
+    dark: "#6D28D9",
+    50: "#EDE9FE",
+    100: "#EDE9FE",
+    200: "#EDE9FE",
+    300: "#EDE9FE",
+    400: "#8B5CF6",
+    500: "#8B5CF6",
+    600: "#8B5CF6",
+    700: "#6D28D9",
+    800: "#6D28D9",
+    900: "#6D28D9"
   },
   yellow: {
-    light: "#FDE68A",
-    DEFAULT: "#FDE68A",
-    dark: "#B45309",
-    50: "#FDE68A",
-    100: "#FDE68A",
-    200: "#FDE68A",
-    300: "#FDE68A",
-    400: "#FDE68A",
-    500: "#FDE68A",
-    600: "#B45309",
-    700: "#B45309",
-    800: "#B45309",
-    900: "#B45309"
+    light: "#6EE7B7",
+    DEFAULT: "#6EE7B7",
+    dark: "#047857",
+    50: "#6EE7B7",
+    100: "#6EE7B7",
+    200: "#6EE7B7",
+    300: "#6EE7B7",
+    400: "#6EE7B7",
+    500: "#6EE7B7",
+    600: "#047857",
+    700: "#047857",
+    800: "#047857",
+    900: "#047857"
   },
   red: {
     DEFAULT: "#C70000",
@@ -237,17 +239,17 @@ merged.theme.colors = {
     900: "#C70000"
   },
   orange: {
-    DEFAULT: "#F46C0B",
-    50: "#F46C0B",
-    100: "#F46C0B",
-    200: "#F46C0B",
-    300: "#F46C0B",
-    400: "#F46C0B",
-    500: "#F46C0B",
-    600: "#F46C0B",
-    700: "#F46C0B",
-    800: "#F46C0B",
-    900: "#F46C0B"
+    DEFAULT: "#FDE68A",
+    50: "#FDE68A",
+    100: "#FDE68A",
+    200: "#FDE68A",
+    300: "#FDE68A",
+    400: "#FDE68A",
+    500: "#FDE68A",
+    600: "#FDE68A",
+    700: "#FDE68A",
+    800: "#FDE68A",
+    900: "#FDE68A"
   },
   green: {
     DEFAULT: "#008600",
