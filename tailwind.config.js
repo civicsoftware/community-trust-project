@@ -47,10 +47,10 @@ const merged = windmill({
         medium: "#8B5CF6",
         dark: "#6D28D9"
       },
-      // updated -- green 100 600
+      // updated -- green 100 200
       yellow: {
-        light: "#6EE7B7",
-        DEFAULT: "#6EE7B7",
+        light: "#A7F3D0",
+        DEFAULT: "#A7F3D0",
         dark: "#047857"
       },
       red: "#C70000",
@@ -211,15 +211,15 @@ merged.theme.colors = {
     900: "#6D28D9"
   },
   yellow: {
-    light: "#6EE7B7",
-    DEFAULT: "#6EE7B7",
+    light: "#A7F3D0",
+    DEFAULT: "#A7F3D0",
     dark: "#047857",
-    50: "#6EE7B7",
-    100: "#6EE7B7",
-    200: "#6EE7B7",
-    300: "#6EE7B7",
-    400: "#6EE7B7",
-    500: "#6EE7B7",
+    50: "#A7F3D0",
+    100: "#A7F3D0",
+    200: "#A7F3D0",
+    300: "#A7F3D0",
+    400: "#A7F3D0",
+    500: "#A7F3D0",
     600: "#047857",
     700: "#047857",
     800: "#047857",
