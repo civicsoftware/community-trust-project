@@ -40,7 +40,7 @@ function ContextSectionMaintenance({ schema }) {
     <ContextSummarySectionWrapper
       title="Maintenance"
       Icon={LibraryIcon}
-      color="purple"
+      color="pink"
       narrow
     >
       <div className="p-4">

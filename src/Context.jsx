@@ -101,28 +101,28 @@ function Context({ datasetId }) {
           questionGroup="5oOzAK9EEh7rUuBrbInLFx"
           dataset={datasetId}
           narrow
-          color="teal"
+          color="blue"
         />
         {/* Methodology */}
         <ContextSection
           questionGroup="iUwbAs8uk0yiUhPJK2eyX"
           dataset={datasetId}
           narrow
-          color="teal"
+          color="orange"
         />
         {/* Access */}
         <ContextSection
           questionGroup="c7cq4mb35M6zr7LAgjINd"
           dataset={datasetId}
           narrow
-          color="blue"
+          color="purple"
         />
         {/* Ethical Governance */}
         <ContextSection
           questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
           dataset={datasetId}
           narrow
-          color="purple"
+          color="yellow"
         />
         {/* Community Context */}
         <div className="md:grid md:grid-cols-2">
@@ -137,7 +137,7 @@ function Context({ datasetId }) {
             questionGroup="2khypcmlN6CBCnl8NS9our"
             dataset={datasetId}
             narrow
-            color="pink"
+            color="blue"
           />
         </div>
         <div className="md:grid md:grid-cols-2">

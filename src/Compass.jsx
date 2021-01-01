@@ -27,25 +27,54 @@ function Compass() {
         <h2 className="text-2xl font-semibold">Compass of Oppression</h2>
       </div>
       <p className="block">
-        The Compass of Oppression (CoO) serves as a visual and interactive
-        glossary of an Intersectional Feminist framework that will help us make
-        sure that we are on the same page when we are referring to terms such as
-        oppression, inequity, justice, racial inequity etc.
+        The Compass of Oppression (CoO) serves as a visual representation of an
+        Intersectional Feminist framework that orients us to the ever-present
+        nature of the Global Systems of Domination.
       </p>
       {/* TODO: definition card here */}
       <p className="block mt-6">
-        This compass is a tool to explain the framework from a narrative-focused
-        perspective. It enables us to tell the stories of our partners. Read
-        these{" "}
+        This compass is a narrative-focused tool built from a perspective that
+        enables us to tell the system’s individual stories. Experience these
+        stakeholder stories
         <span className="font-semibold text-teal">
           <a href="/avatars">stakeholder stories</a>
         </span>{" "}
         that were inspired by the CoO.
       </p>
+      <p>The CoO mimics a functional compass in many ways:</p>
+      <ul>
+        <li>
+          The outer ring, labeled “historical,” represents the continuous nature
+          of history and how our understanding of oppressive systems evolves
+          throughout time. History is a constant that wraps around the
+          “structural, “institutional,” and “individual” constructs of
+          oppression, which we see in the inner ring.
+        </li>
+        <li>
+          In the center of the ring, we find the Global Systems of Domination,
+          which magnetically holds the CoO together and pulls individuals into
+          various identifying and limiting categories.
+        </li>
+        <li>
+          A limitation of the constructions of dominance is that they force
+          individual identification when intersectionality is the true
+          representation of many individuals, especially oppressed and
+          marginalized groups. The color gradients tie in the related concept
+          and create a colorful spectrum of intersectionality, representing how
+          dynamic identity can be.
+        </li>
+      </ul>
+      <p>
+        When these elements combine, we see that the compass guides our
+        understanding of people’s lived experiences while pointing towards a
+        true north of <em>justice</em>. Without this more profound understanding
+        of where we are, it is difficult to know how to navigate away from these
+        harmful constructs.
+      </p>
       <div className="mt-6 font-semibold flex flex-row">
         <Link to="/blueprint">
           <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
-            Read More in the Blueprint
+            Read More in the CIVIC Blueprint
           </Windmill.Button>
         </Link>
       </div>

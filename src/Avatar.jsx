@@ -19,6 +19,12 @@ const pOptions = {
   }
 };
 
+const colors = {
+  Community: "bg-yellow-200",
+  Civic: "bg-orange-200",
+  County: "bg-pink-200"
+};
+
 // TODO: Null checks for non-required fields
 const AVATAR = gql`
   query Avatar($name: String!) {
@@ -28,6 +34,7 @@ const AVATAR = gql`
         organization
         role
         location
+        category
         photo {
           title
           description
@@ -124,7 +131,8 @@ function Avatar({ name }) {
     dataNeeds,
     intersection,
     conversationsCollection,
-    videoConversationsCollection
+    videoConversationsCollection,
+    category
   } = avatar;
 
   const conversation = conversationsCollection?.items?.[0];
@@ -138,8 +146,10 @@ function Avatar({ name }) {
   return (
     <>
       <div className="grid grid-cols-8 -z-10 bg-white pb-6">
-        <div className="col-span-8 bg-purple-dark p-2 flex flex-col z-10">
-          <h2 className="inline-block ml-2 text-xl text-white font-bold z-10">
+        <div
+          className={`col-span-8 ${colors?.[category]} p-2 flex flex-col z-10`}
+        >
+          <h2 className="inline-block ml-2 text-xl text-black font-bold z-10">
             {name}
           </h2>
           <div>
@@ -159,7 +169,7 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-white">{organization}</h3>
+            <h3 className="inline text-xs text-black">{organization}</h3>
             <div className="inline-block p-1 ml-2 -mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +186,7 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-white">{role}</h3>
+            <h3 className="inline text-xs text-black">{role}</h3>
             <div className="inline-block ml-2 p-1 -mb-2 -mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +209,7 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-white">{location}</h3>
+            <h3 className="inline text-xs text-black">{location}</h3>
           </div>
         </div>
         <div className="col-span-5 pl-4 pr-6 pt-6">

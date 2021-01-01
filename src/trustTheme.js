@@ -2,7 +2,7 @@ export default {
   button: {
     primary: {
       base:
-        "text-white bg-teal-dark hover:bg-teal-light border border-transparent",
+        "text-black bg-yellow-light hover:bg-yellow-dark border border-transparent",
       active:
         "active:bg-teal-dark hover:bg-teal-light focus:shadow-outline-teal",
       disabled: "opacity-50 cursor-not-allowed"

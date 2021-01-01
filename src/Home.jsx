@@ -78,6 +78,16 @@ function Home() {
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
             </p>
+          </div>
+        </section>
+
+        <section id="library">
+          <div className="text-4xl m-12 -mt-12 max-w-7xl p-12 pb-0 flex flex-col">
+            <img
+              src={LibraryHero}
+              className="w-full"
+              alt="Community Data Library Graphic"
+            />
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/blueprint">
                 <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
@@ -85,16 +95,6 @@ function Home() {
                 </Windmill.Button>
               </Link>
             </div>
-          </div>
-        </section>
-
-        <section id="library">
-          <div className="text-4xl m-12 mt-0 max-w-7xl p-12 pb-0 flex flex-col">
-            <img
-              src={LibraryHero}
-              className="w-full"
-              alt="Community Data Library Graphic"
-            />
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/library">
                 <Windmill.Button className="whitespace-nowrap inline-flex items-start px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">

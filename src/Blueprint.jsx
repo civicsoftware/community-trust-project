@@ -4,11 +4,31 @@
 import { default as Windmill } from "@windmill/react-ui";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { gql, useQuery } from "@apollo/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 import InfinityLoop from "../public/INFINITY_LOOP.jpg";
 
+const ATTRIBUTION = gql`
+  query Attribution($attribution: String!) {
+    attribution(id: $attribution) {
+      description {
+        json
+      }
+      name
+    }
+  }
+`;
+
 function Blueprint() {
   const [overlayShown, setOverlayShown] = useState(false);
+  const { loading, error, data } = useQuery(ATTRIBUTION, {
+    variables: { attribution: "7K9Gt2OBsG1A4gR6pUstMi" }
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+  const attribution = data?.attribution;
 
   function toggleOverlay() {
     setOverlayShown(!overlayShown);
@@ -37,39 +57,33 @@ function Blueprint() {
             className="w-7 pt-1 mr-3"
             alt="Trust Project Logo"
           />
-          <h2 className="text-2xl font-semibold">Context-Aware Systems</h2>
+          <h2 className="text-2xl font-semibold">
+            Blueprint for Context-Aware Systems
+          </h2>
         </div>
-        <p className="block">
-          The Community Library of Context is a resource that reflects an active
-          anti-oppression practice, and a structured process of creating
-          metadata context for datasets that can be curated collaboratively and
-          shared publicly.
-        </p>
-
-        {/* TODO: make this link to the PDF document */}
-        <div className="mt-4 mb-8 flex flex-row">
-          <Link to="/" target="_blank">
-            <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
-              Read the CIVIC Blueprint for Context-Aware Systems
-            </Windmill.Button>
-          </Link>
+        <div className="mt-4 mb-8 flex flex-row justify-center">
+          <p className="pt-4 block mx-auto font-bold">
+            Infinity Loop Collaboration Model{" "}
+            <span className="italic font-normal">(Click to view larger)</span>:
+          </p>
         </div>
-        <p className="pt-2">
-          This is a paragraph about the inifinity loop. This is a paragraph
-          about the inifinity loop.This is a paragraph about the inifinity
-          loop.This is a paragraph about the inifinity loop.This is a paragraph
-          about the inifinity loop.
-        </p>
-        <p className="pt-4 font-bold">
-          Infinity Loop Collaboration Model{" "}
-          <span className="italic font-normal">(Click to view larger)</span>:
-        </p>
         <img
           src={InfinityLoop}
           onClick={() => toggleOverlay()}
           className="mt-10"
           alt="Infinity Loop"
         />
+        <article className="prose font-rubik mx-auto my-8">
+          {documentToReactComponents(attribution?.description?.json)}
+        </article>
+        {/* TODO: make this link to the PDF document */}
+        <div className="mt-4 mb-8 flex flex-row justify-center">
+          <Link to="/" target="_blank">
+            <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+              Read the CIVIC Blueprint for Context-Aware Systems
+            </Windmill.Button>
+          </Link>
+        </div>
       </div>
     </>
   );

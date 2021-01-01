@@ -26,54 +26,47 @@ function Flower() {
         </svg>
         <h2 className="text-2xl font-semibold">Flower of Hope</h2>
       </div>
-      <p className="block">
-        Flower of Hope is our version of a <b>theory of change</b>. Instead of
-        creating a linear flow chart, we wanted to use flower as a metaphor to
-        emphasize the <b>dynamic aspect</b> of change. A flower is a living and
-        breathing unit, growing and blossoming over time, where
-        &quot;theory&quot; meets actionable steps so that a future where the
-        flower of hope can blossom can be created. We also do acknowledge that
-        change takes <b>time and commitment</b>. A better future is possible
-        through collaborative actions which the Flower of Hope can inform.
+      <p>
+        The Flower of Hope (FoH) is CIVIC’s version of a <b>theory of change</b>{" "}
+        that serves as a metaphor to emphasize the <b>dynamic aspects</b> of
+        change in place of more linear frameworks that make it difficult to see
+        the interconnected elements of transformation. The Flower represents a
+        living organism that must be nurtured, supported to flourish, eventually
+        &quot;blossoming&quot; into its final state. Within the FoH,
+        &quot;theory&quot; meets action, where{" "}
+        <i>
+          <b>&quot;actors,&quot;</b>
+        </i>{" "}
+        in the form of pollinating bees, move from petal to petal and
+        transferring (pollinating) the flower’s system with information,
+        experience, and more. These{" "}
+        <i>
+          <b>&quot;petals&quot;</b>
+        </i>{" "}
+        comprised of goals, objectives, and tactics are the manifestations of
+        what must be done for change to flourish and ultimately leads to the
+        implementation of the petals’ functions.
       </p>
       <p className="block mt-6">
-        Having our main vision -- “
-        <i>justice as the foundational understanding of a society</i>” -- at the
-        center shows we are hopeful; however, we are not ignorant. We do
-        acknowledge the pain and suffering systems of oppressions have caused.
-        We want to plant positive imagination into the gaps we&apos;ve
-        identified via the stories of those whose voices have been oppressed for
-        a long time.
+        The Flower of Hope hinges on the idea that the future can only be
+        crafted through active collaboration and agreement while leveraging data
+        to create visibility into the experiences of the actors within the
+        system. Accountability is inherently a requirement for success and
+        informed, and context-aware systems are the driving force within the
+        data constructs that we see.
       </p>
       <p className="block mt-6">
-        The Flower of Hope helps you see the power data has and can answer many
-        questions including:
-        <ul className="pl-5">
-          <li className="list-disc">
-            How does change happen toward creating a better society for
-            everyone?
-          </li>
-          <li className="list-disc">
-            {" "}
-            What are the elements that make change happen?
-          </li>
-          <li className="list-disc">
-            What is the role of data in social change and how it can accelerate
-            change through visibility?
-          </li>
-          <li className="list-disc">
-            Why do we need a holistic and collaborative approach to provide
-            social justice?
-          </li>
-          <li className="list-disc">
-            What does it take to maintain the blossoming of the Flower of Hope?
-          </li>
-        </ul>
+        At the center of the Flower of Hope, we see our shared vision, which
+        holds the idea that{" "}
+        <i>
+          &quot;justice is the foundational understanding of a society&quot;
+        </i>{" "}
+        at the center of our blossoming theory of change.
       </p>
       <div className="mt-6 font-semibold flex flex-row">
         <Link to="/blueprint">
           <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
-            Read More in the Blueprint
+            Read more in the CIVIC Blueprint
           </Windmill.Button>
         </Link>
       </div>

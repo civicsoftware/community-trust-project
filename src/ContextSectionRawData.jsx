@@ -42,7 +42,7 @@ function ContextSectionRawData({ schema }) {
     <ContextSummarySectionWrapper
       title="Data Details"
       Icon={TableIcon}
-      color="purple"
+      color="pink"
       narrow
     >
       <div className="p-4">
