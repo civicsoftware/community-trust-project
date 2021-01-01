@@ -8,6 +8,12 @@ import "./imageFilter.css";
 
 import Avatar from "./Avatar";
 
+const colors = {
+  Community: "bg-yellow-200",
+  Civic: "bg-orange-200",
+  County: "bg-pink-200"
+};
+
 const AVATARS = gql`
   query {
     avatarCollection(limit: 20) {
@@ -29,9 +35,11 @@ function Avatars() {
   const { loading, error, data } = useQuery(AVATARS);
   const [cardShown, setCardShown] = useState(false);
   const [avatarName, setAvatarName] = useState(null);
+  const [categoryName, setCategoryName] = useState("Community");
 
-  function toggleCard(e, name) {
+  function toggleCard(e, name, category) {
     setAvatarName(name);
+    setCategoryName(category);
     setCardShown(!cardShown);
   }
 
@@ -41,7 +49,7 @@ function Avatars() {
         <Windmill.Modal
           isOpen={cardShown}
           onClose={e => toggleCard(e, null)}
-          className="max-w-screen-lg h-3/4 overflow-y-scroll bg-purple-dark border-gray-300 border-2 rounded-lg shadow-xl"
+          className={`max-w-screen-lg h-3/4 overflow-y-scroll ${colors?.[categoryName]} border-gray-300 border-2 rounded-lg shadow-xl`}
         >
           <Avatar name={avatarName} />
         </Windmill.Modal>
@@ -87,7 +95,7 @@ function Avatars() {
           a multimedia experience:
         </p>
 
-        <h2 className="text-xl mt-6">Community</h2>
+        <h2 className="text-xl mt-6 font-semibold">Community</h2>
         <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
@@ -98,7 +106,7 @@ function Avatars() {
               .map(({ name, thumbnail }) => (
                 <div
                   className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
-                  onClick={e => toggleCard(e, name)}
+                  onClick={e => toggleCard(e, name, "Community")}
                   role="img"
                 >
                   <div className="h-52">
@@ -110,13 +118,13 @@ function Avatars() {
                       className="object-cover h-full"
                     />
                   </div>
-                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-white text-center">{name}</p>
+                  <div className="bg-yellow-light rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-black text-center">{name}</p>
                   </div>
                 </div>
               ))}
         </div>
-        <h2 className="text-xl mt-6">County</h2>
+        <h2 className="text-xl mt-6 font-semibold">County</h2>
         <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
@@ -127,7 +135,7 @@ function Avatars() {
               .map(({ name, thumbnail }) => (
                 <div
                   className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
-                  onClick={e => toggleCard(e, name)}
+                  onClick={e => toggleCard(e, name, "County")}
                   role="img"
                 >
                   <div className="h-52">
@@ -139,13 +147,13 @@ function Avatars() {
                       className="object-cover h-full"
                     />
                   </div>
-                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-white text-center">{name}</p>
+                  <div className="bg-pink-light rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-black text-center">{name}</p>
                   </div>
                 </div>
               ))}
         </div>
-        <h2 className="text-xl mt-6">CIVIC</h2>
+        <h2 className="text-xl mt-6 font-semibold">CIVIC</h2>
         <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
@@ -156,7 +164,7 @@ function Avatars() {
               .map(({ name, thumbnail }) => (
                 <div
                   className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
-                  onClick={e => toggleCard(e, name)}
+                  onClick={e => toggleCard(e, name, "Civic")}
                   role="img"
                 >
                   <div className="h-52">
@@ -168,8 +176,8 @@ function Avatars() {
                       className="object-cover h-full"
                     />
                   </div>
-                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-white text-center">{name}</p>
+                  <div className="bg-orange-200 rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-black text-center">{name}</p>
                   </div>
                 </div>
               ))}
