@@ -18,6 +18,7 @@ const AVATARS = gql`
           description
           url
         }
+        category
       }
     }
   }
@@ -86,31 +87,92 @@ function Avatars() {
           a multimedia experience:
         </p>
 
-        <div className="grid grid-cols-3 gap-10 mt-12  bg-white">
+        <h2 className="text-xl mt-6">Community</h2>
+        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
             !error &&
-            data.avatarCollection.items.map(({ name, thumbnail }) => (
-              <div
-                className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
-                onClick={e => toggleCard(e, name)}
-                role="img"
-              >
-                <div className="h-52">
-                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                  <img
-                    id="filtered"
-                    src={thumbnail?.url}
-                    alt={thumbnail?.description}
-                    className="object-cover h-full"
-                  />
+            data.avatarCollection.items
+              .filter(avatar => avatar?.category === "Community")
+              .map(({ name, thumbnail }) => (
+                <div
+                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  onClick={e => toggleCard(e, name)}
+                  role="img"
+                >
+                  <div className="h-52">
+                    {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                    <img
+                      id="filtered"
+                      src={thumbnail?.url}
+                      alt={thumbnail?.description}
+                      className="object-cover h-full"
+                    />
+                  </div>
+                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-white text-center">{name}</p>
+                  </div>
                 </div>
-                <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                  <p className="text-white text-center">{name}</p>
+              ))}
+        </div>
+        <h2 className="text-xl mt-6">County</h2>
+        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
+          {loading && <p className="col-span-3">Loading...</p>}
+          {error && <p className="col-span-3">Error loading data :(</p>}
+          {!loading &&
+            !error &&
+            data.avatarCollection.items
+              .filter(avatar => avatar?.category === "County")
+              .map(({ name, thumbnail }) => (
+                <div
+                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  onClick={e => toggleCard(e, name)}
+                  role="img"
+                >
+                  <div className="h-52">
+                    {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                    <img
+                      id="filtered"
+                      src={thumbnail?.url}
+                      alt={thumbnail?.description}
+                      className="object-cover h-full"
+                    />
+                  </div>
+                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-white text-center">{name}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+        </div>
+        <h2 className="text-xl mt-6">CIVIC</h2>
+        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
+          {loading && <p className="col-span-3">Loading...</p>}
+          {error && <p className="col-span-3">Error loading data :(</p>}
+          {!loading &&
+            !error &&
+            data.avatarCollection.items
+              .filter(avatar => avatar?.category === "Civic")
+              .map(({ name, thumbnail }) => (
+                <div
+                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  onClick={e => toggleCard(e, name)}
+                  role="img"
+                >
+                  <div className="h-52">
+                    {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                    <img
+                      id="filtered"
+                      src={thumbnail?.url}
+                      alt={thumbnail?.description}
+                      className="object-cover h-full"
+                    />
+                  </div>
+                  <div className="bg-purple-dark rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
+                    <p className="text-white text-center">{name}</p>
+                  </div>
+                </div>
+              ))}
         </div>
       </div>
     </>
