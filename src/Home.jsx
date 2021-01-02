@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
-import LibraryHero from "../public/LIBRARY_HERO.png";
+import LibraryHero from "../public/LIBRARY_HERO.svg";
 
 function Home() {
   return (
