@@ -87,7 +87,7 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mt-20 mb-36 max-w-7xl mx-auto px-12">
+      <div className="m-12 mt-20 mb-36 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col text-gray-900 mb-4">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
@@ -104,7 +104,7 @@ function Library() {
 
         <section
           id="questions"
-          className="flex flex-cols justify-evenly font-medium mt-20"
+          className="flex flex-col lg:flex-col justify-evenly font-medium mt-20"
         >
           {QUESTIONS?.map(({ title, color }, index) => (
             <button
@@ -125,7 +125,7 @@ function Library() {
         </section>
 
         <section id="fake-breadcrumb">
-          <div className="col-span-1 relative m-4 mt-10 rounded-lg shadow-lg bg-gray-50  border-gray-500">
+          <div className="col-span-1 relative lg:m-4 mt-10 rounded-lg shadow-lg bg-gray-50  border-gray-500">
             <div className="relative p-4 rounded-t-lg flex flex-row bg-orange-50 ">
               <h2 className="inline-block mt-1 ml-2 text-xl font-semibold">
                 Community Data Library {">"} Region {">"} Multnomah County
@@ -177,7 +177,7 @@ function Library() {
             </h2>
           </div>
 
-          <div className="m-4 grid grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
+          <div className="m-4 grid lg:grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
             <div className="flex flex-col justify-center">
               <h1 className="font-semibold">
                 Is there a dataset that you would like to see added to a

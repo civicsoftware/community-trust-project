@@ -6,7 +6,7 @@ function QuestionCard({ title, color, children }) {
   return (
     <div
       id="question-card-1"
-      className={`col-span-1 relative m-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
+      className={`col-span-1 relative my-4 lg:m-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
     >
       <div className="relative p-4 rounded-t-lg flex flex-row">
         <div
