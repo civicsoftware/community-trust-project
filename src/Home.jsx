@@ -39,7 +39,7 @@ function Home() {
             </p>
             <div className="justify-self-center self-start pt-4 pb-2 mb-4 flex flex-row">
               <Windmill.Button className="whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
-                <a href="mailto:leadership@civicsoftwarefoundation.org?subject=Bring TRUST to my Community">
+                <a href="mailto:hi@civicsoftwarefoundation.org?subject=Bring TRUST to my Community">
                   Bring TRUST to your community
                 </a>
               </Windmill.Button>
@@ -109,7 +109,7 @@ function Home() {
           <div className="m-12 mt-24 max-w-7xl px-12">
             <div className="flex items-center text-blue mb-4">
               <svg
-                className="h-7 w-7 mr-3"
+                className="h-7 w-7 mr-3 text-blue-dark"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

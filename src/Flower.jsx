@@ -26,43 +26,46 @@ function Flower() {
         </svg>
         <h2 className="text-2xl font-semibold">Flower of Hope</h2>
       </div>
-      <p>
-        The Flower of Hope (FoH) is CIVIC’s version of a <b>theory of change</b>{" "}
-        that serves as a metaphor to emphasize the <b>dynamic aspects</b> of
-        change in place of more linear frameworks that make it difficult to see
-        the interconnected elements of transformation. The Flower represents a
-        living organism that must be nurtured, supported to flourish, eventually
-        &quot;blossoming&quot; into its final state. Within the FoH,
-        &quot;theory&quot; meets action, where{" "}
-        <i>
-          <b>&quot;actors,&quot;</b>
-        </i>{" "}
-        in the form of pollinating bees, move from petal to petal and
-        transferring (pollinating) the flower’s system with information,
-        experience, and more. These{" "}
-        <i>
-          <b>&quot;petals&quot;</b>
-        </i>{" "}
-        comprised of goals, objectives, and tactics are the manifestations of
-        what must be done for change to flourish and ultimately leads to the
-        implementation of the petals’ functions.
-      </p>
-      <p className="block mt-6">
-        The Flower of Hope hinges on the idea that the future can only be
-        crafted through active collaboration and agreement while leveraging data
-        to create visibility into the experiences of the actors within the
-        system. Accountability is inherently a requirement for success and
-        informed, and context-aware systems are the driving force within the
-        data constructs that we see.
-      </p>
-      <p className="block mt-6">
-        At the center of the Flower of Hope, we see our shared vision, which
-        holds the idea that{" "}
-        <i>
-          &quot;justice is the foundational understanding of a society&quot;
-        </i>{" "}
-        at the center of our blossoming theory of change.
-      </p>
+      <section className="prose font-rubik">
+        <p>
+          The Flower of Hope (FoH) is CIVIC’s version of a{" "}
+          <b>theory of change</b> that serves as a metaphor to emphasize the{" "}
+          <b>dynamic aspects</b> of change in place of more linear frameworks
+          that make it difficult to see the interconnected elements of
+          transformation. The Flower represents a living organism that must be
+          nurtured, supported to flourish, eventually &quot;blossoming&quot;
+          into its final state. Within the FoH, &quot;theory&quot; meets action,
+          where{" "}
+          <i>
+            <b>&quot;actors,&quot;</b>
+          </i>{" "}
+          in the form of pollinating bees, move from petal to petal and
+          transferring (pollinating) the flower’s system with information,
+          experience, and more. These{" "}
+          <i>
+            <b>&quot;petals&quot;</b>
+          </i>{" "}
+          comprised of goals, objectives, and tactics are the manifestations of
+          what must be done for change to flourish and ultimately leads to the
+          implementation of the petals’ functions.
+        </p>
+        <p className="block mt-6">
+          The Flower of Hope hinges on the idea that the future can only be
+          crafted through active collaboration and agreement while leveraging
+          data to create visibility into the experiences of the actors within
+          the system. Accountability is inherently a requirement for success and
+          informed, and context-aware systems are the driving force within the
+          data constructs that we see.
+        </p>
+        <p className="block mt-6">
+          At the center of the Flower of Hope, we see our shared vision, which
+          holds the idea that{" "}
+          <i>
+            &quot;justice is the foundational understanding of a society&quot;
+          </i>{" "}
+          at the center of our blossoming theory of change.
+        </p>
+      </section>
       <div className="mt-6 font-semibold flex flex-row">
         <Link to="/blueprint">
           <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
