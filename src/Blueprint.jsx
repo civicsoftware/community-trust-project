@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { default as Windmill } from "@windmill/react-ui";
-import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -16,6 +15,9 @@ const ATTRIBUTION = gql`
         json
       }
       name
+    }
+    asset(id: "6GsjLrn3K6VuYjRy8FwFIQ") {
+      url
     }
   }
 `;
@@ -78,11 +80,11 @@ function Blueprint() {
         </article>
         {/* TODO: make this link to the PDF document */}
         <div className="mt-4 mb-8 flex flex-row justify-center">
-          <Link to="/" target="_blank">
+          <a href={data?.asset?.url}>
             <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
               Read the CIVIC Blueprint for Context-Aware Systems
             </Windmill.Button>
-          </Link>
+          </a>
         </div>
       </div>
     </>
