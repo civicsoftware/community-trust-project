@@ -24,10 +24,7 @@ function Book(dataset) {
 
   if (dataset === "end") {
     bookElement = (
-      <Link
-        to={`/context?data=${dataset?.sys?.id}`}
-        className="text-white px-4 py-2"
-      >
+      <Link to="#CTAs" className="text-white px-4 py-2">
         <div
           id={dataset}
           className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial shadow-lg border-gray-300 hover:opacity-100 `}
@@ -39,8 +36,9 @@ function Book(dataset) {
               alt="Trust Project Logo"
             />
           </div>
-          <div className=" p-4 flex-grow bg-gray-900 text-center">
-            <p className="font-normal text-8xl mt-8">+</p>
+          <div className=" p-4 flex-grow bg-white text-black text-right">
+            <p className="font-semibold">Your Data</p>
+            <p className="text-xs mt-1">Your Organization</p>
           </div>
           <div className="text-gray-900 text-xs p-1 my-1 text-center font-medium">
             CIVIC STRUCTURED CONTEXT
@@ -87,7 +85,7 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mt-20 mb-36 max-w-7xl mx-auto px-12">
+      <div className="m-12 mt-20 mb-36 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col text-gray-900 mb-4">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
@@ -104,11 +102,11 @@ function Library() {
 
         <section
           id="questions"
-          className="flex flex-cols justify-evenly font-medium mt-20"
+          className="flex flex-col gap-4 lg:flex-row justify-evenly font-medium mt-20"
         >
           {QUESTIONS?.map(({ title, color }, index) => (
             <button
-              className={`font-medium border-b-4 border-${color} ${
+              className={`font-medium border-b-4 border-${color} w- ${
                 index === question ? "text-teal-900" : ""
               }`}
               key="title"
@@ -125,7 +123,7 @@ function Library() {
         </section>
 
         <section id="fake-breadcrumb">
-          <div className="col-span-1 relative m-4 mt-10 rounded-lg shadow-lg bg-gray-50  border-gray-500">
+          <div className="col-span-1 relative lg:m-4 mt-10 rounded-lg shadow-lg bg-gray-50  border-gray-500">
             <div className="relative p-4 rounded-t-lg flex flex-row bg-orange-50 ">
               <h2 className="inline-block mt-1 ml-2 text-xl font-semibold">
                 Community Data Library {">"} Region {">"} Multnomah County
@@ -134,7 +132,7 @@ function Library() {
 
             <section id="bookshelf">
               <div className="p-4 mr-0 flex flex-row overflow-x-scroll">
-                <p className="absolute right-4 top-52 z-20 w-12 h-12 text-gray-900 shadow-2xl">
+                <p className="absolute right-4 top-52 z-20 w-12 h-12 text-gray-500 shadow-2xl">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="white"
@@ -177,7 +175,7 @@ function Library() {
             </h2>
           </div>
 
-          <div className="m-4 grid grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
+          <div className="m-4 grid lg:grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
             <div className="flex flex-col justify-center">
               <h1 className="font-semibold">
                 Is there a dataset that you would like to see added to a

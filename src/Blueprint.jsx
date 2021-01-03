@@ -52,7 +52,7 @@ function Blueprint() {
         />
       </Windmill.Modal>
 
-      <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
+      <div className="mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
         <div className="flex items-center text-gray-900 mb-4">
           <img
             src={CivicLogo}
@@ -81,7 +81,7 @@ function Blueprint() {
         {/* TODO: make this link to the PDF document */}
         <div className="mt-4 mb-8 flex flex-row justify-center">
           <a href={data?.asset?.url}>
-            <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+            <Windmill.Button className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
               Read the CIVIC Blueprint for Context-Aware Systems
             </Windmill.Button>
           </a>

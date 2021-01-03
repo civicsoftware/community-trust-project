@@ -55,7 +55,7 @@ function Avatars() {
         </Windmill.Modal>
       )}
 
-      <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
+      <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col mb-4">
           <div className="flex items-center text-gray-900">
             <svg
@@ -96,7 +96,7 @@ function Avatars() {
         </p>
 
         <h2 className="text-xl mt-6 font-semibold">Community</h2>
-        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
+        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
@@ -125,7 +125,7 @@ function Avatars() {
               ))}
         </div>
         <h2 className="text-xl mt-6 font-semibold">County</h2>
-        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
+        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
@@ -154,7 +154,7 @@ function Avatars() {
               ))}
         </div>
         <h2 className="text-xl mt-6 font-semibold">CIVIC</h2>
-        <div className="grid grid-cols-3 gap-10 mt-6  bg-white">
+        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&

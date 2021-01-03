@@ -12,7 +12,7 @@ function Home() {
         id="hero"
         className="bg-gray-50 border-gray-300 border-2 top-0 pt-20 pb-20"
       >
-        <div className="container mx-auto px-72 grid grid-cols-4 gap-x-12 justify-items-stretch items-start">
+        <div className="container mx-auto lg:px-72 p-6 grid lg:grid-cols-4 gap-12 justify-items-stretch items-start">
           <div className="col-span-2">
             <img
               src={FullLogo}
@@ -38,7 +38,7 @@ function Home() {
               experiences of the communities they serve.
             </p>
             <div className="justify-self-center self-start pt-4 pb-2 mb-4 flex flex-row">
-              <Windmill.Button className="whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+              <Windmill.Button className="lg:whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                 <a href="mailto:hi@civicsoftwarefoundation.org?subject=Bring TRUST to my Community">
                   Bring TRUST to your community
                 </a>
@@ -50,7 +50,7 @@ function Home() {
 
       <div className="max-w-4xl mx-auto">
         <section id="blueprint">
-          <div className="mx-12 max-w-7xl p-16">
+          <div className="lg:mx-12 mx-6 max-w-7xl lg:p-16 py-16">
             <div className="flex items-center text-gray-900 mb-4">
               {/* <svg
                 className="h-6 w-6 mr-3"
@@ -82,7 +82,7 @@ function Home() {
         </section>
 
         <section id="library">
-          <div className="text-4xl m-12 -mt-12 max-w-7xl p-12 pb-0 flex flex-col">
+          <div className="text-4xl mx-6 my-12 lg:m-12 -mt-12 max-w-7xl lg:p-12 py-12 pb-0 flex flex-col">
             <img
               src={LibraryHero}
               className="w-full"
@@ -90,14 +90,17 @@ function Home() {
             />
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/blueprint">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button
+                  block
+                  className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
+                >
                   Learn more about the CIVIC Blueprint for Context-Aware Systems
                 </Windmill.Button>
               </Link>
             </div>
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/library">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-start px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="lg:whitespace-nowrap inline-flex items-start px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Explore the Data Library
                 </Windmill.Button>
               </Link>
@@ -106,7 +109,7 @@ function Home() {
         </section>
 
         <section id="compass">
-          <div className="m-12 mt-24 max-w-7xl px-12">
+          <div className="mx-6 my-12 lg:m-12 mt-24 max-w-7xl lg:px-12">
             <div className="flex items-center text-blue mb-4">
               <svg
                 className="h-7 w-7 mr-3 text-blue-dark"
@@ -134,7 +137,7 @@ function Home() {
             </p>
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/compass">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Navigate the Compass of Oppression
                 </Windmill.Button>
               </Link>
@@ -143,7 +146,7 @@ function Home() {
         </section>
 
         <section id="stakeholders">
-          <div className="m-12 mt-24 max-w-7xl px-12">
+          <div className="mx-6 my-12 lg:m-12 mt-24 max-w-7xl lg:px-12">
             <div className="flex items-center text-yellow-dark mb-4">
               <svg
                 className="h-7 w-7 mr-3"
@@ -170,7 +173,7 @@ function Home() {
             </p>
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/avatars">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Get to Know the Actors
                 </Windmill.Button>
               </Link>
@@ -179,7 +182,7 @@ function Home() {
         </section>
 
         <section id="flower">
-          <div className="m-12 mt-24 max-w-7xl px-12">
+          <div className="mx-6 my-12 lg:m-12 mt-24 max-w-7xl lg:px-12">
             <div className="flex items-center text-pink-dark mb-4">
               <svg
                 className="h-7 w-7 mr-3"
@@ -206,7 +209,7 @@ function Home() {
             </p>
             <div className="mt-6 font-semibold flex flex-row">
               <Link to="/flower">
-                <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                <Windmill.Button className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
                   Explore the Flower of Hope
                 </Windmill.Button>
               </Link>
