@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
-import LibraryHero from "../public/LIBRARY_HERO.svg";
+import LibraryHero from "../public/LIBRARY_HERO.png";
 
 function Home() {
   return (
@@ -50,7 +50,7 @@ function Home() {
 
       <div className="max-w-4xl mx-auto">
         <section id="blueprint">
-          <div className="lg:mx-12 mx-6 max-w-7xl lg:p-16 py-16">
+          <div className="lg:mx-12 mx-6 max-w-7xl lg:px-12 py-12">
             <div className="flex items-center text-gray-900 mb-4">
               {/* <svg
                 className="h-6 w-6 mr-3"
@@ -82,7 +82,7 @@ function Home() {
         </section>
 
         <section id="library">
-          <div className="text-4xl mx-6 my-12 lg:m-12 -mt-12 max-w-7xl lg:p-12 py-12 pb-0 flex flex-col">
+          <div className="text-4xl mx-6 lg:mx-12 -mt-6 max-w-7xl lg:px-12 pb-0 flex flex-col">
             <img
               src={LibraryHero}
               className="w-full"
@@ -94,7 +94,7 @@ function Home() {
                   block
                   className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white"
                 >
-                  Learn more about the CIVIC Blueprint for Context-Aware Systems
+                  Read the CIVIC Blueprint for Context-Aware Systems
                 </Windmill.Button>
               </Link>
             </div>
