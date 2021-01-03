@@ -52,7 +52,7 @@ function Blueprint() {
         />
       </Windmill.Modal>
 
-      <div className="my-12 lg:m-12 mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
+      <div className="mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
         <div className="flex items-center text-gray-900 mb-4">
           <img
             src={CivicLogo}
