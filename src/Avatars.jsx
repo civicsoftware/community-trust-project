@@ -79,7 +79,7 @@ function Avatars() {
           </div>
           <p className="text-xl"> Click below to hear their stories.</p>
         </div>
-        <p className="block">
+        <p className="block prose font-sans">
           Story-Centered Stakeholders (also called personas) are a key component
           in our storytelling methodology. We use them to build and extend
           empathy and define the unique needs of each stakeholder.
