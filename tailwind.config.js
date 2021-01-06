@@ -58,6 +58,10 @@ const merged = windmill({
       green: "#008600",
       cobalt: "#184C8B"
     },
+    cursor: {
+      "zoom-in": "zoom-in",
+      "zoom-out": "zoom-out"
+    },
     fontFamily: {
       sans: ['"Rubik", sans-serif'],
       serif: ['"Merriweather", serif'],
