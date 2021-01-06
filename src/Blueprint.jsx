@@ -66,13 +66,13 @@ function Blueprint() {
         <div className="mt-4 mb-8 flex flex-row justify-center">
           <p className="pt-4 block mx-auto font-bold">
             Infinity Loop Collaboration Model{" "}
-            <span className="italic font-normal">(Click to view larger)</span>:
+            <span className="italic font-normal">(Click to enlarge)</span>:
           </p>
         </div>
         <img
           src={InfinityLoop}
           onClick={() => toggleOverlay()}
-          className="mt-10"
+          className={`mt-10 ${overlayShown ? "" : "cursor-zoom-in"}`}
           alt="Infinity Loop"
         />
         <article className="prose font-rubik mx-auto my-8">
