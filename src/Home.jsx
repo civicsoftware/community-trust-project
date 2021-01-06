@@ -69,11 +69,11 @@ function Home() {
               </svg> */}
               <img src={CivicLogo} className="w-7 pt-1 mr-3" alt="CIVIC Logo" />
               <h2 className="text-2xl font-semibold">
-                Community Library of Context
+                TRUST Community Data Library
               </h2>
             </div>
             <p className="block">
-              The Community Library of Context is a resource that reflects an
+              The TRUST Community Data Library is a resource that reflects an
               active anti-oppression practice, and a structured process of
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
