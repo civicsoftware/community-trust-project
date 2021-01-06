@@ -15,18 +15,19 @@ function ContextQuestionsSection({
   color,
   Icon
 }) {
-  const answersForSection = answers.filter(a =>
-    questions.find(
-      question =>
-        question?.questionText === a?.question?.questionText &&
-        (a?.answerBoolean === true ||
-          a?.answerBoolean === false ||
-          a?.answerShortText ||
-          a?.answerLongText)
-    )
-  );
+  const answersForSection =
+    answers?.filter(a =>
+      questions.find(
+        question =>
+          question?.questionText === a?.question?.questionText &&
+          (a?.answerBoolean === true ||
+            a?.answerBoolean === false ||
+            a?.answerShortText ||
+            a?.answerLongText)
+      )
+    ) || [];
   const answered = answersForSection.length;
-  const total = questions.length;
+  const total = questions?.length || 1;
   let completeness = 0;
   if (answered >= 1) {
     completeness = 1;

@@ -5,7 +5,11 @@ import ContextQuestionsSection from "./ContextQuestionsSection";
 import { ICONS } from "./Icons";
 
 const SECTION = gql`
-  query Section($questionGroup: String!, $dataset: String!) {
+  query Section(
+    $questionGroup: String!
+    $dataset: String!
+    $noDataset: Boolean!
+  ) {
     questionGroup(id: $questionGroup) {
       title
       attribution {
@@ -35,7 +39,7 @@ const SECTION = gql`
       }
       icon
     }
-    dataset(id: $dataset) {
+    dataset(id: $dataset) @skip(if: $noDataset) {
       answersCollection {
         items {
           question {
@@ -54,7 +58,7 @@ const SECTION = gql`
 
 function ContextSection({ questionGroup, dataset, narrow, color }) {
   const { loading, error, data } = useQuery(SECTION, {
-    variables: { questionGroup, dataset }
+    variables: { questionGroup, dataset: dataset || "", noDataset: !dataset }
   });
 
   if (loading) return <p>Loading...</p>;

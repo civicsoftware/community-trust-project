@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import { default as Windmill } from "@windmill/react-ui";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 import { QUESTIONS } from "./LibraryQuestions";
+import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA";
+import LibraryDataSourceRequestCTA from "./LibraryDataSourceRequestCTA";
 
 const DATASETS = gql`
   query {
@@ -24,7 +25,7 @@ function Book(dataset) {
 
   if (dataset === "end") {
     bookElement = (
-      <Link to="#CTAs" className="text-white px-4 py-2">
+      <Link to="/context" className="text-white px-4 py-2">
         <div
           id={dataset}
           className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial shadow-lg border-gray-300 hover:opacity-100 `}
@@ -176,48 +177,8 @@ function Library() {
           </div>
 
           <div className="m-4 grid lg:grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
-            <div className="flex flex-col justify-center">
-              <h1 className="font-semibold">
-                Is there a dataset that you would like to see added to a
-                collection?
-              </h1>
-              <p className="mt-4">
-                Knowing what types of information community members need and
-                care about is important, and we want to hear from you. You can
-                send us a request for a dataset or subject area, and we’ll work
-                with one of our TRUST Partners or a city, county, or government
-                agency that isn’t a partner yet to get the conversation started.
-              </p>
-              <Windmill.Button className="mt-4 w-80">
-                <a href="mailto:datastrategy-grp@civicteam.org?subject=Request for Data Source">
-                  Request a Dataset be Added to the Library
-                </a>
-              </Windmill.Button>
-            </div>
-            <div className="flex flex-col justify-center">
-              <h1 className="font-semibold">
-                Are you an organization that has data you would like to see in
-                the Community Data Library?
-              </h1>
-              <p className="mt-4">
-                Creating and publishing open context at the organizational level
-                is a powerful way to create value and build connections in
-                community. If your organization receives requests for access to
-                your data, having metadata context and governance models
-                publicly available is a great way to protect integrity of use
-                and set guidelines before sharing raw data.
-              </p>
-
-              <p className="mt-4">
-                We can help you start the process of adding to an existing
-                collection or starting your own.
-              </p>
-              <Windmill.Button className="mt-4 w-72">
-                <a href="mailto:datastrategy-grp@civicteam.org?subject=Add My Data Source to the Library">
-                  Add Your Data Source to the Library
-                </a>
-              </Windmill.Button>
-            </div>
+            <LibraryDataSourceRequestCTA />
+            <LibraryOrganizationDataSourceCTA />
           </div>
         </section>
       </div>

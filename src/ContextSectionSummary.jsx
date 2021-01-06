@@ -74,7 +74,7 @@ function ContextSectionSummary({
         <div className="grid grid-cols-12">
           <div className="col-start-0 col-end-11 col-span-10">
             <h2 className="text-2xl font-bold tracking-wider text-black">
-              {schema?.title || "Needs Input"}
+              {schema?.title || "Your dataset name"}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
@@ -100,13 +100,20 @@ function ContextSectionSummary({
             </div>
           </div>
           <div className="col-start-11 col-end-13 items-center bg-white ring-2 ring-purple-600 rounded-lg">
-            <img
-              src={logo?.url}
-              alt={logo?.description}
-              height={logo?.height}
-              width={logo?.width}
-              className="w-full content-center"
-            />
+            {logo?.url && (
+              <img
+                src={logo?.url}
+                alt={logo?.description}
+                height={logo?.height}
+                width={logo?.width}
+                className="w-full content-center"
+              />
+            )}
+            {!logo?.url && (
+              <p className="block items-center font-semibold my-2 text-center">
+                Your logo here
+              </p>
+            )}
           </div>
           <div className="col-span-12 flex justify-between">
             <div>
@@ -185,7 +192,7 @@ function ContextSectionSummary({
         {summary?.json ? (
           documentToReactComponents(summary?.json)
         ) : (
-          <p>TODO: convert summary to Contentful</p>
+          <p>Needs Input</p>
         )}
       </div>
       <div className="px-4 mb-4 text-sm">
