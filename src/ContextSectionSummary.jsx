@@ -109,7 +109,11 @@ function ContextSectionSummary({
                 className="w-full content-center"
               />
             )}
-            {!logo?.url && <p className="block items-center font-semibold my-2 text-center">Your logo here</p>}
+            {!logo?.url && (
+              <p className="block items-center font-semibold my-2 text-center">
+                Your logo here
+              </p>
+            )}
           </div>
           <div className="col-span-12 flex justify-between">
             <div>
