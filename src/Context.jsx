@@ -10,6 +10,7 @@ import ContextSectionResources from "./ContextSectionResources";
 import ContextSectionAttribution from "./ContextSectionAttribution";
 import ContextSection from "./ContextSection";
 import ContextNav from "./ContextNav";
+import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA";
 
 const DATASETS = gql`
   query Dataset($datasetId: String!) {
@@ -54,7 +55,8 @@ function ContextPage() {
 
 function Context({ datasetId }) {
   const { loading, error, data } = useQuery(DATASETS, {
-    variables: { datasetId }
+    variables: { datasetId },
+    skip: !datasetId
   });
 
   if (loading) return <p>Loading...</p>;
@@ -65,7 +67,7 @@ function Context({ datasetId }) {
   const challenges = data?.dataset?.challenges;
   const sandtraps = data?.dataset?.sandtraps;
   const logo = data?.dataset?.logo;
-  if (!schema) return <div>No data</div>;
+  // if (!schema) return <div>No data</div>;
 
   return (
     <>
@@ -83,6 +85,9 @@ function Context({ datasetId }) {
         ]}
       />
       <div className="max-w-4xl mx-auto">
+        <div className="m-4 my-8">
+          <LibraryOrganizationDataSourceCTA />
+        </div>
         <ContextSectionSummary
           schema={schema}
           summary={summary}
