@@ -18,34 +18,46 @@ function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
       emailSubject ? encodeURIComponent(emailSubject) : ""
     }&body=${emailBody ? encodeURIComponent(emailBody) : ""}`;
   return (
-    <div className={`px-4 py-2 text-black bg-${color}-100 ${className}`}>
+    <div className={`px-8 py-4 text-black bg-${color}-100 ${className}`}>
       <div
-        className={`prose prose-sm max-w-none mb-16 text-black ${
-          narrow ? "" : "md:mb-6"
+        className={`my-4 max-w-none text-black font-sans lg:mb-20 prose prose-sm ${
+          narrow ? "mb-20" : ""
         }`}
       >
         {description && documentToReactComponents(description)}
       </div>
 
-      {buttonSubText && (
-        <p className="absolute bottom-2 left-4 w-1/2 text-sm">
-          {buttonSubText}
-        </p>
-      )}
-      {buttonText && (
-        <div className="absolute bottom-2 right-2 md:col-span-12 md:ml-auto">
-          {emailRecipients && (
-            <Windmill.Button tag="a" href={mailTo}>
-              <p className="font-semibold capitalize text-md">{buttonText}</p>
-            </Windmill.Button>
-          )}
-          {formUrl && (
-            <Windmill.Button tag="a" href={formUrl}>
-              <p className="font-semibold capitalize text-md">{buttonText}</p>
-            </Windmill.Button>
-          )}
-        </div>
-      )}
+      <div
+        className={narrow ? "absolute right-0 bottom-0 w-full px-8 py-4" : ""}
+      >
+        {buttonSubText && (
+          <p
+            className={`${
+              narrow ? "" : "lg:absolute lg:bottom-4 lg:left-8 lg:w-1/2"
+            } prose font-sans prose-sm`}
+          >
+            {buttonSubText}
+          </p>
+        )}
+        {buttonText && (
+          <div
+            className={`flex justify-end mt-2 ${
+              narrow ? "" : "lg:absolute lg:bottom-4 lg:right-8 lg:my-0"
+            }`}
+          >
+            {emailRecipients && (
+              <Windmill.Button tag="a" href={mailTo}>
+                <p className="font-semibold capitalize text-md">{buttonText}</p>
+              </Windmill.Button>
+            )}
+            {formUrl && (
+              <Windmill.Button tag="a" href={formUrl}>
+                <p className="font-semibold capitalize text-md">{buttonText}</p>
+              </Windmill.Button>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

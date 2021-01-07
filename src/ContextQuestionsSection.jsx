@@ -56,7 +56,7 @@ function ContextQuestionsSection({
       Icon={Icon}
     >
       {questions && questions.length > 0 && (
-        <ul className="mb-2 p-4 text-sm">
+        <ul className="my-4 px-8 text-sm">
           {questions.slice(0, 2).map(question => {
             const answer = answers?.find(
               a => a?.question?.questionText === question?.questionText

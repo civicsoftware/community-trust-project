@@ -48,7 +48,7 @@ function ContextSectionWrapper({
   return (
     <section id={kebabCase(title)} className="grid scroll-mt-14">
       <div
-        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
+        className={`relative mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
       >
         <div className={`px-4 py-2 rounded-t-lg `}>
           <div
@@ -56,7 +56,7 @@ function ContextSectionWrapper({
           >
             <Icon className="inline-block align-text-bottom w-6 h-6" />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-black text-xl font-bold capitalize">
+          <h2 className="inline-block -mt-4 ml-2 text-black text-2xl font-bold capitalize">
             {title}
           </h2>
           <ContextWhoInvestigated
@@ -67,7 +67,7 @@ function ContextSectionWrapper({
           />
         </div>
         <div className={`bg-white ${description ? "py-4" : ""}`}>
-          <div className="px-4 w-full">
+          <div className="px-8 w-full font-sans prose prose-sm max-w-none">
             {documentToReactComponents(description?.json)}
           </div>
           {expandable && (
