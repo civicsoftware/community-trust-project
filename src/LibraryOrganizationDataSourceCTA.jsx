@@ -4,7 +4,7 @@ import { default as Windmill } from "@windmill/react-ui";
 function LibraryOrganizationDataSourceCTA() {
   return (
     <div className="flex flex-col justify-center">
-      <h1 className="font-semibold text-lg">
+      <h1 className="text-lg font-semibold">
         Are you an organization that has data you would like to see in the
         Community Data Library?
       </h1>

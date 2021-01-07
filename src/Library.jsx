@@ -107,7 +107,7 @@ function Library() {
         <section id="about" className="py-12">
           <div className="flex items-center">
             <svg
-              className="mr-1 mb-1 w-7 h-7 text-purple-900"
+              className="mb-1 mr-1 w-7 h-7 text-purple-900"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
