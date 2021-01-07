@@ -6,7 +6,7 @@ function QuestionCard({ title, color, children }) {
   return (
     <div
       id="question-card-1"
-      className={`col-span-1 relative my-4 lg:m-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
+      className={`col-span-1 relative my-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
     >
       <div className="relative flex flex-row p-4 rounded-t-lg">
         <div
@@ -30,7 +30,7 @@ function QuestionCard({ title, color, children }) {
         </div>
         <h2 className="inline-block ml-2 mt-1 text-xl font-bold">{title}</h2>
       </div>
-      <div className="p-4 max-w-none font-rubik bg-white prose">{children}</div>
+      <div className="p-4 max-w-none font-rubik bg-white prose prose-lg">{children}</div>
     </div>
   );
 }

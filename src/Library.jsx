@@ -86,45 +86,84 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mb-36 mt-20 mx-auto px-6 max-w-7xl lg:px-12">
+      <div className="m-12 mt-24 mx-auto px-6 max-w-3xl lg:px-12">
         <div className="flex flex-col mb-4 text-gray-900">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
               <img
                 src={CivicLogo}
-                className="mr-3 pt-1 w-7"
+                className="mr-3 pt-1 w-7 lg:w-10"
                 alt="Trust Project Logo"
               />
-              <h2 className="text-2xl font-semibold">Community Data Library</h2>
+              <h2 className="text-2xl font-semibold lg:text-3xl">
+                Community Data Library
+              </h2>
             </div>
           </div>
-          <p className="text-xl">A Platform for Open Context</p>
+          <p className="mt-4 text-xl">A Platform for Open Context</p>
         </div>
 
-        <section
-          id="questions"
-          className="flex flex-col gap-4 justify-evenly mt-20 font-medium lg:flex-row"
-        >
-          {QUESTIONS?.map(({ title, color }, index) => (
-            <button
-              className={`font-medium border-b-4 border-${color} w- ${
-                index === question ? "text-teal-900" : ""
-              }`}
-              key="title"
-              type="button"
-              onClick={() => setQuestion(index)}
+        <section id="about">
+          <div className="flex items-center mb-4 mt-20">
+            <svg
+              className="mr-1 w-7 h-7 text-teal-900"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {title}
-            </button>
-          ))}
-        </section>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
+            <h2 className="text-gray-900 text-2xl font-semibold">
+              About the Library
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 justify-evenly mt-12 font-medium lg:flex-row">
+            {QUESTIONS?.map(({ title, color }, index) => (
+              <button
+                className={`font-medium border-b-4 border-${color} w- ${
+                  index === question ? "text-teal-900" : ""
+                }`}
+                key="title"
+                type="button"
+                onClick={() => setQuestion(index)}
+              >
+                {title}
+              </button>
+            ))}
+          </div>
 
-        <section id="answer" className="grid items-stretch">
-          {QUESTIONS?.[question]?.Component()}
+          <div className="grid items-stretch mt-6">
+            {QUESTIONS?.[question]?.Component()}
+          </div>
         </section>
 
         <section id="fake-breadcrumb">
-          <div className="relative col-span-1 mt-10 bg-gray-50 border-gray-500 rounded-lg shadow-lg lg:m-4">
+          <div className="flex items-center mb-4 mt-20">
+            <svg
+              className="mr-1 w-7 h-7 text-orange-900"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
+            <h2 className="text-gray-900 text-2xl font-semibold">
+              Explore the Library
+            </h2>
+          </div>
+          <div className="relative col-span-1 mt-10 bg-gray-50 border-gray-500 rounded-lg shadow-lg">
             <div className="relative flex flex-row p-4 bg-orange-50 rounded-t-lg">
               <h2 className="inline-block ml-2 mt-1 text-xl font-semibold">
                 Community Data Library {">"} Region {">"} Multnomah County
@@ -156,7 +195,7 @@ function Library() {
         </section>
 
         <section id="CTAs">
-          <div className="flex items-center mb-4 mt-20 text-pink">
+          <div className="flex items-center mb-4 mt-20">
             <svg
               className="mr-1 w-7 h-7 text-yellow-900"
               xmlns="http://www.w3.org/2000/svg"
