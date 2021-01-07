@@ -7,10 +7,10 @@ import CompassSvg from "../public/CIVIC_COMPASS.svg";
 
 function Compass() {
   return (
-    <div className="m-12 mb-36 mt-20 mx-auto px-6 max-w-4xl lg:px-12">
+    <div className="m-12 mb-36 mt-24 mx-auto px-6 max-w-3xl lg:px-12">
       <div className="flex items-center mb-4 text-gray-900">
         <svg
-          className="mr-3 w-6 h-6"
+          className="mr-3 w-7 h-7 lg:w-10 lg:h-10"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -24,9 +24,11 @@ function Compass() {
             d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
           />
         </svg>
-        <h2 className="text-2xl font-semibold">Compass of Oppression</h2>
+        <h2 className="text-2xl font-semibold lg:text-3xl">
+          Compass of Oppression
+        </h2>
       </div>
-      <section className="font-rubik prose">
+      <section className="py-12 font-rubik prose prose-lg">
         <p className="block">
           The Compass of Oppression (CoO) serves as a visual representation of
           an Intersectional Feminist framework that orients us to the
@@ -72,7 +74,7 @@ function Compass() {
           away from these harmful constructs.
         </p>
       </section>
-      <div className="flex flex-row mt-6 font-semibold">
+      <div className="flex flex-row py-6 font-semibold">
         <Link to="/blueprint">
           <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white whitespace-nowrap text-base font-medium border border-transparent rounded-md shadow-sm">
             Read More in the CIVIC Blueprint
@@ -82,7 +84,7 @@ function Compass() {
       <object
         data={CompassSvg}
         type="image/svg+xml"
-        className="mt-10"
+        className="py-12"
         aria-label="Compass of Oppression"
       />
 
