@@ -38,12 +38,16 @@ function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
           <div className="flex justify-end ml-auto">
             {emailRecipients && (
               <Windmill.Button tag="a" href={mailTo}>
-                <p className="font-semibold capitalize text-md text-center">{buttonText}</p>
+                <p className="text-center font-semibold capitalize text-md">
+                  {buttonText}
+                </p>
               </Windmill.Button>
             )}
             {formUrl && (
               <Windmill.Button tag="a" href={formUrl}>
-                <p className="font-semibold capitalize text-md text-center">{buttonText}</p>
+                <p className="text-center font-semibold capitalize text-md">
+                  {buttonText}
+                </p>
               </Windmill.Button>
             )}
           </div>
