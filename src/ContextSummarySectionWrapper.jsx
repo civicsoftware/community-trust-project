@@ -10,7 +10,7 @@ function DefaultIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="inline-block align-text-bottom w-6 h-6"
+      className="h-6 w-6 inline-block align-text-bottom"
     >
       <path
         strokeLinecap="round"
@@ -47,7 +47,7 @@ function ContextSummarySectionWrapper({
           >
             <Icon />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-black text-xl font-bold capitalize">
+          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize text-black">
             {title}
           </h2>
         </div>

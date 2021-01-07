@@ -23,13 +23,13 @@ function ContextQuestion({
     answerLongText;
 
   return (
-    <li key={text} className="mt-2 p-2 w-full bg-gray-50">
+    <li key={text} className="mt-2 p-2 bg-gray-50 w-full">
       {answer && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="inline-block w-4 h-4"
+          className="inline-block h-4 w-4"
         >
           <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
           <path
@@ -45,7 +45,7 @@ function ContextQuestion({
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="inline-block w-4 h-4"
+          className="inline-block h-4 w-4"
         >
           <path
             strokeLinecap="round"
@@ -78,10 +78,10 @@ function ContextQuestion({
               {hasText &&
                 !hasYesNo &&
                 documentToReactComponents(answerLongText?.json)}
-              <p className="font-medium text-md">
+              <p className="text-md font-medium">
                 {answerBoolean !== false && showYesNo && textYes}
               </p>
-              <p className="font-medium text-md">
+              <p className="text-md font-medium">
                 {answerBoolean !== true && showYesNo && textNo}
               </p>
               <p>{hasText && hasYesNo && answerShortText}</p>
