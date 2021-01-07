@@ -7,10 +7,10 @@ import FlowerSvg from "../public/CIVIC_FLOWER.svg";
 
 function Flower() {
   return (
-    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
-      <div className="flex items-center text-gray-900 mb-4">
+    <div className="m-12 mb-36 mt-20 mx-auto px-6 max-w-4xl lg:px-12">
+      <div className="flex items-center mb-4 text-gray-900">
         <svg
-          className="h-6 w-6 mr-3"
+          className="mr-3 w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -26,7 +26,7 @@ function Flower() {
         </svg>
         <h2 className="text-2xl font-semibold">Flower of Hope</h2>
       </div>
-      <section className="prose font-rubik">
+      <section className="font-rubik prose">
         <p>
           The Flower of Hope (FoH) is CIVIC’s version of a{" "}
           <b>theory of change</b> that serves as a metaphor to emphasize the{" "}
@@ -66,9 +66,9 @@ function Flower() {
           at the center of our blossoming theory of change.
         </p>
       </section>
-      <div className="mt-6 font-semibold flex flex-row">
+      <div className="flex flex-row mt-6 font-semibold">
         <Link to="/blueprint">
-          <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+          <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white whitespace-nowrap text-base font-medium border border-transparent rounded-md shadow-sm">
             Read more in the CIVIC Blueprint
           </Windmill.Button>
         </Link>

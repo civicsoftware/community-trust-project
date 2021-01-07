@@ -25,23 +25,23 @@ function Book(dataset) {
 
   if (dataset === "end") {
     bookElement = (
-      <Link to="/context" className="text-white px-4 py-2">
+      <Link to="/context" className="px-4 py-2 text-white">
         <div
           id={dataset}
           className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial shadow-lg border-gray-300 hover:opacity-100 `}
         >
-          <div className="rounded-t-md bg-white">
+          <div className="bg-white rounded-t-md">
             <img
               src={CivicLogo}
-              className="w-7 m-1 ml-1"
+              className="m-1 ml-1 w-7"
               alt="Trust Project Logo"
             />
           </div>
-          <div className=" p-4 flex-grow bg-white text-black text-right">
+          <div className="flex-grow p-4 text-right text-black bg-white">
             <p className="font-semibold">Your Data</p>
-            <p className="text-xs mt-1">Your Organization</p>
+            <p className="mt-1 text-xs">Your Organization</p>
           </div>
-          <div className="text-gray-900 text-xs p-1 my-1 text-center font-medium">
+          <div className="my-1 p-1 text-center text-gray-900 text-xs font-medium">
             CIVIC STRUCTURED CONTEXT
           </div>
         </div>
@@ -51,24 +51,24 @@ function Book(dataset) {
     bookElement = (
       <Link
         to={`/context?data=${dataset?.sys?.id}`}
-        className="text-white px-4 py-2"
+        className="px-4 py-2 text-white"
       >
         <div
           id={dataset}
           className={`opacity-90 relative m-0 w-48 h-72 rounded-md border-2 flex flex-col flex-initial shadow-lg border-gray-300 hover:opacity-100 `}
         >
-          <div className="rounded-t-md bg-white">
+          <div className="bg-white rounded-t-md">
             <img
               src={CivicLogo}
-              className="w-7 m-1 ml-1"
+              className="m-1 ml-1 w-7"
               alt="Trust Project Logo"
             />
           </div>
-          <div className=" p-4 flex-grow bg-white text-black text-right">
+          <div className="flex-grow p-4 text-right text-black bg-white">
             <p className="font-semibold"> {dataset?.title}</p>
-            <p className="text-xs mt-1">Multnomah County</p>
+            <p className="mt-1 text-xs">Multnomah County</p>
           </div>
-          <div className="text-gray-900 text-xs p-1 my-1 text-center font-medium">
+          <div className="my-1 p-1 text-center text-gray-900 text-xs font-medium">
             CIVIC STRUCTURED CONTEXT
           </div>
         </div>
@@ -86,13 +86,13 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mt-20 mb-36 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col text-gray-900 mb-4">
+      <div className="m-12 mb-36 mt-20 mx-auto px-6 max-w-7xl lg:px-12">
+        <div className="flex flex-col mb-4 text-gray-900">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
               <img
                 src={CivicLogo}
-                className="w-7 pt-1 mr-3"
+                className="mr-3 pt-1 w-7"
                 alt="Trust Project Logo"
               />
               <h2 className="text-2xl font-semibold">Community Data Library</h2>
@@ -103,7 +103,7 @@ function Library() {
 
         <section
           id="questions"
-          className="flex flex-col gap-4 lg:flex-row justify-evenly font-medium mt-20"
+          className="flex flex-col gap-4 justify-evenly mt-20 font-medium lg:flex-row"
         >
           {QUESTIONS?.map(({ title, color }, index) => (
             <button
@@ -124,16 +124,16 @@ function Library() {
         </section>
 
         <section id="fake-breadcrumb">
-          <div className="col-span-1 relative lg:m-4 mt-10 rounded-lg shadow-lg bg-gray-50  border-gray-500">
-            <div className="relative p-4 rounded-t-lg flex flex-row bg-orange-50 ">
-              <h2 className="inline-block mt-1 ml-2 text-xl font-semibold">
+          <div className="relative col-span-1 mt-10 bg-gray-50 border-gray-500 rounded-lg shadow-lg lg:m-4">
+            <div className="relative flex flex-row p-4 bg-orange-50 rounded-t-lg">
+              <h2 className="inline-block ml-2 mt-1 text-xl font-semibold">
                 Community Data Library {">"} Region {">"} Multnomah County
               </h2>
             </div>
 
             <section id="bookshelf">
-              <div className="p-4 mr-0 flex flex-row overflow-x-scroll">
-                <p className="absolute right-4 top-52 z-20 w-12 h-12 text-gray-500 shadow-2xl">
+              <div className="flex flex-row mr-0 p-4 overflow-x-scroll">
+                <p className="absolute z-20 right-4 top-52 w-12 h-12 text-gray-500 shadow-2xl">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="white"
@@ -156,9 +156,9 @@ function Library() {
         </section>
 
         <section id="CTAs">
-          <div className="flex items-center text-pink mb-4 mt-20">
+          <div className="flex items-center mb-4 mt-20 text-pink">
             <svg
-              className="h-7 w-7 mr-1 text-yellow-900"
+              className="mr-1 w-7 h-7 text-yellow-900"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -171,12 +171,12 @@ function Library() {
                 d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
               />
             </svg>
-            <h2 className="text-2xl font-semibold text-gray-900 ">
+            <h2 className="text-gray-900 text-2xl font-semibold">
               Grow the Library
             </h2>
           </div>
 
-          <div className="m-4 grid lg:grid-cols-2 items-start max-w-7xl gap-20 mx-auto">
+          <div className="grid gap-20 items-start m-4 mx-auto max-w-7xl lg:grid-cols-2">
             <LibraryDataSourceRequestCTA />
             <LibraryOrganizationDataSourceCTA />
           </div>

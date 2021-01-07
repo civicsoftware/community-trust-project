@@ -69,7 +69,7 @@ function ContextWhoInvestigated({
             }`}
           />
         </div>
-        <div className="ml-1.5 h-4 text-xs capitalize items-baseline italic text-black">
+        <div className="items-baseline ml-1.5 h-4 text-black text-xs italic capitalize">
           {COMPLETENESS_TEXT?.[completeness] ||
             `${answered}/${total} answered fields`}
           {sources}

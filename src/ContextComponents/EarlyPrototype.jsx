@@ -6,12 +6,12 @@ function EarlyPrototype() {
       href="https://www.civicsoftwarefoundation.org"
       target="_blank"
       rel="noreferrer"
-      className="m-4 p-4 fixed bottom-0 w-36 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
+      className="fixed bottom-0 m-4 p-4 w-36 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-xl"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 408.9 184.5"
-        className="w-24 mb-4"
+        className="mb-4 w-24"
       >
         <path
           fill="#220F25"
@@ -65,9 +65,9 @@ function EarlyPrototype() {
           />
         </g>
       </svg>
-      <p className="text-md font-semibold">Early Prototype</p>
+      <p className="font-semibold text-md">Early Prototype</p>
       <p className="text-sm font-medium uppercase">Do not share publicly</p>
-      <p className="text-xs underline">Learn more</p>
+      <p className="underline text-xs">Learn more</p>
     </a>
   );
 }

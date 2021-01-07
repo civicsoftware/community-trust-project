@@ -28,7 +28,7 @@ function MobileDropdown() {
           disabled={isDisabled}
         >
           <svg
-            className="h-6 w-6 text-black"
+            className="w-6 h-6 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ function MobileDropdown() {
       {isNavOpen && (
         <Windmill.Button aria-label="Navigation" aria-haspopup="true">
           <svg
-            className="h-6 w-6 text-black"
+            className="w-6 h-6 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -72,35 +72,35 @@ function MobileDropdown() {
         <Windmill.DropdownItem
           tag="a"
           href="/blueprint"
-          className="text-base font-medium text-gray-900 hover:text-gray-500"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Blueprint
         </Windmill.DropdownItem>
         <Windmill.DropdownItem
           tag="a"
           href="/library"
-          className="text-base font-medium text-gray-900 hover:text-gray-500"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Data Library
         </Windmill.DropdownItem>
         <Windmill.DropdownItem
           tag="a"
           href="/compass"
-          className="text-base font-medium text-gray-900 hover:text-gray-500"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Compass
         </Windmill.DropdownItem>
         <Windmill.DropdownItem
           tag="a"
           href="/avatars"
-          className="text-base font-medium text-gray-900 hover:text-gray-500"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Stakeholders
         </Windmill.DropdownItem>
         <Windmill.DropdownItem
           tag="a"
           href="/flower"
-          className="text-base font-medium text-gray-900 hover:text-gray-500"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Flower Of Hope
         </Windmill.DropdownItem>
@@ -111,49 +111,49 @@ function MobileDropdown() {
 
 function Navbar() {
   return (
-    <div className="p-2 text-gray-900 ">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6">
-        <div className="flex justify-between py-1 items-center md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+    <div className="p-2 text-gray-900">
+      <div className="mx-auto px-2 max-w-7xl sm:px-6">
+        <div className="flex items-center justify-between py-1 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:flex-1 lg:w-0">
             <a href="/" className="flex flex-row">
-              <img src={Logo} className="h-8 w-8" alt="Trust Project Logo" />
-              <span className="text-xl self-center pl-3">
+              <img src={Logo} className="w-8 h-8" alt="Trust Project Logo" />
+              <span className="self-center pl-3 text-xl">
                 Community TRUST Project
               </span>
             </a>
           </div>
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden space-x-8 md:flex">
             <NavLink
               to="/blueprint"
-              className="text-base font-medium text-gray-900 hover:text-gray-500"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Blueprint
             </NavLink>
             <NavLink
               to="/library"
-              className="text-base font-medium text-gray-900 hover:text-gray-500"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Data Library
             </NavLink>
             <NavLink
               to="/compass"
-              className="text-base font-medium text-gray-900 hover:text-gray-500"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Compass
             </NavLink>
             <NavLink
               to="/avatars"
-              className="text-base font-medium text-gray-900 hover:text-gray-500"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Stakeholders
             </NavLink>
             <NavLink
               to="/flower"
-              className="text-base font-medium text-gray-900 hover:text-gray-500"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Flower Of Hope

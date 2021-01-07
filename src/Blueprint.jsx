@@ -41,7 +41,7 @@ function Blueprint() {
       <Windmill.Modal
         isOpen={overlayShown}
         onClose={() => toggleOverlay()}
-        className="max-w-full mx-40 bg-white border-gray-300 border-2 rounded-lg shadow-xl"
+        className="mx-40 max-w-full bg-white border-2 border-gray-300 rounded-lg shadow-xl"
       >
         {" "}
         <img
@@ -52,19 +52,19 @@ function Blueprint() {
         />
       </Windmill.Modal>
 
-      <div className="mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center text-gray-900 mb-4">
+      <div className="mb-36 mt-20 mx-auto px-6 max-w-4xl lg:px-12">
+        <div className="flex items-center mb-4 text-gray-900">
           <img
             src={CivicLogo}
-            className="w-7 pt-1 mr-3"
+            className="mr-3 pt-1 w-7"
             alt="Trust Project Logo"
           />
           <h2 className="text-2xl font-semibold">
             Blueprint for Context-Aware Systems
           </h2>
         </div>
-        <div className="mt-4 mb-8 flex flex-row justify-center">
-          <p className="pt-4 block mx-auto font-bold">
+        <div className="flex flex-row justify-center mb-8 mt-4">
+          <p className="block mx-auto pt-4 font-bold">
             Infinity Loop Collaboration Model{" "}
             <span className="italic font-normal">(Click to enlarge)</span>:
           </p>
@@ -75,13 +75,13 @@ function Blueprint() {
           className={`mt-10 ${overlayShown ? "" : "cursor-zoom-in"}`}
           alt="Infinity Loop"
         />
-        <article className="prose font-rubik mx-auto my-8">
+        <article className="mx-auto my-8 font-rubik prose">
           {documentToReactComponents(attribution?.description?.json)}
         </article>
         {/* TODO: make this link to the PDF document */}
-        <div className="mt-4 mb-8 flex flex-row justify-center">
+        <div className="flex flex-row justify-center mb-8 mt-4">
           <a href={data?.asset?.url}>
-            <Windmill.Button className="lg:whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+            <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
               Read the CIVIC Blueprint for Context-Aware Systems
             </Windmill.Button>
           </a>

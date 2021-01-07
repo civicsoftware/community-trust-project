@@ -27,14 +27,14 @@ function Attribution() {
   const attribution = data?.attribution;
 
   return (
-    <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-12">
-      <div className="flex items-center text-gray-900 mb-4">
+    <div className="m-12 mb-36 mt-20 mx-auto px-12 max-w-4xl">
+      <div className="flex items-center mb-4 text-gray-900">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="h-6 w-6 mr-3"
+          className="mr-3 w-6 h-6"
         >
           <path
             strokeLinecap="round"
@@ -48,9 +48,9 @@ function Attribution() {
       <div className="prose prose-sm">
         {documentToReactComponents(attribution?.description?.json)}
       </div>
-      <div className="mt-6 font-semibold flex flex-row">
+      <div className="flex flex-row mt-6 font-semibold">
         <Link to="/blueprint">
-          <Windmill.Button className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+          <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white whitespace-nowrap text-base font-medium border border-transparent rounded-md shadow-sm">
             Read More in the Blueprint
           </Windmill.Button>
         </Link>

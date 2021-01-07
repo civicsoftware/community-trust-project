@@ -55,11 +55,11 @@ function Avatars() {
         </Windmill.Modal>
       )}
 
-      <div className="m-12 mt-20 mb-36 max-w-4xl mx-auto px-6 lg:px-12">
+      <div className="m-12 mb-36 mt-20 mx-auto px-6 max-w-4xl lg:px-12">
         <div className="flex flex-col mb-4">
           <div className="flex items-center text-gray-900">
             <svg
-              className="h-6 w-6 mr-3"
+              className="mr-3 w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -79,7 +79,7 @@ function Avatars() {
           </div>
           <p className="text-xl"> Click below to hear their stories.</p>
         </div>
-        <p className="block prose font-sans">
+        <p className="block font-sans prose">
           Story-Centered Stakeholders (also called personas) are a key component
           in our storytelling methodology. We use them to build and extend
           empathy and define the unique needs of each stakeholder.
@@ -95,8 +95,8 @@ function Avatars() {
           a multimedia experience:
         </p>
 
-        <h2 className="text-xl mt-6 font-semibold">Community</h2>
-        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
+        <h2 className="mt-6 text-xl font-semibold">Community</h2>
+        <div className="grid gap-10 mt-6 bg-white lg:grid-cols-3">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
@@ -105,7 +105,7 @@ function Avatars() {
               .filter(avatar => avatar?.category === "Community")
               .map(({ name, thumbnail }) => (
                 <div
-                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  className="relative flex flex-col justify-center pb-12 border-2 border-gray-300 rounded-lg shadow-xl"
                   onClick={e => toggleCard(e, name, "Community")}
                   role="img"
                 >
@@ -115,17 +115,17 @@ function Avatars() {
                       id="filtered"
                       src={thumbnail?.url}
                       alt={thumbnail?.description}
-                      className="object-cover h-full"
+                      className="h-full object-cover"
                     />
                   </div>
-                  <div className="bg-yellow-light rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-black text-center">{name}</p>
+                  <div className="absolute bottom-0 inset-x-0 p-2 pb-4 bg-yellow-light rounded-b-lg">
+                    <p className="text-center text-black">{name}</p>
                   </div>
                 </div>
               ))}
         </div>
-        <h2 className="text-xl mt-6 font-semibold">County</h2>
-        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
+        <h2 className="mt-6 text-xl font-semibold">County</h2>
+        <div className="grid gap-10 mt-6 bg-white lg:grid-cols-3">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
@@ -134,7 +134,7 @@ function Avatars() {
               .filter(avatar => avatar?.category === "County")
               .map(({ name, thumbnail }) => (
                 <div
-                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  className="relative flex flex-col justify-center pb-12 border-2 border-gray-300 rounded-lg shadow-xl"
                   onClick={e => toggleCard(e, name, "County")}
                   role="img"
                 >
@@ -144,17 +144,17 @@ function Avatars() {
                       id="filtered"
                       src={thumbnail?.url}
                       alt={thumbnail?.description}
-                      className="object-cover h-full"
+                      className="h-full object-cover"
                     />
                   </div>
-                  <div className="bg-pink-light rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-black text-center">{name}</p>
+                  <div className="absolute bottom-0 inset-x-0 p-2 pb-4 bg-pink-light rounded-b-lg">
+                    <p className="text-center text-black">{name}</p>
                   </div>
                 </div>
               ))}
         </div>
-        <h2 className="text-xl mt-6 font-semibold">CIVIC</h2>
-        <div className="grid lg:grid-cols-3 gap-10 mt-6  bg-white">
+        <h2 className="mt-6 text-xl font-semibold">CIVIC</h2>
+        <div className="grid gap-10 mt-6 bg-white lg:grid-cols-3">
           {loading && <p className="col-span-3">Loading...</p>}
           {error && <p className="col-span-3">Error loading data :(</p>}
           {!loading &&
@@ -163,7 +163,7 @@ function Avatars() {
               .filter(avatar => avatar?.category === "Civic")
               .map(({ name, thumbnail }) => (
                 <div
-                  className="flex flex-col justify-center border-gray-300 border-2 shadow-xl rounded-lg relative pb-12"
+                  className="relative flex flex-col justify-center pb-12 border-2 border-gray-300 rounded-lg shadow-xl"
                   onClick={e => toggleCard(e, name, "Civic")}
                   role="img"
                 >
@@ -173,11 +173,11 @@ function Avatars() {
                       id="filtered"
                       src={thumbnail?.url}
                       alt={thumbnail?.description}
-                      className="object-cover h-full"
+                      className="h-full object-cover"
                     />
                   </div>
-                  <div className="bg-orange-200 rounded-b-lg p-2 pb-4 absolute bottom-0 inset-x-0">
-                    <p className="text-black text-center">{name}</p>
+                  <div className="absolute bottom-0 inset-x-0 p-2 pb-4 bg-orange-200 rounded-b-lg">
+                    <p className="text-center text-black">{name}</p>
                   </div>
                 </div>
               ))}

@@ -13,7 +13,7 @@ function DefaultIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-6 w-6 inline-block align-text-bottom"
+      className="inline-block align-text-bottom w-6 h-6"
     >
       <path
         strokeLinecap="round"
@@ -54,9 +54,9 @@ function ContextSectionWrapper({
           <div
             className={`inline-block p-1 border-2  shadow-xl rounded-full  text-black bg-${color}-200`}
           >
-            <Icon className="h-6 w-6 inline-block align-text-bottom" />
+            <Icon className="inline-block align-text-bottom w-6 h-6" />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-xl font-bold capitalize text-black">
+          <h2 className="inline-block -mt-4 ml-2 text-black text-xl font-bold capitalize">
             {title}
           </h2>
           <ContextWhoInvestigated

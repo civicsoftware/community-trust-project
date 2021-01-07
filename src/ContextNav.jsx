@@ -8,31 +8,29 @@ function ContextNav({ sections }) {
   return (
     <section
       id="nav"
-      className="mx-auto sticky bg-gray-50 border-gray-300 border-2 top-0 left-0 z-50"
+      className="sticky z-50 left-0 top-0 mx-auto bg-gray-50 border-2 border-gray-300"
     >
-      <div className="p-1 flex flex-row lg:flex-col lg:absolute lg:m-4 text-gray-600 text-sm w-min-content overflow-x-scroll">
+      <div className="flex flex-row p-1 text-gray-600 text-sm overflow-x-scroll lg:absolute lg:flex-col lg:m-4 w-min-content">
         <img
           src={CivicLogo}
-          className="w-7 m-2 block lg:hidden"
+          className="block m-2 w-7 lg:hidden"
           alt="CIVIC Logo"
         />
         <div className="flex flex-col">
           <img
             src={CivicLogo}
-            className="w-7 m-2 hidden lg:block"
+            className="hidden m-2 w-7 lg:block"
             alt="CIVIC Logo"
           />
-          <div className="mx-2 lg:text-md lg:font-bold text-black ">
+          <div className="mx-2 text-black lg:font-bold lg:text-md">
             Structured
           </div>
-          <div className="mx-2 lg:text-md lg:font-bold text-black ">
-            Context
-          </div>
-          <div className="mx-2 lg:text-md lg:font-bold text-black ">Schema</div>
+          <div className="mx-2 text-black lg:font-bold lg:text-md">Context</div>
+          <div className="mx-2 text-black lg:font-bold lg:text-md">Schema</div>
         </div>
         <a
           href="/library"
-          className="m-2 text-cobalt hover:underline text-xs hidden lg:block w-36"
+          className="hidden m-2 w-36 text-cobalt hover:underline text-xs lg:block"
         >
           &#x3c; Back to Library Directory
         </a>
@@ -43,7 +41,7 @@ function ContextNav({ sections }) {
         ))}
         <a
           href="/blueprint"
-          className="m-2 text-cobalt hover:underline text-xs hidden lg:block w-36"
+          className="hidden m-2 w-36 text-cobalt hover:underline text-xs lg:block"
         >
           Learn more about context-aware systems
         </a>
