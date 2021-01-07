@@ -18,33 +18,22 @@ function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
       emailSubject ? encodeURIComponent(emailSubject) : ""
     }&body=${emailBody ? encodeURIComponent(emailBody) : ""}`;
   return (
-    <div className={`px-8 py-4 text-black bg-${color}-100 ${className}`}>
+    <div
+      className={`flex flex-col flex-grow px-8 py-4 text-black bg-${color}-100 ${className}`}
+    >
       <div
-        className={`my-4 max-w-none text-black font-sans lg:mb-20 prose prose-sm ${
-          narrow ? "mb-20" : ""
+        className={`my-4 max-w-none text-black font-sans prose prose-sm
         }`}
       >
         {description && documentToReactComponents(description)}
       </div>
 
-      <div
-        className={narrow ? "absolute right-0 bottom-0 w-full px-8 py-4" : ""}
-      >
+      <div className="flex flex-grow mt-auto">
         {buttonSubText && (
-          <p
-            className={`${
-              narrow ? "" : "lg:absolute lg:bottom-4 lg:left-8 lg:w-1/2"
-            } prose font-sans prose-sm`}
-          >
-            {buttonSubText}
-          </p>
+          <p className="prose font-sans prose-sm">{buttonSubText}</p>
         )}
         {buttonText && (
-          <div
-            className={`flex justify-end mt-2 ${
-              narrow ? "" : "lg:absolute lg:bottom-4 lg:right-8 lg:my-0"
-            }`}
-          >
+          <div className="flex justify-end mt-2">
             {emailRecipients && (
               <Windmill.Button tag="a" href={mailTo}>
                 <p className="font-semibold capitalize text-md">{buttonText}</p>
