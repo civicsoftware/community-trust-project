@@ -37,7 +37,7 @@ function ContextSummarySectionWrapper({
   Icon
 }) {
   return (
-    <section id={kebabCase(title)} className="grid scroll-mt-14">
+    <section id="summary" className="grid">
       <div
         className={`relative mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-white`}
       >

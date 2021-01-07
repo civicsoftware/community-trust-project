@@ -68,7 +68,7 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative mx-4 my-8 border-4 border-yellow-200 rounded-lg shadow-xl scroll-mt-16"
+      className="relative mx-4 my-8 border-4 border-yellow-200 rounded-lg shadow-xl scroll-mt-32 lg:scroll-mt-8"
     >
       <div className="px-8 py-4 text-black bg-yellow-200">
         <div className="grid grid-cols-12">

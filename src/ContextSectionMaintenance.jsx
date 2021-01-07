@@ -43,7 +43,7 @@ function ContextSectionMaintenance({ schema }) {
       color="pink"
       narrow
     >
-      <div className="px-8 py-4 font-sans prose prose-sm">
+      <div className="px-8 pt-4 mb-4 font-sans prose prose-sm">
         <div className="text-purple-800 font-bold">
           {schema?.officialMaintenance?.officialMaintainer || "Needs Input"}
         </div>

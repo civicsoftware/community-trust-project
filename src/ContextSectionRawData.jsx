@@ -45,7 +45,7 @@ function ContextSectionRawData({ schema }) {
       color="pink"
       narrow
     >
-      <div className="px-8 py-4 font-sans prose prose-sm">
+      <div className="mt-4 pb-4 px-8 font-sans prose prose-sm">
         <div className="text-purple-800 font-bold">
           {schema?.rawData?.rawTitle || "Needs Input"}
         </div>

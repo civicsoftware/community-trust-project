@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 @layer utilities {
+  .scroll-mt-0 {
+    scroll-margin-top: 0rem;
+  }
+  .scroll-mt-2 {
+    scroll-margin-top: 0.5rem;
+  }
+  .scroll-mt-4 {
+    scroll-margin-top: 1rem;
+  }
+  .scroll-mt-6 {
+    scroll-margin-top: 1.5rem;
+  }
+  .scroll-mt-8 {
+    scroll-margin-top: 2rem;
+  }
+  .scroll-mt-10 {
+    scroll-margin-top: 2.5rem;
+  }
   .scroll-mt-12 {
     scroll-margin-top: 3rem;
   }
@@ -11,5 +29,17 @@
   }
   .scroll-mt-16 {
     scroll-margin-top: 4rem;
+  }
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+  .scroll-mt-28 {
+    scroll-margin-top: 7rem;
+  }
+  .scroll-mt-32 {
+    scroll-margin-top: 8rem;
   }
 }

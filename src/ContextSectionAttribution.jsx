@@ -56,7 +56,7 @@ function ContextSectionAttribution({ schema }) {
       narrow
       expandable
     >
-      <div className="px-8 py-4 font-sans prose prose-sm">
+      <div className="pt-4 px-8 font-sans prose prose-sm">
         <div className="">
           <span className="font-semibold">Context contributors: </span>
           {schema?.context?.contextContributor || "Needs Input"}

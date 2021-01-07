@@ -42,7 +42,7 @@ export default function CollapsableFixedHeight({
       </div>
       {height > 36 && (
         <button
-          className={`mt-6 bottom-0 w-full font-bold text-md text-cobalt-900 ${buttonClassName}`}
+          className={`mt-4 bottom-0 w-full font-bold text-md text-cobalt-900 ${buttonClassName}`}
           onClick={() => handleClick(expanded)}
           type="button"
           aria-live="polite"

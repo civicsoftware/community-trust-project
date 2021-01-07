@@ -46,7 +46,7 @@ function ContextSectionWrapper({
   callToAction
 }) {
   return (
-    <section id={kebabCase(title)} className="grid scroll-mt-14">
+    <section id={kebabCase(title)} className="grid scroll-mt-24">
       <div
         className={`relative mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
       >
