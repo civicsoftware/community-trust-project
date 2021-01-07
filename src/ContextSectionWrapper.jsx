@@ -67,7 +67,7 @@ function ContextSectionWrapper({
           />
         </div>
         <div className={`bg-white ${description ? "py-4" : ""}`}>
-          <div className="px-8 w-full font-sans prose prose-sm max-w-none">
+          <div className="px-8 w-full max-w-none font-sans prose prose-sm">
             {documentToReactComponents(description?.json)}
           </div>
           {expandable && (

@@ -10,7 +10,7 @@ function ContextNav({ sections }) {
       id="nav"
       className="sticky z-50 left-0 top-0 mx-auto bg-gray-50 border-2 border-gray-300"
     >
-      <div className="flex flex-row p-1 text-sm overflow-x-scroll lg:absolute lg:flex-col lg:mx-4 mt-4 w-min-content items-center lg:items-baseline">
+      <div className="flex flex-row items-center mt-4 p-1 text-sm overflow-x-scroll lg:absolute lg:flex-col lg:items-baseline lg:mx-4 w-min-content">
         <img
           src={CivicLogo}
           className="block m-2 w-7 lg:hidden"
@@ -37,7 +37,7 @@ function ContextNav({ sections }) {
         {sections?.map(section => (
           <a
             href={`#${section}`}
-            className="m-2 hover:text-gray-500 text-base font-medium w-36"
+            className="m-2 w-36 hover:text-gray-500 text-base font-medium"
           >
             {startCase(toLower(section))}
           </a>

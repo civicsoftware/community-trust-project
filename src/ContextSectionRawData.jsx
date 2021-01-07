@@ -45,7 +45,7 @@ function ContextSectionRawData({ schema }) {
       color="pink"
       narrow
     >
-      <div className="px-8 py-4 prose prose-sm font-sans">
+      <div className="px-8 py-4 font-sans prose prose-sm">
         <div className="text-purple-800 font-bold">
           {schema?.rawData?.rawTitle || "Needs Input"}
         </div>
@@ -66,14 +66,14 @@ function ContextSectionRawData({ schema }) {
         <div className="">
           <span className="font-semibold">URI: </span>
           {schema?.rawData?.rawStableURI ? (
-            <a href="#TODO" className="underline  font-medium">
+            <a href="#TODO" className="underline font-medium">
               {schema?.rawData?.rawStableURI}
             </a>
           ) : (
             <span>Needs Input</span>
           )}
         </div>
-        <div className="mt-4 ">{schema?.rawData?.notes}</div>
+        <div className="mt-4">{schema?.rawData?.notes}</div>
       </div>
     </ContextSummarySectionWrapper>
   );

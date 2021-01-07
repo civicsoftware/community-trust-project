@@ -27,7 +27,7 @@ function ContextWhoInvestigated({
 }) {
   return (
     completeness >= 0 && (
-      <div className="flex flex-col lg:flex-row ">
+      <div className="flex flex-col lg:flex-row">
         <div
           className={`relative flex items-center gap-1 ml-12 -mt-1 ${className}`}
         >
@@ -71,7 +71,7 @@ function ContextWhoInvestigated({
             />
           </div>
         </div>
-        <div className="items-baseline ml-12 h-4 mt-1 text-black text-xs italic capitalize lg:-mt-1 lg:ml-1.5">
+        <div className="items-baseline ml-12 mt-1 h-4 text-black text-xs italic capitalize lg:-mt-1 lg:ml-1.5">
           {COMPLETENESS_TEXT?.[completeness] ||
             `${answered}/${total} answered fields`}
           {sources}

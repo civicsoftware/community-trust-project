@@ -78,7 +78,7 @@ function ContextSectionSummary({
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
-              <div className="inline-block lg:ml-4 p-1">
+              <div className="inline-block p-1 lg:ml-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -99,7 +99,7 @@ function ContextSectionSummary({
               </h3>
             </div>
           </div>
-          <div className="col-end-13 col-start-11 items-center bg-white rounded-lg ring-purple-600 ring-2 my-2">
+          <div className="col-end-13 col-start-11 items-center my-2 bg-white rounded-lg ring-purple-600 ring-2">
             {logo?.url && (
               <img
                 src={logo?.url}
@@ -275,10 +275,10 @@ function ContextSectionSummary({
         <dl>
           {schema?.other?.definitions?.map(definition => (
             <div key={definition.term} className="grid grid-cols-12 mt-2">
-              <dt className="col-span-12 lg:col-span-2 font-bold border-b-4 lg:border-b-0 lg:border-r-4 text-md">
+              <dt className="col-span-12 font-bold border-b-4 lg:col-span-2 lg:border-b-0 lg:border-r-4 text-md">
                 {definition.term}
               </dt>
-              <dd className="col-span-12 lg:col-span-10 pl-2">
+              <dd className="col-span-12 pl-2 lg:col-span-10">
                 <span className="font-sans prose prose-sm">
                   {definition.definition}{" "}
                 </span>
@@ -344,10 +344,7 @@ function ContextSectionSummary({
           {schema?.relatedTo || "Needs Input"}
         </div>
       </div>
-      <ContextSectionCTAFooter
-        callToAction={callToAction}
-        color="yellow"
-      />
+      <ContextSectionCTAFooter callToAction={callToAction} color="yellow" />
     </section>
   );
 }

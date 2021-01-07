@@ -84,7 +84,7 @@ function Context({ datasetId }) {
           "attribution"
         ]}
       />
-      <div className="lg:pl-48 my-8">
+      <div className="my-8 lg:pl-48">
         <div className="mx-auto max-w-5xl">
           {!schema && (
             <div className="m-4 my-8">
@@ -99,7 +99,7 @@ function Context({ datasetId }) {
             sandtraps={sandtraps}
             logo={logo}
           />
-          <div className="md:grid md:grid-cols-2 gap-4">
+          <div className="gap-4 md:grid md:grid-cols-2">
             <ContextSectionRawData schema={schema} />
             <ContextSectionMaintenance schema={schema} />
           </div>
@@ -129,7 +129,7 @@ function Context({ datasetId }) {
             color="yellow"
           />
           {/* Community Context */}
-          <div className="md:grid md:grid-cols-2 gap-4">
+          <div className="gap-4 md:grid md:grid-cols-2">
             <ContextSection
               questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
               dataset={datasetId}
@@ -144,7 +144,7 @@ function Context({ datasetId }) {
               color="blue"
             />
           </div>
-          <div className="md:grid md:grid-cols-2 gap-4">
+          <div className="gap-4 md:grid md:grid-cols-2">
             <ContextSectionResources schema={schema} />
             <ContextSectionAttribution schema={schema} />
           </div>
