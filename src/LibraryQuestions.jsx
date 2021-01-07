@@ -8,12 +8,12 @@ function QuestionCard({ title, color, children }) {
       id="question-card-1"
       className={`col-span-1 relative my-4 lg:m-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
     >
-      <div className="relative p-4 rounded-t-lg flex flex-row">
+      <div className="relative flex flex-row p-4 rounded-t-lg">
         <div
           className={`inline-block p-1 border-2 rounded-full text-gray bg-gray-100 border-gray-500 `}
         >
           <svg
-            className="h-6 w-6"
+            className="w-6 h-6"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -28,9 +28,9 @@ function QuestionCard({ title, color, children }) {
             />
           </svg>
         </div>
-        <h2 className="inline-block mt-1 ml-2 text-xl font-bold">{title}</h2>
+        <h2 className="inline-block ml-2 mt-1 text-xl font-bold">{title}</h2>
       </div>
-      <div className="p-4 bg-white prose font-rubik max-w-none">{children}</div>
+      <div className="p-4 max-w-none font-rubik bg-white prose">{children}</div>
     </div>
   );
 }

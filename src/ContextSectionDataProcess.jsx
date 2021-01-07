@@ -9,7 +9,7 @@ function ProcessIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-6 w-6 inline-block align-text-bottom"
+      className="inline-block align-text-bottom w-6 h-6"
     >
       <path
         strokeLinecap="round"
@@ -51,8 +51,8 @@ function ContextSectionDataProcess({ schema }) {
         </div>
         <div>{schema?.processedData?.processOverview}</div>
       </div>
-      <div className="m-0 bg-gray-100 w-full font-mono text-xs">
-        <div className="inline-block ml-0 mt-0 px-2 uppercase bg-gray-800 text-white font-semibold rounded-br shadow-sm text-sm">
+      <div className="m-0 w-full font-mono text-xs bg-gray-100">
+        <div className="inline-block ml-0 mt-0 px-2 text-white text-sm font-semibold bg-gray-800 rounded-br shadow-sm uppercase">
           Field changes
         </div>
         <div className="p-4">
@@ -64,27 +64,27 @@ function ContextSectionDataProcess({ schema }) {
           </div>
         </div>
       </div>
-      <div className="py-4 px-4 text-sm">
+      <div className="px-4 py-4 text-sm">
         <h3 className="text-lg font-bold">Process Steps</h3>
         <ol>
           {schema?.processedData?.processSteps?.map(step => (
             <li
               key={step.stepNumber}
-              className="mt-4 bg-indigo-50 rounded-lg p-2 shadow-md"
+              className="mt-4 p-2 rounded-lg shadow-md bg-indigo-50"
             >
               <div className="grid grid-cols-12">
                 <div className="col-span-1 font-mono text-2xl">
                   {step?.stepNumber}
                 </div>
                 <div className="col-span-11">
-                  <span className="text-md font-semibold">{step.action}</span>
+                  <span className="font-semibold text-md">{step.action}</span>
                   <p className="italic">{step.stepWho}</p>
                   <p className="mb-2">{step.stepExplanation}</p>
                   <p className="text-xs">Resources used:</p>
                   {step?.relatedResources?.map(resource => (
                     <div
                       key={`${step?.stepNumber}${resource}`}
-                      className="inline-block mr-2 p-0.5 bg-indigo-800 text-white text-xs rounded"
+                      className="inline-block mr-2 p-0.5 text-white text-xs rounded bg-indigo-800"
                     >
                       {resource}
                     </div>

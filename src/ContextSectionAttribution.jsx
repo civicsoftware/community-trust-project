@@ -26,7 +26,7 @@ function BookmarkIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-6 w-6 inline-block align-text-bottom"
+      className="inline-block align-text-bottom w-6 h-6"
     >
       <path
         strokeLinecap="round"
