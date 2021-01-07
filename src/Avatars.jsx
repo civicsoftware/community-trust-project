@@ -56,7 +56,7 @@ function Avatars() {
       )}
 
       <div className="m-12 mb-36 mt-24 mx-auto px-6 max-w-3xl lg:px-12">
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col">
           <div className="flex items-center text-gray-900">
             <svg
               className="mr-3 w-7 h-7 lg:w-10 lg:h-10"

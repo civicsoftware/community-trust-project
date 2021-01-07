@@ -56,13 +56,16 @@ function Blueprint() {
         <div className="flex items-center text-gray-900">
           <img
             src={CivicLogo}
-            className="mr-3 pt-1 w-7 lg:w-10"
+            className="mr-3 w-6 lg:w-8"
             alt="Trust Project Logo"
           />
           <h2 className="text-2xl font-semibold lg:text-3xl">
-            Blueprint for Context-Aware Systems
+            The CIVIC Blueprint
           </h2>
         </div>
+        <h3 className="block text-xl">
+          Building Inclusionary Practices for Context-Aware Systems
+        </h3>
         <div className="flex justify-center mb-8 mt-4">
           <p className="block mx-auto pt-4 text-xl font-semibold">
             Infinity Loop Collaboration Model{" "}

@@ -86,13 +86,13 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mt-24 mx-auto px-6 max-w-3xl lg:px-12">
-        <div className="flex flex-col mb-4 text-gray-900">
+      <div className="m-12 mx-auto px-6 py-12 max-w-3xl lg:px-12">
+        <div className="flex flex-col text-gray-900">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
               <img
                 src={CivicLogo}
-                className="mr-3 pt-1 w-7 lg:w-10"
+                className="mr-3 w-6 lg:w-8"
                 alt="Trust Project Logo"
               />
               <h2 className="text-2xl font-semibold lg:text-3xl">
@@ -100,13 +100,14 @@ function Library() {
               </h2>
             </div>
           </div>
-          <p className="mt-4 text-xl">A Platform for Open Context</p>
+          <p className="text-xl">A Platform for Open Context</p>
+          {/* <p className="mt-4 text-xl">A Platform for Open Context</p> */}
         </div>
 
-        <section id="about">
-          <div className="flex items-center mb-4 mt-20">
+        <section id="about" className="py-12">
+          <div className="flex items-center">
             <svg
-              className="mr-1 w-7 h-7 text-teal-900"
+              className="mr-1 mb-1 w-7 h-7 text-purple-900"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -116,14 +117,14 @@ function Library() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
               />
             </svg>
             <h2 className="text-gray-900 text-2xl font-semibold">
               About the Library
             </h2>
           </div>
-          <div className="flex flex-col gap-4 justify-evenly mt-12 font-medium lg:flex-row">
+          <div className="flex flex-col gap-4 justify-evenly mt-6 font-medium lg:flex-row">
             {QUESTIONS?.map(({ title, color }, index) => (
               <button
                 className={`font-medium border-b-4 border-${color} w- ${
@@ -143,10 +144,10 @@ function Library() {
           </div>
         </section>
 
-        <section id="fake-breadcrumb">
-          <div className="flex items-center mb-4 mt-20">
+        <section id="fake-breadcrumb" className="py-12">
+          <div className="flex items-center">
             <svg
-              className="mr-1 w-7 h-7 text-orange-900"
+              className="mr-1 w-7 h-7 text-pink-900"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -194,8 +195,8 @@ function Library() {
           </div>
         </section>
 
-        <section id="CTAs">
-          <div className="flex items-center mb-4 mt-20">
+        <section id="CTAs" className="py-12">
+          <div className="flex items-center">
             <svg
               className="mr-1 w-7 h-7 text-yellow-900"
               xmlns="http://www.w3.org/2000/svg"
