@@ -85,9 +85,11 @@ function Context({ datasetId }) {
         ]}
       />
       <div className="mx-auto max-w-4xl">
-        <div className="m-4 my-8">
-          <LibraryOrganizationDataSourceCTA />
-        </div>
+        {!schema && (
+          <div className="m-4 my-8">
+            <LibraryOrganizationDataSourceCTA />
+          </div>
+        )}
         <ContextSectionSummary
           schema={schema}
           summary={summary}
