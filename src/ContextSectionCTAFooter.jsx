@@ -28,20 +28,20 @@ function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
       </div>
 
       {buttonSubText && (
-        <p className="absolute left-4 bottom-2 text-sm w-1/2">
+        <p className="absolute bottom-2 left-4 w-1/2 text-sm">
           {buttonSubText}
         </p>
       )}
       {buttonText && (
-        <div className="md:col-span-12 md:ml-auto absolute right-2 bottom-2">
+        <div className="absolute bottom-2 right-2 md:col-span-12 md:ml-auto">
           {emailRecipients && (
             <Windmill.Button tag="a" href={mailTo}>
-              <p className="text-md font-semibold capitalize">{buttonText}</p>
+              <p className="font-semibold capitalize text-md">{buttonText}</p>
             </Windmill.Button>
           )}
           {formUrl && (
             <Windmill.Button tag="a" href={formUrl}>
-              <p className="text-md font-semibold capitalize">{buttonText}</p>
+              <p className="font-semibold capitalize text-md">{buttonText}</p>
             </Windmill.Button>
           )}
         </div>

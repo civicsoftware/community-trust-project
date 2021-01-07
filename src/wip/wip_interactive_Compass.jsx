@@ -29,7 +29,7 @@ function Compass() {
         <div
           aria-hidden="true"
           onClick={toggleBackdrop}
-          className="bg-pink-400 bottom-10 right-10 m-4 p-4 fixed w-32 bg-gray-50 border-gray-300 border-2 rounded-lg shadow-xl"
+          className="fixed bottom-10 right-10 m-4 p-4 w-32 bg-gray-50 bg-pink-400 border-2 border-gray-300 rounded-lg shadow-xl"
         >
           Open Compass Navigation
         </div>

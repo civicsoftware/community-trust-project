@@ -26,7 +26,7 @@ function BookIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-6 w-6 inline-block align-text-bottom"
+      className="inline-block align-text-bottom w-6 h-6"
     >
       <path
         strokeLinecap="round"
@@ -61,7 +61,7 @@ function ContextSectionResources({ schema }) {
         <ul className="">
           {schema?.referenceDocumentation?.map(resource => (
             <li key={resource.title} className="mt-2">
-              <a className="font-medium underline" href={resource.stableURI}>
+              <a className="underline font-medium" href={resource.stableURI}>
                 {resource?.title}
               </a>
               <p className="">{resource?.notes}</p>
@@ -74,7 +74,7 @@ function ContextSectionResources({ schema }) {
         <ul className="">
           {schema?.other?.serviceProviders?.map(provider => (
             <li key={provider?.serviceProvider} className="mt-2">
-              <a className="font-medium underline" href={provider?.website}>
+              <a className="underline font-medium" href={provider?.website}>
                 {provider?.serviceProvider}
               </a>
               <p className="text-xs">{provider?.address}</p>

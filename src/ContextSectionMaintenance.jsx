@@ -9,7 +9,7 @@ function LibraryIcon() {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-6 w-6 inline-block align-text-bottom"
+      className="inline-block align-text-bottom w-6 h-6"
     >
       <path
         strokeLinecap="round"
@@ -44,7 +44,7 @@ function ContextSectionMaintenance({ schema }) {
       narrow
     >
       <div className="p-4">
-        <div className="text-sm font-bold text-purple-800">
+        <div className="text-purple-800 text-sm font-bold">
           {schema?.officialMaintenance?.officialMaintainer || "Needs Input"}
         </div>
         <div className="text-sm">

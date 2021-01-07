@@ -14,7 +14,7 @@ const Sandtrap = ({ children }) => (
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className="h-4 w-4 mr-1 inline-block align-text-bottom"
+      className="inline-block align-text-bottom mr-1 w-4 h-4"
     >
       <path
         strokeLinecap="round"
@@ -68,23 +68,23 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-yellow-200 border-4 rounded-lg shadow-xl scroll-mt-16"
+      className="relative m-4 border-4 border-yellow-200 rounded-lg shadow-xl scroll-mt-16"
     >
-      <div className="p-4 bg-yellow-200 text-black">
+      <div className="p-4 text-black bg-yellow-200">
         <div className="grid grid-cols-12">
-          <div className="col-start-0 col-end-11 col-span-10">
-            <h2 className="text-2xl font-bold tracking-wider text-black">
+          <div className="col-span-10 col-end-11 col-start-0">
+            <h2 className="text-black text-2xl font-bold tracking-wider">
               {schema?.title || "Your dataset name"}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
-              <div className="inline-block p-1 ml-4 -mt-2">
+              <div className="inline-block -mt-2 ml-4 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="h-4 w-4 inline-block align-text-bottom"
+                  className="inline-block align-text-bottom w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -99,31 +99,31 @@ function ContextSectionSummary({
               </h3>
             </div>
           </div>
-          <div className="col-start-11 col-end-13 items-center bg-white ring-2 ring-purple-600 rounded-lg">
+          <div className="col-end-13 col-start-11 items-center bg-white rounded-lg ring-purple-600 ring-2">
             {logo?.url && (
               <img
                 src={logo?.url}
                 alt={logo?.description}
                 height={logo?.height}
                 width={logo?.width}
-                className="w-full content-center"
+                className="content-center w-full"
               />
             )}
             {!logo?.url && (
-              <p className="block items-center font-semibold my-2 text-center">
+              <p className="block items-center my-2 text-center font-semibold">
                 Your logo here
               </p>
             )}
           </div>
-          <div className="col-span-12 flex justify-between">
+          <div className="flex col-span-12 justify-between">
             <div>
-              <div className="inline-block p-1 -mb-2">
+              <div className="inline-block -mb-2 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="h-4 w-4 inline-block align-text-bottom"
+                  className="inline-block align-text-bottom w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -139,13 +139,13 @@ function ContextSectionSummary({
               </h3>
             </div>
             <div>
-              <div className="inline-block p-1 -mb-2">
+              <div className="inline-block -mb-2 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="h-4 w-4 inline-block align-text-bottom"
+                  className="inline-block align-text-bottom w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -160,13 +160,13 @@ function ContextSectionSummary({
               </h3>
             </div>
             <div>
-              <div className="inline-block p-1 ml-4 -mb-2">
+              <div className="inline-block -mb-2 ml-4 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="h-4 w-4 inline-block align-text-bottom"
+                  className="inline-block align-text-bottom w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -195,8 +195,8 @@ function ContextSectionSummary({
           <p>Needs Input</p>
         )}
       </div>
-      <div className="px-4 mb-4 text-sm">
-        <div className="bg-pink-light rounded box-content p-2">
+      <div className="mb-4 px-4 text-sm">
+        <div className="p-2 bg-pink-light rounded box-content">
           <ul className="font-medium prose-sm">
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json, sandtrapOptions)
@@ -265,13 +265,13 @@ function ContextSectionSummary({
                 </li>
               </ul>
             </div> */}
-        <h3 className="text-lg font-bold mt-4">
+        <h3 className="mt-4 text-lg font-bold">
           {schema?.other?.definitions && "Definitions"}
         </h3>
         <dl>
           {schema?.other?.definitions?.map(definition => (
-            <div key={definition.term} className="mt-2 grid grid-cols-12">
-              <dt className="text-md font-bold col-span-2 border-r-4">
+            <div key={definition.term} className="grid grid-cols-12 mt-2">
+              <dt className="col-span-2 font-bold border-r-4 text-md">
                 {definition.term}
               </dt>
               <dd className="col-span-10 pl-2">
@@ -328,7 +328,7 @@ function ContextSectionSummary({
           </div>
         </div>
       </div> */}
-      <div className="grid grid-cols-2 bg-purple-100 rounded box-content m-4 p-6 text-sm">
+      <div className="grid grid-cols-2 m-4 p-6 text-sm bg-purple-100 rounded box-content">
         <div className="">
           <span className="font-semibold">Included in : </span>
           {schema?.includedIn || "Needs Input"}

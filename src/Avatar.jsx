@@ -145,21 +145,21 @@ function Avatar({ name }) {
 
   return (
     <>
-      <div className="grid grid-cols-8 -z-10 bg-white pb-6">
+      <div className="-z-10 grid grid-cols-8 pb-6 bg-white">
         <div
           className={`col-span-8 ${colors?.[category]} p-2 flex flex-col z-10`}
         >
-          <h2 className="inline-block ml-2 text-xl text-black font-bold z-10">
+          <h2 className="z-10 inline-block ml-2 text-black text-xl font-bold">
             {name}
           </h2>
           <div>
-            <div className="inline-block p-1 ml-0.5 -mt-2">
+            <div className="inline-block -mt-2 ml-0.5 p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="white"
-                className="h-4 w-4 inline-block align-text-bottom"
+                className="inline-block align-text-bottom w-4 h-4"
               >
                 <path
                   strokeLinecap="round"
@@ -169,14 +169,14 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-black">{organization}</h3>
-            <div className="inline-block p-1 ml-2 -mt-2">
+            <h3 className="inline text-black text-xs">{organization}</h3>
+            <div className="inline-block -mt-2 ml-2 p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="white"
-                className="h-4 w-4 inline-block align-text-bottom"
+                className="inline-block align-text-bottom w-4 h-4"
               >
                 <path
                   strokeLinecap="round"
@@ -186,14 +186,14 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-black">{role}</h3>
-            <div className="inline-block ml-2 p-1 -mb-2 -mt-2">
+            <h3 className="inline text-black text-xs">{role}</h3>
+            <div className="inline-block -mb-2 -mt-2 ml-2 p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="white"
-                className="h-4 w-4 inline-block align-text-bottom"
+                className="inline-block align-text-bottom w-4 h-4"
               >
                 <path
                   strokeLinecap="round"
@@ -209,7 +209,7 @@ function Avatar({ name }) {
                 />
               </svg>
             </div>
-            <h3 className="inline text-xs text-black">{location}</h3>
+            <h3 className="inline text-black text-xs">{location}</h3>
           </div>
         </div>
         <div className="col-span-5 pl-4 pr-6 pt-6">
@@ -230,12 +230,12 @@ function Avatar({ name }) {
         </div>
 
         <div className="col-span-8">
-          <p className="bg-blue-light rounded-2xl box-content py-4 my-4 mx-4 text-m italic pl-4 font-delius text-lg font-bold">
+          <p className="mx-4 my-4 pl-4 py-4 text-lg italic font-bold bg-blue-light rounded-2xl box-content text-m font-delius">
             &quot;{quote}&quot;
           </p>
         </div>
 
-        <div className="col-span-4 px-10 pb-10 text-sm">
+        <div className="col-span-4 pb-10 px-10 text-sm">
           <div className="">
             <h3 className="text-lg font-bold">Goals</h3>
             <ul className="pl-4">
@@ -243,22 +243,22 @@ function Avatar({ name }) {
             </ul>
           </div>
           <div className="">
-            <h3 className="text-lg font-bold pt-4">Frustrations</h3>
+            <h3 className="pt-4 text-lg font-bold">Frustrations</h3>
             <ul className="pl-4">
               {documentToReactComponents(frustrations.json, liOptions)}
             </ul>
           </div>
           <div className="">
-            <h3 className="text-lg font-bold pt-4">Needs</h3>
+            <h3 className="pt-4 text-lg font-bold">Needs</h3>
             <ul className="pl-4">
               {documentToReactComponents(dataNeeds.json, liOptions)}
             </ul>
           </div>
         </div>
         <div className="col-span-4 pb-4">
-          <h3 className="text-lg font-bold pb-2">Actions</h3>
+          <h3 className="pb-2 text-lg font-bold">Actions</h3>
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video className="w-full pr-6" controls>
+          <video className="pr-6 w-full" controls>
             <source src={videoFile} type="video/mp4" />
           </video>
           <p className="mr-10 my-4 text-sm">
