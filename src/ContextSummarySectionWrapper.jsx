@@ -1,6 +1,5 @@
 import React from "react";
 import { node, shape, string } from "prop-types";
-import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 function DefaultIcon() {

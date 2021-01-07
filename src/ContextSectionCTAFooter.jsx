@@ -1,9 +1,9 @@
 import React from "react";
 import { default as Windmill } from "@windmill/react-ui";
-import { bool, shape, string } from "prop-types";
+import { shape, string } from "prop-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
+function ContextSectionCTAFooter({ callToAction, className, color }) {
   const description = callToAction?.description.json;
   const buttonText = callToAction?.buttonText;
   const buttonSubText = callToAction?.buttonSubText;
@@ -60,7 +60,6 @@ function ContextSectionCTAFooter({ callToAction, className, narrow, color }) {
 ContextSectionCTAFooter.propTypes = {
   callToAction: shape({}),
   className: string,
-  narrow: bool,
   color: string
 };
 

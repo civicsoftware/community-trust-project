@@ -41,7 +41,6 @@ function ContextSectionWrapper({
   color,
   description,
   Icon,
-  narrow,
   expandable,
   callToAction
 }) {
@@ -50,7 +49,7 @@ function ContextSectionWrapper({
       <div
         className={`flex flex-col items-stretch mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
       >
-        <div className={`px-4 py-2 rounded-t-lg`}>
+        <div className="px-4 py-2 rounded-t-lg">
           <div
             className={`inline-block p-1 border-2  shadow-xl rounded-full  text-black bg-${color}-200`}
           >
@@ -78,7 +77,6 @@ function ContextSectionWrapper({
         {callToAction?.buttonText && (
           <ContextSectionCTAFooter
             className=""
-            narrow={narrow}
             callToAction={callToAction}
             color={color}
           />
@@ -100,7 +98,6 @@ ContextSectionWrapper.propTypes = {
       /* contentful rich text json */
     })
   }),
-  narrow: bool,
   Icon: node,
   expandable: bool,
   callToAction: shape({})
