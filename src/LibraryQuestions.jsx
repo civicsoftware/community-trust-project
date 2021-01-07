@@ -30,7 +30,9 @@ function QuestionCard({ title, color, children }) {
         </div>
         <h2 className="inline-block ml-2 mt-1 text-xl font-bold">{title}</h2>
       </div>
-      <div className="p-4 max-w-none font-rubik bg-white prose prose-lg">{children}</div>
+      <div className="p-4 max-w-none font-rubik bg-white prose prose-lg">
+        {children}
+      </div>
     </div>
   );
 }
