@@ -58,11 +58,11 @@ function Home() {
                 alt="CIVIC Logo"
               />
               <h2 className="text-2xl font-semibold lg:text-3xl">
-                TRUST Community Data Library
+                Community Data Library
               </h2>
             </div>
             <p className="block mt-4 font-rubik prose prose-lg">
-              The TRUST Community Data Library is a resource that reflects an
+              The Community Data Library is a resource that reflects an
               active anti-oppression practice, and a structured process of
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
