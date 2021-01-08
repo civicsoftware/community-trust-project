@@ -45,35 +45,35 @@ function ContextSectionRawData({ schema }) {
       color="pink"
       narrow
     >
-      <div className="p-4">
-        <div className="text-purple-800 text-sm font-bold">
+      <div className="mt-4 pb-4 px-8 font-sans prose prose-sm">
+        <div className="text-purple-800 font-bold">
           {schema?.rawData?.rawTitle || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Date Range: </span>
           {schema?.rawData?.dateRangeStart
             ? `${schema?.rawData?.dateRangeStart} - ${schema?.rawData?.dataRangeEnd}`
             : "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Data Type: </span>
           {schema?.dataType || "English"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Language: </span>
           {schema?.rawData?.lang || "English"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">URI: </span>
           {schema?.rawData?.rawStableURI ? (
-            <a href="#TODO" className="underline text-sm font-medium">
+            <a href="#TODO" className="underline font-medium">
               {schema?.rawData?.rawStableURI}
             </a>
           ) : (
-            <p>Needs Input</p>
+            <span>Needs Input</span>
           )}
         </div>
-        <div className="mt-4 text-sm">{schema?.rawData?.notes}</div>
+        <div className="mt-4">{schema?.rawData?.notes}</div>
       </div>
     </ContextSummarySectionWrapper>
   );

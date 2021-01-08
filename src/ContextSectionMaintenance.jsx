@@ -43,24 +43,24 @@ function ContextSectionMaintenance({ schema }) {
       color="pink"
       narrow
     >
-      <div className="p-4">
-        <div className="text-purple-800 text-sm font-bold">
+      <div className="mb-4 pt-4 px-8 font-sans prose prose-sm">
+        <div className="text-purple-800 font-bold">
           {schema?.officialMaintenance?.officialMaintainer || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Contributors: </span>
           {schema?.officialMaintenance?.dataContributor || "Needs Input"}
         </div>
-        <div className="mt-4 text-sm">
+        <div className="mt-4">
           <span className="font-semibold">Last updated: </span>
           {schema?.officialMaintenance?.lastOfficialMaintainence ||
             "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Update frequency: </span>
           {schema?.officialMaintenance?.maintenanceInterval || "Needs Input"}
         </div>
-        <div className="mt-4 text-sm">
+        <div className="mt-4">
           {schema?.officialMaintenance?.typicalUpdates || "Needs Input"}
         </div>
       </div>

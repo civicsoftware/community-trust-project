@@ -56,32 +56,40 @@ function ContextSectionResources({ schema }) {
       narrow
       expandable
     >
-      <div className="mt-4 p-4 text-sm">
+      <div className="px-8 py-4">
         <h3 className="text-lg font-bold">Resources</h3>
-        <ul className="">
-          {schema?.referenceDocumentation?.map(resource => (
-            <li key={resource.title} className="mt-2">
-              <a className="underline font-medium" href={resource.stableURI}>
-                {resource?.title}
-              </a>
-              <p className="">{resource?.notes}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="">
+          <ul className="">
+            {schema?.referenceDocumentation?.map(resource => (
+              <li
+                key={resource.title}
+                className="mt-4 font-sans prose prose-sm"
+              >
+                <a className="underline font-medium" href={resource.stableURI}>
+                  {resource?.title}
+                </a>
+                <p className="">{resource?.notes}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="p-4 text-sm">
+      <div className="p-8">
         <h3 className="text-lg font-bold">Service Providers</h3>
         <ul className="">
           {schema?.other?.serviceProviders?.map(provider => (
-            <li key={provider?.serviceProvider} className="mt-2">
+            <li
+              key={provider?.serviceProvider}
+              className="mt-2 font-sans prose prose-sm"
+            >
               <a className="underline font-medium" href={provider?.website}>
                 {provider?.serviceProvider}
               </a>
-              <p className="text-xs">{provider?.address}</p>
+              <p className="">{provider?.address}</p>
               <p className="">{provider?.servicesProvided}</p>
-              <p className="text-xs">
+              <p className="">
                 <span
-                  className={`inline-block mr-2 p-0.5 text-xs rounded ${
+                  className={`inline-block mr-2 p-0.5  rounded ${
                     provider?.contractWithMultCo === "Active"
                       ? "bg-indigo-800 text-white"
                       : "bg-gray-300"

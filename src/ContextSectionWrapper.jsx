@@ -41,22 +41,21 @@ function ContextSectionWrapper({
   color,
   description,
   Icon,
-  narrow,
   expandable,
   callToAction
 }) {
   return (
-    <section id={kebabCase(title)} className="grid scroll-mt-14">
+    <section id={kebabCase(title)} className="grid scroll-mt-24">
       <div
-        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
+        className={`flex flex-col items-stretch mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-${color}-200`}
       >
-        <div className={`px-4 py-2 rounded-t-lg `}>
+        <div className="px-4 py-2 rounded-t-lg">
           <div
             className={`inline-block p-1 border-2  shadow-xl rounded-full  text-black bg-${color}-200`}
           >
             <Icon className="inline-block align-text-bottom w-6 h-6" />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-black text-xl font-bold capitalize">
+          <h2 className="inline-block -mt-4 ml-2 text-black text-2xl font-bold capitalize">
             {title}
           </h2>
           <ContextWhoInvestigated
@@ -67,7 +66,7 @@ function ContextSectionWrapper({
           />
         </div>
         <div className={`bg-white ${description ? "py-4" : ""}`}>
-          <div className="px-4 w-full">
+          <div className="px-8 w-full max-w-none font-sans prose prose-sm">
             {documentToReactComponents(description?.json)}
           </div>
           {expandable && (
@@ -78,7 +77,6 @@ function ContextSectionWrapper({
         {callToAction?.buttonText && (
           <ContextSectionCTAFooter
             className=""
-            narrow={narrow}
             callToAction={callToAction}
             color={color}
           />
@@ -100,7 +98,6 @@ ContextSectionWrapper.propTypes = {
       /* contentful rich text json */
     })
   }),
-  narrow: bool,
   Icon: node,
   expandable: bool,
   callToAction: shape({})

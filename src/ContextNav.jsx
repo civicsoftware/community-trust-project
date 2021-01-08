@@ -10,7 +10,7 @@ function ContextNav({ sections }) {
       id="nav"
       className="sticky z-50 left-0 top-0 mx-auto bg-gray-50 border-2 border-gray-300"
     >
-      <div className="flex flex-row p-1 text-gray-600 text-sm overflow-x-scroll lg:absolute lg:flex-col lg:m-4 w-min-content">
+      <div className="flex flex-row items-center mt-4 p-1 text-sm overflow-x-scroll lg:absolute lg:flex-col lg:items-baseline lg:mx-4 w-min-content">
         <img
           src={CivicLogo}
           className="block m-2 w-7 lg:hidden"
@@ -22,26 +22,29 @@ function ContextNav({ sections }) {
             className="hidden m-2 w-7 lg:block"
             alt="CIVIC Logo"
           />
-          <div className="mx-2 text-black lg:font-bold lg:text-md">
+          <div className="mx-2 text-black lg:text-lg lg:font-bold">
             Structured
           </div>
-          <div className="mx-2 text-black lg:font-bold lg:text-md">Context</div>
-          <div className="mx-2 text-black lg:font-bold lg:text-md">Schema</div>
+          <div className="mx-2 text-black lg:text-lg lg:font-bold">Context</div>
+          <div className="mx-2 text-black lg:text-lg lg:font-bold">Schema</div>
         </div>
         <a
           href="/library"
-          className="hidden m-2 w-36 text-cobalt hover:underline text-xs lg:block"
+          className="hidden m-2 w-36 text-cobalt hover:underline text-sm lg:block"
         >
           &#x3c; Back to Library Directory
         </a>
         {sections?.map(section => (
-          <a href={`#${section}`} className="m-2 underline">
+          <a
+            href={`#${section}`}
+            className="m-2 w-36 hover:text-gray-500 text-base font-medium"
+          >
             {startCase(toLower(section))}
           </a>
         ))}
         <a
           href="/blueprint"
-          className="hidden m-2 w-36 text-cobalt hover:underline text-xs lg:block"
+          className="hidden m-2 w-36 text-cobalt hover:underline text-sm lg:block"
         >
           Learn more about context-aware systems
         </a>

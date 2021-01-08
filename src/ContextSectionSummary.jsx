@@ -68,23 +68,23 @@ function ContextSectionSummary({
   return (
     <section
       id="summary"
-      className="relative m-4 border-4 border-yellow-200 rounded-lg shadow-xl scroll-mt-16"
+      className="relative mx-4 my-8 border-4 border-yellow-200 rounded-lg shadow-xl scroll-mt-32 lg:scroll-mt-8"
     >
-      <div className="p-4 text-black bg-yellow-200">
+      <div className="px-8 py-4 text-black bg-yellow-200">
         <div className="grid grid-cols-12">
           <div className="col-span-10 col-end-11 col-start-0">
-            <h2 className="text-black text-2xl font-bold tracking-wider">
+            <h2 className="text-black text-2xl font-bold tracking-wider lg:text-3xl">
               {schema?.title || "Your dataset name"}
             </h2>
             {/* <h3 className="text-sm">Type: {dataset.dataType}</h3> */}
             <div>
-              <div className="inline-block -mt-2 ml-4 p-1">
+              <div className="inline-block p-1 lg:ml-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="inline-block align-text-bottom w-4 h-4"
+                  className="inline-block align-text-bottom w-5 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -94,12 +94,12 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-sm font-semibold">
+              <h3 className="inline font-semibold">
                 {schema?.subComponentOf || "Needs Input"}
               </h3>
             </div>
           </div>
-          <div className="col-end-13 col-start-11 items-center bg-white rounded-lg ring-purple-600 ring-2">
+          <div className="col-end-13 col-start-11 items-center my-2 bg-white rounded-lg ring-purple-600 ring-2">
             {logo?.url && (
               <img
                 src={logo?.url}
@@ -115,9 +115,9 @@ function ContextSectionSummary({
               </p>
             )}
           </div>
-          <div className="flex col-span-12 justify-between">
+          <div className="flex flex-col col-span-12 justify-between lg:flex-row">
             <div>
-              <div className="inline-block -mb-2 p-1">
+              <div className="inline-block -mt-1 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -133,13 +133,13 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">
+              <h3 className="inline text-sm">
                 {schema?.officialMaintenance?.officialMaintainer ||
                   "Needs Input"}
               </h3>
             </div>
             <div>
-              <div className="inline-block -mb-2 p-1">
+              <div className="inline-block -mt-1 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -155,12 +155,12 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">
+              <h3 className="inline text-sm">
                 {schema?.dateRange || "Needs Input"}
               </h3>
             </div>
             <div>
-              <div className="inline-block -mb-2 ml-4 p-1">
+              <div className="inline-block -mt-1 p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -182,22 +182,24 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-xs">Multnomah County, Oregon, US</h3>
+              <h3 className="inline text-sm">Multnomah County, Oregon, US</h3>
             </div>
           </div>
         </div>
       </div>
-      <div className="p-4 prose-md">
-        <h3 className="text-xl font-bold">Dataset Description</h3>
-        {summary?.json ? (
-          documentToReactComponents(summary?.json)
-        ) : (
-          <p>Needs Input</p>
-        )}
+      <div className="px-8 py-4">
+        <h3 className="my-2 text-xl font-bold">Dataset Description</h3>
+        <div className="max-w-none font-sans prose">
+          {summary?.json ? (
+            documentToReactComponents(summary?.json)
+          ) : (
+            <p>Needs Input</p>
+          )}
+        </div>
       </div>
-      <div className="mb-4 px-4 text-sm">
+      <div className="px-8 text-md">
         <div className="p-2 bg-pink-light rounded box-content">
-          <ul className="font-medium prose-sm">
+          <ul className="max-w-none font-sans font-medium prose prose-sm">
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json, sandtrapOptions)
             ) : (
@@ -206,13 +208,15 @@ function ContextSectionSummary({
           </ul>
         </div>
         <CollapsableFixedHeight>
-          <div className="mt-2 prose-sm">
-            <h3 className="text-lg font-bold">Challenges</h3>
-            {challenges?.json ? (
-              documentToReactComponents(challenges?.json)
-            ) : (
-              <p>Needs Input</p>
-            )}
+          <div className="my-4">
+            <h3 className="my-2 text-lg font-bold">Challenges</h3>
+            <div className="max-w-none font-sans prose prose-sm">
+              {challenges?.json ? (
+                documentToReactComponents(challenges?.json)
+              ) : (
+                <p>Needs Input</p>
+              )}
+            </div>
           </div>
           {/* <div className="grid grid-cols-2 gap-4 mt-2">
             <div className="p-4 prose-sm">
@@ -271,11 +275,13 @@ function ContextSectionSummary({
         <dl>
           {schema?.other?.definitions?.map(definition => (
             <div key={definition.term} className="grid grid-cols-12 mt-2">
-              <dt className="col-span-2 font-bold border-r-4 text-md">
+              <dt className="col-span-12 font-bold border-b-4 lg:col-span-2 lg:border-b-0 lg:border-r-4 text-md">
                 {definition.term}
               </dt>
-              <dd className="col-span-10 pl-2">
-                {definition.definition}{" "}
+              <dd className="col-span-12 pl-2 lg:col-span-10">
+                <span className="font-sans prose prose-sm">
+                  {definition.definition}{" "}
+                </span>
                 <p className="text-xs italic">({definition.source})</p>
               </dd>
             </div>
@@ -329,20 +335,16 @@ function ContextSectionSummary({
         </div>
       </div> */}
       <div className="grid grid-cols-2 m-4 p-6 text-sm bg-purple-100 rounded box-content">
-        <div className="">
+        <div className="font-sans prose prose-sm">
           <span className="font-semibold">Included in : </span>
           {schema?.includedIn || "Needs Input"}
         </div>
-        <div className="">
+        <div className="font-sans prose prose-sm">
           <span className="font-semibold">Related to: </span>
           {schema?.relatedTo || "Needs Input"}
         </div>
       </div>
-      <ContextSectionCTAFooter
-        callToAction={callToAction}
-        color="yellow"
-        narrow
-      />
+      <ContextSectionCTAFooter callToAction={callToAction} color="yellow" />
     </section>
   );
 }

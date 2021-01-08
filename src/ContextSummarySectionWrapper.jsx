@@ -1,6 +1,5 @@
 import React from "react";
 import { node, shape, string } from "prop-types";
-import { kebabCase } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 function DefaultIcon() {
@@ -37,9 +36,9 @@ function ContextSummarySectionWrapper({
   Icon
 }) {
   return (
-    <section id={kebabCase(title)} className="grid scroll-mt-14">
+    <section id="summary" className="grid">
       <div
-        className={`relative m-4 rounded-lg border-4 shadow-xl border-${color}-200 bg-white`}
+        className={`relative mx-4 my-8 rounded-lg border-4 shadow-xl border-${color}-200 bg-white`}
       >
         <div className={`px-4 py-2 bg-${color}-200`}>
           <div
@@ -47,7 +46,7 @@ function ContextSummarySectionWrapper({
           >
             <Icon />
           </div>
-          <h2 className="inline-block -mt-4 ml-2 text-black text-xl font-bold capitalize">
+          <h2 className="inline-block -mt-4 ml-2 text-black text-2xl font-bold capitalize">
             {title}
           </h2>
         </div>

@@ -52,19 +52,22 @@ function Blueprint() {
         />
       </Windmill.Modal>
 
-      <div className="mb-36 mt-20 mx-auto px-6 max-w-4xl lg:px-12">
-        <div className="flex items-center mb-4 text-gray-900">
+      <div className="mb-36 mt-24 mx-auto px-6 max-w-3xl lg:px-12">
+        <div className="flex items-center text-gray-900">
           <img
             src={CivicLogo}
-            className="mr-3 pt-1 w-7"
+            className="mr-3 w-6 lg:w-8"
             alt="Trust Project Logo"
           />
-          <h2 className="text-2xl font-semibold">
-            Blueprint for Context-Aware Systems
+          <h2 className="text-2xl font-semibold lg:text-3xl">
+            The CIVIC Blueprint
           </h2>
         </div>
-        <div className="flex flex-row justify-center mb-8 mt-4">
-          <p className="block mx-auto pt-4 font-bold">
+        <h3 className="block text-xl">
+          Building Inclusionary Practices for Context-Aware Systems
+        </h3>
+        <div className="flex justify-center mb-8 mt-4">
+          <p className="block mx-auto pt-4 text-xl font-semibold">
             Infinity Loop Collaboration Model{" "}
             <span className="italic font-normal">(Click to enlarge)</span>:
           </p>
@@ -75,10 +78,11 @@ function Blueprint() {
           className={`mt-10 ${overlayShown ? "" : "cursor-zoom-in"}`}
           alt="Infinity Loop"
         />
-        <article className="mx-auto my-8 font-rubik prose">
-          {documentToReactComponents(attribution?.description?.json)}
-        </article>
-        {/* TODO: make this link to the PDF document */}
+        <div className="flex flex-col my-12">
+          <article className="font-rubik prose prose-lg">
+            {documentToReactComponents(attribution?.description?.json)}
+          </article>
+        </div>
         <div className="flex flex-row justify-center mb-8 mt-4">
           <a href={data?.asset?.url}>
             <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">

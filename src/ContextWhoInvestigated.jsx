@@ -27,49 +27,51 @@ function ContextWhoInvestigated({
 }) {
   return (
     completeness >= 0 && (
-      <div
-        className={`relative flex items-center gap-1 ml-12 -mt-1 ${className}`}
-      >
-        <div className="bg-white">
-          <div
-            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-              completeness >= 0 ? `bg-${color}-900 bg-opacity-20` : ""
-            }`}
-          />
-        </div>
+      <div className="flex flex-col lg:flex-row">
+        <div
+          className={`relative flex items-center gap-1 ml-12 -mt-1 ${className}`}
+        >
+          <div className="bg-white">
+            <div
+              className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+                completeness >= 0 ? `bg-${color}-900 bg-opacity-40` : ""
+              }`}
+            />
+          </div>
 
-        <div className="bg-white">
-          <div
-            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-              completeness >= 1 ? `bg-${color}-900 bg-opacity-40` : ""
-            }`}
-          />
-        </div>
+          <div className="bg-white">
+            <div
+              className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+                completeness >= 1 ? `bg-${color}-900 bg-opacity-60` : ""
+              }`}
+            />
+          </div>
 
-        <div className="bg-white">
-          <div
-            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-              completeness >= 2 ? `bg-${color}-900 bg-opacity-60` : ""
-            }`}
-          />
-        </div>
+          <div className="bg-white">
+            <div
+              className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+                completeness >= 2 ? `bg-${color}-900 bg-opacity-80` : ""
+              }`}
+            />
+          </div>
 
-        <div className="bg-white">
-          <div
-            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-              completeness >= 3 ? `bg-${color}-900 bg-opacity-80` : ""
-            }`}
-          />
-        </div>
+          <div className="bg-white">
+            <div
+              className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+                completeness >= 3 ? `bg-${color}-900 bg-opacity-90` : ""
+              }`}
+            />
+          </div>
 
-        <div className="bg-white">
-          <div
-            className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
-              completeness >= 4 ? `bg-${color}-900 bg-opacity-100` : ""
-            }`}
-          />
+          <div className="bg-white">
+            <div
+              className={`h-2 w-6 bg-gray-100 ring-2 ring-gray-500 z-20 bg-gradient-to-r ${
+                completeness >= 4 ? `bg-${color}-900 bg-opacity-100` : ""
+              }`}
+            />
+          </div>
         </div>
-        <div className="items-baseline ml-1.5 h-4 text-black text-xs italic capitalize">
+        <div className="items-baseline ml-12 mt-1 h-4 text-black text-xs italic capitalize lg:-mt-1 lg:ml-1.5">
           {COMPLETENESS_TEXT?.[completeness] ||
             `${answered}/${total} answered fields`}
           {sources}

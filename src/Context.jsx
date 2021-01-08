@@ -84,72 +84,70 @@ function Context({ datasetId }) {
           "attribution"
         ]}
       />
-      <div className="mx-auto max-w-4xl">
-        {!schema && (
-          <div className="m-4 my-8">
-            <LibraryOrganizationDataSourceCTA />
-          </div>
-        )}
-        <ContextSectionSummary
-          schema={schema}
-          summary={summary}
-          challenges={challenges}
-          successes={successes}
-          sandtraps={sandtraps}
-          logo={logo}
-        />
-        <div className="md:grid md:grid-cols-2">
-          <ContextSectionRawData schema={schema} />
-          <ContextSectionMaintenance schema={schema} />
-        </div>
-        {/* <ContextSectionDataProcess schema={schema} /> */}
-        {/* Lineage */}
-        <ContextSection
-          questionGroup="5oOzAK9EEh7rUuBrbInLFx"
-          dataset={datasetId}
-          narrow
-          color="blue"
-        />
-        {/* Methodology */}
-        <ContextSection
-          questionGroup="iUwbAs8uk0yiUhPJK2eyX"
-          dataset={datasetId}
-          narrow
-          color="orange"
-        />
-        {/* Access */}
-        <ContextSection
-          questionGroup="c7cq4mb35M6zr7LAgjINd"
-          dataset={datasetId}
-          narrow
-          color="purple"
-        />
-        {/* Ethical Governance */}
-        <ContextSection
-          questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
-          dataset={datasetId}
-          narrow
-          color="yellow"
-        />
-        {/* Community Context */}
-        <div className="md:grid md:grid-cols-2">
-          <ContextSection
-            questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
-            dataset={datasetId}
-            narrow
-            color="pink"
+      <div className="my-8 lg:pl-48">
+        <div className="mx-auto max-w-5xl">
+          {!schema && (
+            <div className="m-4 my-8">
+              <LibraryOrganizationDataSourceCTA />
+            </div>
+          )}
+          <ContextSectionSummary
+            schema={schema}
+            summary={summary}
+            challenges={challenges}
+            successes={successes}
+            sandtraps={sandtraps}
+            logo={logo}
           />
-          {/* Historic Context */}
+          <div className="gap-4 md:grid md:grid-cols-2">
+            <ContextSectionRawData schema={schema} />
+            <ContextSectionMaintenance schema={schema} />
+          </div>
+          {/* <ContextSectionDataProcess schema={schema} /> */}
+          {/* Lineage */}
           <ContextSection
-            questionGroup="2khypcmlN6CBCnl8NS9our"
+            questionGroup="5oOzAK9EEh7rUuBrbInLFx"
             dataset={datasetId}
-            narrow
             color="blue"
           />
-        </div>
-        <div className="md:grid md:grid-cols-2">
-          <ContextSectionResources schema={schema} />
-          <ContextSectionAttribution schema={schema} />
+          {/* Methodology */}
+          <ContextSection
+            questionGroup="iUwbAs8uk0yiUhPJK2eyX"
+            dataset={datasetId}
+            color="orange"
+          />
+          {/* Access */}
+          <ContextSection
+            questionGroup="c7cq4mb35M6zr7LAgjINd"
+            dataset={datasetId}
+            color="purple"
+          />
+          {/* Ethical Governance */}
+          <ContextSection
+            questionGroup="2QRPQC441E4cW8Bcu7RZ1e"
+            dataset={datasetId}
+            color="yellow"
+          />
+          {/* Community Context */}
+          <div className="gap-4 md:grid md:grid-cols-2">
+            <ContextSection
+              questionGroup="1ZyqfQanm2wGOrV6GVw7WL"
+              dataset={datasetId}
+              narrow
+              color="pink"
+            />
+            {/* Historic Context */}
+            <ContextSection
+              questionGroup="2khypcmlN6CBCnl8NS9our"
+              dataset={datasetId}
+              narrow
+              color="blue"
+            />
+          </div>
+          <div className="gap-4 md:grid md:grid-cols-2">
+            <ContextSectionResources schema={schema} />
+            <ContextSectionAttribution schema={schema} />
+          </div>
         </div>
       </div>
     </>

@@ -6,7 +6,7 @@ function QuestionCard({ title, color, children }) {
   return (
     <div
       id="question-card-1"
-      className={`col-span-1 relative my-4 lg:m-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
+      className={`col-span-1 relative my-4 rounded-lg shadow-xl bg-${color}-50  border-gray-500`}
     >
       <div className="relative flex flex-row p-4 rounded-t-lg">
         <div
@@ -30,7 +30,9 @@ function QuestionCard({ title, color, children }) {
         </div>
         <h2 className="inline-block ml-2 mt-1 text-xl font-bold">{title}</h2>
       </div>
-      <div className="p-4 max-w-none font-rubik bg-white prose">{children}</div>
+      <div className="p-4 max-w-none font-rubik bg-white prose prose-lg">
+        {children}
+      </div>
     </div>
   );
 }
@@ -62,7 +64,7 @@ function QuestionOne() {
 }
 function QuestionTwo() {
   return (
-    <QuestionCard color="pink" title="Who is it for?">
+    <QuestionCard color="blue" title="Who is it for?">
       <p>
         For anyone attempting to draw conclusions or perform ethically sound
         analysis, it’s important to have clear and structured models that
@@ -83,7 +85,7 @@ function QuestionTwo() {
 }
 function QuestionThree() {
   return (
-    <QuestionCard color="yellow" title="Who can publish to the library?">
+    <QuestionCard color="pink" title="Who can publish to the library?">
       <p>
         For <b>organizations</b> whose goal is to cross-collaborate and share
         information, making your metadata more discoverable can help you connect
@@ -99,7 +101,7 @@ function QuestionThree() {
 }
 function QuestionFour() {
   return (
-    <QuestionCard color="blue" title="What is a TRUST Partnership?">
+    <QuestionCard color="yellow" title="What is a TRUST Partnership?">
       <p>
         TRUST stands for Technology for Relationships, Understanding, Service
         and Transparency. For government agencies, creating public data
@@ -143,16 +145,16 @@ export const QUESTIONS = [
     title: "What is the data library?",
     color: "purple"
   },
-  { Component: QuestionTwo, title: "Who is it for?", color: "pink" },
+  { Component: QuestionTwo, title: "Who is it for?", color: "blue" },
   {
     Component: QuestionThree,
     title: "Who can publish to the library?",
-    color: "yellow"
+    color: "pink"
   },
   {
     Component: QuestionFour,
     title: "What is a TRUST Partnership?",
-    color: "blue"
+    color: "yellow"
   },
   {
     Component: QuestionFive,

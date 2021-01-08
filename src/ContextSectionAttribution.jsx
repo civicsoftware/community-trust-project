@@ -56,24 +56,24 @@ function ContextSectionAttribution({ schema }) {
       narrow
       expandable
     >
-      <div className="mt-4 p-4 text-sm">
-        <div className="text-sm">
+      <div className="pt-4 px-8 font-sans prose prose-sm">
+        <div className="">
           <span className="font-semibold">Context contributors: </span>
           {schema?.context?.contextContributor || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">On behalf of: </span>
           {schema?.context?.onBehalfOf || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Publication date: </span>
           {schema?.context?.contextPublicationDate || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Update date: </span>
           {schema?.context?.contextUpdateDate || "Needs Input"}
         </div>
-        <div className="text-sm">
+        <div className="">
           <span className="font-semibold">Updated by: </span>
           {schema?.context?.contextUpdateBy || "Needs Input"}
         </div>

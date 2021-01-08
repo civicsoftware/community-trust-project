@@ -31,14 +31,14 @@ function Home() {
             </p>
           </div>
           <div className="col-span-2">
-            <p className="justify-self-start text-xl">
+            <p className="justify-self-start font-rubik prose prose-lg">
               The Community TRUST Project represents a commitment from local
               government to assess institutional bias embedded in data models
               and systems that represent diverse identities and lived
               experiences of the communities they serve.
             </p>
-            <div className="flex flex-row self-start justify-self-center mb-4 pb-2 pt-4">
-              <Windmill.Button className="px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
+            <div className="flex flex-row self-start justify-self-center pt-4">
+              <Windmill.Button className="px-4 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
                 <a href="mailto:hi@civicsoftwarefoundation.org?subject=Bring TRUST to my Community">
                   Bring TRUST to your community
                 </a>
@@ -49,40 +49,26 @@ function Home() {
       </section>
 
       <div className="mx-auto max-w-4xl">
-        <section id="blueprint">
-          <div className="mx-6 py-12 max-w-7xl lg:mx-12 lg:px-12">
-            <div className="flex items-center mb-4 text-gray-900">
-              {/* <svg
-                className="h-6 w-6 mr-3"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg> */}
-              <img src={CivicLogo} className="mr-3 pt-1 w-7" alt="CIVIC Logo" />
-              <h2 className="text-2xl font-semibold">
+        <section className="my-24" id="library">
+          <div className="mx-6 max-w-7xl lg:mx-12 lg:px-12">
+            <div className="flex items-center text-gray-900">
+              <img
+                src={CivicLogo}
+                className="mr-3 pt-1 w-7 lg:w-10"
+                alt="CIVIC Logo"
+              />
+              <h2 className="text-2xl font-semibold lg:text-3xl">
                 TRUST Community Data Library
               </h2>
             </div>
-            <p className="block">
+            <p className="block mt-4 font-rubik prose prose-lg">
               The TRUST Community Data Library is a resource that reflects an
               active anti-oppression practice, and a structured process of
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
             </p>
           </div>
-        </section>
-
-        <section id="library">
-          <div className="flex flex-col -mt-6 mx-6 pb-0 max-w-7xl text-4xl lg:mx-12 lg:px-12">
+          <div className="flex flex-col mt-4 mx-6 pb-0 max-w-7xl text-4xl lg:mx-12 lg:px-12">
             <img
               src={LibraryHero}
               className="w-full"
@@ -108,11 +94,11 @@ function Home() {
           </div>
         </section>
 
-        <section id="compass">
-          <div className="mt-24 mx-6 my-12 max-w-7xl lg:m-12 lg:px-12">
+        <section className="my-24" id="compass">
+          <div className="mx-6 max-w-7xl lg:mx-12 lg:px-12">
             <div className="flex items-center mb-4 text-blue">
               <svg
-                className="mr-3 w-7 h-7 text-blue-dark"
+                className="mr-3 w-7 h-7 text-blue-dark lg:w-10 lg:h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -126,11 +112,11 @@ function Home() {
                   d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
                 />
               </svg>
-              <h2 className="text-gray-900 text-2xl font-semibold">
+              <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
                 Everything is Intersectional
               </h2>
             </div>
-            <p className="block">
+            <p className="block font-rubik prose prose-lg">
               Recognition of how systemic forces contribute to bias and can
               perpetuate harm is an essential (and complex) part of
               understanding how to do work in our current environment.
@@ -145,11 +131,11 @@ function Home() {
           </div>
         </section>
 
-        <section id="stakeholders">
-          <div className="mt-24 mx-6 my-12 max-w-7xl lg:m-12 lg:px-12">
+        <section className="my-24" id="stakeholders">
+          <div className="mx-6 max-w-7xl lg:m-12 lg:px-12">
             <div className="flex items-center mb-4 text-yellow-dark">
               <svg
-                className="mr-3 w-7 h-7"
+                className="mr-3 w-7 h-7 lg:w-10 lg:h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -163,11 +149,11 @@ function Home() {
                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <h2 className="text-gray-900 text-2xl font-semibold">
+              <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
                 Story-Centered Stakeholders
               </h2>
             </div>
-            <p className="block">
+            <p className="block font-rubik prose prose-lg">
               Context-aware systems are built on a collaborative model that
               places lived experiences at the center of impact.{" "}
             </p>
@@ -181,11 +167,11 @@ function Home() {
           </div>
         </section>
 
-        <section id="flower">
-          <div className="mt-24 mx-6 my-12 max-w-7xl lg:m-12 lg:px-12">
+        <section className="my-24" id="flower">
+          <div className="mx-6 max-w-7xl lg:m-12 lg:px-12">
             <div className="flex items-center mb-4 text-pink-dark">
               <svg
-                className="mr-3 w-7 h-7"
+                className="mr-3 w-7 h-7 lg:w-10 lg:h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -199,11 +185,11 @@ function Home() {
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               </svg>
-              <h2 className="text-gray-900 text-2xl font-semibold">
+              <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
                 Plant the Seed of Change
               </h2>
             </div>
-            <p className="block">
+            <p className="block font-rubik prose prose-lg">
               Participation, acknowledgment, accountability are the foundation
               of the theory to drive long-term transformation.{" "}
             </p>
@@ -220,29 +206,34 @@ function Home() {
 
       <section
         id="footer"
-        className="mt-40 pb-40 pt-12 bg-gray-50 border-2 border-gray-300"
+        className="mx-auto py-12 bg-gray-50 border-2 border-gray-300"
       >
-        <div className="flex flex-col justify-center text-center">
-          <p>
-            The Community TRUST Project is built and maintained by Civic
-            Software Foundation and{" "}
-            <a
-              href="/attribution"
-              className="inline text-teal-dark hover:text-teal-light"
-            >
-              inspired by many others
-            </a>
-            .
-          </p>
-          <p>
-            <a
-              className="inline text-teal-dark hover:text-teal-light"
-              href="mailto:hi@civicsoftwarefoundation.org"
-            >
-              Contact us
-            </a>{" "}
-            for questions.
-          </p>
+        <div className="mx-auto max-w-4xl">
+          <div className="mx-6 max-w-7xl font-rubik lg:m-12 lg:px-12 prose">
+            <p className="block">
+              The Community TRUST Project is built and maintained by{" "}
+              <a
+                className="hover:text-teal-dark"
+                href="https://www.civicsoftwarefoundation.org/"
+              >
+                Civic Software Foundation
+              </a>{" "}
+              and{" "}
+              <a href="/attribution" className="hover:text-teal-dark">
+                inspired by many others
+              </a>
+              .
+            </p>
+            <p className="block">
+              <a
+                className="hover:text-teal-dark"
+                href="mailto:hi@civicsoftwarefoundation.org"
+              >
+                Contact us
+              </a>{" "}
+              for questions.
+            </p>
+          </div>
         </div>
       </section>
     </>
