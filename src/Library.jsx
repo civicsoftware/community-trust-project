@@ -124,7 +124,7 @@ function Library() {
               About the Library
             </h2>
           </div>
-          <div className="flex flex-col gap-4 justify-evenly mt-6 font-medium lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-4 justify-evenly mt-6 font-medium lg:flex-row">
             {QUESTIONS?.map(({ title, color }, index) => (
               <button
                 className={`font-medium border-b-4 border-${color} w- ${
@@ -173,12 +173,13 @@ function Library() {
 
             <section id="bookshelf">
               <div className="flex flex-row mr-0 p-4 overflow-x-scroll">
-                <p className="absolute z-20 right-4 top-52 w-12 h-12 text-gray-500 shadow-2xl">
+                <p className="absolute z-20 right-4 top-56 bg-none rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
+                    fill="transparent"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    className="w-12 h-12 text-gray-400"
                   >
                     <path
                       strokeLinecap="round"
