@@ -1,11 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
+import { gql, useQuery } from "@apollo/client";
 import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 import LibraryHero from "../public/LIBRARY_HERO.svg";
 
+const PARTNERS = gql`
+  query Partners {
+    partnerCollection {
+      items {
+        name
+        logo {
+          description
+          url
+        }
+      }
+    }
+  }
+`;
+
 function Home() {
+  const { loading, error, data } = useQuery(PARTNERS, {});
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{JSON.stringify(error)}(</p>;
+
+  const partners = data?.partnerCollection?.items;
+
   return (
     <>
       <section
@@ -45,6 +67,18 @@ function Home() {
               </Windmill.Button>
             </div>
           </div>
+          {partners && partners.length > 0 && (
+            <div className="col-span-2 p-2 border-2 border-gray-300 rounded-lg lg:col-span-4">
+              <p className="font-semibold">TRUST Partners</p>
+              {partners.map(partner => (
+                <img
+                  src={partner?.logo?.url}
+                  alt={partner?.logo?.description}
+                  className="h-12"
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
