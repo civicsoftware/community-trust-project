@@ -67,18 +67,6 @@ function Home() {
               </Windmill.Button>
             </div>
           </div>
-          {partners && partners.length > 0 && (
-            <div className="col-span-2 p-2 border-2 border-gray-300 rounded-lg lg:col-span-4">
-              <p className="font-semibold">TRUST Partners</p>
-              {partners.map(partner => (
-                <img
-                  src={partner?.logo?.url}
-                  alt={partner?.logo?.description}
-                  className="h-12"
-                />
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
@@ -256,6 +244,20 @@ function Home() {
         id="footer"
         className="mt-40 pb-40 pt-12 bg-gray-50 border-2 border-gray-300"
       >
+        {partners && partners.length > 0 && (
+          <div className="mx-auto max-w-4xl">
+            <div className="m-12 px-12">
+              <p className="font-medium">TRUST Partners</p>
+              {partners.map(partner => (
+                <img
+                  src={partner?.logo?.url}
+                  alt={partner?.logo?.description}
+                  className="h-12"
+                />
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex flex-col justify-center text-center">
           <p>
             The Community TRUST Project is built and maintained by Civic
