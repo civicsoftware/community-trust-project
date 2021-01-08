@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { gql, useQuery } from "@apollo/client";
+// import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
@@ -8,18 +8,18 @@ import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA
 import LibraryDataSourceRequestCTA from "./LibraryDataSourceRequestCTA";
 import LibraryHero from "../public/LIBRARY_HERO.svg";
 
-const DATASETS = gql`
-  query {
-    datasetCollection(limit: 20) {
-      items {
-        sys {
-          id
-        }
-        title
-      }
-    }
-  }
-`;
+// const DATASETS = gql`
+//   query {
+//     datasetCollection(limit: 20) {
+//       items {
+//         sys {
+//           id
+//         }
+//         title
+//       }
+//     }
+//   }
+// `;
 
 // TODO: this is an extremely fast/bad implementation of the 'end' concept
 function Book(dataset) {
@@ -81,15 +81,14 @@ function Book(dataset) {
 }
 
 function Library() {
-  const { loading, error, data } = useQuery(DATASETS);
+  // const { loading, error, data } = useQuery(DATASETS);
   const [question, setQuestion] = useState(0);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{JSON.stringify(error)}(</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
       <div className="m-12 mx-auto px-6 py-12 max-w-4xl lg:px-12">
-
         <section className="pb-12" id="library">
           <div className="">
             <div className="flex items-center text-gray-900">
