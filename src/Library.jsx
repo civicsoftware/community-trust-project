@@ -86,8 +86,8 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mx-auto px-6 py-12 max-w-6xl lg:px-12">
-        <div className="flex flex-col mx-auto max-w-3xl text-gray-900 lg:px-12">
+      <div className="m-12 mx-auto px-6 py-12 max-w-3xl lg:px-12">
+        <div className="flex flex-col text-gray-900">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
               <img
@@ -104,8 +104,8 @@ function Library() {
           {/* <p className="mt-4 text-xl">A Platform for Open Context</p> */}
         </div>
 
-        <section id="about" className="lg:py-12">
-          <div className="flex items-center py-6 lg:py-0">
+        <section id="about" className="py-12">
+          <div className="flex items-center">
             <svg
               className="mb-1 mr-1 w-7 h-7 text-purple-900"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,25 +124,23 @@ function Library() {
               About the Library
             </h2>
           </div>
-          <div className="flex flex-col justify-items-start lg:grid lg:grid-cols-12">
-            <div className="flex flex-row flex-wrap gap-4 justify-around font-medium lg:flex-col lg:gap-6 lg:col-span-4 lg:justify-start lg:mb-4 lg:mt-10 lg:flex-no-wrap">
-              {QUESTIONS?.map(({ title, color }, index) => (
-                <button
-                  className={`text-lg font-medium p-1 rounded-lg w-72 shadow-lg bg-opacity-50 bg-${color} ${
-                    index === question ? "font-semibold bg-opacity-100" : ""
-                  }`}
-                  key="title"
-                  type="button"
-                  onClick={() => setQuestion(index)}
-                >
-                  {title}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-col gap-4 justify-evenly mt-6 font-medium lg:flex-row">
+            {QUESTIONS?.map(({ title, color }, index) => (
+              <button
+                className={`font-medium border-b-4 border-${color} w- ${
+                  index === question ? "text-teal-900" : ""
+                }`}
+                key="title"
+                type="button"
+                onClick={() => setQuestion(index)}
+              >
+                {title}
+              </button>
+            ))}
+          </div>
 
-            <div className="items-stretch mt-6 lg:col-span-8 lg:mx-6">
-              {QUESTIONS?.[question]?.Component()}
-            </div>
+          <div className="grid items-stretch mt-6">
+            {QUESTIONS?.[question]?.Component()}
           </div>
         </section>
 
