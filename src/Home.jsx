@@ -34,8 +34,8 @@ function Home() {
         id="hero"
         className="top-0 pb-20 pt-20 bg-gray-50 border-2 border-gray-300"
       >
-        <div className="container grid gap-12 items-start justify-items-stretch mx-auto p-6 lg:grid-cols-4 lg:px-72">
-          <div className="col-span-2">
+        <div className="container flex flex-col gap-12 grid-rows-3 items-start justify-items-stretch mx-auto p-6 lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:px-72">
+          <div className="col-span-2 w-full lg:w-auto">
             <img
               src={FullLogo}
               className="justify-self-end pb-5 pt-2"
@@ -52,7 +52,19 @@ function Home() {
               </a>
             </p>
           </div>
-          <div className="col-span-2">
+          {partners && partners.length > 0 && (
+            <div className="col-span-2 p-2 w-full border-2 border-gray-300 rounded-lg lg:col-span-2 lg:w-auto lg:row-start-2">
+              <p className="font-semibold">TRUST Partners</p>
+              {partners.map(partner => (
+                <img
+                  src={partner?.logo?.url}
+                  alt={partner?.logo?.description}
+                  className="h-12"
+                />
+              ))}
+            </div>
+          )}
+          <div className="col-span-2 w-full lg:row-span-2 lg:w-auto">
             <p className="justify-self-start font-rubik prose prose-lg">
               The Community TRUST Project represents a commitment from local
               government to assess institutional bias embedded in data models
@@ -67,18 +79,6 @@ function Home() {
               </Windmill.Button>
             </div>
           </div>
-          {partners && partners.length > 0 && (
-            <div className="col-span-2 p-2 border-2 border-gray-300 rounded-lg lg:col-span-4">
-              <p className="font-semibold">TRUST Partners</p>
-              {partners.map(partner => (
-                <img
-                  src={partner?.logo?.url}
-                  alt={partner?.logo?.description}
-                  className="h-12"
-                />
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
@@ -96,10 +96,10 @@ function Home() {
               </h2>
             </div>
             <p className="block mt-4 font-rubik prose prose-lg">
-              The Community Data Library is a resource that reflects an
-              active anti-oppression practice, and a structured process of
-              creating metadata context for datasets that can be curated
-              collaboratively and shared publicly.
+              The Community Data Library is a resource that reflects an active
+              anti-oppression practice, and a structured process of creating
+              metadata context for datasets that can be curated collaboratively
+              and shared publicly.
             </p>
           </div>
           <div className="flex flex-col mt-4 mx-6 pb-0 max-w-7xl text-4xl lg:mx-12 lg:px-12">
