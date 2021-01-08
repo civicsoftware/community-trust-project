@@ -53,7 +53,7 @@ function Home() {
             </p>
           </div>
           {partners && partners.length > 0 && (
-            <div className="col-span-2 p-2 w-full border-2 border-gray-300 rounded-lg lg:col-span-2 lg:w-auto lg:row-start-2">
+            <div className="col-span-2 p-2 w-full border-2 border-gray-300 rounded-lg lg:col-span-2 lg:row-start-2 lg:w-auto">
               <p className="font-semibold">TRUST Partners</p>
               {partners.map(partner => (
                 <img
