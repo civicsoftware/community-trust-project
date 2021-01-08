@@ -86,7 +86,7 @@ function Library() {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   return (
     <>
-      <div className="m-12 mx-auto px-6 py-12 max-w-3xl lg:px-12">
+      <div className="m-12 mx-auto px-6 py-12 max-w-4xl lg:px-12">
         <div className="flex flex-col text-gray-900">
           <div className="flex flex-row">
             <div className="flex items-center text-gray-900">
@@ -124,10 +124,10 @@ function Library() {
               About the Library
             </h2>
           </div>
-          <div className="flex flex-col flex-wrap gap-4 justify-evenly mt-6 font-medium lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-4 justify-evenly mt-6 font-medium lg:flex-row lg:gap-x-6">
             {QUESTIONS?.map(({ title, color }, index) => (
               <button
-                className={`font-medium border-b-4 border-${color} w- ${
+                className={`font-medium text-lg border-b-4 border-${color} w- ${
                   index === question ? "text-teal-900" : ""
                 }`}
                 key="title"
