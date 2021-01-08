@@ -85,7 +85,7 @@ function QuestionTwo() {
 }
 function QuestionThree() {
   return (
-    <QuestionCard color="yellow" title="Who can publish to the library?">
+    <QuestionCard color="blue" title="Who can publish to the library?">
       <p>
         For <b>organizations</b> whose goal is to cross-collaborate and share
         information, making your metadata more discoverable can help you connect
@@ -101,7 +101,7 @@ function QuestionThree() {
 }
 function QuestionFour() {
   return (
-    <QuestionCard color="blue" title="What is a TRUST Partnership?">
+    <QuestionCard color="yellow" title="What is a TRUST Partnership?">
       <p>
         TRUST stands for Technology for Relationships, Understanding, Service
         and Transparency. For government agencies, creating public data
@@ -149,12 +149,12 @@ export const QUESTIONS = [
   {
     Component: QuestionThree,
     title: "Who can publish to the library?",
-    color: "yellow"
+    color: "blue"
   },
   {
     Component: QuestionFour,
     title: "What is a TRUST Partnership?",
-    color: "blue"
+    color: "yellow"
   },
   {
     Component: QuestionFive,
