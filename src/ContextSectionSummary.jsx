@@ -58,7 +58,7 @@ function ContextSectionSummary({
   logo
 }) {
   const { loading, error, data } = useQuery(CTA, {
-    variables: { callToAction: "1c7nrhVR6PWQ8MXuauq54b" }
+    variables: { callToAction: "01oIwAnNk5qCl5tv5QBDqM" }
   });
 
   if (loading) return <p>Loading...</p>;
@@ -182,7 +182,7 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-sm">Multnomah County, Oregon, US</h3>
+              <h3 className="inline text-sm">Needs Input</h3>
             </div>
           </div>
         </div>

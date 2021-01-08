@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { default as Windmill } from "@windmill/react-ui";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
 import { QUESTIONS } from "./LibraryQuestions";
 import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA";
 import LibraryDataSourceRequestCTA from "./LibraryDataSourceRequestCTA";
+import LibraryHero from "../public/LIBRARY_HERO.svg";
 
 const DATASETS = gql`
   query {
@@ -87,22 +89,52 @@ function Library() {
   return (
     <>
       <div className="m-12 mx-auto px-6 py-12 max-w-4xl lg:px-12">
-        <div className="flex flex-col text-gray-900">
-          <div className="flex flex-row">
+
+        <section className="pb-12" id="library">
+          <div className="">
             <div className="flex items-center text-gray-900">
               <img
                 src={CivicLogo}
-                className="mr-3 w-6 lg:w-8"
-                alt="Trust Project Logo"
+                className="mr-3 pt-1 w-7 lg:w-10"
+                alt="CIVIC Logo"
               />
               <h2 className="text-2xl font-semibold lg:text-3xl">
                 Community Data Library
               </h2>
             </div>
+            <h3 className="text-xl font-normal">A Platform for Open Context</h3>
+            <p className="block mt-4 font-rubik prose prose-lg">
+              The Community Data Library is a resource that reflects an active
+              anti-oppression practice, and a structured process of creating
+              metadata context for datasets that can be curated collaboratively
+              and shared publicly.
+            </p>
           </div>
-          <p className="text-xl">A Platform for Open Context</p>
-          {/* <p className="mt-4 text-xl">A Platform for Open Context</p> */}
-        </div>
+          <div className="flex flex-col mt-4 pb-0 text-4xl">
+            <img
+              src={LibraryHero}
+              className="w-full"
+              alt="Community Data Library Graphic"
+            />
+            <div className="flex flex-row mt-6 font-semibold">
+              <Link to="/blueprint">
+                <Windmill.Button
+                  block
+                  className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap"
+                >
+                  Read the CIVIC Blueprint for Context-Aware Systems
+                </Windmill.Button>
+              </Link>
+            </div>
+            {/* <div className="flex flex-row mt-6 font-semibold">
+              <Link to="/library">
+                <Windmill.Button className="inline-flex items-start px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
+                  Explore the Data Library
+                </Windmill.Button>
+              </Link>
+            </div> */}
+          </div>
+        </section>
 
         <section id="about" className="py-12">
           <div className="flex items-center">
@@ -167,13 +199,13 @@ function Library() {
           <div className="relative col-span-1 mt-10 bg-gray-50 border-gray-500 rounded-lg shadow-lg">
             <div className="relative flex flex-row p-4 bg-orange-50 rounded-t-lg">
               <h2 className="inline-block ml-2 mt-1 text-xl font-semibold">
-                Community Data Library {">"} Region {">"} Multnomah County
+                Community Data Library {">"} Region {">"} Example
               </h2>
             </div>
 
             <section id="bookshelf">
               <div className="flex flex-row mr-0 p-4 overflow-x-scroll">
-                <p className="absolute z-20 right-4 top-56 bg-none rounded-full">
+                {/* <p className="absolute z-20 right-4 top-56 bg-none rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="transparent"
@@ -189,7 +221,7 @@ function Library() {
                     />
                   </svg>
                 </p>
-                {data?.datasetCollection?.items?.map(dataset => Book(dataset))}
+                {data?.datasetCollection?.items?.map(dataset => Book(dataset))} */}
                 {Book("end")}
               </div>
             </section>

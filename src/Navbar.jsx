@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
-import Logo from "../public/trust_logo_t.svg";
+import Logo from "../public/CIVIC_LOGO.svg";
 
 function MobileDropdown() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -83,7 +83,7 @@ function MobileDropdown() {
         >
           Data Library
         </Windmill.DropdownItem>
-        <Windmill.DropdownItem
+        {/* <Windmill.DropdownItem
           tag="a"
           href="/compass"
           className="hover:text-gray-500 text-gray-900 text-base font-medium"
@@ -103,7 +103,7 @@ function MobileDropdown() {
           className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Flower Of Hope
-        </Windmill.DropdownItem>
+        </Windmill.DropdownItem> */}
       </Windmill.Dropdown>
     </div>
   );
@@ -115,10 +115,10 @@ function Navbar() {
       <div className="mx-auto px-2 max-w-7xl sm:px-6">
         <div className="flex items-center justify-between py-1 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:flex-1 lg:w-0">
-            <a href="/" className="flex flex-row">
-              <img src={Logo} className="w-8 h-8" alt="Trust Project Logo" />
+            <a href="/library" className="flex flex-row">
+              <img src={Logo} className="w-8 h-8" alt="CIVIC Project Logo" />
               <span className="self-center pl-3 text-xl">
-                Community TRUST Project
+                Community Data Library
               </span>
             </a>
           </div>
@@ -137,7 +137,7 @@ function Navbar() {
             >
               Data Library
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/compass"
               className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
@@ -157,7 +157,7 @@ function Navbar() {
               activeClassName="text-teal-dark"
             >
               Flower Of Hope
-            </NavLink>
+            </NavLink> */}
           </nav>
           <MobileDropdown />
         </div>
