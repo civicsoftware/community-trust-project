@@ -8,8 +8,7 @@
     "prestart": "yarn generate",
     "prebuild": "yarn generate",
     "postinstall": "husky install",
-    "lint": "eslint --fix \"src/**/*.{js,jsx}\" && prettier --check \"src/**/*.{js,jsx}\"",
-    "watch:tailwind": "postcss src/tailwind.css -o src/index.css -w"
+    "lint": "eslint --fix \"src/**/*.{js,jsx}\" && prettier --check \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
     "@apollo/client": "^3.3.6",
