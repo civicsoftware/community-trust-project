@@ -69,19 +69,26 @@ function MobileDropdown() {
           setIsDisabled(false);
         }}
       >
-        <Windmill.DropdownItem
+        {/* <Windmill.DropdownItem
           tag="a"
           href="/blueprint"
           className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
           Blueprint
+        </Windmill.DropdownItem> */}
+        <Windmill.DropdownItem
+          tag="a"
+          href="/team"
+          className="hover:text-gray-500 text-gray-900 text-base font-medium"
+        >
+          Team
         </Windmill.DropdownItem>
         <Windmill.DropdownItem
           tag="a"
-          href="/library"
+          href="/context"
           className="hover:text-gray-500 text-gray-900 text-base font-medium"
         >
-          Data Library
+          Sample Schema
         </Windmill.DropdownItem>
         {/* <Windmill.DropdownItem
           tag="a"
@@ -115,27 +122,34 @@ function Navbar() {
       <div className="mx-auto px-2 max-w-7xl sm:px-6">
         <div className="flex items-center justify-between py-1 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:flex-1 lg:w-0">
-            <a href="/library" className="flex flex-row">
+            <a href="/" className="flex flex-row">
               <img src={Logo} className="w-8 h-8" alt="CIVIC Project Logo" />
               <span className="self-center pl-3 text-xl">
-                Community Data Library
+                CIVIC Data Library
               </span>
             </a>
           </div>
           <nav className="hidden space-x-8 md:flex">
-            <NavLink
+            {/* <NavLink
               to="/blueprint"
               className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
               Blueprint
-            </NavLink>
+            </NavLink> */}
             <NavLink
-              to="/library"
+              to="/team"
               className="hover:text-gray-500 text-gray-900 text-base font-medium"
               activeClassName="text-teal-dark"
             >
-              Data Library
+              Team
+            </NavLink>
+            <NavLink
+              to="/context"
+              className="hover:text-gray-500 text-gray-900 text-base font-medium"
+              activeClassName="text-teal-dark"
+            >
+              Sample Schema
             </NavLink>
             {/* <NavLink
               to="/compass"

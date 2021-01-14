@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
-import FullLogo from "../public/trust_logo_full.svg";
+// import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
+import Trace from "../public/TRACE_LG.svg";
+import Archive from "../public/ARCHIVE_LG.svg";
+import Power from "../public/POWER_LG.svg";
 import LibraryHero from "../public/LIBRARY_HERO.svg";
 
 function Home() {
   return (
     <>
-      <section
+      {/* <section
         id="hero"
         className="top-0 pb-20 pt-20 bg-gray-50 border-2 border-gray-300"
       >
@@ -46,7 +49,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="mx-auto max-w-4xl">
         <section className="my-24" id="library">
@@ -58,11 +61,11 @@ function Home() {
                 alt="CIVIC Logo"
               />
               <h2 className="text-2xl font-semibold lg:text-3xl">
-                TRUST Community Data Library
+                CIVIC Data Library Of Context
               </h2>
             </div>
             <p className="block mt-4 font-rubik prose prose-lg">
-              The TRUST Community Data Library is a resource that reflects an
+              The CIVIC Data Library Of Context is a resource that reflects an
               active anti-oppression practice, and a structured process of
               creating metadata context for datasets that can be curated
               collaboratively and shared publicly.
@@ -74,7 +77,7 @@ function Home() {
               className="w-full"
               alt="Community Data Library Graphic"
             />
-            <div className="flex flex-row mt-6 font-semibold">
+            {/* <div className="flex flex-row mt-6 font-semibold">
               <Link to="/blueprint">
                 <Windmill.Button
                   block
@@ -83,11 +86,11 @@ function Home() {
                   Read the CIVIC Blueprint for Context-Aware Systems
                 </Windmill.Button>
               </Link>
-            </div>
+            </div> */}
             <div className="flex flex-row mt-6 font-semibold">
               <Link to="/library">
                 <Windmill.Button className="inline-flex items-start px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
-                  Explore the Data Library
+                  View Sample Schema
                 </Windmill.Button>
               </Link>
             </div>
@@ -96,35 +99,30 @@ function Home() {
 
         <section className="my-24" id="compass">
           <div className="mx-6 max-w-7xl lg:mx-12 lg:px-12">
-            <div className="flex items-center mb-4 text-blue">
-              <svg
-                className="mr-3 w-7 h-7 text-blue-dark lg:w-10 lg:h-10"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-                />
-              </svg>
+            <div className="flex items-center mb-4">
+              <img
+                src={Trace}
+                className="mr-3 pt-1 w-14 lg:w-20"
+                alt="TRACE Logo"
+              />
               <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
-                Everything is Intersectional
+                For Governments
               </h2>
             </div>
+            <h3 className="text-gray-700 text-xl font-medium lg:text-2xl">
+              Transparency, Responsibility, Accountability, Contextualized
+              Equity
+            </h3>
             <p className="block font-rubik prose prose-lg">
-              Recognition of how systemic forces contribute to bias and can
-              perpetuate harm is an essential (and complex) part of
-              understanding how to do work in our current environment.
+              Mint cookies and cream pistachio cake batter chocolate french
+              vanilla. Dark chocolate cookies and cream chocolate chip
+              strawberry rocky road vanilla french vanilla chocolate coffee
+              pistachio french vanilla.
             </p>
             <div className="flex flex-row mt-6 font-semibold">
               <Link to="/compass">
                 <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
-                  Navigate the Compass of Oppression
+                  Get Involved
                 </Windmill.Button>
               </Link>
             </div>
@@ -133,34 +131,29 @@ function Home() {
 
         <section className="my-24" id="stakeholders">
           <div className="mx-6 max-w-7xl lg:m-12 lg:px-12">
-            <div className="flex items-center mb-4 text-yellow-dark">
-              <svg
-                className="mr-3 w-7 h-7 lg:w-10 lg:h-10"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
+            <div className="flex items-center mb-4">
+              <img
+                src={Archive}
+                className="mr-3 pt-1 w-14 lg:w-20"
+                alt="ARCHIVE Logo"
+              />
               <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
-                Story-Centered Stakeholders
+                For Academia
               </h2>
             </div>
+            <h3 className="text-gray-700 text-xl font-medium lg:text-2xl">
+              Accessible, Reviewable, Collaborative, Historically Inclusive,
+              Validated, Exchange
+            </h3>
             <p className="block font-rubik prose prose-lg">
-              Context-aware systems are built on a collaborative model that
-              places lived experiences at the center of impact.{" "}
+              Peanut butter pistachio chocolate cake batter strawberry chocolate
+              cake batter mint chocolate chip chocolate strawberry cookies and
+              cream french vanilla french vanilla pistachio.
             </p>
             <div className="flex flex-row mt-6 font-semibold">
               <Link to="/avatars">
                 <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
-                  Get to Know the Actors
+                  Get Involved
                 </Windmill.Button>
               </Link>
             </div>
@@ -169,34 +162,28 @@ function Home() {
 
         <section className="my-24" id="flower">
           <div className="mx-6 max-w-7xl lg:m-12 lg:px-12">
-            <div className="flex items-center mb-4 text-pink-dark">
-              <svg
-                className="mr-3 w-7 h-7 lg:w-10 lg:h-10"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
+            <div className="flex items-center mb-4">
+              <img
+                src={Power}
+                className="mr-3 pt-1 w-14 lg:w-20"
+                alt="Power Logo"
+              />
               <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
-                Plant the Seed of Change
+                For Organizations
               </h2>
             </div>
+            <h3 className="text-gray-700 text-xl font-medium lg:text-2xl">
+              Preventing Oppression With Equitable Remediation
+            </h3>
             <p className="block font-rubik prose prose-lg">
-              Participation, acknowledgment, accountability are the foundation
-              of the theory to drive long-term transformation.{" "}
+              Coffee mint chocolate chip chocolate chip pistachio chocolate,
+              cookies and cream mint chocolate chip cookies and cream cake
+              batter french vanilla.
             </p>
             <div className="flex flex-row mt-6 font-semibold">
               <Link to="/flower">
                 <Windmill.Button className="inline-flex items-center justify-center px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
-                  Explore the Flower of Hope
+                  Get Involved
                 </Windmill.Button>
               </Link>
             </div>
@@ -211,7 +198,7 @@ function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="mx-6 max-w-7xl font-rubik lg:m-12 lg:px-12 prose">
             <p className="block">
-              The Community TRUST Project is built and maintained by{" "}
+              The CIVIC Data Library is built and maintained by{" "}
               <a
                 className="hover:text-teal-dark"
                 href="https://www.civicsoftwarefoundation.org/"

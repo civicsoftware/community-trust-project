@@ -10,7 +10,7 @@ import ContextSectionResources from "./ContextSectionResources";
 import ContextSectionAttribution from "./ContextSectionAttribution";
 import ContextSection from "./ContextSection";
 import ContextNav from "./ContextNav";
-import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA";
+// import LibraryOrganizationDataSourceCTA from "./LibraryOrganizationDataSourceCTA";
 
 const DATASETS = gql`
   query Dataset($datasetId: String!) {
@@ -86,11 +86,6 @@ function Context({ datasetId }) {
       />
       <div className="my-8 lg:pl-48">
         <div className="mx-auto max-w-5xl">
-          {!schema && (
-            <div className="m-4 my-8">
-              <LibraryOrganizationDataSourceCTA />
-            </div>
-          )}
           <ContextSectionSummary
             schema={schema}
             summary={summary}
