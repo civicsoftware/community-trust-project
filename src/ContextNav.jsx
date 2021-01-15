@@ -28,12 +28,12 @@ function ContextNav({ sections }) {
           <div className="mx-2 text-black lg:text-lg lg:font-bold">Context</div>
           <div className="mx-2 text-black lg:text-lg lg:font-bold">Schema</div>
         </div>
-        <a
+        {/* <a
           href="/library"
           className="hidden m-2 w-36 text-cobalt hover:underline text-sm lg:block"
         >
           &#x3c; Back to Library Directory
-        </a>
+        </a> */}
         {sections?.map(section => (
           <a
             href={`#${section}`}
@@ -43,10 +43,10 @@ function ContextNav({ sections }) {
           </a>
         ))}
         <a
-          href="/blueprint"
+          href="/"
           className="hidden m-2 w-36 text-cobalt hover:underline text-sm lg:block"
         >
-          Learn more about context-aware systems
+          Learn how to add your data
         </a>
       </div>
     </section>
