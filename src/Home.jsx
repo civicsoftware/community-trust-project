@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { default as Windmill } from "@windmill/react-ui";
 // import FullLogo from "../public/trust_logo_full.svg";
 import CivicLogo from "../public/CIVIC_LOGO.svg";
-import Trace from "../public/TRACE_LG.svg";
+import Origin from "../public/ORIGIN_LG.svg";
 import Archive from "../public/ARCHIVE_LG.svg";
 import Power from "../public/POWER_LG.svg";
 import LibraryHero from "../public/LIBRARY_HERO.svg";
@@ -101,17 +101,17 @@ function Home() {
           <div className="mx-6 max-w-7xl lg:mx-12 lg:px-12">
             <div className="flex items-center mb-4">
               <img
-                src={Trace}
+                src={Origin}
                 className="mr-3 pt-1 w-14 lg:w-20"
-                alt="TRACE Logo"
+                alt="ORIGIN Logo"
               />
               <h2 className="text-gray-900 text-2xl font-semibold lg:text-3xl">
                 For Governments
               </h2>
             </div>
             <h3 className="text-gray-700 text-xl font-medium lg:text-2xl">
-              Transparency, Responsibility, Accountability, Contextualized
-              Equity
+              Open, Responsive, Iterative Governance (centering) Inclusive
+              Narratives
             </h3>
             <p className="block font-rubik prose prose-lg">
               Mint cookies and cream pistachio cake batter chocolate french
