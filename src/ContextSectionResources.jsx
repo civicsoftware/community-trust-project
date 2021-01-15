@@ -19,6 +19,24 @@ const CTA = gql`
   }
 `;
 
+const sampleReferences = [
+  {
+    title: "Resource name",
+    notes: "Notes about this resource",
+    stableURI: "https://www.youtube.com/watch?v=gJ5hbJsN7Hc"
+  }
+];
+
+const sampleServiceProviders = [
+  {
+    serviceProvider: "Service provider name",
+    address: "Address, City, Region, Country",
+    servicesProvided: "List of services",
+    startDate: "Start date",
+    endDate: "end date"
+  }
+];
+
 function BookIcon() {
   return (
     <svg
@@ -47,6 +65,10 @@ function ContextSectionResources({ schema }) {
   if (error) return <p>{JSON.stringify(error)}(</p>;
   const callToAction = data?.callToAction;
 
+  const references = schema?.referenceDocumentation || sampleReferences;
+  const serviceProviders =
+    schema?.other?.serviceProviders || sampleServiceProviders;
+
   return (
     <ContextSectionWrapper
       title="Resources"
@@ -60,7 +82,7 @@ function ContextSectionResources({ schema }) {
         <h3 className="text-lg font-bold">Resources</h3>
         <div className="">
           <ul className="">
-            {schema?.referenceDocumentation?.map(resource => (
+            {references?.map(resource => (
               <li
                 key={resource.title}
                 className="mt-4 font-sans prose prose-sm"
@@ -77,7 +99,7 @@ function ContextSectionResources({ schema }) {
       <div className="p-8">
         <h3 className="text-lg font-bold">Service Providers</h3>
         <ul className="">
-          {schema?.other?.serviceProviders?.map(provider => (
+          {serviceProviders?.map(provider => (
             <li
               key={provider?.serviceProvider}
               className="mt-2 font-sans prose prose-sm"

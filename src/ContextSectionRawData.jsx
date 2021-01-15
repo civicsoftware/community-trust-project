@@ -53,15 +53,15 @@ function ContextSectionRawData({ schema }) {
           <span className="font-semibold">Date Range: </span>
           {schema?.rawData?.dateRangeStart
             ? `${schema?.rawData?.dateRangeStart} - ${schema?.rawData?.dataRangeEnd}`
-            : "Needs Input"}
+            : "Start date - end date"}
         </div>
         <div className="">
           <span className="font-semibold">Data Type: </span>
-          {schema?.dataType || "English"}
+          {schema?.dataType || "Type of dataset"}
         </div>
         <div className="">
           <span className="font-semibold">Language: </span>
-          {schema?.rawData?.lang || "English"}
+          {schema?.rawData?.lang || "Dataset language"}
         </div>
         <div className="">
           <span className="font-semibold">URI: </span>
@@ -70,7 +70,7 @@ function ContextSectionRawData({ schema }) {
               {schema?.rawData?.rawStableURI}
             </a>
           ) : (
-            <span>Needs Input</span>
+            <span>Stable link to dataset</span>
           )}
         </div>
         <div className="mt-4">{schema?.rawData?.notes}</div>

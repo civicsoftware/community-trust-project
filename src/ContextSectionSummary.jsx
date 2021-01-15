@@ -95,7 +95,7 @@ function ContextSectionSummary({
                 </svg>
               </div>
               <h3 className="inline font-semibold">
-                {schema?.subComponentOf || "Needs Input"}
+                {schema?.subComponentOf || "Collection Name"}
               </h3>
             </div>
           </div>
@@ -135,7 +135,7 @@ function ContextSectionSummary({
               </div>
               <h3 className="inline text-sm">
                 {schema?.officialMaintenance?.officialMaintainer ||
-                  "Needs Input"}
+                  "Department Name"}
               </h3>
             </div>
             <div>
@@ -156,7 +156,7 @@ function ContextSectionSummary({
                 </svg>
               </div>
               <h3 className="inline text-sm">
-                {schema?.dateRange || "Needs Input"}
+                {schema?.dateRange || "Start Date – End Date"}
               </h3>
             </div>
             <div>
@@ -182,7 +182,7 @@ function ContextSectionSummary({
                   />
                 </svg>
               </div>
-              <h3 className="inline text-sm">Needs Input</h3>
+              <h3 className="inline text-sm">City, Region, Country</h3>
             </div>
           </div>
         </div>
@@ -193,7 +193,13 @@ function ContextSectionSummary({
           {summary?.json ? (
             documentToReactComponents(summary?.json)
           ) : (
-            <p>Needs Input</p>
+            <p>
+              This is a summary description of the dataset. It should be simple
+              and readable by any community member. It should include
+              information such as what is being counted, how the counting is
+              performed, who does the counting. It should be precise, clear, and
+              not too long.
+            </p>
           )}
         </div>
       </div>
@@ -203,7 +209,9 @@ function ContextSectionSummary({
             {sandtraps?.json ? (
               documentToReactComponents(sandtraps?.json, sandtrapOptions)
             ) : (
-              <p>Needs Input</p>
+              <Sandtrap>
+                Key limitations of the dataset or other known sandtraps
+              </Sandtrap>
             )}
           </ul>
         </div>
@@ -214,7 +222,13 @@ function ContextSectionSummary({
               {challenges?.json ? (
                 documentToReactComponents(challenges?.json)
               ) : (
-                <p>Needs Input</p>
+                <p>
+                  This section summarizes key challenges with the information
+                  contained in the dataset, systemic factors present in the
+                  dataset, known ommissions or biases, and other information
+                  that will aid in understanding challenges and limitations. It
+                  should be precise, clear, and not too long.
+                </p>
               )}
             </div>
           </div>
@@ -337,11 +351,11 @@ function ContextSectionSummary({
       <div className="grid grid-cols-2 m-4 p-6 text-sm bg-purple-100 rounded box-content">
         <div className="font-sans prose prose-sm">
           <span className="font-semibold">Included in : </span>
-          {schema?.includedIn || "Needs Input"}
+          {schema?.includedIn || "Other Project Name"}
         </div>
         <div className="font-sans prose prose-sm">
           <span className="font-semibold">Related to: </span>
-          {schema?.relatedTo || "Needs Input"}
+          {schema?.relatedTo || "Other Dataset Name"}
         </div>
       </div>
       <ContextSectionCTAFooter callToAction={callToAction} color="yellow" />

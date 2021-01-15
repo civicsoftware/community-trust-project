@@ -59,23 +59,23 @@ function ContextSectionAttribution({ schema }) {
       <div className="pt-4 px-8 font-sans prose prose-sm">
         <div className="">
           <span className="font-semibold">Context contributors: </span>
-          {schema?.context?.contextContributor || "Needs Input"}
+          {schema?.context?.contextContributor || "Contributor teams and names"}
         </div>
         <div className="">
           <span className="font-semibold">On behalf of: </span>
-          {schema?.context?.onBehalfOf || "Needs Input"}
+          {schema?.context?.onBehalfOf || "Behalf of names"}
         </div>
         <div className="">
           <span className="font-semibold">Publication date: </span>
-          {schema?.context?.contextPublicationDate || "Needs Input"}
+          {schema?.context?.contextPublicationDate || "Date of publication"}
         </div>
         <div className="">
           <span className="font-semibold">Update date: </span>
-          {schema?.context?.contextUpdateDate || "Needs Input"}
+          {schema?.context?.contextUpdateDate || "Date of most recent update"}
         </div>
         <div className="">
           <span className="font-semibold">Updated by: </span>
-          {schema?.context?.contextUpdateBy || "Needs Input"}
+          {schema?.context?.contextUpdateBy || "Contributor teams and names"}
         </div>
       </div>
     </ContextSectionWrapper>
