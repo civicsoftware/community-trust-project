@@ -6,7 +6,7 @@ import CivicLogo from "../public/CIVIC_LOGO.svg";
 import Origin from "../public/ORIGIN_LG.svg";
 import Archive from "../public/ARCHIVE_LG.svg";
 import Power from "../public/POWER_LG.svg";
-import LibraryHero from "../public/LIBRARY_HERO.svg";
+// import LibraryHero from "../public/LIBRARY_HERO.svg";
 
 function Home() {
   return (
@@ -72,11 +72,11 @@ function Home() {
             </p>
           </div>
           <div className="flex flex-col mt-4 mx-6 pb-0 max-w-7xl text-4xl lg:mx-12 lg:px-12">
-            <img
+            {/* <img
               src={LibraryHero}
               className="w-full"
               alt="Community Data Library Graphic"
-            />
+            /> */}
             {/* <div className="flex flex-row mt-6 font-semibold">
               <Link to="/blueprint">
                 <Windmill.Button
