@@ -1,1 +1,13 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 687.24034 848.99132"><defs><clipPath id="clip-path"><path d="M481.29456,188.46579v72.40234H385.11V552.59469H302.13733V260.86813H205.95179V188.46579Z" fill="none"/></clipPath></defs><path d="M481.29431,188.46687v72.40234H385.10974V552.59382H302.13708V260.86921H205.95153V188.46687Z" fill="#221025"/><path d="M629.39942,682.92523H405.48161l-84.89978,83.96506-83.965-83.965H57.84642V57.84638L.00012.00009V739.8368H212.35644L320.58183,848.99132,429.742,739.8368H687.24034l-57.84075-56.91148Z" fill="#221025"/><path d="M0,0,57.8463,57.84633H629.39942v625.0789l57.84075,56.91149V0H.00012Z" fill="#8773ff"/><g clip-path="url(#clip-path)"><polygon points="205.952 260.868 447.235 502.152 544.046 151.738 192.421 96.137 205.952 260.868" fill="#8773ff"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 687.2 849" style="enable-background:new 0 0 687.2 849;" xml:space="preserve">
+<style type="text/css">
+	.st0{enable-background:new    ;}
+</style>
+<g class="st0">
+	<path d="M303.5,548.8c-2.6-2.6-3.8-5.5-3.8-9V274.6h-91.1c-3.4,0-6.4-1.3-9-3.8c-2.6-2.6-3.8-5.5-3.8-9V207c0-3.8,1.3-6.8,3.8-9.2
+		c2.6-2.4,5.5-3.6,9-3.6H484c3.8,0,6.8,1.2,9.2,3.6c2.4,2.4,3.6,5.5,3.6,9.2v54.8c0,3.8-1.2,6.8-3.6,9.2c-2.4,2.4-5.5,3.6-9.2,3.6
+		h-91.1v265.2c0,3.4-1.2,6.4-3.6,9c-2.4,2.6-5.5,3.8-9.2,3.8h-67.6C309.1,552.6,306.1,551.3,303.5,548.8z"/>
+</g>
+</svg>
