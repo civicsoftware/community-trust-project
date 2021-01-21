@@ -1,5 +1,4 @@
 import React from "react";
-import { default as Windmill } from "@windmill/react-ui";
 import { gql, useQuery } from "@apollo/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
