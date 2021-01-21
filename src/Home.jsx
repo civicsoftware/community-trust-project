@@ -88,7 +88,7 @@ function Home() {
               </Link>
             </div> */}
             <div className="flex flex-row mt-6 font-semibold">
-              <Link to="/library">
+              <Link to="/context">
                 <Windmill.Button className="inline-flex items-start px-4 py-2 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
                   View Sample Schema
                 </Windmill.Button>
