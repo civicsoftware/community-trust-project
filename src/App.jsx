@@ -36,8 +36,10 @@ function App() {
               </p>
               <p>
                 Community partners may request access from{" "}
-                <a href="mailto:">Kory Murphy</a> at the Multnomah County
-                Department of County Assets.
+                <a href="mailto:kory.murphy@multco.us?cc=alis.smbatyan@multco.us,matt.conrad@multco.us&subject=Community%20TRUST%20Project%20Access%20Request">
+                  Kory Murphy
+                </a>{" "}
+                at the Multnomah County Department of County Assets.
               </p>
               <Windmill.Input
                 className="mt-4"
