@@ -11,6 +11,7 @@ import Compass from "./Compass";
 import Flower from "./Flower";
 import Attribution from "./Attribution";
 import Blueprint from "./Blueprint";
+import Team from "./Team";
 
 /* *
  * Render a route with potential sub routes
@@ -98,6 +99,12 @@ const ROUTES = [
         key: "ATTRIBUTION",
         exact: true,
         component: Attribution
+      },
+      {
+        path: "/team",
+        key: "TEAM",
+        exact: true,
+        component: Team
       }
     ]
   }
