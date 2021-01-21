@@ -41,7 +41,7 @@ function Home() {
               className="justify-self-end pb-5 pt-2"
               alt="Trust Project Logo"
             />
-            <p className="-mt-9 text-sm">
+            <p className="-mt-9 text-center text-sm">
               <a
                 href="http://www.civicsoftwarefoundation.org"
                 rel="noreferrer"
@@ -53,23 +53,22 @@ function Home() {
             </p>
           </div>
           {partners && partners.length > 0 && (
-            <div className="col-span-2 p-2 w-full border-2 border-gray-300 rounded-lg lg:col-span-2 lg:row-start-2 lg:w-auto">
-              <p className="font-semibold">TRUST Partners</p>
+            <div className="col-span-2 p-2 w-full rounded-lg lg:col-span-2 lg:row-start-2 lg:w-auto">
               {partners.map(partner => (
                 <img
                   src={partner?.logo?.url}
                   alt={partner?.logo?.description}
-                  className="h-12"
+                  className="m-auto h-20"
                 />
               ))}
             </div>
           )}
           <div className="col-span-2 w-full lg:row-span-2 lg:w-auto">
             <p className="justify-self-start font-rubik prose prose-lg">
-              The Community TRUST Project represents a commitment from local
-              government to assess institutional bias embedded in data models
-              and systems that represent diverse identities and lived
-              experiences of the communities they serve.
+              The Multnomah County Community TRUST Project represents a
+              commitment from local government to assess institutional bias
+              embedded in data models and systems that represent diverse
+              identities and lived experiences of the communities they serve.
             </p>
             <div className="flex flex-row self-start justify-self-center pt-4">
               <Windmill.Button className="px-4 text-white text-base font-medium border border-transparent rounded-md shadow-sm lg:whitespace-nowrap">
